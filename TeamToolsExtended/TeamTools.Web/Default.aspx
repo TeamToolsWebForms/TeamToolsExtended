@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TeamTools.Web._Default" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TeamTools.Web._Default" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="HeadContent">
     <link href="./Content/DefaultPage.css" rel="stylesheet" type="text/css" />
