@@ -47,6 +47,14 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Moq, Version=4.5.30.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.5.30\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
@@ -79,7 +87,43 @@
     <Compile Include="MessageTests\PictureUrl_Should.cs" />
     <Compile Include="MessageTests\ProjectId_Should.cs" />
     <Compile Include="MessageTests\RelatedProject_Should.cs" />
+    <Compile Include="NoteTests\Content_Should.cs" />
+    <Compile Include="NoteTests\Id_Should.cs" />
+    <Compile Include="NoteTests\Title_Should.cs" />
+    <Compile Include="NoteTests\UserId_Should.cs" />
+    <Compile Include="NoteTests\User_Should.cs" />
+    <Compile Include="OrganizationTests\CreatorId_Should.cs" />
+    <Compile Include="OrganizationTests\Creator_Should.cs" />
+    <Compile Include="OrganizationTests\Description_Should.cs" />
+    <Compile Include="OrganizationTests\Id_Should.cs" />
+    <Compile Include="OrganizationTests\Members_Should.cs" />
+    <Compile Include="OrganizationTests\Name_Should.cs" />
+    <Compile Include="OrganizationTests\Projects_Should.cs" />
+    <Compile Include="ProjectTaskTests\Description_Should.cs" />
+    <Compile Include="ProjectTaskTests\ExecutionCost_Should.cs" />
+    <Compile Include="ProjectTaskTests\ExecutionTime_Should.cs" />
+    <Compile Include="ProjectTaskTests\Id_Should.cs" />
+    <Compile Include="ProjectTaskTests\IsDeleted_Should.cs" />
+    <Compile Include="ProjectTaskTests\ProjectId_Should.cs" />
+    <Compile Include="ProjectTaskTests\Project_Should.cs" />
+    <Compile Include="ProjectTaskTests\RelatedUsers_Should.cs" />
+    <Compile Include="ProjectTaskTests\Status_Should.cs" />
+    <Compile Include="ProjectTaskTests\Title_Should.cs" />
+    <Compile Include="ProjectTests\CreatorId_Should.cs" />
+    <Compile Include="ProjectTests\Creator_Should.cs" />
+    <Compile Include="ProjectTests\Description_Should.cs" />
+    <Compile Include="ProjectTests\Id_Should.cs" />
+    <Compile Include="ProjectTests\Messages_Should.cs" />
+    <Compile Include="ProjectTests\ProjectMembers_Should.cs" />
+    <Compile Include="ProjectTests\Tasks_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserRoleTests\Constructor_Should.cs" />
+    <Compile Include="UserTests\FirstName_Should.cs" />
+    <Compile Include="UserTests\Gender_Should.cs" />
+    <Compile Include="UserTests\LastName_Should.cs" />
+    <Compile Include="UserTests\Notes_Should.cs" />
+    <Compile Include="UserTests\Organizations_Should.cs" />
+    <Compile Include="UserTests\PersonalProjects_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

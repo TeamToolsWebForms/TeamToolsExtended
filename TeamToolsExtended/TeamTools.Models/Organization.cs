@@ -6,7 +6,8 @@ namespace TeamTools.Models
 {
     public class Organization
     {
-        // organization logo
+        // organization logo and then test
+
         private ICollection<User> members;
         private ICollection<Project> projects;
 
