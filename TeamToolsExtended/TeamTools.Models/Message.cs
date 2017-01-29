@@ -21,6 +21,7 @@ namespace TeamTools.Models
         public string Content { get; set; }
 
         [MaxLength(300)]
+        [RegularExpression(@"^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$")]
         public string PictureUrl { get; set; }
     }
 }

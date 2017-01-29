@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamTools.Data", "TeamTools
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamTools.Services", "TeamTools.Services\TeamTools.Services.csproj", "{09565B37-917C-4291-AB9A-5F499BE1354A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TeamToolsExtended.Tests", "TeamToolsExtended.Tests", "{42889A93-297D-4502-A7D9-96B5AFC7F15E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamTools.Models.Tests", "TeamTools.Models.Tests\TeamTools.Models.Tests.csproj", "{68164AE1-F5B9-4CCA-A27E-9A8DC4D4D288}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TeamToolsExtended", "TeamToolsExtended", "{BB47155E-3BD9-489E-8AEC-C93D7DFC8BE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +39,19 @@ Global
 		{09565B37-917C-4291-AB9A-5F499BE1354A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09565B37-917C-4291-AB9A-5F499BE1354A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09565B37-917C-4291-AB9A-5F499BE1354A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68164AE1-F5B9-4CCA-A27E-9A8DC4D4D288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68164AE1-F5B9-4CCA-A27E-9A8DC4D4D288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68164AE1-F5B9-4CCA-A27E-9A8DC4D4D288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68164AE1-F5B9-4CCA-A27E-9A8DC4D4D288}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ABB989D8-A441-4A55-8B70-34BF9F220DCF} = {BB47155E-3BD9-489E-8AEC-C93D7DFC8BE6}
+		{956032E0-9391-40C1-8CB4-2E6E39FD7D89} = {BB47155E-3BD9-489E-8AEC-C93D7DFC8BE6}
+		{AF6E3F21-6278-404C-BA78-37F984B34C79} = {BB47155E-3BD9-489E-8AEC-C93D7DFC8BE6}
+		{09565B37-917C-4291-AB9A-5F499BE1354A} = {BB47155E-3BD9-489E-8AEC-C93D7DFC8BE6}
+		{68164AE1-F5B9-4CCA-A27E-9A8DC4D4D288} = {42889A93-297D-4502-A7D9-96B5AFC7F15E}
 	EndGlobalSection
 EndGlobal
