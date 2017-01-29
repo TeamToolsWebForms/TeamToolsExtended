@@ -1,0 +1,26 @@
+﻿@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+.home-btn {
+    margin-top: -55px;
+    padding-right: 10px;
+}
+
+footer{
+    height: 100px
+}
+
+.special{
+    font-size: 30px;
+}
+
+.github {
+    color: black;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+footer {
+    width: 100%;
+}

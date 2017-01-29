@@ -11,7 +11,9 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" path="~/Content/css" />
+    <link href="Content/footer-icons.css" rel="stylesheet" type="text/css" />
+    <link href="Content/Initial.css" rel="stylesheet" type="text/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <asp:ContentPlaceHolder runat="server" ID="HeadContent">
     </asp:ContentPlaceHolder>
