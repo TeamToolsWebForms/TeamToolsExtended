@@ -49,9 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Profile\Home\Contracts\IProfileHomePresenter.cs" />
+    <Compile Include="Profile\Home\Contracts\IProfileHomeProjectsPresenter.cs" />
+    <Compile Include="Profile\Home\Contracts\IProfileHomeProjectsView.cs" />
     <Compile Include="Profile\Home\Contracts\IProfileHomeView.cs" />
     <Compile Include="Profile\Home\ProfileHomeEventArgs.cs" />
     <Compile Include="Profile\Home\ProfileHomePresenter.cs" />
+    <Compile Include="Profile\Home\ProfileHomeProjectsPresenter.cs" />
     <Compile Include="Profile\Home\ProfileHomeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

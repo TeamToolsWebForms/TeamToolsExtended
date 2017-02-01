@@ -110,6 +110,8 @@
     <Compile Include="ProjectTests\Creatorname_Should.cs" />
     <Compile Include="ProjectTests\Description_Should.cs" />
     <Compile Include="ProjectTests\Id_Should.cs" />
+    <Compile Include="ProjectTests\IsDeleted_Should.cs" />
+    <Compile Include="ProjectTests\IsPersonal_Should.cs" />
     <Compile Include="ProjectTests\Messages_Should.cs" />
     <Compile Include="ProjectTests\Title_Should.cs" />
     <Compile Include="ProjectTests\Users_Should.cs" />

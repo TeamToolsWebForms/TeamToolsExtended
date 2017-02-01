@@ -29,6 +29,10 @@ namespace TeamTools.Models
         [MaxLength(150)]
         public string CreatorName { get; set; }
 
+        public bool IsPersonal { get; set; }
+
+        public bool IsDeleted { get; set; }
+
         public virtual ICollection<User> Users
         {
             get { return this.users; }

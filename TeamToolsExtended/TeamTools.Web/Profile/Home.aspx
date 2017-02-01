@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="TeamTools.Web.Profile.Home" %>
+<%@ Register Src="~/Profile/HomeOrganizations.ascx" TagName="MyOrganizations" TagPrefix="mo" %>
+<%@ Register Src="~/Profile/HomeProjects.ascx" TagName="MyProjects" TagPrefix="mp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="../Content/home-profile.css" rel="stylesheet" type="text/css" />
@@ -84,7 +86,7 @@
                                         <li class="list-group-item"><%#: this.Model.User.FirstName %></li>
                                         <li class="list-group-item"><%#: this.Model.User.LastName %></li>
                                         <li class="list-group-item"><%#: this.Model.User.Gender %></li>
-                                        <li class="list-group-item"><i class="fa fa-envelope"></i> <%#: HttpContext.Current.User.Identity.GetUserName() %></li>
+                                        <li class="list-group-item"><i class="fa fa-envelope"></i><%#: HttpContext.Current.User.Identity.GetUserName() %></li>
                                     </ul>
                                 </div>
                             </div>
@@ -105,21 +107,12 @@
                                             </li>
                                         </ul>
                                         <div class="tab-content">
-                                            <asp:MultiView ActiveViewIndex="0" runat="server" ID="ContentView" OnLoad="ContentView_Load">
+                                            <asp:MultiView ActiveViewIndex="0" runat="server" ID="ContentView">
                                                 <asp:View runat="server" ID="MyOrganizationsView">
-                                                    <asp:ListView runat="server" ID="ProfileOrganizations" ItemType="TeamTools.DataTransferObjects.OrganizationDTO">
-                                                        <LayoutTemplate>
-                                                            <h3>My Organizations</h3>
-                                                            <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
-                                                        </LayoutTemplate>
-                                                        <ItemTemplate>
-                                                            <h4><%#: Item.Name %></h4>
-                                                            <p><%#: Item.Description %></p>
-                                                        </ItemTemplate>
-                                                    </asp:ListView>
+                                                    <mo:MyOrganizations runat="server" />
                                                 </asp:View>
                                                 <asp:View runat="server" ID="MyProjectsView">
-                                                    <h3>Projects</h3>
+                                                    <mp:MyProjects runat="server" />
                                                 </asp:View>
                                             </asp:MultiView>
                                         </div>

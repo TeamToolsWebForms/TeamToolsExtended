@@ -15,7 +15,9 @@ namespace TeamTools.Web.Profile
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.LoadUserData?.Invoke(sender, new ProfileHomeEventArgs() { Id = Page.User.Identity.GetUserId() });
+            string userId = Page.User.Identity.GetUserId();
+            string username = Page.User.Identity.GetUserName();
+            this.LoadUserData?.Invoke(sender, new ProfileHomeEventArgs(userId, username));
             
             this.ProfileImage.ImageUrl = this.Model.ImageUrl;
         }
@@ -34,12 +36,6 @@ namespace TeamTools.Web.Profile
         protected void ShowOrganizations_Click(object sender, EventArgs e)
         {
             this.ContentView.ActiveViewIndex = 0;
-        }
-
-        protected void ContentView_Load(object sender, EventArgs e)
-        {
-            this.ProfileOrganizations.DataSource = this.Model.User.Organizations;
-            this.ProfileOrganizations.DataBind();
         }
     }
 }

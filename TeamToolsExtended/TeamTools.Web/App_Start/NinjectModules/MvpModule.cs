@@ -10,6 +10,7 @@ using TeamTools.Web.App_Start.MvpFactoryConfig;
 using TeamTools.Web.App_Start.MvpFactoryConfig.Contracts;
 using TeamTools.Mvp.Profile.Home.Contracts;
 using TeamTools.Mvp.Profile.Home;
+using Ninject.Web.Common;
 
 namespace TeamTools.Web.App_Start.NinjectModules
 {
@@ -23,6 +24,7 @@ namespace TeamTools.Web.App_Start.NinjectModules
                 .ToMethod(GetPresenter)
                 .NamedLikeFactoryMethod((ICustomPresenterFactory factory) => factory.GetPresenter(null, null, null));
             this.Bind<IProfileHomePresenter>().To<ProfileHomePresenter>();
+            this.Bind<IProfileHomeProjectsPresenter>().To<ProfileHomeProjectsPresenter>();
         }
 
         private IPresenter GetPresenter(IContext context)

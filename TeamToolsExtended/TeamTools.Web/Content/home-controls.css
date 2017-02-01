@@ -1,0 +1,13 @@
+﻿#items-list {
+    list-style-type: none;
+}
+
+.list-item h3 a {
+    color: darkslategray;
+    text-decoration: none;
+}
+
+.list-item h3 a:hover {
+    color: lightblue;
+    text-decoration: underline;
+}

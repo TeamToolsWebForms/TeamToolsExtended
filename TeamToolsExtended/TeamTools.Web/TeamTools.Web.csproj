@@ -227,6 +227,7 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Admin\Admin.aspx" />
+    <Content Include="Content\home-controls.css" />
     <Content Include="Content\home-profile.css" />
     <Content Include="Images\default-user.jpg" />
     <Content Include="Content\bootstrap-social.css" />
@@ -256,6 +257,8 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Organizations.aspx" />
     <Content Include="Profile\Home.aspx" />
+    <Content Include="Profile\HomeOrganizations.ascx" />
+    <Content Include="Profile\HomeProjects.ascx" />
     <Content Include="Profile\MyOrganizations.aspx" />
     <Content Include="Profile\MyProjects.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -408,6 +411,20 @@
     </Compile>
     <Compile Include="Profile\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\HomeOrganizations.ascx.cs">
+      <DependentUpon>HomeOrganizations.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\HomeOrganizations.ascx.designer.cs">
+      <DependentUpon>HomeOrganizations.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\HomeProjects.ascx.cs">
+      <DependentUpon>HomeProjects.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\HomeProjects.ascx.designer.cs">
+      <DependentUpon>HomeProjects.ascx</DependentUpon>
     </Compile>
     <Compile Include="Profile\MyOrganizations.aspx.cs">
       <DependentUpon>MyOrganizations.aspx</DependentUpon>

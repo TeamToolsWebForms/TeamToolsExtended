@@ -33,11 +33,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:UpdatePanel runat="server">
-                                <ContentTemplate>
-                                    <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn-default" />
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
+                            <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn-default" />
                             <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
                         </div>
                     </div>

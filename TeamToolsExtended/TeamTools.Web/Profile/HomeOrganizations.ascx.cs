@@ -1,0 +1,26 @@
+﻿using System;
+using System.Web.UI;
+using TeamTools.Mvp.Profile.Home;
+using TeamTools.Mvp.Profile.Home.Contracts;
+using WebFormsMvp;
+using WebFormsMvp.Web;
+using Microsoft.AspNet.Identity;
+
+namespace TeamTools.Web.Profile
+{
+    [PresenterBinding(typeof(IProfileHomePresenter))]
+    public partial class HomeOrganizations : MvpUserControl<ProfileHomeViewModel>, IProfileHomeView
+    {
+        public event EventHandler<ProfileHomeEventArgs> LoadUserData;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            string userId = Page.User.Identity.GetUserId();
+            string username = Page.User.Identity.GetUserName();
+            this.LoadUserData?.Invoke(sender, new ProfileHomeEventArgs(userId, username));
+
+            this.ProfileOrganizations.DataSource = this.Model.User.Organizations;
+            this.ProfileOrganizations.DataBind();
+        }
+    }
+}

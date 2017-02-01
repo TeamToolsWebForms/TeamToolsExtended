@@ -10,7 +10,7 @@ namespace TeamTools.Web.App_Start
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<User, UserDTO>();
+                cfg.CreateMap<User, UserDTO>().PreserveReferences();
                 cfg.CreateMap<Organization, OrganizationDTO>();
                 cfg.CreateMap<Project, ProjectDTO>();
                 cfg.CreateMap<Note, NoteDTO>();

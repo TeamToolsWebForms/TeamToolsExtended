@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using AutoMapper;
 using TeamTools.Data.Contracts;
 using TeamTools.DataTransferObjects;
 using TeamTools.Models;
@@ -19,6 +20,15 @@ namespace TeamTools.Services
         {
             var user = this.userRepository.GetById(id);
             // cannot test mapper
+            var mappedUser = Mapper.Map<UserDTO>(user);
+            return mappedUser;
+        }
+
+        public UserDTO GetByIdWithFilteredProjects(string id, string username)
+        {
+            var user = this.userRepository.GetById(id);
+            user.Projects = user.Projects.Where(x => x.IsPersonal == true && x.CreatorName == username).ToList();
+
             var mappedUser = Mapper.Map<UserDTO>(user);
             return mappedUser;
         }
