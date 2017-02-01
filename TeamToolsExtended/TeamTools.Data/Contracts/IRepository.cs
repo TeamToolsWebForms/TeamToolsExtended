@@ -8,6 +8,10 @@ namespace TeamTools.Data.Contracts
     {
         void Add(T entity);
 
+        T GetById(int id);
+
+        T GetById(string id);
+
         IEnumerable<T> All();
 
         IEnumerable<T> All(Expression<Func<T, bool>> filter);

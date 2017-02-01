@@ -6,13 +6,26 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using TeamTools.Models;
 using TeamTools.Web.IdentityHelpers;
+using System.IO;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace TeamTools.Web.Account
 {
     public partial class Register : Page
     {
+        public byte[] ImageToByteArray(Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, ImageFormat.Jpeg);
+            return ms.ToArray();
+        }
+
         protected void CreateUser_Click(object sender, EventArgs e)
         {
+            var image = Image.FromFile(HttpContext.Current.Server.MapPath("~/Images/default-user.jpg"), true);
+            var converterImage = this.ImageToByteArray(image);
+
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
             var user = new User()
@@ -21,7 +34,8 @@ namespace TeamTools.Web.Account
                 Email = Email.Text,
                 FirstName = FirstName.Text,
                 LastName = LastName.Text,
-                Gender = GenderList.SelectedValue
+                Gender = GenderList.SelectedValue,
+                ProfileImage = converterImage
             };
 
             IdentityResult result = manager.Create(user, Password.Text);

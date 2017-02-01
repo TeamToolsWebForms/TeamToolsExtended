@@ -14,9 +14,11 @@ namespace TeamTools.Web
         {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            // move configs later
             var presenterFactory = NinjectWebCommon.Kernel.Get<IPresenterFactory>();
             PresenterBinder.Factory = presenterFactory;
             DbConfig.Initialize();
+            AutomapperConfig.CreateMapper();
         }
     }
 }

@@ -8,6 +8,8 @@ using WebFormsMvp;
 using WebFormsMvp.Binder;
 using TeamTools.Web.App_Start.MvpFactoryConfig;
 using TeamTools.Web.App_Start.MvpFactoryConfig.Contracts;
+using TeamTools.Mvp.Profile.Home.Contracts;
+using TeamTools.Mvp.Profile.Home;
 
 namespace TeamTools.Web.App_Start.NinjectModules
 {
@@ -20,6 +22,7 @@ namespace TeamTools.Web.App_Start.NinjectModules
             this.Bind<IPresenter>()
                 .ToMethod(GetPresenter)
                 .NamedLikeFactoryMethod((ICustomPresenterFactory factory) => factory.GetPresenter(null, null, null));
+            this.Bind<IProfileHomePresenter>().To<ProfileHomePresenter>();
         }
 
         private IPresenter GetPresenter(IContext context)

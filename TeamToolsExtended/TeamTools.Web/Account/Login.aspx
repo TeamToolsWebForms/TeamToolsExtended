@@ -43,16 +43,14 @@
                     </div>
                 </div>
                 <p>
-                    <%-- Enable this once you have account confirmation enabled for password reset functionality
+                    Enable this once you have account confirmation enabled for password reset functionality
                     <asp:HyperLink runat="server" ID="ForgotPasswordHyperLink" ViewStateMode="Disabled">Forgot your password?</asp:HyperLink>
-                    --%>
                 </p>
             </section>
         </div>
 
         <div class="col-md-4">
             <section id="socialLoginForm">
-                
             </section>
         </div>
     </div>

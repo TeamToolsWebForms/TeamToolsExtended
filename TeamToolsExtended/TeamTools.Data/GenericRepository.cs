@@ -24,6 +24,18 @@ namespace TeamTools.Data
             entry.State = EntityState.Added;
         }
 
+        public T GetById(int id)
+        {
+            var record = this.set.Find(id);
+            return record;
+        }
+
+        public T GetById(string id)
+        {
+            var record = this.set.Find(id);
+            return record;
+        }
+
         public IEnumerable<T> All()
         {
             return this.set.ToList();
