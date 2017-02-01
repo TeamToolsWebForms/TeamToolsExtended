@@ -22,7 +22,7 @@ namespace TeamTools.Models.Tests.OrganizationTests
         {
             var organization = new Organization();
 
-            bool isVirtual = organization.GetType().GetProperty("Members").GetGetMethod().IsVirtual;
+            bool isVirtual = organization.GetType().GetProperty("Projects").GetGetMethod().IsVirtual;
 
             Assert.IsTrue(isVirtual);
         }

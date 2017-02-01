@@ -81,22 +81,20 @@
   <ItemGroup>
     <Compile Include="MessageTests\Content_Should.cs" />
     <Compile Include="MessageTests\Created_Should.cs" />
-    <Compile Include="MessageTests\CreatorId_Should.cs" />
-    <Compile Include="MessageTests\Creator_Should.cs" />
+    <Compile Include="MessageTests\UserId_Should.cs" />
+    <Compile Include="MessageTests\User_Should.cs" />
     <Compile Include="MessageTests\Id_Should.cs" />
-    <Compile Include="MessageTests\PictureUrl_Should.cs" />
     <Compile Include="MessageTests\ProjectId_Should.cs" />
-    <Compile Include="MessageTests\RelatedProject_Should.cs" />
+    <Compile Include="MessageTests\Project_Should.cs" />
     <Compile Include="NoteTests\Content_Should.cs" />
     <Compile Include="NoteTests\Id_Should.cs" />
     <Compile Include="NoteTests\Title_Should.cs" />
     <Compile Include="NoteTests\UserId_Should.cs" />
     <Compile Include="NoteTests\User_Should.cs" />
-    <Compile Include="OrganizationTests\CreatorId_Should.cs" />
-    <Compile Include="OrganizationTests\Creator_Should.cs" />
+    <Compile Include="OrganizationTests\Creatorname_Should.cs" />
     <Compile Include="OrganizationTests\Description_Should.cs" />
     <Compile Include="OrganizationTests\Id_Should.cs" />
-    <Compile Include="OrganizationTests\Members_Should.cs" />
+    <Compile Include="OrganizationTests\Users_Should.cs" />
     <Compile Include="OrganizationTests\Name_Should.cs" />
     <Compile Include="OrganizationTests\Projects_Should.cs" />
     <Compile Include="ProjectTaskTests\Description_Should.cs" />
@@ -106,16 +104,16 @@
     <Compile Include="ProjectTaskTests\IsDeleted_Should.cs" />
     <Compile Include="ProjectTaskTests\ProjectId_Should.cs" />
     <Compile Include="ProjectTaskTests\Project_Should.cs" />
-    <Compile Include="ProjectTaskTests\RelatedUsers_Should.cs" />
+    <Compile Include="ProjectTaskTests\Users_Should.cs" />
     <Compile Include="ProjectTaskTests\Status_Should.cs" />
     <Compile Include="ProjectTaskTests\Title_Should.cs" />
-    <Compile Include="ProjectTests\CreatorId_Should.cs" />
-    <Compile Include="ProjectTests\Creator_Should.cs" />
+    <Compile Include="ProjectTests\Creatorname_Should.cs" />
     <Compile Include="ProjectTests\Description_Should.cs" />
     <Compile Include="ProjectTests\Id_Should.cs" />
     <Compile Include="ProjectTests\Messages_Should.cs" />
-    <Compile Include="ProjectTests\ProjectMembers_Should.cs" />
-    <Compile Include="ProjectTests\Tasks_Should.cs" />
+    <Compile Include="ProjectTests\Title_Should.cs" />
+    <Compile Include="ProjectTests\Users_Should.cs" />
+    <Compile Include="ProjectTests\ProjectTasks_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserRoleTests\Constructor_Should.cs" />
     <Compile Include="UserTests\FirstName_Should.cs" />
@@ -123,7 +121,9 @@
     <Compile Include="UserTests\LastName_Should.cs" />
     <Compile Include="UserTests\Notes_Should.cs" />
     <Compile Include="UserTests\Organizations_Should.cs" />
-    <Compile Include="UserTests\PersonalProjects_Should.cs" />
+    <Compile Include="UserTests\ProfileImage_Should.cs" />
+    <Compile Include="UserTests\Projects_Should.cs" />
+    <Compile Include="UserTests\ProjectTasks_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

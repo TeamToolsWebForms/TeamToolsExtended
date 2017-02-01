@@ -40,11 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageDTO.cs" />
     <Compile Include="NoteDTO.cs" />
     <Compile Include="OrganizationDTO.cs" />
     <Compile Include="ProjectDTO.cs" />
+    <Compile Include="ProjectTaskDTO.cs" />
     <Compile Include="UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TeamTools.Models\TeamTools.Models.csproj">
+      <Project>{956032E0-9391-40C1-8CB4-2E6E39FD7D89}</Project>
+      <Name>TeamTools.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

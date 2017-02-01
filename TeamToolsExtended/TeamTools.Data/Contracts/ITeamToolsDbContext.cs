@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using TeamTools.Models;
 
 namespace TeamTools.Data.Contracts
 {
@@ -8,13 +9,15 @@ namespace TeamTools.Data.Contracts
     {
         int SaveChanges();
 
-        //IDbSet<University> Universities { get; set; }
+        IDbSet<Organization> Organizations { get; set; }
 
-        //IDbSet<Specialty> Specialties { get; set; }
+        IDbSet<ProjectTask> ProjectTasks { get; set; }
 
-        //IDbSet<Course> Courses { get; set; }
+        IDbSet<Message> Messages { get; set; }
 
-        //IDbSet<Student> Students { get; set; }
+        IDbSet<Note> Notes { get; set; }
+
+        IDbSet<Project> Projects { get; set; }
 
         IDbSet<T> Set<T>() where T : class;
 

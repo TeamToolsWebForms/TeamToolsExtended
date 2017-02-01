@@ -3,17 +3,17 @@
 namespace TeamTools.Models.Tests.MessageTests
 {
     [TestFixture]
-    public class CreatorId_Should
+    public class UserId_Should
     {
         [TestCase(1)]
         [TestCase(500)]
-        public void SetCreatodId_Correct(int id)
+        public void SetUserId_Correct(int id)
         {
             var message = new Message();
 
-            message.CreatorId = id;
+            message.UserId = id;
 
-            Assert.AreEqual(id, message.CreatorId);
+            Assert.AreEqual(id, message.UserId);
         }
     }
 }

@@ -6,14 +6,12 @@ namespace TeamTools.Models
 {
     public class Organization
     {
-        // organization logo and then test
-
-        private ICollection<User> members;
+        private ICollection<User> users;
         private ICollection<Project> projects;
 
         public Organization()
         {
-            this.members = new HashSet<User>();
+            this.users = new HashSet<User>();
             this.projects = new HashSet<Project>();
         }
 
@@ -29,14 +27,15 @@ namespace TeamTools.Models
         [MaxLength(200)]
         public string Description { get; set; }
 
-        public int CreatorId { get; set; }
+        public byte[] OrganizationLogo { get; set; }
 
-        public virtual User Creator { get; set; }
+        [MaxLength(150)]
+        public string CreatorName { get; set; }
 
-        public virtual ICollection<User> Members
+        public virtual ICollection<User> Users
         {
-            get { return this.members; }
-            set { this.members = value; }
+            get { return this.users; }
+            set { this.users = value; }
         }
 
         public virtual ICollection<Project> Projects

@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace TeamTools.Models.Tests.OrganizationTests
 {
     [TestFixture]
-    public class Members_Should
+    public class Users_Should
     {
         [Test]
         public void SetMembers_Correct()
@@ -12,9 +12,9 @@ namespace TeamTools.Models.Tests.OrganizationTests
             var members = new HashSet<User>();
             var organization = new Organization();
 
-            organization.Members = members;
+            organization.Users = members;
 
-            Assert.AreSame(members, organization.Members);
+            Assert.AreSame(members, organization.Users);
         }
 
         [Test]
@@ -22,7 +22,7 @@ namespace TeamTools.Models.Tests.OrganizationTests
         {
             var organization = new Organization();
 
-            bool isVirtual = organization.GetType().GetProperty("Members").GetGetMethod().IsVirtual;
+            bool isVirtual = organization.GetType().GetProperty("Users").GetGetMethod().IsVirtual;
 
             Assert.IsTrue(isVirtual);
         }

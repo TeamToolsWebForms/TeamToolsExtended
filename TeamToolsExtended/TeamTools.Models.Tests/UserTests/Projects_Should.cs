@@ -4,17 +4,17 @@ using NUnit.Framework;
 namespace TeamTools.Models.Tests.UserTests
 {
     [TestFixture]
-    public class PersonalProjects_Should
+    public class Projects_Should
     {
         [Test]
-        public void SetPersonalProjects_Correct()
+        public void SetProjects_Correct()
         {
             var personalProjects = new HashSet<Project>();
             var user = new User();
 
-            user.PersonalProjects = personalProjects;
+            user.Projects = personalProjects;
 
-            Assert.AreSame(personalProjects, user.PersonalProjects);
+            Assert.AreSame(personalProjects, user.Projects);
         }
 
         [Test]
@@ -22,7 +22,7 @@ namespace TeamTools.Models.Tests.UserTests
         {
             var user = new User();
 
-            bool isVirtual = user.GetType().GetProperty("PersonalProjects").GetGetMethod().IsVirtual;
+            bool isVirtual = user.GetType().GetProperty("Projects").GetGetMethod().IsVirtual;
 
             Assert.IsTrue(isVirtual);
         }

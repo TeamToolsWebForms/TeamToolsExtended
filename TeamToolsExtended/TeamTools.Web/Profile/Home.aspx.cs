@@ -19,5 +19,27 @@ namespace TeamTools.Web.Profile
             
             this.ProfileImage.ImageUrl = this.Model.ImageUrl;
         }
+
+        protected void ImageUpload_Click(object sender, EventArgs e)
+        {
+            this.FileUpload.Visible = true;
+            this.ImageUpload.Visible = false;
+        }
+
+        protected void ShowProjects_Click(object sender, EventArgs e)
+        {
+            this.ContentView.ActiveViewIndex = 1;
+        }
+
+        protected void ShowOrganizations_Click(object sender, EventArgs e)
+        {
+            this.ContentView.ActiveViewIndex = 0;
+        }
+
+        protected void ContentView_Load(object sender, EventArgs e)
+        {
+            this.ProfileOrganizations.DataSource = this.Model.User.Organizations;
+            this.ProfileOrganizations.DataBind();
+        }
     }
 }

@@ -4,17 +4,17 @@ using Moq;
 namespace TeamTools.Models.Tests.MessageTests
 {
     [TestFixture]
-    public class Creator_Should
+    public class User_Should
     {
         [Test]
-        public void SetCreator_Correct()
+        public void SetUser_Correct()
         {
             var creator = new Mock<User>();
             var message = new Message();
 
-            message.Creator = creator.Object;
+            message.User = creator.Object;
 
-            Assert.AreSame(creator.Object, message.Creator);
+            Assert.AreSame(creator.Object, message.User);
         }
 
         [Test]
@@ -22,7 +22,7 @@ namespace TeamTools.Models.Tests.MessageTests
         {
             var message = new Message();
 
-            bool isVirtual = message.GetType().GetProperty("Creator").GetGetMethod().IsVirtual;
+            bool isVirtual = message.GetType().GetProperty("User").GetGetMethod().IsVirtual;
 
             Assert.IsTrue(isVirtual);
         }

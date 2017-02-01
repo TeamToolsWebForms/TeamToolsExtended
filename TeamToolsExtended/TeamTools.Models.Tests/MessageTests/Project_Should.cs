@@ -4,7 +4,7 @@ using Moq;
 namespace TeamTools.Models.Tests.MessageTests
 {
     [TestFixture]
-    public class RelatedProject_Should
+    public class Project_Should
     {
         [Test]
         public void SetRelatedProject()
@@ -12,9 +12,9 @@ namespace TeamTools.Models.Tests.MessageTests
             var relatedProject = new Mock<Project>();
             var message = new Message();
 
-            message.RelatedProject = relatedProject.Object;
+            message.Project = relatedProject.Object;
 
-            Assert.AreSame(relatedProject.Object, message.RelatedProject);
+            Assert.AreSame(relatedProject.Object, message.Project);
         }
 
         [Test]
@@ -22,7 +22,7 @@ namespace TeamTools.Models.Tests.MessageTests
         {
             var message = new Message();
 
-            bool isVirtual = message.GetType().GetProperty("RelatedProject").GetGetMethod().IsVirtual;
+            bool isVirtual = message.GetType().GetProperty("Project").GetGetMethod().IsVirtual;
 
             Assert.IsTrue(isVirtual);
         }

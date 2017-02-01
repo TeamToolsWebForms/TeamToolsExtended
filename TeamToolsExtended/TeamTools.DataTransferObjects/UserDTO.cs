@@ -12,9 +12,11 @@ namespace TeamTools.DataTransferObjects
         
         public byte[] ProfileImage { get; set; }
 
+        public ICollection<ProjectTaskDTO> ProjectTasks { get; set; }
+
         public ICollection<OrganizationDTO> Organizations;
 
-        public ICollection<ProjectDTO> PersonalProjects;
+        public ICollection<ProjectDTO> Projects;
 
         public ICollection<NoteDTO> Notes;
     }

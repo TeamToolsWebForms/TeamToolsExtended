@@ -5,34 +5,37 @@ namespace TeamTools.Models
 {
     public class Project
     {
-        private ICollection<User> projectMembers;
+        private ICollection<User> users;
         private ICollection<ProjectTask> tasks;
         private ICollection<Message> messages;
 
         public Project()
         {
-            this.projectMembers = new HashSet<User>();
+            this.users = new HashSet<User>();
             this.tasks = new HashSet<ProjectTask>();
             this.messages = new HashSet<Message>();
         }
 
         public int Id { get; set; }
 
-        public int CreatorId { get; set; }
-
-        public virtual User Creator { get; set; }
+        [MinLength(5)]
+        [MaxLength(150)]
+        public string Title { get; set; }
 
         [MinLength(5)]
         [MaxLength(200)]
         public string Description { get; set; }
 
-        public virtual ICollection<User> ProjectMembers
+        [MaxLength(150)]
+        public string CreatorName { get; set; }
+
+        public virtual ICollection<User> Users
         {
-            get { return this.projectMembers; }
-            set { this.projectMembers = value; }
+            get { return this.users; }
+            set { this.users = value; }
         }
 
-        public virtual ICollection<ProjectTask> Tasks
+        public virtual ICollection<ProjectTask> ProjectTasks
         {
             get { return this.tasks; }
             set { this.tasks = value; }

@@ -7,11 +7,11 @@ namespace TeamTools.Models
 {
     public class ProjectTask
     {
-        private ICollection<User> relatedUsers;
+        private ICollection<User> users;
 
         public ProjectTask()
         {
-            this.relatedUsers = new HashSet<User>();
+            this.users = new HashSet<User>();
         }
 
         public int Id { get; set; }
@@ -37,10 +37,10 @@ namespace TeamTools.Models
 
         public virtual Project Project { get; set; }
 
-        public virtual ICollection<User> RelatedUsers
+        public virtual ICollection<User> Users
         {
-            get { return this.relatedUsers; }
-            set { this.relatedUsers = value; }
+            get { return this.users; }
+            set { this.users = value; }
         }
 
         public bool IsDeleted { get; set; }

@@ -9,6 +9,7 @@ namespace TeamTools.Models
 {
     public class User : IdentityUser
     {
+        private ICollection<ProjectTask> projectTasks;
         private ICollection<Organization> organizations;
         private ICollection<Project> personalProjects;
         private ICollection<Note> notes;
@@ -16,6 +17,7 @@ namespace TeamTools.Models
         public User()
             : base()
         {
+            this.projectTasks = new HashSet<ProjectTask>();
             this.organizations = new HashSet<Organization>();
             this.personalProjects = new HashSet<Project>();
             this.notes = new HashSet<Note>();
@@ -30,9 +32,14 @@ namespace TeamTools.Models
         public string LastName { get; set; }
         
         public string Gender { get; set; }
-
-        // unit test!
+        
         public byte[] ProfileImage { get; set; }
+        
+        public virtual ICollection<ProjectTask> ProjectTasks
+        {
+            get { return this.projectTasks; }
+            set { this.projectTasks = value; }
+        }
 
         public virtual ICollection<Organization> Organizations
         {
@@ -40,7 +47,7 @@ namespace TeamTools.Models
             set { this.organizations = value; }
         }
 
-        public virtual ICollection<Project> PersonalProjects
+        public virtual ICollection<Project> Projects
         {
             get { return this.personalProjects; }
             set { this.personalProjects = value; }
