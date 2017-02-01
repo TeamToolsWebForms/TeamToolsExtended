@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.UI;
 using TeamTools.Mvp.Profile.Home;
 using TeamTools.Mvp.Profile.Home.Contracts;
@@ -20,6 +21,13 @@ namespace TeamTools.Web.Profile
             this.LoadUserData?.Invoke(sender, new ProfileHomeEventArgs(userId, username));
 
             this.ProfileOrganizations.DataSource = this.Model.User.Organizations;
+            this.ProfileOrganizations.DataBind();
+        }
+
+        protected void SortByName_Click(object sender, EventArgs e)
+        {
+            // check if work properly
+            this.ProfileOrganizations.DataSource = this.Model.User.Organizations.OrderBy(o => o.Name).ToList();
             this.ProfileOrganizations.DataBind();
         }
     }

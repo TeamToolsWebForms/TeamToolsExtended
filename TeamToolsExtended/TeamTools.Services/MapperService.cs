@@ -5,6 +5,9 @@ namespace TeamTools.Services
 {
     public class MapperService : IMapperService
     {
-        public IMapper Instance { get; set; }
+        public T MapObject<T>(object source)
+        {
+            return Mapper.Map<T>(source);
+        }
     }
 }

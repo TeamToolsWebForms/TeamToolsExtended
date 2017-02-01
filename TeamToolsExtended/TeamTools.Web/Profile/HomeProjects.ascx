@@ -8,7 +8,7 @@
                 <div>
                     <ul id="items-list">
                         <li class="list-item">
-                            <h3><a href="#"><i class="fa fa-users"></i> <%#: Item.Title %></a></h3>
+                            <h3><a href="#"><i class="fa fa-file-text"></i> <%#: Item.Title %></a></h3>
                             <p><%#: Item.Description %></p>
                         </li>
                     </ul>
