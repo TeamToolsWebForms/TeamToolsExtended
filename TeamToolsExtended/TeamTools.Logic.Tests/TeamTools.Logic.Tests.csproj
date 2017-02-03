@@ -121,6 +121,10 @@
     <Compile Include="Data\Models\ProjectTests\ProjectTasks_Should.cs" />
     <Compile Include="Data\Models\ProjectTests\Title_Should.cs" />
     <Compile Include="Data\Models\ProjectTests\Users_Should.cs" />
+    <Compile Include="Data\Models\UserLogoTests\Id_Should.cs" />
+    <Compile Include="Data\Models\UserLogoTests\Image_Should.cs" />
+    <Compile Include="Data\Models\UserLogoTests\UserId_Should.cs" />
+    <Compile Include="Data\Models\UserLogoTests\User_Should.cs" />
     <Compile Include="Data\Models\UserRoleTests\Constructor_Should.cs" />
     <Compile Include="Data\Models\UserTests\FirstName_Should.cs" />
     <Compile Include="Data\Models\UserTests\Gender_Should.cs" />

@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using Moq;
 using TeamTools.Logic.Data.Models;
 
 namespace TeamTools.Logic.Tests.Data.Models.UserTests
@@ -6,15 +7,25 @@ namespace TeamTools.Logic.Tests.Data.Models.UserTests
     [TestFixture]
     public class ProfileImage_Should
     {
-        [TestCase(new byte[] { 12, 15, 16 })]
-        [TestCase(new byte[] { 12, 15, 16, 1, 1, 1, 1 })]
-        public void SetProfileImage_Correct(byte[] array)
+        [Test]
+        public void SetProfileImage_Correct()
+        {
+            var userLogo = new Mock<UserLogo>();
+            var user = new User();
+
+            user.ProfileImage = userLogo.Object;
+
+            Assert.AreSame(userLogo.Object, user.ProfileImage);
+        }
+
+        [Test]
+        public void BeVirtual()
         {
             var user = new User();
 
-            user.ProfileImage = array;
+            bool isVirtual = user.GetType().GetProperty("ProfileImage").GetGetMethod().IsVirtual;
 
-            Assert.AreEqual(array, user.ProfileImage);
+            Assert.IsTrue(isVirtual);
         }
     }
 }

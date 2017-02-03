@@ -34,9 +34,9 @@ namespace TeamTools.Web.Account
                 Email = Email.Text,
                 FirstName = FirstName.Text,
                 LastName = LastName.Text,
-                Gender = GenderList.SelectedValue,
-                ProfileImage = converterImage
+                Gender = GenderList.SelectedValue
             };
+            user.ProfileImage = new UserLogo() { Image = converterImage, User = user };
 
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
