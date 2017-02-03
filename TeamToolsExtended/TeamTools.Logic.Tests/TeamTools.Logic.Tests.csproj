@@ -91,10 +91,15 @@
     <Compile Include="Data\Models\NoteTests\Title_Should.cs" />
     <Compile Include="Data\Models\NoteTests\UserId_Should.cs" />
     <Compile Include="Data\Models\NoteTests\User_Should.cs" />
+    <Compile Include="Data\Models\OrganizationLogoTests\Id_Should.cs" />
+    <Compile Include="Data\Models\OrganizationLogoTests\Image_Should.cs" />
+    <Compile Include="Data\Models\OrganizationLogoTests\OrganizationId_Should.cs" />
+    <Compile Include="Data\Models\OrganizationLogoTests\Organization_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\Creatorname_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\Description_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\Id_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\Name_Should.cs" />
+    <Compile Include="Data\Models\OrganizationTests\OrganizationLogo_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\Projects_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\Users_Should.cs" />
     <Compile Include="Data\Models\ProjectTaskTests\Description_Should.cs" />

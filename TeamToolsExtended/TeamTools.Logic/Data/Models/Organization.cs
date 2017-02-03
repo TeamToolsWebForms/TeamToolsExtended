@@ -27,7 +27,7 @@ namespace TeamTools.Logic.Data.Models
         [MaxLength(200)]
         public string Description { get; set; }
 
-        public byte[] OrganizationLogo { get; set; }
+        public virtual OrganizationLogo OrganizationLogo { get; set; }
 
         [MaxLength(150)]
         public string CreatorName { get; set; }
