@@ -1,0 +1,9 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProfileHome.master.cs" Inherits="TeamTools.Web.Profile.ProfileHome" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="HeadContent">
+    
+</asp:Content>
+
+<asp:Content runat="server" ContentPlaceHolderID="MainContent">
+    
+</asp:Content>

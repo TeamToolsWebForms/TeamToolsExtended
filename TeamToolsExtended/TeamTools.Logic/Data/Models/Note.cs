@@ -7,15 +7,15 @@ namespace TeamTools.Logic.Data.Models
         public int Id { get; set; }
 
         [Required]
-        [MinLength(5)]
+        [MinLength(3)]
         [MaxLength(100)]
         public string Title { get; set; }
 
-        [MinLength(5)]
+        [MinLength(3)]
         [MaxLength(100)]
         public string Content { get; set; }
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         public virtual User User { get; set; }
     }

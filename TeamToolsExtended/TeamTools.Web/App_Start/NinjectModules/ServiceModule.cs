@@ -14,6 +14,7 @@ namespace TeamTools.Web.App_Start.NinjectModules
             this.Bind<IImageHelper>().To<ImageHelper>().InRequestScope();
             this.Bind<IUserService>().To<UserService>().InRequestScope();
             this.Bind<IMapperService>().To<MapperService>().InRequestScope();
+            this.Bind<INoteService>().To<NoteService>().InRequestScope();
         }
     }
 }

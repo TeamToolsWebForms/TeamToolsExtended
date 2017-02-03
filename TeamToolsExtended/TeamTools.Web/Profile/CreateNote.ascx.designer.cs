@@ -10,51 +10,33 @@
 namespace TeamTools.Web.Profile {
     
     
-    public partial class Home {
+    public partial class CreateNote {
         
         /// <summary>
-        /// MyNotes control.
+        /// title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton MyNotes;
+        protected global::System.Web.UI.WebControls.TextBox title;
         
         /// <summary>
-        /// CreateNote control.
+        /// content control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton CreateNote;
+        protected global::System.Web.UI.WebControls.TextBox content;
         
         /// <summary>
-        /// MyControls control.
+        /// NewNote control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder MyControls;
-        
-        /// <summary>
-        /// PersonalInfoControl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::TeamTools.Web.Profile.HomePersonalInfo PersonalInfoControl;
-        
-        /// <summary>
-        /// CreateNoteControl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::TeamTools.Web.Profile.CreateNote CreateNoteControl;
+        protected global::System.Web.UI.WebControls.Button NewNote;
     }
 }

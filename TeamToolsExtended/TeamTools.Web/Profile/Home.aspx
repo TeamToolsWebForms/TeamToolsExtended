@@ -1,28 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="TeamTools.Web.Profile.Home" %>
-<%@ Register Src="~/Profile/HomeOrganizations.ascx" TagName="MyOrganizations" TagPrefix="mo" %>
-<%@ Register Src="~/Profile/HomeProjects.ascx" TagName="MyProjects" TagPrefix="mp" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+<%@ Register Src="~/Profile/HomePersonalInfo.ascx" TagName="PersonalInfo" TagPrefix="pi" %>
+<%@ Register Src="~/Profile/CreateNote.ascx" TagName="CreateNote" TagPrefix="cn" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="HeadContent">
     <link href="../Content/home-profile.css" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../Content/create-note.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <%--<h3>Toq menu bara da ne go zabravime ;d</h3>
-    <h3><%# HttpContext.Current.User.Identity.GetUserName() %></h3>
-    <asp:Image runat="server" ID="ProfileImage" AlternateText="Profile logo" />--%>
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
                 <ul class="nav nav-pills nav-stacked nav-email shadow mb-20">
                     <li class="active">
-                        <a href="#mail-inbox.html">
+                        <asp:LinkButton runat="server" ID="MyNotes" OnClick="MyNotes_Click">
                             <i class="fa fa-sticky-note-o"></i>My Notes  <span class="label pull-right"></span>
-                        </a>
+                        </asp:LinkButton>
                     </li>
                     <li>
-                        <a href="#mail-compose.html"><i class="fa fa-sticky-note"></i>Create Note</a>
+                        <asp:LinkButton runat="server" ID="CreateNote" OnClick="CreateNote_Click">
+                            <i class="fa fa-sticky-note"></i>Create Note</asp:LinkButton>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-certificate"></i>Important</a>
@@ -46,7 +45,7 @@
                     <li>
                         <a href="#">
                             <i class="fa fa-sitemap"></i>My Organizations
-                </a>
+                        </a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span style="font-size: 16px;" class="pull-left hidden-xs showopacity fa fa-cog"></span>Settings</a>
@@ -57,74 +56,18 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading resume-heading">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="col-xs-12 col-sm-4">
-                                    <figure>
-                                        <asp:Image runat="server" ID="ProfileImage" AlternateText="Profile logo" CssClass="img-circle img-responsive" />
-                                    </figure>
-                                    <div class="row">
-                                        <div class="col-xs-12 social-btns">
-                                            <asp:UpdatePanel runat="server">
-                                                <ContentTemplate>
-                                                    <asp:Button Text="Upload image" runat="server" ID="ImageUpload" OnClick="ImageUpload_Click" />
-                                                </ContentTemplate>
-                                            </asp:UpdatePanel>
-                                            <asp:UpdatePanel runat="server">
-                                                <ContentTemplate>
-                                                    <asp:FileUpload runat="server" ID="FileUpload" Visible="false" />
-                                                </ContentTemplate>
-                                            </asp:UpdatePanel>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="profileInfo" class="col-xs-12 col-sm-8">
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><%#: this.Model.User.FirstName %></li>
-                                        <li class="list-group-item"><%#: this.Model.User.LastName %></li>
-                                        <li class="list-group-item"><%#: this.Model.User.Gender %></li>
-                                        <li class="list-group-item"><i class="fa fa-envelope"></i><%#: HttpContext.Current.User.Identity.GetUserName() %></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bs-callout bs-callout-danger">
-                        <asp:UpdatePanel runat="server">
-                            <ContentTemplate>
-                                <div class="tabbable-panel">
-                                    <div class="tabbable-line">
-                                        <ul class="nav nav-tabs">
-                                            <li id="myProjects">
-                                                <asp:Button Text="My Projects" runat="server" ID="ShowProjects" CssClass="btn btn-default" OnClick="ShowProjects_Click" />
-                                            </li>
-                                            <li id="myOrganizations">
-                                                <asp:Button Text="My Organizations" runat="server" ID="ShowOrganizations" CssClass="btn btn-default" OnClick="ShowOrganizations_Click" />
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content">
-                                            <asp:MultiView ActiveViewIndex="0" runat="server" ID="ContentView">
-                                                <asp:View runat="server" ID="MyOrganizationsView">
-                                                    <mo:MyOrganizations runat="server" />
-                                                </asp:View>
-                                                <asp:View runat="server" ID="MyProjectsView">
-                                                    <mp:MyProjects runat="server" />
-                                                </asp:View>
-                                            </asp:MultiView>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
-                    </div>
-                </div>
-            </div>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    <asp:PlaceHolder runat="server" ID="MyControls">
+                        <pi:PersonalInfo runat="server" ID="PersonalInfoControl" />
+                        <cn:CreateNote runat="server" ID="CreateNoteControl" Visible="false" />
+                    </asp:PlaceHolder>
+                </ContentTemplate>
+                <Triggers>
+                    <%--<asp:AsyncPostBackTrigger ControlID="MyNotes" EventName="Click" />--%>
+                    <asp:AsyncPostBackTrigger ControlID="CreateNote" EventName="Click" />
+                </Triggers>
+            </asp:UpdatePanel>
         </div>
     </div>
-    <script src="../Scripts/Profile/Home/profile-home.js"></script>
 </asp:Content>

@@ -26,7 +26,7 @@
         </div>
     </ItemTemplate>
     <EmptyDataTemplate>
-        <h3>Currently you are not a member of organization.</h3>
+        <h3>Currently you are not a member of organization</h3>
     </EmptyDataTemplate>
 </asp:ListView>
 <%-- Make pager with ajax --%>

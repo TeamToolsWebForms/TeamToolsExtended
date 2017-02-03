@@ -1,41 +1,38 @@
 ﻿using System;
 using System.Web.UI;
-using Microsoft.AspNet.Identity;
+using System.Web.UI.WebControls;
 using WebFormsMvp.Web;
-using TeamTools.Logic.Mvp.Profile.Home.Contracts;
-using TeamTools.Logic.Mvp.Profile.Home;
-using WebFormsMvp;
 
 namespace TeamTools.Web.Profile
 {
-    [PresenterBinding(typeof(IProfileHomePresenter))]
-    public partial class Home : MvpPage<ProfileHomeViewModel>, IProfileHomeView
+    public partial class Home : Page
     {
-        public event EventHandler<ProfileHomeEventArgs> LoadUserData;
+        //private const string RelativePath = "~/Profile/";
+        //private const string UserControlSuffix = ".ascx";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string userId = Page.User.Identity.GetUserId();
-            string username = Page.User.Identity.GetUserName();
-            this.LoadUserData?.Invoke(sender, new ProfileHomeEventArgs(userId, username));
             
-            this.ProfileImage.ImageUrl = this.Model.ImageUrl;
         }
 
-        protected void ImageUpload_Click(object sender, EventArgs e)
+        protected void MyNotes_Click(object sender, EventArgs e)
         {
-            this.FileUpload.Visible = true;
-            this.ImageUpload.Visible = false;
+            //LinkButton button = sender as LinkButton;
+            //this.LoadSpecificUserControl(RelativePath, button.ID, UserControlSuffix);
         }
 
-        protected void ShowProjects_Click(object sender, EventArgs e)
+        protected void CreateNote_Click(object sender, EventArgs e)
         {
-            this.ContentView.ActiveViewIndex = 1;
+            this.PersonalInfoControl.Visible = false;
+            this.CreateNoteControl.Visible = true;
         }
 
-        protected void ShowOrganizations_Click(object sender, EventArgs e)
-        {
-            this.ContentView.ActiveViewIndex = 0;
-        }
+        //private void LoadSpecificUserControl(string relativePath, string userControlName, string userControlSuffix)
+        //{
+        //    string fullPath = relativePath + userControlName + userControlSuffix;
+        //    this.MyControls.Controls.Clear();
+        //    UserControl userControl = (UserControl)this.LoadControl(fullPath);
+        //    this.MyControls.Controls.Add(userControl);
+        //}
     }
 }

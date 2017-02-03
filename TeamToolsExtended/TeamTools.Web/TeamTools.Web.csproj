@@ -227,6 +227,7 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Admin\Admin.aspx" />
+    <Content Include="Content\create-note.css" />
     <Content Include="Content\home-controls.css" />
     <Content Include="Content\home-profile.css" />
     <Content Include="Images\default-user.jpg" />
@@ -254,10 +255,15 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Profile\CreateNote.ascx" />
+    <Content Include="Profile\HomeNotes.aspx" />
+    <Content Include="Profile\MyNotes.ascx" />
+    <Content Include="Profile\ProfileHome.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Organizations.aspx" />
     <Content Include="Profile\Home.aspx" />
     <Content Include="Profile\HomeOrganizations.ascx" />
+    <Content Include="Profile\HomePersonalInfo.ascx" />
     <Content Include="Profile\HomeProjects.ascx" />
     <Content Include="Profile\MyOrganizations.aspx" />
     <Content Include="Profile\MyProjects.aspx" />
@@ -405,12 +411,26 @@
     <Compile Include="Organizations.aspx.designer.cs">
       <DependentUpon>Organizations.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Profile\CreateNote.ascx.cs">
+      <DependentUpon>CreateNote.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\CreateNote.ascx.designer.cs">
+      <DependentUpon>CreateNote.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Profile\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Profile\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\HomeNotes.aspx.cs">
+      <DependentUpon>HomeNotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\HomeNotes.aspx.designer.cs">
+      <DependentUpon>HomeNotes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile\HomeOrganizations.ascx.cs">
       <DependentUpon>HomeOrganizations.ascx</DependentUpon>
@@ -419,12 +439,26 @@
     <Compile Include="Profile\HomeOrganizations.ascx.designer.cs">
       <DependentUpon>HomeOrganizations.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Profile\HomePersonalInfo.ascx.cs">
+      <DependentUpon>HomePersonalInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\HomePersonalInfo.ascx.designer.cs">
+      <DependentUpon>HomePersonalInfo.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Profile\HomeProjects.ascx.cs">
       <DependentUpon>HomeProjects.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Profile\HomeProjects.ascx.designer.cs">
       <DependentUpon>HomeProjects.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\MyNotes.ascx.cs">
+      <DependentUpon>MyNotes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\MyNotes.ascx.designer.cs">
+      <DependentUpon>MyNotes.ascx</DependentUpon>
     </Compile>
     <Compile Include="Profile\MyOrganizations.aspx.cs">
       <DependentUpon>MyOrganizations.aspx</DependentUpon>
@@ -439,6 +473,13 @@
     </Compile>
     <Compile Include="Profile\MyProjects.aspx.designer.cs">
       <DependentUpon>MyProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\ProfileHome.Master.cs">
+      <DependentUpon>ProfileHome.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\ProfileHome.Master.designer.cs">
+      <DependentUpon>ProfileHome.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
