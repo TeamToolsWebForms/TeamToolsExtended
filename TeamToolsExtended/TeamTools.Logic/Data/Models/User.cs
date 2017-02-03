@@ -33,7 +33,9 @@ namespace TeamTools.Logic.Data.Models
 
         public string Gender { get; set; }
 
-        public virtual UserLogo ProfileImage { get; set; }
+        public int UserLogoId { get; set; }
+
+        public virtual UserLogo UserLogo { get; set; }
 
         public virtual ICollection<ProjectTask> ProjectTasks
         {

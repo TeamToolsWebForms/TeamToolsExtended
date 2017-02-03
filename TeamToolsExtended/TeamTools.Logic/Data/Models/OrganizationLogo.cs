@@ -5,9 +5,5 @@
         public int Id { get; set; }
 
         public byte[] Image { get; set; }
-
-        public int OrganizationId { get; set; }
-
-        public virtual Organization Organization { get; set; }
     }
 }

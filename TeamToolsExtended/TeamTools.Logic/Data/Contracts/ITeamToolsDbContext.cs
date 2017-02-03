@@ -11,6 +11,10 @@ namespace TeamTools.Logic.Data.Contracts
 
         IDbSet<Organization> Organizations { get; set; }
 
+        IDbSet<OrganizationLogo> OrganizationLogos { get; set; }
+
+        IDbSet<UserLogo> UserLogos { get; set; }
+
         IDbSet<ProjectTask> ProjectTasks { get; set; }
 
         IDbSet<Message> Messages { get; set; }

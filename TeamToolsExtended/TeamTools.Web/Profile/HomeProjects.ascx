@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HomeProjects.ascx.cs" Inherits="TeamTools.Web.Profile.HomeProjects" %>
 <link rel="stylesheet" href="../Content/home-controls.css" type="text/css" />
 
-<asp:ListView runat="server" ID="ProfileProjects" ItemType="TeamTools.DataTransferObjects.ProjectDTO">
+<asp:ListView runat="server" ID="ProfileProjects" ItemType="TeamTools.Logic.DTO.ProjectDTO">
     <ItemTemplate>
         <div class="container">
             <div class="row">

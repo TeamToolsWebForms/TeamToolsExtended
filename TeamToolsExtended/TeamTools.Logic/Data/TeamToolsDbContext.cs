@@ -27,6 +27,10 @@ namespace TeamTools.Logic.Data
 
         public IDbSet<Project> Projects { get; set; }
 
+        public IDbSet<OrganizationLogo> OrganizationLogos { get; set; }
+
+        public IDbSet<UserLogo> UserLogos { get; set; }
+
         public virtual new IDbSet<T> Set<T>() where T : class
         {
             return base.Set<T>();

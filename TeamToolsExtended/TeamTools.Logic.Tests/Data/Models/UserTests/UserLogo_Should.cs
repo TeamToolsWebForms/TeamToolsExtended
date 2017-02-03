@@ -5,17 +5,17 @@ using TeamTools.Logic.Data.Models;
 namespace TeamTools.Logic.Tests.Data.Models.UserTests
 {
     [TestFixture]
-    public class ProfileImage_Should
+    public class UserLogo_Should
     {
         [Test]
-        public void SetProfileImage_Correct()
+        public void SetUserLogo_Correct()
         {
             var userLogo = new Mock<UserLogo>();
             var user = new User();
 
-            user.ProfileImage = userLogo.Object;
+            user.UserLogo = userLogo.Object;
 
-            Assert.AreSame(userLogo.Object, user.ProfileImage);
+            Assert.AreSame(userLogo.Object, user.UserLogo);
         }
 
         [Test]
@@ -23,7 +23,7 @@ namespace TeamTools.Logic.Tests.Data.Models.UserTests
         {
             var user = new User();
 
-            bool isVirtual = user.GetType().GetProperty("ProfileImage").GetGetMethod().IsVirtual;
+            bool isVirtual = user.GetType().GetProperty("UserLogo").GetGetMethod().IsVirtual;
 
             Assert.IsTrue(isVirtual);
         }

@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HomeOrganizations.ascx.cs" Inherits="TeamTools.Web.Profile.HomeOrganizations" %>
 <link rel="stylesheet" href="../Content/home-controls.css" type="text/css" />
 
-<asp:ListView runat="server" ID="ProfileOrganizations" ItemType="TeamTools.DataTransferObjects.OrganizationDTO">
+<asp:ListView runat="server" ID="ProfileOrganizations" ItemType="TeamTools.Logic.DTO.OrganizationDTO">
     <LayoutTemplate>
         <div class="dropdown">
             <span class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort <span class="caret"></span></span>

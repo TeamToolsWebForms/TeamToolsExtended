@@ -10,7 +10,7 @@ namespace TeamTools.Logic.DTO
 
         public string Gender { get; set; }
         
-        public UserLogoDTO ProfileImage { get; set; }
+        public UserLogoDTO UserLogo { get; set; }
 
         public ICollection<ProjectTaskDTO> ProjectTasks { get; set; }
 

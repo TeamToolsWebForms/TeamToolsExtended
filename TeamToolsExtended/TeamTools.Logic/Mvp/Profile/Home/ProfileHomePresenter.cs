@@ -23,7 +23,7 @@ namespace TeamTools.Logic.Mvp.Profile.Home
         {
             var foundUser = this.userService.GetById(e.Id);
             this.View.Model.User = foundUser;
-            this.View.Model.ImageUrl = this.imageHelper.ByteArrayToImageUrl(foundUser.ProfileImage.Image);
+            this.View.Model.ImageUrl = this.imageHelper.ByteArrayToImageUrl(foundUser.UserLogo.Image);
         }
     }
 }
