@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1380F4DF-7E90-482C-8B13-57317E8781CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TeamTools.Logic.Tests</RootNamespace>
+    <AssemblyName>TeamTools.Logic.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Moq, Version=4.5.30.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.5.30\lib\net45\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.6.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Data\Models\MessageTests\Content_Should.cs" />
+    <Compile Include="Data\Models\MessageTests\Created_Should.cs" />
+    <Compile Include="Data\Models\MessageTests\Id_Should.cs" />
+    <Compile Include="Data\Models\MessageTests\ProjectId_Should.cs" />
+    <Compile Include="Data\Models\MessageTests\Project_Should.cs" />
+    <Compile Include="Data\Models\MessageTests\UserId_Should.cs" />
+    <Compile Include="Data\Models\MessageTests\User_Should.cs" />
+    <Compile Include="Data\Models\NoteTests\Content_Should.cs" />
+    <Compile Include="Data\Models\NoteTests\Id_Should.cs" />
+    <Compile Include="Data\Models\NoteTests\Title_Should.cs" />
+    <Compile Include="Data\Models\NoteTests\UserId_Should.cs" />
+    <Compile Include="Data\Models\NoteTests\User_Should.cs" />
+    <Compile Include="Data\Models\OrganizationTests\Creatorname_Should.cs" />
+    <Compile Include="Data\Models\OrganizationTests\Description_Should.cs" />
+    <Compile Include="Data\Models\OrganizationTests\Id_Should.cs" />
+    <Compile Include="Data\Models\OrganizationTests\Name_Should.cs" />
+    <Compile Include="Data\Models\OrganizationTests\Projects_Should.cs" />
+    <Compile Include="Data\Models\OrganizationTests\Users_Should.cs" />
+    <Compile Include="Data\Models\ProjectTaskTests\Description_Should.cs" />
+    <Compile Include="Data\Models\ProjectTaskTests\ExecutionCost_Should.cs" />
+    <Compile Include="Data\Models\ProjectTaskTests\ExecutionTime_Should.cs" />
+    <Compile Include="Data\Models\ProjectTaskTests\Id_Should.cs" />
+    <Compile Include="Data\Models\ProjectTaskTests\IsDeleted_Should.cs" />
+    <Compile Include="Data\Models\ProjectTaskTests\ProjectId_Should.cs" />
+    <Compile Include="Data\Models\ProjectTaskTests\Project_Should.cs" />
+    <Compile Include="Data\Models\ProjectTaskTests\Status_Should.cs" />
+    <Compile Include="Data\Models\ProjectTaskTests\Title_Should.cs" />
+    <Compile Include="Data\Models\ProjectTaskTests\Users_Should.cs" />
+    <Compile Include="Data\Models\ProjectTests\Creatorname_Should.cs" />
+    <Compile Include="Data\Models\ProjectTests\Description_Should.cs" />
+    <Compile Include="Data\Models\ProjectTests\Id_Should.cs" />
+    <Compile Include="Data\Models\ProjectTests\IsDeleted_Should.cs" />
+    <Compile Include="Data\Models\ProjectTests\IsPersonal_Should.cs" />
+    <Compile Include="Data\Models\ProjectTests\Messages_Should.cs" />
+    <Compile Include="Data\Models\ProjectTests\ProjectTasks_Should.cs" />
+    <Compile Include="Data\Models\ProjectTests\Title_Should.cs" />
+    <Compile Include="Data\Models\ProjectTests\Users_Should.cs" />
+    <Compile Include="Data\Models\UserRoleTests\Constructor_Should.cs" />
+    <Compile Include="Data\Models\UserTests\FirstName_Should.cs" />
+    <Compile Include="Data\Models\UserTests\Gender_Should.cs" />
+    <Compile Include="Data\Models\UserTests\LastName_Should.cs" />
+    <Compile Include="Data\Models\UserTests\Notes_Should.cs" />
+    <Compile Include="Data\Models\UserTests\Organizations_Should.cs" />
+    <Compile Include="Data\Models\UserTests\ProfileImage_Should.cs" />
+    <Compile Include="Data\Models\UserTests\Projects_Should.cs" />
+    <Compile Include="Data\Models\UserTests\ProjectTasks_Should.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TeamTools.Logic\TeamTools.Logic.csproj">
+      <Project>{0265786e-93d5-467d-b1fa-2a8ff03ff459}</Project>
+      <Name>TeamTools.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

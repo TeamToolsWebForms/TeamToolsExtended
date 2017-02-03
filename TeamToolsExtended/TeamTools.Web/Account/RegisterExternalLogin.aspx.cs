@@ -3,7 +3,7 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using TeamTools.Models;
+using TeamTools.Logic.Data.Models;
 using TeamTools.Web.IdentityHelpers;
 
 namespace TeamTools.Web.Account

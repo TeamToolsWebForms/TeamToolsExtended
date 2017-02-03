@@ -8,9 +8,8 @@ using WebFormsMvp;
 using WebFormsMvp.Binder;
 using TeamTools.Web.App_Start.MvpFactoryConfig;
 using TeamTools.Web.App_Start.MvpFactoryConfig.Contracts;
-using TeamTools.Mvp.Profile.Home.Contracts;
-using TeamTools.Mvp.Profile.Home;
-using Ninject.Web.Common;
+using TeamTools.Logic.Mvp.Profile.Home.Contracts;
+using TeamTools.Logic.Mvp.Profile.Home;
 
 namespace TeamTools.Web.App_Start.NinjectModules
 {

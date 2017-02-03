@@ -1,7 +1,7 @@
 ﻿using Ninject.Modules;
 using Ninject.Web.Common;
-using TeamTools.Data.Contracts;
-using TeamTools.Data;
+using TeamTools.Logic.Data.Contracts;
+using TeamTools.Logic.Data;
 
 namespace TeamTools.Web.App_Start.NinjectModules
 {

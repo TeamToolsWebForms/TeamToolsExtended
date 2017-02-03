@@ -4,8 +4,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
-using TeamTools.Models;
-using TeamTools.Data;
+using TeamTools.Logic.Data.Models;
+using TeamTools.Logic.Data;
 
 namespace TeamTools.Web
 {

@@ -3,7 +3,7 @@ using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using TeamTools.Models;
+using TeamTools.Logic.Data.Models;
 
 namespace TeamTools.Web.Account
 {

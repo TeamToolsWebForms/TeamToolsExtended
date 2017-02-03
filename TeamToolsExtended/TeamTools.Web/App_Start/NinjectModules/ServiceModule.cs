@@ -1,9 +1,9 @@
 ﻿using Ninject.Modules;
 using Ninject.Web.Common;
-using TeamTools.Services;
-using TeamTools.Services.Contracts;
-using TeamTools.Services.Helpers;
-using TeamTools.Services.Helpers.Contracts;
+using TeamTools.Logic.Services;
+using TeamTools.Logic.Services.Contracts;
+using TeamTools.Logic.Services.Helpers;
+using TeamTools.Logic.Services.Helpers.Contracts;
 
 namespace TeamTools.Web.App_Start.NinjectModules
 {

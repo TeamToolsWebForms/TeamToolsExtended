@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
-using TeamTools.Data;
-using TeamTools.Data.Migrations;
+using TeamTools.Logic.Data;
+using TeamTools.Logic.Data.Migrations;
 
 namespace TeamTools.Web.App_Start
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.UI;
-using TeamTools.Mvp.Profile.Home;
-using TeamTools.Mvp.Profile.Home.Contracts;
+using TeamTools.Logic.Mvp.Profile.Home;
+using TeamTools.Logic.Mvp.Profile.Home.Contracts;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 using Microsoft.AspNet.Identity;

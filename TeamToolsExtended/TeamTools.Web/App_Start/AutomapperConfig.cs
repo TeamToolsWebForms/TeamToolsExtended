@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using TeamTools.DataTransferObjects;
-using TeamTools.Models;
+using TeamTools.Logic.DTO;
+using TeamTools.Logic.Data.Models;
 
 namespace TeamTools.Web.App_Start
 {

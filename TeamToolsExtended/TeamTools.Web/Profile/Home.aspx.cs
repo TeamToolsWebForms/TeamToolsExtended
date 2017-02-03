@@ -2,8 +2,8 @@
 using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using WebFormsMvp.Web;
-using TeamTools.Mvp.Profile.Home.Contracts;
-using TeamTools.Mvp.Profile.Home;
+using TeamTools.Logic.Mvp.Profile.Home.Contracts;
+using TeamTools.Logic.Mvp.Profile.Home;
 using WebFormsMvp;
 
 namespace TeamTools.Web.Profile

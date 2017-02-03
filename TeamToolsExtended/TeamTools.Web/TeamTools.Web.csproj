@@ -468,25 +468,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TeamTools.DataTransferObjects\TeamTools.DataTransferObjects.csproj">
-      <Project>{F80AAF52-E221-4686-8208-DDCC543F4661}</Project>
-      <Name>TeamTools.DataTransferObjects</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TeamTools.Data\TeamTools.Data.csproj">
-      <Project>{AF6E3F21-6278-404C-BA78-37F984B34C79}</Project>
-      <Name>TeamTools.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TeamTools.Models\TeamTools.Models.csproj">
-      <Project>{956032e0-9391-40c1-8cb4-2e6e39fd7d89}</Project>
-      <Name>TeamTools.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TeamTools.Mvp\TeamTools.Mvp.csproj">
-      <Project>{F97B6D5E-D18F-44D0-B71C-7A2408AC2F52}</Project>
-      <Name>TeamTools.Mvp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TeamTools.Services\TeamTools.Services.csproj">
-      <Project>{09565B37-917C-4291-AB9A-5F499BE1354A}</Project>
-      <Name>TeamTools.Services</Name>
+    <ProjectReference Include="..\TeamTools.Logic\TeamTools.Logic.csproj">
+      <Project>{0265786e-93d5-467d-b1fa-2a8ff03ff459}</Project>
+      <Name>TeamTools.Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
