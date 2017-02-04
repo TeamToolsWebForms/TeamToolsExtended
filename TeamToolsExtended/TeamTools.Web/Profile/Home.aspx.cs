@@ -17,12 +17,16 @@ namespace TeamTools.Web.Profile
 
         protected void MyNotes_Click(object sender, EventArgs e)
         {
+            this.PersonalInfoControl.Visible = false;
+            this.CreateNoteControl.Visible = false;
+            this.MyNotesControl.Visible = true;
             //LinkButton button = sender as LinkButton;
             //this.LoadSpecificUserControl(RelativePath, button.ID, UserControlSuffix);
         }
 
         protected void CreateNote_Click(object sender, EventArgs e)
         {
+            this.MyNotesControl.Visible = false;
             this.PersonalInfoControl.Visible = false;
             this.CreateNoteControl.Visible = true;
         }

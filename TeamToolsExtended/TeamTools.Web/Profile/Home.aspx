@@ -2,6 +2,7 @@
 
 <%@ Register Src="~/Profile/HomePersonalInfo.ascx" TagName="PersonalInfo" TagPrefix="pi" %>
 <%@ Register Src="~/Profile/CreateNote.ascx" TagName="CreateNote" TagPrefix="cn" %>
+<%@ Register Src="~/Profile/MyNotes.ascx" TagName="MyNotes" TagPrefix="mn" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="HeadContent">
     <link href="../Content/home-profile.css" rel="stylesheet" type="text/css" />
@@ -61,10 +62,11 @@
                     <asp:PlaceHolder runat="server" ID="MyControls">
                         <pi:PersonalInfo runat="server" ID="PersonalInfoControl" />
                         <cn:CreateNote runat="server" ID="CreateNoteControl" Visible="false" />
+                        <mn:MyNotes runat="server" ID="MyNotesControl" Visible="false" />
                     </asp:PlaceHolder>
                 </ContentTemplate>
                 <Triggers>
-                    <%--<asp:AsyncPostBackTrigger ControlID="MyNotes" EventName="Click" />--%>
+                    <asp:AsyncPostBackTrigger ControlID="MyNotes" EventName="Click" />
                     <asp:AsyncPostBackTrigger ControlID="CreateNote" EventName="Click" />
                 </Triggers>
             </asp:UpdatePanel>

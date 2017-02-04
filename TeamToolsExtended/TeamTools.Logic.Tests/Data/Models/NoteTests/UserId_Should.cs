@@ -6,9 +6,9 @@ namespace TeamTools.Logic.Tests.Data.Models.NoteTests
     [TestFixture]
     public class UserId_Should
     {
-        [TestCase(1)]
-        [TestCase(20)]
-        public void SetUserId_Correct(int id)
+        [TestCase("ssaf-2")]
+        [TestCase("safdadsfa=dsf")]
+        public void SetUserId_Correct(string id)
         {
             var note = new Note();
 

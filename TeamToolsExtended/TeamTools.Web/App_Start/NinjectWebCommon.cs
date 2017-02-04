@@ -4,6 +4,7 @@ using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;
 using TeamTools.Web.App_Start.NinjectModules;
+using WebFormsMvp.Binder;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(TeamTools.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(TeamTools.Web.App_Start.NinjectWebCommon), "Stop")]
@@ -13,8 +14,6 @@ namespace TeamTools.Web.App_Start
     public static class NinjectWebCommon
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
-
-        public static IKernel Kernel { get; private set; }
 
         /// <summary>
         /// Starts the application
@@ -41,7 +40,6 @@ namespace TeamTools.Web.App_Start
         private static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
-            Kernel = kernel;
 
             try
             {
@@ -64,10 +62,14 @@ namespace TeamTools.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            Kernel.Load(
+            kernel.Load(
                 new DataModule(),
                 new MvpModule(),
                 new ServiceModule());
+            
+            PresenterBinder.Factory = kernel.Get<IPresenterFactory>();
+            DbConfig.Initialize();
+            AutomapperConfig.CreateMapper();
         }
     }
 }

@@ -56,5 +56,14 @@ namespace TeamTools.Web.Profile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::TeamTools.Web.Profile.CreateNote CreateNoteControl;
+        
+        /// <summary>
+        /// MyNotesControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TeamTools.Web.Profile.MyNotes MyNotesControl;
     }
 }
