@@ -12,6 +12,8 @@ namespace TeamTools.Logic.Data.Contracts
 
         T GetById(string id);
 
+        void Update(T entity);
+
         IEnumerable<T> All();
 
         IEnumerable<T> All(Expression<Func<T, bool>> filter);

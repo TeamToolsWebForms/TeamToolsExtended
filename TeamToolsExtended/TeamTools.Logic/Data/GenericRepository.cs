@@ -52,5 +52,11 @@ namespace TeamTools.Logic.Data
             var entry = this.dbContext.Entry(entity);
             entry.State = EntityState.Deleted;
         }
+
+        public void Update(T entity)
+        {
+            var entry = this.dbContext.Entry(entity);
+            entry.State = EntityState.Modified;
+        }
     }
 }

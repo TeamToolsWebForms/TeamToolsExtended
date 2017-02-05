@@ -32,11 +32,6 @@
                     <li>
                         <a href="#"><i class="fa fa-certificate"></i>Important</a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-file-text-o"></i>Notes <span class="label label-info pull-right inbox-notification">35</span>
-                        </a>
-                    </li>
                     <li><a href="#"><i class="fa fa-trash-o"></i>Trash</a></li>
                 </ul>
                 <!-- /.nav -->

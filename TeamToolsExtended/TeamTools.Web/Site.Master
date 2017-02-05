@@ -40,6 +40,7 @@
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
                 <asp:ScriptReference Path="~/Scripts/toastr.min.js" />
+                <asp:ScriptReference Path="~/Scripts/requester.js" />
             </Scripts>
         </asp:ScriptManager>
 

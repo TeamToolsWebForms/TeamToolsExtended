@@ -88,6 +88,8 @@
     <Compile Include="Data\Models\MessageTests\User_Should.cs" />
     <Compile Include="Data\Models\NoteTests\Content_Should.cs" />
     <Compile Include="Data\Models\NoteTests\Id_Should.cs" />
+    <Compile Include="Data\Models\NoteTests\IsDeleted_Should.cs" />
+    <Compile Include="Data\Models\NoteTests\IsImportant_Should.cs" />
     <Compile Include="Data\Models\NoteTests\Title_Should.cs" />
     <Compile Include="Data\Models\NoteTests\UserId_Should.cs" />
     <Compile Include="Data\Models\NoteTests\User_Should.cs" />

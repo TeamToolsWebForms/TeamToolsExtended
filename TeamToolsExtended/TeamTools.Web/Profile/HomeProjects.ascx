@@ -17,6 +17,6 @@
         </div>
     </ItemTemplate>
     <EmptyDataTemplate>
-        <h3>Currently you are dont't have projects</h3>
+        <h3>Currently you don't have projects</h3>
     </EmptyDataTemplate>
 </asp:ListView>

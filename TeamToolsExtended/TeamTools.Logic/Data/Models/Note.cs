@@ -15,6 +15,10 @@ namespace TeamTools.Logic.Data.Models
         [MaxLength(100)]
         public string Content { get; set; }
 
+        public bool IsImportant { get; set; }
+
+        public bool IsDeleted { get; set; }
+
         public string UserId { get; set; }
 
         public virtual User User { get; set; }

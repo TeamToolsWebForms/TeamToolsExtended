@@ -6,7 +6,6 @@
     <label for="title">Title</label>
     <asp:TextBox runat="server" ID="title" type="text"/>
     <asp:CustomValidator ControlToValidate="title" runat="server" ClientValidationFunction="titleValidation" EnableClientScript="true"  />
-    <asp:RequiredFieldValidator ErrorMessage="Title is required" ControlToValidate="title" runat="server" />
     <label for="content">Content</label>
     <asp:TextBox runat="server" ID="content" type="text"/>
     <asp:CustomValidator ControlToValidate="content" runat="server" ClientValidationFunction="contentValidation" EnableClientScript="true" />
