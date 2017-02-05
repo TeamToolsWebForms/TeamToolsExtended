@@ -134,6 +134,17 @@
     <Compile Include="Data\Models\UserTests\UserLogo_Should.cs" />
     <Compile Include="Data\Models\UserTests\Projects_Should.cs" />
     <Compile Include="Data\Models\UserTests\ProjectTasks_Should.cs" />
+    <Compile Include="Data\TeamToolsDbContextTests\Constructor_Should.cs" />
+    <Compile Include="Data\TeamToolsDbContextTests\Create_Should.cs" />
+    <Compile Include="Data\TeamToolsDbContextTests\Messages_Should.cs" />
+    <Compile Include="Data\TeamToolsDbContextTests\Notes_Should.cs" />
+    <Compile Include="Data\TeamToolsDbContextTests\OrganizationLogos_Should.cs" />
+    <Compile Include="Data\TeamToolsDbContextTests\Organizations_Should.cs" />
+    <Compile Include="Data\TeamToolsDbContextTests\Projects_Should.cs" />
+    <Compile Include="Data\TeamToolsDbContextTests\ProjectTasks_Should.cs" />
+    <Compile Include="Data\TeamToolsDbContextTests\UserLogos_Should.cs" />
+    <Compile Include="Data\UnitOfWorkTests\Commit_Should.cs" />
+    <Compile Include="Data\UnitOfWorkTests\Constructor_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -686,3 +686,7 @@ form .form-group {
 }
 
 /**** resume ****/
+
+.show-cursor {
+    cursor: pointer;
+}

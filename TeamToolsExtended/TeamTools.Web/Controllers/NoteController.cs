@@ -20,5 +20,16 @@ namespace TeamTools.Web.Controllers
 
             return this.Ok("Added as important");
         }
+
+        [HttpPost]
+        [Route("api/Note/delete/{id}")]
+        public IHttpActionResult DeleteNote(int id)
+        {
+            var note = this.noteService.GetById(id);
+            note.IsDeleted = true;
+            this.noteService.Update(note);
+
+            return this.Ok("Note was deleted successfully");
+        }
     }
 }

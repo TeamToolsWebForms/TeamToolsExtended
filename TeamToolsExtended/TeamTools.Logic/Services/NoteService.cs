@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TeamTools.Logic.Data.Contracts;
 using TeamTools.Logic.Data.Models;
@@ -34,7 +33,7 @@ namespace TeamTools.Logic.Services
         public IEnumerable<NoteDTO> GetAllUserNotes(string id)
         {
             return this.noteRepository
-                .All(u => u.UserId == id)
+                .All(u => u.UserId == id && u.IsDeleted == false)
                 .Select(n => this.mapperService.MapObject<NoteDTO>(n));
         }
 

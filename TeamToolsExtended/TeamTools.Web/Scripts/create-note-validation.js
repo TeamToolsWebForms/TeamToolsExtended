@@ -1,12 +1,5 @@
 ﻿"use strict";
 
-function setImportant(id) {
-    requester.postJSON(`/api/Note/${id}`)
-        .then((response) => {
-            console.log(response);
-        });
-}
-
 function titleValidation(oSrc, args) {
     let isValid = true;
     let textValue = args.Value.length;

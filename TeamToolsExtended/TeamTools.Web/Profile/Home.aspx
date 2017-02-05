@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="TeamTools.Web.Profile.Home" %>
+﻿<%@ Page Title="" EnableEventValidation="false" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="TeamTools.Web.Profile.Home" %>
 
 <%@ Register Src="~/Profile/HomePersonalInfo.ascx" TagName="PersonalInfo" TagPrefix="pi" %>
 <%@ Register Src="~/Profile/CreateNote.ascx" TagName="CreateNote" TagPrefix="cn" %>
@@ -72,4 +72,5 @@
         </div>
     </div>
     <script src="../Scripts/create-note-validation.js"></script>
+    <script src="../Scripts/mynotes.js"></script>
 </asp:Content>

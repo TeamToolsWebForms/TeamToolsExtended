@@ -21,6 +21,9 @@ namespace TeamTools.Web.Profile
         {
             string userId = Page.User.Identity.GetUserId();
             this.LoadUserNotes?.Invoke(sender, new MyNotesEventArgs(userId));
+
+            this.MyNotesList.DataSource = this.Model.UserNotes.ToList();
+            this.MyNotesList.DataBind();
         }
     }
 }

@@ -17,19 +17,19 @@ namespace TeamTools.Logic.Data
             return new TeamToolsDbContext();
         }
 
-        public IDbSet<Organization> Organizations { get; set; }
-
-        public IDbSet<ProjectTask> ProjectTasks { get; set; }
-
-        public IDbSet<Message> Messages { get; set; }
-
-        public IDbSet<Note> Notes { get; set; }
-
-        public IDbSet<Project> Projects { get; set; }
-
-        public IDbSet<OrganizationLogo> OrganizationLogos { get; set; }
-
-        public IDbSet<UserLogo> UserLogos { get; set; }
+        public virtual IDbSet<Organization> Organizations { get; set; }
+               
+        public virtual IDbSet<ProjectTask> ProjectTasks { get; set; }
+               
+        public virtual IDbSet<Message> Messages { get; set; }
+               
+        public virtual IDbSet<Note> Notes { get; set; }
+               
+        public virtual IDbSet<Project> Projects { get; set; }
+               
+        public virtual IDbSet<OrganizationLogo> OrganizationLogos { get; set; }
+               
+        public virtual IDbSet<UserLogo> UserLogos { get; set; }
 
         public virtual new IDbSet<T> Set<T>() where T : class
         {
