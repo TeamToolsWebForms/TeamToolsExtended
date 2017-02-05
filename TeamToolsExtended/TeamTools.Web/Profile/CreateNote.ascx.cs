@@ -14,7 +14,6 @@ namespace TeamTools.Web.Profile
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
         }
 
         protected void NewNote_Click(object sender, EventArgs e)

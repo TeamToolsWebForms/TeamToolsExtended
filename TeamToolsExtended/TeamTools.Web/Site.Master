@@ -14,6 +14,7 @@
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="Content/footer-icons.css" rel="stylesheet" type="text/css" />
     <link href="Content/Initial.css" rel="stylesheet" type="text/css" />
+    <link href="Content/toastr.min.css" rel="stylesheet" type="text/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <asp:ContentPlaceHolder runat="server" ID="HeadContent">
     </asp:ContentPlaceHolder>
@@ -38,6 +39,7 @@
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
+                <asp:ScriptReference Path="~/Scripts/toastr.min.js" />
             </Scripts>
         </asp:ScriptManager>
 

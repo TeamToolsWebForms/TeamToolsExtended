@@ -16,13 +16,18 @@
             <div class="col-sm-3">
                 <ul class="nav nav-pills nav-stacked nav-email shadow mb-20">
                     <li class="active">
+                        <asp:LinkButton runat="server" ID="MyProfile" OnClick="MyProfile_Click">
+                            <i class="fa fa-user"></i>Profile  <span class="label pull-right"></span>
+                        </asp:LinkButton>
+                    </li>
+                    <li>
                         <asp:LinkButton runat="server" ID="MyNotes" OnClick="MyNotes_Click">
                             <i class="fa fa-sticky-note-o"></i>My Notes  <span class="label pull-right"></span>
                         </asp:LinkButton>
                     </li>
                     <li>
                         <asp:LinkButton runat="server" ID="CreateNote" OnClick="CreateNote_Click">
-                            <i class="fa fa-sticky-note"></i>Create Note</asp:LinkButton>
+                            <i class="fa fa-sticky-note"></i>Create Note <span class="label pull-right"></span></asp:LinkButton>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-certificate"></i>Important</a>
@@ -59,17 +64,17 @@
             </div>
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
-                    <asp:PlaceHolder runat="server" ID="MyControls">
-                        <pi:PersonalInfo runat="server" ID="PersonalInfoControl" />
-                        <cn:CreateNote runat="server" ID="CreateNoteControl" Visible="false" />
-                        <mn:MyNotes runat="server" ID="MyNotesControl" Visible="false" />
-                    </asp:PlaceHolder>
+                    <pi:PersonalInfo runat="server" ID="PersonalInfoControl" />
+                    <cn:CreateNote runat="server" ID="CreateNoteControl" Visible="false" />
+                    <mn:MyNotes runat="server" ID="MyNotesControl" Visible="false" />
                 </ContentTemplate>
                 <Triggers>
                     <asp:AsyncPostBackTrigger ControlID="MyNotes" EventName="Click" />
                     <asp:AsyncPostBackTrigger ControlID="CreateNote" EventName="Click" />
+                    <asp:AsyncPostBackTrigger ControlID="MyProfile" EventName="Click" />
                 </Triggers>
             </asp:UpdatePanel>
         </div>
     </div>
+    <script src="../Scripts/create-note-validation.js"></script>
 </asp:Content>

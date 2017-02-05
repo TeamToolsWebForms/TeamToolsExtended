@@ -91,6 +91,7 @@
     <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Data\Migrations\Configuration.cs" />
     <Compile Include="DTO\UserLogoDTO.cs" />
+    <Compile Include="Mvp\Profile\Home\Contracts\INoteDTOFactory.cs" />
     <Compile Include="Mvp\Profile\Home\CreateNoteEventArgs.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\ICreateNotePresenter.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\ICreateNoteView.cs" />

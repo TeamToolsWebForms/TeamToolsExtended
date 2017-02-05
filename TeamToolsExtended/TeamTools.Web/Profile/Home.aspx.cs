@@ -7,12 +7,15 @@ namespace TeamTools.Web.Profile
 {
     public partial class Home : Page
     {
-        //private const string RelativePath = "~/Profile/";
-        //private const string UserControlSuffix = ".ascx";
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+        }
+
+        protected void MyProfile_Click(object sender, EventArgs e)
+        {
+            this.PersonalInfoControl.Visible = true;
+            this.CreateNoteControl.Visible = false;
+            this.MyNotesControl.Visible = false;
         }
 
         protected void MyNotes_Click(object sender, EventArgs e)
@@ -20,8 +23,6 @@ namespace TeamTools.Web.Profile
             this.PersonalInfoControl.Visible = false;
             this.CreateNoteControl.Visible = false;
             this.MyNotesControl.Visible = true;
-            //LinkButton button = sender as LinkButton;
-            //this.LoadSpecificUserControl(RelativePath, button.ID, UserControlSuffix);
         }
 
         protected void CreateNote_Click(object sender, EventArgs e)
@@ -30,13 +31,5 @@ namespace TeamTools.Web.Profile
             this.PersonalInfoControl.Visible = false;
             this.CreateNoteControl.Visible = true;
         }
-
-        //private void LoadSpecificUserControl(string relativePath, string userControlName, string userControlSuffix)
-        //{
-        //    string fullPath = relativePath + userControlName + userControlSuffix;
-        //    this.MyControls.Controls.Clear();
-        //    UserControl userControl = (UserControl)this.LoadControl(fullPath);
-        //    this.MyControls.Controls.Add(userControl);
-        //}
     }
 }

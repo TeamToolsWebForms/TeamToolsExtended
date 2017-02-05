@@ -230,6 +230,8 @@
     <Content Include="Content\create-note.css" />
     <Content Include="Content\home-controls.css" />
     <Content Include="Content\home-profile.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="Images\default-user.jpg" />
     <Content Include="Content\bootstrap-social.css" />
     <Content Include="Content\docs.css" />
@@ -259,6 +261,8 @@
     <Content Include="Profile\HomeNotes.aspx" />
     <Content Include="Profile\MyNotes.ascx" />
     <Content Include="Profile\ProfileHome.Master" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Organizations.aspx" />
     <Content Include="Profile\Home.aspx" />
@@ -269,12 +273,15 @@
     <Content Include="Profile\MyProjects.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\create-note-validation.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Profile\Home\profile-home.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />

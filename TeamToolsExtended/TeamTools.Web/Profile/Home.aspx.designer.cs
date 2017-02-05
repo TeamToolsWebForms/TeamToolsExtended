@@ -13,6 +13,15 @@ namespace TeamTools.Web.Profile {
     public partial class Home {
         
         /// <summary>
+        /// MyProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton MyProfile;
+        
+        /// <summary>
         /// MyNotes control.
         /// </summary>
         /// <remarks>
@@ -29,15 +38,6 @@ namespace TeamTools.Web.Profile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton CreateNote;
-        
-        /// <summary>
-        /// MyControls control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder MyControls;
         
         /// <summary>
         /// PersonalInfoControl control.

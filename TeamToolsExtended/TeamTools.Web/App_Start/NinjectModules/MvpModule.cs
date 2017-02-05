@@ -25,6 +25,7 @@ namespace TeamTools.Web.App_Start.NinjectModules
             this.Bind<IProfileHomePresenter>().To<ProfileHomePresenter>();
             this.Bind<IProfileHomeProjectsPresenter>().To<ProfileHomeProjectsPresenter>();
             this.Bind<ICreateNotePresenter>().To<CreateNotePresenter>();
+            this.Bind<INoteDTOFactory>().ToFactory().InSingletonScope();
         }
 
         private IPresenter GetPresenter(IContext context)
