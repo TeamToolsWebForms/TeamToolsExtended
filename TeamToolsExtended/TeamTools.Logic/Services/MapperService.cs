@@ -9,5 +9,10 @@ namespace TeamTools.Logic.Services
         {
             return Mapper.Map<T>(source);
         }
+
+        public T MapObject<K, T>(K source, T destination)
+        {
+            return Mapper.Map(source, destination);
+        }
     }
 }

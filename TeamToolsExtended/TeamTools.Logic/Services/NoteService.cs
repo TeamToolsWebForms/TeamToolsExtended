@@ -46,8 +46,8 @@ namespace TeamTools.Logic.Services
 
         public void Update(NoteDTO note)
         {
-            var mappedNote = this.mapperService.MapObject<Note>(note);
-            this.noteRepository.Update(mappedNote);
+            var currentNote = this.noteRepository.GetById(note.Id);
+            var mappedNote = this.mapperService.MapObject(note, currentNote);
             this.unitOfWork.Commit();
         }
     }

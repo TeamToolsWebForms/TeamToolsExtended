@@ -1,9 +1,13 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using TeamTools.Logic.Data.Contracts;
+using TeamTools.Logic.Data.Models;
+using TeamTools.Logic.DTO;
 
 namespace TeamTools.Logic.Data
 {
@@ -51,12 +55,6 @@ namespace TeamTools.Logic.Data
         {
             var entry = this.dbContext.Entry(entity);
             entry.State = EntityState.Deleted;
-        }
-
-        public void Update(T entity)
-        {
-            var entry = this.dbContext.Entry(entity);
-            entry.State = EntityState.Modified;
         }
     }
 }

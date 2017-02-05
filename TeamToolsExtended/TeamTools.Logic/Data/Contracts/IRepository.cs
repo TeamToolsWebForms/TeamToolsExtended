@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using TeamTools.Logic.DTO;
 
 namespace TeamTools.Logic.Data.Contracts
 {
@@ -11,8 +12,6 @@ namespace TeamTools.Logic.Data.Contracts
         T GetById(int id);
 
         T GetById(string id);
-
-        void Update(T entity);
 
         IEnumerable<T> All();
 
