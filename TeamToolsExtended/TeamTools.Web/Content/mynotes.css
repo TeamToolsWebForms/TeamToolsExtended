@@ -1,0 +1,11 @@
+﻿#MainContent_MyNotesControl_DataPagerNotes {
+    position: absolute;
+    top: 450px;
+    right: 450px;
+}
+
+#MainContent_MyNotesControl_DataPagerNotes * {
+    margin: 10px 10px 10px 0px;
+    padding: 5px 10px 5px 10px;
+    background: #eee;
+}

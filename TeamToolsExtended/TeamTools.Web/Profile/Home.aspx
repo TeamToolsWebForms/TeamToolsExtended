@@ -8,6 +8,7 @@
     <link href="../Content/home-profile.css" rel="stylesheet" type="text/css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../Content/create-note.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/mynotes.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">

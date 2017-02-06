@@ -255,6 +255,7 @@
     <Content Include="Content\create-note.css" />
     <Content Include="Content\home-controls.css" />
     <Content Include="Content\home-profile.css" />
+    <Content Include="Content\mynotes.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="Images\default-user.jpg" />
@@ -438,6 +439,7 @@
     <Compile Include="Helpers\Contracts\IImageHelper.cs" />
     <Compile Include="Helpers\IdentityHelper.cs" />
     <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\Validator.cs" />
     <Compile Include="Organizations.aspx.cs">
       <DependentUpon>Organizations.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

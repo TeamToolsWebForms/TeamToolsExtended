@@ -5,12 +5,16 @@ using WebFormsMvp;
 using WebFormsMvp.Web;
 using Microsoft.AspNet.Identity;
 using System.Web.UI;
+using TeamTools.Web.Helpers;
 
 namespace TeamTools.Web.Profile
 {
     [PresenterBinding(typeof(CreateNotePresenter))]
     public partial class CreateNote : MvpUserControl<CreateNoteViewModel>, ICreateNoteView
     {
+        private const int MinLength = 3;
+        private const int MaxLength = 100;
+
         public event EventHandler<CreateNoteEventArgs> CreateNewNote;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -22,13 +26,13 @@ namespace TeamTools.Web.Profile
             string title = this.title.Text;
             string content = this.content.Text;
             
-            if (title.Length < 3 || title.Length > 100)
+            if (!Validator.ValidateRange(title, MinLength, MaxLength))
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "titleValidation();", true);
                 return;
             }
 
-            if (content.Length < 3 || content.Length > 100)
+            if (!Validator.ValidateRange(content, MinLength, MaxLength))
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "contentValidation();", true);
                 return;
