@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using Moq;
 using TeamTools.Logic.Data.Contracts;
@@ -12,7 +9,6 @@ using TeamTools.Logic.Data;
 
 namespace TeamTools.Logic.Tests.Data.GenericRepositoryTests
 {
-    // all by expression
     [TestFixture]
     public class All_Should
     {
@@ -40,6 +36,28 @@ namespace TeamTools.Logic.Tests.Data.GenericRepositoryTests
         }
 
         [Test]
+        public void ReturnCorrect_AllRecordsFiltered()
+        {
+            var data = new List<Note>()
+            {
+                new Note() { IsImportant = true, Title = "Some" },
+                new Note() { IsImportant = true, Title = "Other" },
+                new Note() { IsImportant = true, Title = "Another" },
+                new Note() { IsImportant = false, Title = "Again" }
+            };
+            var mockedDbContext = new Mock<ITeamToolsDbContext>();
+            var queryableData = data.AsQueryable();
+            var mockedDbSet = this.GetMockedDbSet<Note>(queryableData);
+
+            mockedDbContext.Setup(x => x.Set<Note>()).Returns(mockedDbSet.Object);
+            var repo = new GenericRepository<Note>(mockedDbContext.Object);
+
+            var result = repo.All(x => x.IsImportant == true);
+
+            Assert.AreEqual(3, result.Count());
+        }
+
+        [Test]
         public void ReturnEmptyCollection_WhenNoElements()
         {
             var data = new List<Note>();
@@ -54,6 +72,28 @@ namespace TeamTools.Logic.Tests.Data.GenericRepositoryTests
 
             Assert.AreEqual(data.Count, result.Count());
             CollectionAssert.AreEqual(data, result);
+        }
+
+        [Test]
+        public void ReturnEmptyCollection_WhenNoElementsMatchFilter()
+        {
+            var data = new List<Note>()
+            {
+                new Note() { IsImportant = true, Title = "Some" },
+                new Note() { IsImportant = true, Title = "Other" },
+                new Note() { IsImportant = true, Title = "Another" },
+                new Note() { IsImportant = true, Title = "Again" }
+            };
+            var mockedDbContext = new Mock<ITeamToolsDbContext>();
+            var queryableData = data.AsQueryable();
+            var mockedDbSet = this.GetMockedDbSet<Note>(queryableData);
+
+            mockedDbContext.Setup(x => x.Set<Note>()).Returns(mockedDbSet.Object);
+            var repo = new GenericRepository<Note>(mockedDbContext.Object);
+
+            var result = repo.All(x => x.IsImportant == false);
+
+            Assert.AreEqual(0, result.Count());
         }
 
         private Mock<IDbSet<T>> GetMockedDbSet<T>(IQueryable<T> data)

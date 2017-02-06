@@ -141,6 +141,7 @@
     <Compile Include="Data\Models\UserTests\ProjectTasks_Should.cs" />
     <Compile Include="Data\TeamToolsDbContextTests\Constructor_Should.cs" />
     <Compile Include="Data\TeamToolsDbContextTests\Create_Should.cs" />
+    <Compile Include="Data\TeamToolsDbContextTests\GetState_Should.cs" />
     <Compile Include="Data\TeamToolsDbContextTests\Messages_Should.cs" />
     <Compile Include="Data\TeamToolsDbContextTests\Notes_Should.cs" />
     <Compile Include="Data\TeamToolsDbContextTests\OrganizationLogos_Should.cs" />
