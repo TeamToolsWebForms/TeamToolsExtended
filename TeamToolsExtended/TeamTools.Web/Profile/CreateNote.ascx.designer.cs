@@ -13,6 +13,15 @@ namespace TeamTools.Web.Profile {
     public partial class CreateNote {
         
         /// <summary>
+        /// ProfileHomeScriptManager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManagerProxy ProfileHomeScriptManager;
+        
+        /// <summary>
         /// title control.
         /// </summary>
         /// <remarks>

@@ -12,7 +12,7 @@ namespace TeamTools.Web.Profile
     [PresenterBinding(typeof(ProfileHomePresenter))]
     public partial class HomePersonalInfo : MvpUserControl<ProfileHomeViewModel>, IProfileHomeView
     {
-        private const int TenMBs = 1000 * 1024;
+        private const int FiveMBs = 5 * 1024 * 1024;
 
         public event EventHandler<ProfileHomeEventArgs> LoadUserData;
         public event EventHandler<ProfileHomeEventArgs> SaveProfileImage;
@@ -54,7 +54,7 @@ namespace TeamTools.Web.Profile
                 {
                     if (this.FileUpload.PostedFile.ContentType == "image/jpeg")
                     {
-                        if (this.FileUpload.PostedFile.ContentLength < TenMBs)
+                        if (this.FileUpload.PostedFile.ContentLength < FiveMBs)
                         {
                             string filename = Path.GetFileName(this.FileUpload.FileName);
                             string serverPath = Server.MapPath("~/Images/");
