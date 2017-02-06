@@ -21,6 +21,7 @@ namespace TeamTools.Web.App_Start
 
                 cfg.CreateMap<NoteDTO, Note>();
                 cfg.CreateMap<UserDTO, User>();
+                cfg.CreateMap<UserLogoDTO, UserLogo>();
             });
         }
     }

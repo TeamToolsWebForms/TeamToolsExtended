@@ -4,7 +4,7 @@ using WebFormsMvp;
 
 namespace TeamTools.Logic.Mvp.Profile.Home
 {
-    public class ProfileHomeProjectsPresenter : Presenter<IProfileHomeProjectsView>, IProfileHomeProjectsPresenter
+    public class ProfileHomeProjectsPresenter : Presenter<IProfileHomeProjectsView>
     {
         private readonly IUserService userService;
 

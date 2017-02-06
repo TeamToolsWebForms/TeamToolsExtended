@@ -3,9 +3,8 @@ using WebFormsMvp;
 
 namespace TeamTools.Logic.Mvp.Profile.Home.Contracts
 {
-    public interface IProfileHomeView : IView<ProfileHomeViewModel>
+    public interface IProfileHomeOrganizationsView : IView<ProfileHomeViewModel>
     {
         event EventHandler<ProfileHomeEventArgs> LoadUserData;
-        event EventHandler<ProfileHomeEventArgs> SaveProfileImage;
     }
 }

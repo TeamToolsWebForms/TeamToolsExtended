@@ -20,14 +20,14 @@
                             <div class="col-xs-12 social-btns">
                                 <asp:UpdatePanel runat="server">
                                     <ContentTemplate>
-                                        <asp:Button Text="Upload image" runat="server" ID="ImageUpload" OnClick="ImageUpload_Click" />
+                                        <asp:FileUpload runat="server" ID="FileUpload" />
+                                        <asp:Button Text="Upload" runat="server" ID="UploadImage" CssClass="btn btn-info" OnClick="UploadImage_Click" />
                                     </ContentTemplate>
+                                    <Triggers>
+                                        <asp:PostBackTrigger ControlID="UploadImage" />
+                                    </Triggers>
                                 </asp:UpdatePanel>
-                                <asp:UpdatePanel runat="server">
-                                    <ContentTemplate>
-                                        <asp:FileUpload runat="server" ID="FileUpload" Visible="false" />
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
+                                <asp:Button Text="Upload image" runat="server" ID="ShowUpload" CssClass="btn btn-info" OnClick="ShowUpload_Click" />
                             </div>
                         </div>
                     </div>

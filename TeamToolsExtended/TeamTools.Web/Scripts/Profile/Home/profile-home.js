@@ -4,6 +4,22 @@ $(document).ready(function () {
     bindEvents();
 });
 
+function FileSuccess() {
+    toastr.success("Upload status: File uploaded!");
+}
+
+function FileMemory() {
+    toastr.error("Upload status: The file has to be less than 100 kb!");
+}
+
+function FileType() {
+    toastr.error("Upload status: Only JPEG files are accepted!");
+}
+
+function InternalError(ex) {
+    toastr.error("Upload status: The file could not be uploaded. The following error occured: InternalError");
+}
+
 function bindEvents() {
     $("#MainContent_ShowProjects").on("click", (e) => {
         $("#MainContent_ShowProjects").parent().addClass("active");

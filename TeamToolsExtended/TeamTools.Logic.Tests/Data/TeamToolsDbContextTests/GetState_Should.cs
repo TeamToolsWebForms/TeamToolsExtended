@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Moq;
 using TeamTools.Logic.Data;
 using TeamTools.Logic.Data.Contracts;
 using TeamTools.Logic.Data.Models;
-using System.Data.Entity.Infrastructure;
-using System.Data.Entity;
 
 namespace TeamTools.Logic.Tests.Data.TeamToolsDbContextTests
 {

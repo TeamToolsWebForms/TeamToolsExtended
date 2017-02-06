@@ -10,11 +10,16 @@ namespace TeamTools.Logic.Services
     {
         private readonly IRepository<User> userRepository;
         private readonly IMapperService mapperService;
+        private readonly IUnitOfWork unitOfWork;
 
-        public UserService(IRepository<User> userRepository, IMapperService mapperService)
+        public UserService(
+            IRepository<User> userRepository,
+            IMapperService mapperService,
+            IUnitOfWork unitOfWork)
         {
             this.userRepository = userRepository;
             this.mapperService = mapperService;
+            this.unitOfWork = unitOfWork;
         }
 
         public UserDTO GetById(string id)
@@ -31,6 +36,13 @@ namespace TeamTools.Logic.Services
 
             var mappedUser = this.mapperService.MapObject<UserDTO>(user);
             return mappedUser;
+        }
+
+        public void Update(UserDTO user)
+        {
+            var currentUser = this.userRepository.GetById(user.Id);
+            var mappedUser = this.mapperService.MapObject(user, currentUser);
+            this.unitOfWork.Commit();
         }
     }
 }

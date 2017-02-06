@@ -9,9 +9,5 @@ namespace TeamTools.Logic.Data.Migrations
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
         }
-
-        protected override void Seed(TeamToolsDbContext context)
-        {
-        }
     }
 }

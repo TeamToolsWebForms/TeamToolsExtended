@@ -8,7 +8,7 @@ using Microsoft.AspNet.Identity;
 
 namespace TeamTools.Web.Profile
 {
-    [PresenterBinding(typeof(IProfileHomeProjectsPresenter))]
+    [PresenterBinding(typeof(ProfileHomeProjectsPresenter))]
     public partial class HomeProjects : MvpUserControl<ProfileHomeViewModel>, IProfileHomeProjectsView
     {
         public event EventHandler<ProfileHomeEventArgs> LoadUserWithPersonalProjects;

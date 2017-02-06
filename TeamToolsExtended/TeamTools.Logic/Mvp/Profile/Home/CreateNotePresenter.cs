@@ -4,7 +4,7 @@ using WebFormsMvp;
 
 namespace TeamTools.Logic.Mvp.Profile.Home
 {
-    public class CreateNotePresenter : Presenter<ICreateNoteView>, ICreateNotePresenter
+    public class CreateNotePresenter : Presenter<ICreateNoteView>
     {
         private readonly INoteService noteService;
         private readonly INoteDTOFactory noteFactory;

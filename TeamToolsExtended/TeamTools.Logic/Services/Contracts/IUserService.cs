@@ -7,5 +7,7 @@ namespace TeamTools.Logic.Services.Contracts
         UserDTO GetById(string id);
 
         UserDTO GetByIdWithFilteredProjects(string id, string username);
+
+        void Update(UserDTO note);
     }
 }

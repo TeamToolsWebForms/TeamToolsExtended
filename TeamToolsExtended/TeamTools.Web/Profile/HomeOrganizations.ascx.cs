@@ -9,8 +9,8 @@ using Microsoft.AspNet.Identity;
 
 namespace TeamTools.Web.Profile
 {
-    [PresenterBinding(typeof(IProfileHomePresenter))]
-    public partial class HomeOrganizations : MvpUserControl<ProfileHomeViewModel>, IProfileHomeView
+    [PresenterBinding(typeof(ProfileHomeOrganizationsPresenter))]
+    public partial class HomeOrganizations : MvpUserControl<ProfileHomeViewModel>, IProfileHomeOrganizationsView
     {
         public event EventHandler<ProfileHomeEventArgs> LoadUserData;
 

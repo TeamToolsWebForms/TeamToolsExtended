@@ -22,9 +22,6 @@ namespace TeamTools.Web.App_Start.NinjectModules
             this.Bind<IPresenter>()
                 .ToMethod(GetPresenter)
                 .NamedLikeFactoryMethod((ICustomPresenterFactory factory) => factory.GetPresenter(null, null, null));
-            this.Bind<IProfileHomePresenter>().To<ProfileHomePresenter>();
-            this.Bind<IProfileHomeProjectsPresenter>().To<ProfileHomeProjectsPresenter>();
-            this.Bind<ICreateNotePresenter>().To<CreateNotePresenter>();
             this.Bind<INoteDTOFactory>().ToFactory().InSingletonScope();
         }
 
