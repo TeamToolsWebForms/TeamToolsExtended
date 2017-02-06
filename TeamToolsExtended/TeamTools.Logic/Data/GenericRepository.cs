@@ -1,13 +1,10 @@
-﻿using AutoMapper;
+﻿using Bytes2you.Validation;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using TeamTools.Logic.Data.Contracts;
-using TeamTools.Logic.Data.Models;
-using TeamTools.Logic.DTO;
 
 namespace TeamTools.Logic.Data
 {
@@ -19,24 +16,32 @@ namespace TeamTools.Logic.Data
 
         public GenericRepository(ITeamToolsDbContext dbContext)
         {
+            Guard.WhenArgument(dbContext, "DbContext").IsNull().Throw();
+
             this.dbContext = dbContext;
             this.set = this.dbContext.Set<T>();
         }
 
         public void Add(T entity)
         {
-            var entry = this.dbContext.Entry(entity);
+            Guard.WhenArgument(entity, "Entity").IsNull().Throw();
+
+            var entry = this.dbContext.GetState(entity);
             entry.State = EntityState.Added;
         }
 
         public T GetById(int id)
         {
+            Guard.WhenArgument(id, "Id").IsLessThan(0).Throw();
+
             var record = this.set.Find(id);
             return record;
         }
 
         public T GetById(string id)
         {
+            Guard.WhenArgument(id, "Id").IsNull().Throw();
+
             var record = this.set.Find(id);
             return record;
         }
@@ -53,7 +58,9 @@ namespace TeamTools.Logic.Data
 
         public void Delete(T entity)
         {
-            var entry = this.dbContext.Entry(entity);
+            Guard.WhenArgument(entity, "Entity").IsNull().Throw();
+
+            var entry = this.dbContext.GetState(entity);
             entry.State = EntityState.Deleted;
         }
     }

@@ -79,6 +79,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Data\GenericRepositoryTests\Add_Should.cs" />
+    <Compile Include="Data\GenericRepositoryTests\All_Should.cs" />
+    <Compile Include="Data\GenericRepositoryTests\Constructor_Should.cs" />
+    <Compile Include="Data\GenericRepositoryTests\Delete_Should.cs" />
+    <Compile Include="Data\GenericRepositoryTests\GetById_Should.cs" />
     <Compile Include="Data\Models\MessageTests\Content_Should.cs" />
     <Compile Include="Data\Models\MessageTests\Created_Should.cs" />
     <Compile Include="Data\Models\MessageTests\Id_Should.cs" />

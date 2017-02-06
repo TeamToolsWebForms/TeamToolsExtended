@@ -2,14 +2,25 @@
 using TeamTools.Logic.Data.Contracts;
 using TeamTools.Logic.Data.Models;
 using System.Data.Entity;
+using Bytes2you.Validation;
 
 namespace TeamTools.Logic.Data
 {
     public class TeamToolsDbContext : IdentityDbContext<User>, ITeamToolsDbContext
     {
+        private IStateFactory stateFactory;
+
         public TeamToolsDbContext()
             : base("TeamToolsDB")
         {
+        }
+
+        public TeamToolsDbContext(IStateFactory stateFactory)
+            : base("TeamToolsDB")
+        {
+            Guard.WhenArgument(stateFactory, "StateFactory").IsNull().Throw();
+
+            this.stateFactory = stateFactory;
         }
 
         public static TeamToolsDbContext Create()
@@ -34,6 +45,11 @@ namespace TeamTools.Logic.Data
         public virtual new IDbSet<T> Set<T>() where T : class
         {
             return base.Set<T>();
+        }
+
+        public IEntryState<T> GetState<T>(T entity) where T : class
+        {
+            return this.stateFactory.CreateState(this.Entry(entity));
         }
     }
 }

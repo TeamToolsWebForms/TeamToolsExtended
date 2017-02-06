@@ -2,6 +2,7 @@
 using Ninject.Web.Common;
 using TeamTools.Logic.Data.Contracts;
 using TeamTools.Logic.Data;
+using Ninject.Extensions.Factory;
 
 namespace TeamTools.Web.App_Start.NinjectModules
 {
@@ -12,6 +13,8 @@ namespace TeamTools.Web.App_Start.NinjectModules
             this.Bind<ITeamToolsDbContext>().To<TeamToolsDbContext>().InRequestScope();
             this.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>)).InSingletonScope();
             this.Bind<IUnitOfWork>().To<UnitOfWork>().InSingletonScope();
+            this.Bind<IStateFactory>().ToFactory().InSingletonScope();
+            this.Bind(typeof(IEntryState<>)).To(typeof(EntryState<>));
         }
     }
 }
