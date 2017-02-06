@@ -11,3 +11,25 @@
     color: lightblue;
     text-decoration: underline;
 }
+
+#MainContent_PersonalInfoControl_ctl05_DataPagerMyProjects {
+    padding-left: 200px;
+}
+
+#MainContent_PersonalInfoControl_ctl05_DataPagerMyProjects * {
+    margin: 10px 10px 10px 0px;
+    padding: 5px 10px 5px 10px;
+}
+
+#MainContent_MyProjectsControl_DataPagerAllMyProjects {
+    padding-left: 750px;
+}
+
+#MainContent_MyProjectsControl_DataPagerAllMyProjects * {
+    margin: 10px 10px 10px 0px;
+    padding: 5px 10px 5px 10px;
+}
+
+#list-root {
+    padding-left: 400px;
+}

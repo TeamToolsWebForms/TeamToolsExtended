@@ -36,7 +36,7 @@
                             <li class="list-group-item"><%#: this.Model.User.FirstName %></li>
                             <li class="list-group-item"><%#: this.Model.User.LastName %></li>
                             <li class="list-group-item"><%#: this.Model.User.Gender %></li>
-                            <li class="list-group-item"><i class="fa fa-envelope"></i><%#: HttpContext.Current.User.Identity.GetUserName() %></li>
+                            <li class="list-group-item"><i class="fa fa-envelope"></i> <%#: HttpContext.Current.User.Identity.GetUserName() %></li>
                         </ul>
                     </div>
                 </div>

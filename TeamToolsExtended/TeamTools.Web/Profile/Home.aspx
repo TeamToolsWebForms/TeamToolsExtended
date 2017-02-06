@@ -3,12 +3,14 @@
 <%@ Register Src="~/Profile/HomePersonalInfo.ascx" TagName="PersonalInfo" TagPrefix="pi" %>
 <%@ Register Src="~/Profile/CreateNote.ascx" TagName="CreateNote" TagPrefix="cn" %>
 <%@ Register Src="~/Profile/MyNotes.ascx" TagName="MyNotes" TagPrefix="mn" %>
+<%@ Register Src="~/Profile/MyProjects.ascx" TagName="MyProjects" TagPrefix="mp" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="HeadContent">
     <link href="../Content/home-profile.css" rel="stylesheet" type="text/css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../Content/create-note.css" rel="stylesheet" type="text/css" />
     <link href="../Content/mynotes.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../Content/home-controls.css" type="text/css" />
 </asp:Content>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
@@ -46,9 +48,9 @@
                 <h5 class="nav-email-subtitle">More</h5>
                 <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
                     <li>
-                        <a href="#">
+                        <asp:LinkButton runat="server" ID="MyProjects" OnClick="MyProjects_Click">
                             <i class="fa fa-folder-open"></i>My Projects  <span class="label label-info pull-right">3</span>
-                        </a>
+                        </asp:LinkButton>
                     </li>
                     <li>
                         <a href="#">
@@ -69,11 +71,13 @@
                     <pi:PersonalInfo runat="server" ID="PersonalInfoControl" />
                     <cn:CreateNote runat="server" ID="CreateNoteControl" Visible="false" />
                     <mn:MyNotes runat="server" ID="MyNotesControl" Visible="false" />
+                    <mp:MyProjects runat="server" ID="MyProjectsControl" Visible="false" />
                 </ContentTemplate>
                 <Triggers>
                     <asp:AsyncPostBackTrigger ControlID="MyNotes" EventName="Click" />
                     <asp:AsyncPostBackTrigger ControlID="CreateNote" EventName="Click" />
                     <asp:AsyncPostBackTrigger ControlID="MyProfile" EventName="Click" />
+                    <asp:AsyncPostBackTrigger ControlID="MyProjects" EventName="Click" />
                 </Triggers>
             </asp:UpdatePanel>
         </div>

@@ -9,15 +9,18 @@ namespace TeamTools.Logic.Services
     public class UserService : IUserService
     {
         private readonly IRepository<User> userRepository;
+        private readonly IRepository<Project> projectRepository;
         private readonly IMapperService mapperService;
         private readonly IUnitOfWork unitOfWork;
 
         public UserService(
             IRepository<User> userRepository,
+            IRepository<Project> projectRepository,
             IMapperService mapperService,
             IUnitOfWork unitOfWork)
         {
             this.userRepository = userRepository;
+            this.projectRepository = projectRepository;
             this.mapperService = mapperService;
             this.unitOfWork = unitOfWork;
         }
@@ -32,7 +35,8 @@ namespace TeamTools.Logic.Services
         public UserDTO GetByIdWithFilteredProjects(string id, string username)
         {
             var user = this.userRepository.GetById(id);
-            user.Projects = user.Projects.Where(x => x.IsPersonal == true && x.CreatorName == username && x.IsDeleted == false).ToList();
+            var userProjects = this.projectRepository.All(x => x.IsPersonal == true && x.CreatorName == username && x.IsDeleted == false);
+            user.Projects = userProjects.ToList();
 
             var mappedUser = this.mapperService.MapObject<UserDTO>(user);
             return mappedUser;

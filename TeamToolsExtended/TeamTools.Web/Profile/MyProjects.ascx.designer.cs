@@ -10,7 +10,7 @@
 namespace TeamTools.Web.Profile {
     
     
-    public partial class HomeProjects {
+    public partial class MyProjects {
         
         /// <summary>
         /// ProfileProjects control.
@@ -22,12 +22,12 @@ namespace TeamTools.Web.Profile {
         protected global::System.Web.UI.WebControls.ListView ProfileProjects;
         
         /// <summary>
-        /// DataPagerMyProjects control.
+        /// DataPagerAllMyProjects control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataPager DataPagerMyProjects;
+        protected global::System.Web.UI.WebControls.DataPager DataPagerAllMyProjects;
     }
 }
