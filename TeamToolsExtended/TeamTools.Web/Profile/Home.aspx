@@ -12,6 +12,12 @@
 </asp:Content>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
+    <asp:ScriptManagerProxy runat="server">
+        <Scripts>
+            <asp:ScriptReference Path="~/Scripts/create-note-validation.js" />
+            <asp:ScriptReference Path="~/Scripts/mynotes.js" />
+        </Scripts>
+    </asp:ScriptManagerProxy>
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
@@ -72,6 +78,4 @@
             </asp:UpdatePanel>
         </div>
     </div>
-    <script src="../Scripts/create-note-validation.js"></script>
-    <script src="../Scripts/mynotes.js"></script>
 </asp:Content>

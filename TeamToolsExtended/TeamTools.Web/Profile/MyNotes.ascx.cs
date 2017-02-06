@@ -25,5 +25,19 @@ namespace TeamTools.Web.Profile
             this.MyNotesList.DataSource = this.Model.UserNotes.ToList();
             this.MyNotesList.DataBind();
         }
+
+        protected void MyNotesList_Sorting(object sender, ListViewSortEventArgs e)
+        {
+            if (e.SortExpression == "Id")
+            {
+                this.MyNotesList.DataSource = this.Model.UserNotes.OrderBy(x => x.Id).ToList();
+            }
+            else
+            {
+                this.MyNotesList.DataSource = this.Model.UserNotes.OrderBy(x => x.Title).ToList();
+            }
+            
+            this.MyNotesList.DataBind();
+        }
     }
 }
