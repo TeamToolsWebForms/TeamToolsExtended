@@ -33,7 +33,7 @@ namespace TeamTools.Logic.Services
         public IEnumerable<NoteDTO> GetAllUserNotes(string id)
         {
             return this.noteRepository
-                .All(u => u.UserId == id && u.IsDeleted == false)
+                .All(u => u.UserId == id && u.IsDeleted == false, n => n.Id, false)
                 .Select(n => this.mapperService.MapObject<NoteDTO>(n));
         }
 
@@ -47,6 +47,7 @@ namespace TeamTools.Logic.Services
         {
             var currentNote = this.noteRepository.GetById(note.Id);
             var mappedNote = this.mapperService.MapObject(note, currentNote);
+            this.noteRepository.Update(mappedNote);
             this.unitOfWork.Commit();
         }
     }

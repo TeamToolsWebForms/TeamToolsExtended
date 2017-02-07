@@ -17,6 +17,10 @@ namespace TeamTools.Logic.Data.Contracts
 
         IEnumerable<T> All(Expression<Func<T, bool>> filter);
 
+        IEnumerable<T> All<K>(Expression<Func<T, bool>> filter, Expression<Func<T, K>> sort, bool isAscending);
+
+        void Update(T entity);
+
         void Delete(T entity);
     }
 }

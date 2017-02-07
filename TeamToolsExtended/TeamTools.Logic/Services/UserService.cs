@@ -45,7 +45,9 @@ namespace TeamTools.Logic.Services
         public void Update(UserDTO user)
         {
             var currentUser = this.userRepository.GetById(user.Id);
-            var mappedUser = this.mapperService.MapObject(user, currentUser);
+            var mappedLogo = this.mapperService.MapObject<UserLogo>(user.UserLogo);
+            currentUser.UserLogo = mappedLogo;
+            this.userRepository.Update(currentUser);
             this.unitOfWork.Commit();
         }
     }

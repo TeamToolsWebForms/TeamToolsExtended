@@ -56,12 +56,32 @@ namespace TeamTools.Logic.Data
             return this.set.Where(filter).ToList();
         }
 
+        public IEnumerable<T> All<K>(Expression<Func<T, bool>> filter, Expression<Func<T, K>> sort, bool isAscending)
+        {
+            if (isAscending)
+            {
+                return this.set.Where(filter).OrderBy(sort).ToList();
+            }
+            else
+            {
+                return this.set.Where(filter).OrderByDescending(sort).ToList();
+            }
+        }
+
         public void Delete(T entity)
         {
             Guard.WhenArgument(entity, "Entity").IsNull().Throw();
 
             var entry = this.dbContext.GetState(entity);
             entry.State = EntityState.Deleted;
+        }
+
+        public void Update(T entity)
+        {
+            Guard.WhenArgument(entity, "Entity").IsNull().Throw();
+
+            var entry = this.dbContext.GetState(entity);
+            entry.State = EntityState.Modified;
         }
     }
 }
