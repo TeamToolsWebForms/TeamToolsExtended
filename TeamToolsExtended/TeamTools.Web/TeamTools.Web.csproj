@@ -288,6 +288,7 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Profile\CreateNote.ascx" />
+    <Content Include="Profile\ImportantNotes.ascx" />
     <Content Include="Profile\MyNotes.ascx" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
@@ -485,6 +486,13 @@
     </Compile>
     <Compile Include="Profile\HomeProjects.ascx.designer.cs">
       <DependentUpon>HomeProjects.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\ImportantNotes.ascx.cs">
+      <DependentUpon>ImportantNotes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\ImportantNotes.ascx.designer.cs">
+      <DependentUpon>ImportantNotes.ascx</DependentUpon>
     </Compile>
     <Compile Include="Profile\MyNotes.ascx.cs">
       <DependentUpon>MyNotes.ascx</DependentUpon>

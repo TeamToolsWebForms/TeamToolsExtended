@@ -40,6 +40,15 @@ namespace TeamTools.Web.Profile {
         protected global::System.Web.UI.WebControls.LinkButton CreateNote;
         
         /// <summary>
+        /// ImportantNotes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton ImportantNotes;
+        
+        /// <summary>
         /// MyProjects control.
         /// </summary>
         /// <remarks>
@@ -83,5 +92,14 @@ namespace TeamTools.Web.Profile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::TeamTools.Web.Profile.MyProjects MyProjectsControl;
+        
+        /// <summary>
+        /// ImportantNotesControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TeamTools.Web.Profile.ImportantNotes ImportantNotesControl;
     }
 }

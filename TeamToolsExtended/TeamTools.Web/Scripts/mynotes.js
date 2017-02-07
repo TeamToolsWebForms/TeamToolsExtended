@@ -20,3 +20,14 @@ function deleteNote(id) {
         toastr.error(err);
     });
 }
+
+function markAsNormalNote(id) {
+    requester.postJSON(`/api/Note/Important/markNormal/${id}`)
+       .then((response) => {
+           $(`#note${id}`).remove();
+           toastr.success(response);
+       })
+    .catch((err) => {
+        toastr.error(err);
+    });
+}

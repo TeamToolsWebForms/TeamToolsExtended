@@ -1,10 +1,10 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MyNotes.ascx.cs" Inherits="TeamTools.Web.Profile.MyNotes" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ImportantNotes.ascx.cs" Inherits="TeamTools.Web.Profile.ImportantNotes" %>
 
 <asp:UpdatePanel runat="server">
     <ContentTemplate>
         <div>
-            <asp:ListView runat="server" ID="MyNotesList" ItemType="TeamTools.Logic.DTO.NoteDTO"
-                OnSorting="MyNotesList_Sorting">
+            <asp:ListView runat="server" ID="ImportantNotesList" ItemType="TeamTools.Logic.DTO.NoteDTO"
+                OnSorting="ImportantNotesList_Sorting">
                 <LayoutTemplate>
                     <div class="btn-group pull-right">
                         <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -12,7 +12,7 @@
                         </button>
                         <div class="dropdown-menu">
                             <asp:Button Text="Title" runat="server" CssClass="btn btn-info" CommandName="Sort" CommandArgument="Title" />
-                            <asp:Button Text="Normal" runat="server" CssClass="btn btn-info" CommandName="Sort" CommandArgument="Id" />
+                            <asp:Button Text="Newest" runat="server" CssClass="btn btn-info" CommandName="Sort" CommandArgument="Id" />
                         </div>
                     </div>
                     <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
@@ -24,8 +24,7 @@
                             <blockquote class="note yellow">
                                 <div>
                                     <%#: Item.Title %>
-                                    <span class="fa fa-times pull-right show-cursor" onclick="deleteNote(<%# Item.Id %>);"></span>
-                                    <span class="fa fa-certificate pull-right show-cursor" onclick="setImportant(<%# Item.Id %>);"></span>
+                                    <span class="fa fa-times pull-right show-cursor" onclick="markAsNormalNote(<%# Item.Id %>);"></span>
                                 </div>
                                 <p><%#: Item.Content %></p>
                             </blockquote>
@@ -34,12 +33,12 @@
                 </ItemTemplate>
                 <EmptyDataTemplate>
                     <div>
-                        <h3>Currently you don't have notes</h3>
+                        <h3>Currently you don't have important notes</h3>
                     </div>
                 </EmptyDataTemplate>
             </asp:ListView>
             <asp:DataPager ID="DataPagerNotes" runat="server"
-                PagedControlID="MyNotesList" PageSize="6" ClientIDMode="Static">
+                PagedControlID="ImportantNotesList" PageSize="6" ClientIDMode="Static">
                 <Fields>
                     <asp:NextPreviousPagerField ShowFirstPageButton="true"
                         ShowNextPageButton="false" ShowPreviousPageButton="false" />

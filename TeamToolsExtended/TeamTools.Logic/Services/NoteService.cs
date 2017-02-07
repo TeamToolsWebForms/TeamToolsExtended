@@ -37,6 +37,13 @@ namespace TeamTools.Logic.Services
                 .Select(n => this.mapperService.MapObject<NoteDTO>(n));
         }
 
+        public IEnumerable<NoteDTO> GetAllImportantUserNotes(string id)
+        {
+            return this.noteRepository
+                .All(u => u.UserId == id && u.IsDeleted == false && u.IsImportant == true, n => n.Id, false)
+                .Select(n => this.mapperService.MapObject<NoteDTO>(n));
+        }
+
         public NoteDTO GetById(int id)
         {
             var note = this.noteRepository.GetById(id);

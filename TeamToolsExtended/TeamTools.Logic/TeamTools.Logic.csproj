@@ -99,6 +99,7 @@
     <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Data\Migrations\Configuration.cs" />
     <Compile Include="DTO\UserLogoDTO.cs" />
+    <Compile Include="Mvp\Profile\Home\Contracts\IImportantNoteView.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IMyNotesView.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\INoteDTOFactory.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IProfileHomeOrganizationsView.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Mvp\Profile\Home\MyNotesEventArgs.cs" />
     <Compile Include="Mvp\Profile\Home\MyNotesViewModel.cs" />
     <Compile Include="Mvp\Profile\Home\ProfileHomeEventArgs.cs" />
+    <Compile Include="Mvp\Profile\Home\ProfileHomeImortantNotesPresenter.cs" />
     <Compile Include="Mvp\Profile\Home\ProfileHomeMyNotesPresenter.cs" />
     <Compile Include="Mvp\Profile\Home\ProfileHomeOrganizationsPresenter.cs" />
     <Compile Include="Mvp\Profile\Home\ProfileHomePresenter.cs" />

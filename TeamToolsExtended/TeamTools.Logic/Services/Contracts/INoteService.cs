@@ -11,6 +11,8 @@ namespace TeamTools.Logic.Services.Contracts
 
         IEnumerable<NoteDTO> GetAllUserNotes(string id);
 
+        IEnumerable<NoteDTO> GetAllImportantUserNotes(string id);
+
         void Update(NoteDTO note);
     }
 }

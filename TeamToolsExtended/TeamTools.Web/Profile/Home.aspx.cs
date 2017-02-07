@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using WebFormsMvp.Web;
 
 namespace TeamTools.Web.Profile
 {
@@ -13,6 +11,7 @@ namespace TeamTools.Web.Profile
 
         protected void MyProfile_Click(object sender, EventArgs e)
         {
+            this.ImportantNotesControl.Visible = false;
             this.MyProjectsControl.Visible = false;
             this.CreateNoteControl.Visible = false;
             this.MyNotesControl.Visible = false;
@@ -21,6 +20,7 @@ namespace TeamTools.Web.Profile
 
         protected void MyNotes_Click(object sender, EventArgs e)
         {
+            this.ImportantNotesControl.Visible = false;
             this.MyProjectsControl.Visible = false;
             this.PersonalInfoControl.Visible = false;
             this.CreateNoteControl.Visible = false;
@@ -29,6 +29,7 @@ namespace TeamTools.Web.Profile
 
         protected void CreateNote_Click(object sender, EventArgs e)
         {
+            this.ImportantNotesControl.Visible = false;
             this.MyProjectsControl.Visible = false;
             this.MyNotesControl.Visible = false;
             this.PersonalInfoControl.Visible = false;
@@ -37,10 +38,20 @@ namespace TeamTools.Web.Profile
 
         protected void MyProjects_Click(object sender, EventArgs e)
         {
+            this.ImportantNotesControl.Visible = false;
             this.MyNotesControl.Visible = false;
             this.PersonalInfoControl.Visible = false;
             this.CreateNoteControl.Visible = false;
             this.MyProjectsControl.Visible = true;
+        }
+
+        protected void ImportantNotes_Click(object sender, EventArgs e)
+        {
+            this.MyNotesControl.Visible = false;
+            this.PersonalInfoControl.Visible = false;
+            this.CreateNoteControl.Visible = false;
+            this.MyProjectsControl.Visible = false;
+            this.ImportantNotesControl.Visible = true;
         }
     }
 }

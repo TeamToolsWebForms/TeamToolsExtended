@@ -31,5 +31,16 @@ namespace TeamTools.Web.Controllers
 
             return this.Ok("Note was deleted successfully");
         }
+
+        [HttpPost]
+        [Route("api/Note/Important/markNormal/{id}")]
+        public IHttpActionResult MarkNormal(int id)
+        {
+            var note = this.noteService.GetById(id);
+            note.IsImportant = false;
+            this.noteService.Update(note);
+
+            return this.Ok("Note was unmarked as important");
+        }
     }
 }
