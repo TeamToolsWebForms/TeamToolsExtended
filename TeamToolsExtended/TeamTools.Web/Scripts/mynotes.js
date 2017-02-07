@@ -13,6 +13,7 @@ function setImportant(id) {
 function deleteNote(id) {
     requester.postJSON(`/api/Note/delete/${id}`)
        .then((response) => {
+           $(`#note${id}`).hide();
            toastr.success(response);
        })
     .catch((err) => {

@@ -18,7 +18,7 @@
                     <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
                 </LayoutTemplate>
                 <ItemTemplate>
-                    <div class="col-md-3">
+                    <div class="col-md-3" id="note<%# Item.Id %>">
                         <div class="quote-container">
                             <i class="pin"></i>
                             <blockquote class="note yellow">
