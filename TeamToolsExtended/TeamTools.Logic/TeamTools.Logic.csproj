@@ -103,6 +103,7 @@
     <Compile Include="Mvp\Profile\Home\Contracts\IMyNotesView.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\INoteDTOFactory.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IProfileHomeOrganizationsView.cs" />
+    <Compile Include="Mvp\Profile\Home\Contracts\ITrashNotesView.cs" />
     <Compile Include="Mvp\Profile\Home\CreateNoteEventArgs.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\ICreateNoteView.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IProfileHomeProjectsView.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Mvp\Profile\Home\ProfileHomeOrganizationsPresenter.cs" />
     <Compile Include="Mvp\Profile\Home\ProfileHomePresenter.cs" />
     <Compile Include="Mvp\Profile\Home\ProfileHomeProjectsPresenter.cs" />
+    <Compile Include="Mvp\Profile\Home\ProfileHomeTrashNotesPresenter.cs" />
     <Compile Include="Mvp\Profile\Home\ProfileHomeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Contracts\IFileService.cs" />

@@ -31,3 +31,15 @@ function markAsNormalNote(id) {
         toastr.error(err);
     });
 }
+
+function restoreNote(id) {
+    console.log(id);
+    requester.postJSON(`/api/Note/Restored/restoreNote/${id}`)
+       .then((response) => {
+           $(`#note${id}`).remove();
+           toastr.success(response);
+       })
+    .catch((err) => {
+        toastr.error(err);
+    });
+}

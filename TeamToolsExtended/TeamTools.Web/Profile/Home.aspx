@@ -5,6 +5,7 @@
 <%@ Register Src="~/Profile/MyNotes.ascx" TagName="MyNotes" TagPrefix="mn" %>
 <%@ Register Src="~/Profile/MyProjects.ascx" TagName="MyProjects" TagPrefix="mp" %>
 <%@ Register Src="~/Profile/ImportantNotes.ascx" TagName="ImportantNotes" TagPrefix="in" %>
+<%@ Register Src="~/Profile/TrashNotes.ascx" TagName="TrashNotes" TagPrefix="tn" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="HeadContent">
     <link href="../Content/home-profile.css" rel="stylesheet" type="text/css" />
@@ -43,7 +44,10 @@
                         <asp:LinkButton runat="server" ID="ImportantNotes" OnClick="ImportantNotes_Click">
                             <i class="fa fa-certificate"></i>Important</asp:LinkButton>
                     </li>
-                    <li><a href="#"><i class="fa fa-trash-o"></i>Trash</a></li>
+                    <li>
+                        <asp:LinkButton runat="server" ID="TrashNotes" OnClick="TrashNotes_Click">
+                            <i class="fa fa-trash-o"></i>Trash</asp:LinkButton>
+                    </li>
                 </ul>
                 <!-- /.nav -->
 
@@ -75,6 +79,7 @@
                     <mn:MyNotes runat="server" ID="MyNotesControl" Visible="false" />
                     <mp:MyProjects runat="server" ID="MyProjectsControl" Visible="false" />
                     <in:ImportantNotes runat="server" ID="ImportantNotesControl" Visible="false" />
+                    <tn:TrashNotes runat="server" ID="TrashNotesControl" Visible="false" />
                 </ContentTemplate>
                 <Triggers>
                     <asp:AsyncPostBackTrigger ControlID="MyNotes" EventName="Click" />
@@ -82,6 +87,7 @@
                     <asp:AsyncPostBackTrigger ControlID="MyProfile" EventName="Click" />
                     <asp:AsyncPostBackTrigger ControlID="MyProjects" EventName="Click" />
                     <asp:AsyncPostBackTrigger ControlID="ImportantNotes" EventName="Click" />
+                    <asp:AsyncPostBackTrigger ControlID="TrashNotes" EventName="Click" />
                 </Triggers>
             </asp:UpdatePanel>
         </div>

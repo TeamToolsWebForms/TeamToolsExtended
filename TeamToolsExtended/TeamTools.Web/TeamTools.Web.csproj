@@ -300,6 +300,7 @@
     <Content Include="Profile\HomeProjects.ascx" />
     <Content Include="Profile\MyOrganizations.aspx" />
     <Content Include="Profile\MyProjects.ascx" />
+    <Content Include="Profile\TrashNotes.ascx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\create-note-validation.js" />
@@ -514,6 +515,13 @@
     </Compile>
     <Compile Include="Profile\MyProjects.ascx.designer.cs">
       <DependentUpon>MyProjects.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\TrashNotes.ascx.cs">
+      <DependentUpon>TrashNotes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\TrashNotes.ascx.designer.cs">
+      <DependentUpon>TrashNotes.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
