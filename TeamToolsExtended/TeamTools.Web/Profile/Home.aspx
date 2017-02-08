@@ -3,7 +3,6 @@
 <%@ Register Src="~/Profile/HomePersonalInfo.ascx" TagName="PersonalInfo" TagPrefix="pi" %>
 <%@ Register Src="~/Profile/CreateNote.ascx" TagName="CreateNote" TagPrefix="cn" %>
 <%@ Register Src="~/Profile/MyNotes.ascx" TagName="MyNotes" TagPrefix="mn" %>
-<%@ Register Src="~/Profile/MyProjects.ascx" TagName="MyProjects" TagPrefix="mp" %>
 <%@ Register Src="~/Profile/ImportantNotes.ascx" TagName="ImportantNotes" TagPrefix="in" %>
 <%@ Register Src="~/Profile/TrashNotes.ascx" TagName="TrashNotes" TagPrefix="tn" %>
 
@@ -54,9 +53,9 @@
                 <h5 class="nav-email-subtitle">More</h5>
                 <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
                     <li>
-                        <asp:LinkButton runat="server" ID="MyProjects" OnClick="MyProjects_Click">
+                        <a href="~/Profile/MyProjects.aspx" runat="server">
                             <i class="fa fa-folder-open"></i>My Projects  <span class="label label-info pull-right">3</span>
-                        </asp:LinkButton>
+                        </a>
                     </li>
                     <li>
                         <a href="#">
@@ -77,7 +76,6 @@
                     <pi:PersonalInfo runat="server" ID="PersonalInfoControl" />
                     <cn:CreateNote runat="server" ID="CreateNoteControl" Visible="false" />
                     <mn:MyNotes runat="server" ID="MyNotesControl" Visible="false" />
-                    <mp:MyProjects runat="server" ID="MyProjectsControl" Visible="false" />
                     <in:ImportantNotes runat="server" ID="ImportantNotesControl" Visible="false" />
                     <tn:TrashNotes runat="server" ID="TrashNotesControl" Visible="false" />
                 </ContentTemplate>
@@ -85,7 +83,6 @@
                     <asp:AsyncPostBackTrigger ControlID="MyNotes" EventName="Click" />
                     <asp:AsyncPostBackTrigger ControlID="CreateNote" EventName="Click" />
                     <asp:AsyncPostBackTrigger ControlID="MyProfile" EventName="Click" />
-                    <asp:AsyncPostBackTrigger ControlID="MyProjects" EventName="Click" />
                     <asp:AsyncPostBackTrigger ControlID="ImportantNotes" EventName="Click" />
                     <asp:AsyncPostBackTrigger ControlID="TrashNotes" EventName="Click" />
                 </Triggers>

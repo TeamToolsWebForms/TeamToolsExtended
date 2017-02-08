@@ -13,21 +13,12 @@ namespace TeamTools.Web.Profile {
     public partial class MyProjects {
         
         /// <summary>
-        /// ProfileProjects control.
+        /// MyProjectsGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ProfileProjects;
-        
-        /// <summary>
-        /// DataPagerAllMyProjects control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataPager DataPagerAllMyProjects;
+        protected global::System.Web.UI.WebControls.GridView MyProjectsGrid;
     }
 }

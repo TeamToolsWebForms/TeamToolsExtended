@@ -11,12 +11,11 @@ namespace TeamTools.Logic.Mvp.Profile.Home
             this.Username = username;
         }
 
-        public ProfileHomeEventArgs(string filename, HttpPostedFile postedFile, string serverPath, string userId)
+        public ProfileHomeEventArgs(string filename, HttpPostedFile postedFile, string userId)
         {
             this.FileName = filename;
             this.UploadedImage = postedFile;
             this.Id = userId;
-            this.ServerPath = serverPath;
         }
 
         public string Id { get; set; }
@@ -24,8 +23,6 @@ namespace TeamTools.Logic.Mvp.Profile.Home
         public string Username { get; set; }
 
         public string FileName { get; set; }
-
-        public string ServerPath { get; set; }
 
         public HttpPostedFile UploadedImage { get; set; }
     }

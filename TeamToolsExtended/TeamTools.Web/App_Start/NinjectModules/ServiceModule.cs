@@ -17,6 +17,7 @@ namespace TeamTools.Web.App_Start.NinjectModules
             this.Bind<IUserService>().To<UserService>().InRequestScope();
             this.Bind<IMapperService>().To<MapperService>().InRequestScope();
             this.Bind<INoteService>().To<NoteService>().InRequestScope();
+            this.Bind<IProjectService>().To<ProjectService>().InRequestScope();
         }
     }
 }

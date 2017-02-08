@@ -26,7 +26,6 @@ namespace TeamTools.Logic.Mvp.Profile.Home
 
         private void View_SaveProfileImage(object sender, ProfileHomeEventArgs e)
         {
-            // possibly resize picture
             var user = this.userService.GetById(e.Id);
             Stream fileStream = e.UploadedImage.InputStream;
             BinaryReader binaryReader = new BinaryReader(fileStream);

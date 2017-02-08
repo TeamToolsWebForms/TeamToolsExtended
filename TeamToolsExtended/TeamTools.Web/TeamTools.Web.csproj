@@ -299,7 +299,8 @@
     <Content Include="Profile\HomePersonalInfo.ascx" />
     <Content Include="Profile\HomeProjects.ascx" />
     <Content Include="Profile\MyOrganizations.aspx" />
-    <Content Include="Profile\MyProjects.ascx" />
+    <Content Include="Profile\Projects.ascx" />
+    <Content Include="Profile\MyProjects.aspx" />
     <Content Include="Profile\TrashNotes.ascx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -509,12 +510,19 @@
     <Compile Include="Profile\MyOrganizations.aspx.designer.cs">
       <DependentUpon>MyOrganizations.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Profile\MyProjects.ascx.cs">
-      <DependentUpon>MyProjects.ascx</DependentUpon>
+    <Compile Include="Profile\Projects.ascx.cs">
+      <DependentUpon>Projects.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Profile\MyProjects.ascx.designer.cs">
-      <DependentUpon>MyProjects.ascx</DependentUpon>
+    <Compile Include="Profile\Projects.ascx.designer.cs">
+      <DependentUpon>Projects.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\MyProjects.aspx.cs">
+      <DependentUpon>MyProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\MyProjects.aspx.designer.cs">
+      <DependentUpon>MyProjects.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile\TrashNotes.ascx.cs">
       <DependentUpon>TrashNotes.ascx</DependentUpon>

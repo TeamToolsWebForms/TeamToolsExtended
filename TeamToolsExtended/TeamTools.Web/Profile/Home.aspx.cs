@@ -13,7 +13,6 @@ namespace TeamTools.Web.Profile
         {
             this.TrashNotesControl.Visible = false;
             this.ImportantNotesControl.Visible = false;
-            this.MyProjectsControl.Visible = false;
             this.CreateNoteControl.Visible = false;
             this.MyNotesControl.Visible = false;
             this.PersonalInfoControl.Visible = true;
@@ -23,7 +22,6 @@ namespace TeamTools.Web.Profile
         {
             this.TrashNotesControl.Visible = false;
             this.ImportantNotesControl.Visible = false;
-            this.MyProjectsControl.Visible = false;
             this.PersonalInfoControl.Visible = false;
             this.CreateNoteControl.Visible = false;
             this.MyNotesControl.Visible = true;
@@ -33,20 +31,9 @@ namespace TeamTools.Web.Profile
         {
             this.TrashNotesControl.Visible = false;
             this.ImportantNotesControl.Visible = false;
-            this.MyProjectsControl.Visible = false;
             this.MyNotesControl.Visible = false;
             this.PersonalInfoControl.Visible = false;
             this.CreateNoteControl.Visible = true;
-        }
-
-        protected void MyProjects_Click(object sender, EventArgs e)
-        {
-            this.TrashNotesControl.Visible = false;
-            this.ImportantNotesControl.Visible = false;
-            this.MyNotesControl.Visible = false;
-            this.PersonalInfoControl.Visible = false;
-            this.CreateNoteControl.Visible = false;
-            this.MyProjectsControl.Visible = true;
         }
 
         protected void ImportantNotes_Click(object sender, EventArgs e)
@@ -55,7 +42,6 @@ namespace TeamTools.Web.Profile
             this.MyNotesControl.Visible = false;
             this.PersonalInfoControl.Visible = false;
             this.CreateNoteControl.Visible = false;
-            this.MyProjectsControl.Visible = false;
             this.ImportantNotesControl.Visible = true;
         }
 
@@ -64,7 +50,6 @@ namespace TeamTools.Web.Profile
             this.MyNotesControl.Visible = false;
             this.PersonalInfoControl.Visible = false;
             this.CreateNoteControl.Visible = false;
-            this.MyProjectsControl.Visible = false;
             this.ImportantNotesControl.Visible = false;
             this.TrashNotesControl.Visible = true;
         }

@@ -4,7 +4,7 @@
     {
         public static bool ValidateRange(string value, int min, int max)
         {
-            bool isInRange = value.Length >= min || value.Length <= max;
+            bool isInRange = value.Length >= min && value.Length <= max;
             return isInRange;
         }
     }

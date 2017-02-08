@@ -57,9 +57,8 @@ namespace TeamTools.Web.Profile
                         if (this.FileUpload.PostedFile.ContentLength < FiveMBs)
                         {
                             string filename = Path.GetFileName(this.FileUpload.FileName);
-                            string serverPath = Server.MapPath("~/Images/");
                             string userId = Page.User.Identity.GetUserId();
-                            this.SaveProfileImage?.Invoke(sender, new ProfileHomeEventArgs(filename, this.FileUpload.PostedFile, serverPath, userId));
+                            this.SaveProfileImage?.Invoke(sender, new ProfileHomeEventArgs(filename, this.FileUpload.PostedFile, userId));
 
                             this.ProfileImage.ImageUrl = this.Model.ImageUrl;
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "FileSuccess();", true);
