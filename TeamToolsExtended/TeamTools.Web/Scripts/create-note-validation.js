@@ -11,3 +11,11 @@ function contentValidation() {
 function noteSuccess() {
     toastr.success("Note created successfully");
 }
+
+function updateProjectSuccess() {
+    toastr.success("Project name updated successfully");
+}
+
+function deleteProjectSuccess() {
+    toastr.success("Project deleted successfully");
+}

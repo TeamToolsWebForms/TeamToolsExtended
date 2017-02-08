@@ -23,7 +23,8 @@
                     PageSize="5"
                     OnPageIndexChanging="MyProjectsGrid_PageIndexChanging"
                     SelectMethod="MyProjectsGrid_GetData"
-                    UpdateMethod="MyProjectsGrid_UpdateItem">
+                    UpdateMethod="MyProjectsGrid_UpdateItem"
+                    DeleteMethod="MyProjectsGrid_DeleteItem">
                     <Columns>
                         <asp:CommandField ShowEditButton="true" ControlStyle-CssClass="btn btn-info" />
                         <asp:BoundField SortExpression="Title" DataField="Title" HeaderText="Name" />

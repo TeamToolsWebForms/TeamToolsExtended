@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using WebFormsMvp;
 using TeamTools.Logic.Mvp.Profile.Home;
 using WebFormsMvp.Web;
-using TeamTools.Logic.Mvp.Profile.Home.Contracts;
 using TeamTools.Logic.DTO;
 using TeamTools.Logic.Mvp.Profile.MyProjects.Contracts;
 using TeamTools.Logic.Mvp.Profile.MyProjects;
@@ -36,22 +33,14 @@ namespace TeamTools.Web.Profile
         protected void MyProjectsGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             this.MyProjectsGrid.PageIndex = e.NewPageIndex;
-            this.MyProjectsGrid.DataSource = this.Model.User.Projects;
             this.MyProjectsGrid.DataBind();
         }
-
-        // The return type can be changed to IEnumerable, however to support
-        // paging and sorting, the following parameters must be added:
-        //     int maximumRows
-        //     int startRowIndex
-        //     out int totalRowCount
-        //     string sortByExpression
+        
         public IQueryable<ProjectDTO> MyProjectsGrid_GetData()
         {
             return this.Model.User.Projects.OrderBy(x => x.Id).AsQueryable();
         }
-
-        // The id parameter name should match the DataKeyNames value set on the control
+        
         public void MyProjectsGrid_UpdateItem(int id)
         {
             string userId = Page.User.Identity.GetUserId();
@@ -65,6 +54,18 @@ namespace TeamTools.Web.Profile
 
             this.UpdateUserProject?.Invoke(this, new MyProjectsEventArgs(userId, username, id, editTitleBox.Text));
 
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "updateProjectSuccess();", true);
+            this.MyProjectsGrid.DataBind();
+        }
+        
+        public void MyProjectsGrid_DeleteItem(int id)
+        {
+            string userId = Page.User.Identity.GetUserId();
+            string username = Page.User.Identity.GetUserName();
+
+            this.DeleteUserProject?.Invoke(this, new MyProjectsEventArgs(userId, username, id));
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "deleteProjectSuccess();", true);
             this.MyProjectsGrid.DataBind();
         }
     }

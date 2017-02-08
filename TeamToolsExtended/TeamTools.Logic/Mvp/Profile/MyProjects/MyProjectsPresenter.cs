@@ -1,4 +1,4 @@
-﻿using System;
+﻿using TeamTools.Logic.DTO;
 using TeamTools.Logic.Mvp.Profile.MyProjects;
 using TeamTools.Logic.Mvp.Profile.MyProjects.Contracts;
 using TeamTools.Logic.Services.Contracts;
@@ -24,20 +24,27 @@ namespace TeamTools.Logic.Mvp.Profile.Home
 
         private void View_DeleteUserProject(object sender, MyProjectsEventArgs e)
         {
-            throw new NotImplementedException();
+            this.projectService.Delete(e.ProjectId);
+            var foundUser = this.GetUser(e.UserId, e.Username);
+            this.View.Model.User = foundUser;
         }
 
         private void View_UpdateUserProject(object sender, MyProjectsEventArgs e)
         {
             this.projectService.Update(e.ProjectId, e.ProjectName);
-            var foundUser = this.userService.GetByIdWithFilteredProjects(e.UserId, e.Username);
+            var foundUser = this.GetUser(e.UserId, e.Username);
             this.View.Model.User = foundUser;
         }
 
         private void View_LoadUserProjects(object sender, MyProjectsEventArgs e)
         {
-            var foundUser = this.userService.GetByIdWithFilteredProjects(e.UserId, e.Username);
+            var foundUser = this.GetUser(e.UserId, e.Username);
             this.View.Model.User = foundUser;
+        }
+
+        private UserDTO GetUser(string id, string username)
+        {
+            return this.userService.GetByIdWithFilteredProjects(id, username);
         }
     }
 }

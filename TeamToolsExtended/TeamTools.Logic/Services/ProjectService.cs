@@ -20,6 +20,7 @@ namespace TeamTools.Logic.Services
             var searchedProject = this.projectRepository.GetById(id);
             searchedProject.IsDeleted = true;
             this.projectRepository.Update(searchedProject);
+            this.unitOfWork.Commit();
         }
 
         public void Update(int id, string newTitle)
