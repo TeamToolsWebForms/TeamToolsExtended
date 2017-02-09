@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Projects.ascx.cs" Inherits="TeamTools.Web.Profile.MyProjects" %>
 
-<div class="row">
+<div id="gridviewControl" class="row">
     <div class="col-md-7 col-md-offset-1">
         <div class="panel panel-default panel-table">
             <div class="panel-heading">
@@ -9,7 +9,7 @@
                         <h3 class="panel-title">My Projects</h3>
                     </div>
                     <div class="col col-xs-6 text-right">
-                        <button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>
+                        <asp:Button Text="Create New" ID="CreateNew" CssClass="btn btn-sm btn-primary btn-create" runat="server" />
                     </div>
                 </div>
             </div>
@@ -33,6 +33,41 @@
                     </Columns>
                 </asp:GridView>
             </div>
+            <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtenderCreateProject"
+                TargetControlID="CreateNew"
+                PopupControlID="CreteProjectPanel"
+                OkControlID="saveProject"
+                CancelControlID="closeForm"
+                BackgroundCssClass="modalBackground"
+                runat="server">
+            </ajaxToolkit:ModalPopupExtender>
+            <asp:Panel ID="CreteProjectPanel" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" id="closeForm" class="close" aria-label="Close" <%--onclick="hideChildModal()"--%>>
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title">New Project</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="projectName">Name</label>
+                                        <asp:TextBox runat="server" ID="ProjectName" placeholder="Name of the project" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="projectDesc">Description</label>
+                                        <textarea class="form-control" rows="5" name="projectDesc" id="projectDesc" placeholder="Optional description"></textarea>
+                                    </div>
+                                    <div class="actions">
+                                        <asp:Button ID="saveProject" CssClass="btn btn-success" Text="Save Project" runat="server" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </asp:Panel>
         </div>
     </div>
 </div>

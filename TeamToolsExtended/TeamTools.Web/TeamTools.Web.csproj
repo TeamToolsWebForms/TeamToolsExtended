@@ -257,6 +257,7 @@
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Admin\Admin.aspx" />
     <Content Include="Content\create-note.css" />
+    <Content Include="Content\gridview-create.css" />
     <Content Include="Content\home-controls.css" />
     <Content Include="Content\home-profile.css" />
     <Content Include="Content\mynotes.css" />
