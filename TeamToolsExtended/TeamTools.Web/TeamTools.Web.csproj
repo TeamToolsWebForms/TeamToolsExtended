@@ -300,6 +300,7 @@
     <Content Include="Profile\HomePersonalInfo.ascx" />
     <Content Include="Profile\HomeProjects.ascx" />
     <Content Include="Profile\MyOrganizations.aspx" />
+    <Content Include="Profile\ProjectDetails.aspx" />
     <Content Include="Profile\Projects.ascx" />
     <Content Include="Profile\MyProjects.aspx" />
     <Content Include="Profile\TrashNotes.ascx" />
@@ -510,6 +511,13 @@
     </Compile>
     <Compile Include="Profile\MyOrganizations.aspx.designer.cs">
       <DependentUpon>MyOrganizations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\ProjectDetails.aspx.cs">
+      <DependentUpon>ProjectDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\ProjectDetails.aspx.designer.cs">
+      <DependentUpon>ProjectDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile\Projects.ascx.cs">
       <DependentUpon>Projects.ascx</DependentUpon>

@@ -14,6 +14,12 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjects
         {
         }
 
+        public MyProjectsEventArgs(string userId, string username, string projectName, string projectDescription)
+            : this(userId, username, -1, projectName)
+        {
+            this.ProjectDescription = projectDescription;
+        }
+
         public MyProjectsEventArgs(string userId, string username, int projectId, string projectName)
         {
             this.UserId = userId;
@@ -29,5 +35,7 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjects
         public int ProjectId { get; set; }
 
         public string ProjectName { get; set; }
+
+        public string ProjectDescription { get; set; }
     }
 }

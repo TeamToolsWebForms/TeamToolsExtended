@@ -18,10 +18,12 @@ namespace TeamTools.Web.Profile
     {
         private const int MinTitleLength = 3;
         private const int MaxTitleLength = 100;
+        private const int MaxDescriptionLength = 200;
 
         public event EventHandler<MyProjectsEventArgs> LoadUserProjects;
         public event EventHandler<MyProjectsEventArgs> UpdateUserProject;
         public event EventHandler<MyProjectsEventArgs> DeleteUserProject;
+        public event EventHandler<MyProjectsEventArgs> CreateUserProject;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,7 +40,7 @@ namespace TeamTools.Web.Profile
         
         public IQueryable<ProjectDTO> MyProjectsGrid_GetData()
         {
-            return this.Model.User.Projects.OrderBy(x => x.Id).AsQueryable();
+            return this.Model.User.Projects.OrderByDescending(x => x.Id).AsQueryable();
         }
         
         public void MyProjectsGrid_UpdateItem(int id)
@@ -67,6 +69,36 @@ namespace TeamTools.Web.Profile
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "deleteProjectSuccess();", true);
             this.MyProjectsGrid.DataBind();
+        }
+
+        protected void saveProject_Click(object sender, EventArgs e)
+        {
+            string projectName = this.ProjectName.Text;
+            if (!Validator.ValidateRange(projectName, MinTitleLength, MaxTitleLength))
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "createProjectNameValidation();", true);
+                return;
+            }
+
+            string projectDescription = this.projectDesc.InnerText;
+            if (!Validator.ValidateRange(projectDescription, MinTitleLength, MaxDescriptionLength))
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "createProjectDescriptionValidation();", true);
+                return;
+            }
+
+            string userId = Page.User.Identity.GetUserId();
+            string username = Page.User.Identity.GetUserName();
+
+            this.CreateUserProject?.Invoke(this, new MyProjectsEventArgs(userId, username, projectName, projectDescription));
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "createProjectSuccess();", true);
+            
+            this.MyProjectsGrid.DataBind();
+        }
+
+        protected void FakeSaveProject_Click(object sender, EventArgs e)
+        {
+            saveProject_Click(sender, e);
         }
     }
 }

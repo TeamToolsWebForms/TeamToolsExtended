@@ -17,9 +17,15 @@ namespace TeamTools.Logic.Mvp.Profile.Home
             this.View.LoadUserProjects += View_LoadUserProjects;
             this.View.UpdateUserProject += View_UpdateUserProject;
             this.View.DeleteUserProject += View_DeleteUserProject;
+            this.View.CreateUserProject += View_CreateUserProject;
 
             this.projectService = projectService;
             this.userService = userService;
+        }
+
+        private void View_CreateUserProject(object sender, MyProjectsEventArgs e)
+        {
+            this.projectService.CreatePersonalProject(e.ProjectName, e.ProjectDescription, e.Username);
         }
 
         private void View_DeleteUserProject(object sender, MyProjectsEventArgs e)

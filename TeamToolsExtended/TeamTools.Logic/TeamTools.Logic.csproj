@@ -113,6 +113,7 @@
     <Compile Include="Mvp\Profile\Home\CreateNoteViewModel.cs" />
     <Compile Include="Mvp\Profile\Home\MyNotesEventArgs.cs" />
     <Compile Include="Mvp\Profile\Home\MyNotesViewModel.cs" />
+    <Compile Include="Mvp\Profile\MyProjects\Contracts\IProjectFactory.cs" />
     <Compile Include="Mvp\Profile\MyProjects\MyProjectsPresenter.cs" />
     <Compile Include="Mvp\Profile\Home\ProfileHomeEventArgs.cs" />
     <Compile Include="Mvp\Profile\Home\ProfileHomeImortantNotesPresenter.cs" />

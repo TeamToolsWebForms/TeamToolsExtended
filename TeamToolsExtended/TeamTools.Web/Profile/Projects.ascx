@@ -45,7 +45,7 @@
                     <div class="modal-dialog modal-md">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" id="closeForm" class="close" aria-label="Close" <%--onclick="hideChildModal()"--%>>
+                                <button type="button" id="closeForm" class="close" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                 <h4 class="modal-title">New Project</h4>
@@ -58,10 +58,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="projectDesc">Description</label>
-                                        <textarea class="form-control" rows="5" name="projectDesc" id="projectDesc" placeholder="Optional description"></textarea>
+                                        <textarea class="form-control" rows="5" runat="server" id="projectDesc" placeholder="Optional description"></textarea>
                                     </div>
                                     <div class="actions">
-                                        <asp:Button ID="saveProject" CssClass="btn btn-success" Text="Save Project" runat="server" />
+                                        <asp:Button ID="saveProject" Visible="false" OnClick="saveProject_Click" runat="server" />
+                                        <asp:Button ID="FakeSaveProject" OnClick="FakeSaveProject_Click" CssClass="btn btn-success" Text="Save Project" runat="server" />
                                     </div>
                                 </form>
                             </div>

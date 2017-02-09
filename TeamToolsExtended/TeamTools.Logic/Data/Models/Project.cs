@@ -16,13 +16,21 @@ namespace TeamTools.Logic.Data.Models
             this.messages = new HashSet<Message>();
         }
 
+        public Project(string title, string description, string username)
+            : this()
+        {
+            this.Title = title;
+            this.Description = description;
+            this.CreatorName = username;
+        }
+
         public int Id { get; set; }
 
         [MinLength(3)]
         [MaxLength(100)]
         public string Title { get; set; }
 
-        [MinLength(5)]
+        [MinLength(3)]
         [MaxLength(200)]
         public string Description { get; set; }
 

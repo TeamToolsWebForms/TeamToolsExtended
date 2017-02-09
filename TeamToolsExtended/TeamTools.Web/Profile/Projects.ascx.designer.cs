@@ -58,6 +58,15 @@ namespace TeamTools.Web.Profile {
         protected global::System.Web.UI.WebControls.TextBox ProjectName;
         
         /// <summary>
+        /// projectDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea projectDesc;
+        
+        /// <summary>
         /// saveProject control.
         /// </summary>
         /// <remarks>
@@ -65,5 +74,14 @@ namespace TeamTools.Web.Profile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button saveProject;
+        
+        /// <summary>
+        /// FakeSaveProject control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button FakeSaveProject;
     }
 }

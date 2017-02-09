@@ -8,5 +8,6 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjects.Contracts
         event EventHandler<MyProjectsEventArgs> LoadUserProjects;
         event EventHandler<MyProjectsEventArgs> UpdateUserProject;
         event EventHandler<MyProjectsEventArgs> DeleteUserProject;
+        event EventHandler<MyProjectsEventArgs> CreateUserProject;
     }
 }
