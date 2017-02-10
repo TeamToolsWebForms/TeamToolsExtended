@@ -14,7 +14,7 @@ using TeamTools.Web.Helpers;
 namespace TeamTools.Web.Profile
 {
     [PresenterBinding(typeof(MyProjectsPresenter))]
-    public partial class MyProjects : MvpUserControl<MyProjectsViewModel>, IMyProjectsView
+    public partial class Projects : MvpUserControl<MyProjectsViewModel>, IMyProjectsView
     {
         private const int MinTitleLength = 3;
         private const int MaxTitleLength = 100;
@@ -37,17 +37,17 @@ namespace TeamTools.Web.Profile
             this.MyProjectsGrid.PageIndex = e.NewPageIndex;
             this.MyProjectsGrid.DataBind();
         }
-        
+
         public IQueryable<ProjectDTO> MyProjectsGrid_GetData()
         {
             return this.Model.User.Projects.OrderByDescending(x => x.Id).AsQueryable();
         }
-        
+
         public void MyProjectsGrid_UpdateItem(int id)
         {
             string userId = Page.User.Identity.GetUserId();
             string username = Page.User.Identity.GetUserName();
-            var editTitleBox = this.MyProjectsGrid.Rows[this.MyProjectsGrid.EditIndex].Controls[1].Controls[0] as TextBox;
+            var editTitleBox = this.MyProjectsGrid.Rows[this.MyProjectsGrid.EditIndex].Controls[2].Controls[0] as TextBox;
             if (!Validator.ValidateRange(editTitleBox.Text, MinTitleLength, MaxTitleLength))
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "titleValidation();", true);
@@ -59,7 +59,7 @@ namespace TeamTools.Web.Profile
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "updateProjectSuccess();", true);
             this.MyProjectsGrid.DataBind();
         }
-        
+
         public void MyProjectsGrid_DeleteItem(int id)
         {
             string userId = Page.User.Identity.GetUserId();
@@ -92,13 +92,22 @@ namespace TeamTools.Web.Profile
 
             this.CreateUserProject?.Invoke(this, new MyProjectsEventArgs(userId, username, projectName, projectDescription));
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "createProjectSuccess();", true);
-            
+
             this.MyProjectsGrid.DataBind();
         }
 
         protected void FakeSaveProject_Click(object sender, EventArgs e)
         {
             saveProject_Click(sender, e);
+        }
+
+        protected void closeBtn_ServerClick(object sender, EventArgs e)
+        {
+            this.closeForm_Click(sender, e);
+        }
+
+        protected void closeForm_Click(object sender, EventArgs e)
+        {
         }
     }
 }

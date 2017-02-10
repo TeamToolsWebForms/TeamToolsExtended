@@ -101,6 +101,10 @@
     <Compile Include="DTO\UserLogoDTO.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IImportantNoteView.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IMyNotesView.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasks\Contracts\IProjectTasksView.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasks\ProjectTasksEventArgs.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasks\ProjectTasksPresenter.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasks\ProjectTasksViewModel.cs" />
     <Compile Include="Mvp\Profile\MyProjects\Contracts\IMyProjectsView.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\INoteDTOFactory.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IProfileHomeOrganizationsView.cs" />

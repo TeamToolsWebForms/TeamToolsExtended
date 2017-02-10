@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HomePersonalInfo.ascx.cs" Inherits="TeamTools.Web.Profile.HomePersonalInfo" %>
 <%@ Register Src="~/Profile/HomeOrganizations.ascx" TagName="MyOrganizations" TagPrefix="mo" %>
-<%@ Register Src="~/Profile/HomeProjects.ascx" TagName="MyProjects" TagPrefix="mp" %>
+<%@ Register Src="~/Profile/HomeProjects.ascx" TagName="HomeProjects" TagPrefix="mp" %>
 
 <asp:ScriptManagerProxy runat="server" ID="ProfileHomeScriptManager">
     <Scripts>
@@ -62,7 +62,7 @@
                                         <mo:MyOrganizations runat="server" />
                                     </asp:View>
                                     <asp:View runat="server" ID="MyProjectsView">
-                                        <mp:MyProjects runat="server" />
+                                        <mp:HomeProjects runat="server" />
                                     </asp:View>
                                 </asp:MultiView>
                             </div>

@@ -12,7 +12,7 @@ namespace TeamTools.Web.App_Start
             {
                 cfg.CreateMap<User, UserDTO>().PreserveReferences();
                 cfg.CreateMap<Organization, OrganizationDTO>();
-                cfg.CreateMap<Project, ProjectDTO>();
+                cfg.CreateMap<Project, ProjectDTO>().PreserveReferences();
                 cfg.CreateMap<Note, NoteDTO>();
                 cfg.CreateMap<Message, MessageDTO>();
                 cfg.CreateMap<ProjectTask, ProjectTaskDTO>();
@@ -20,7 +20,7 @@ namespace TeamTools.Web.App_Start
                 cfg.CreateMap<UserLogo, UserLogoDTO>();
 
                 cfg.CreateMap<NoteDTO, Note>();
-                cfg.CreateMap<UserDTO, User>();
+                cfg.CreateMap<UserDTO, User>().PreserveReferences();
                 cfg.CreateMap<UserLogoDTO, UserLogo>();
                 cfg.CreateMap<ProjectDTO, Project>().PreserveReferences();
             });

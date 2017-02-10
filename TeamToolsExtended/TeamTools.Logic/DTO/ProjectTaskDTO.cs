@@ -5,6 +5,8 @@ namespace TeamTools.Logic.DTO
 {
     public class ProjectTaskDTO
     {
+        public int Id { get; set; }
+
         public string Title { get; set; }
         
         public string Description { get; set; }

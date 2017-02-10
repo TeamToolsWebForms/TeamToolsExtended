@@ -10,7 +10,7 @@
 namespace TeamTools.Web.Profile {
     
     
-    public partial class MyProjects1 {
+    public partial class MyProjects {
         
         /// <summary>
         /// MyProjectsControl control.
@@ -19,6 +19,6 @@ namespace TeamTools.Web.Profile {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TeamTools.Web.Profile.MyProjects MyProjectsControl;
+        protected global::TeamTools.Web.Profile.Projects MyProjectsControl;
     }
 }

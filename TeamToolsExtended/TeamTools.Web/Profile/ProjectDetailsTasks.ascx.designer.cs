@@ -10,7 +10,7 @@
 namespace TeamTools.Web.Profile {
     
     
-    public partial class Projects {
+    public partial class ProjectDetailsTasks {
         
         /// <summary>
         /// CreateNew control.
@@ -22,84 +22,75 @@ namespace TeamTools.Web.Profile {
         protected global::System.Web.UI.WebControls.Button CreateNew;
         
         /// <summary>
-        /// MyProjectsGrid control.
+        /// MyProjectTasksGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView MyProjectsGrid;
+        protected global::System.Web.UI.WebControls.GridView MyProjectTasksGrid;
         
         /// <summary>
-        /// ModalPopupExtenderCreateProject control.
+        /// ModalPopupExtenderCreateProjectTask control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender ModalPopupExtenderCreateProject;
+        protected global::AjaxControlToolkit.ModalPopupExtender ModalPopupExtenderCreateProjectTask;
         
         /// <summary>
-        /// CreteProjectPanel control.
+        /// CreteProjectTaskPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel CreteProjectPanel;
+        protected global::System.Web.UI.WebControls.Panel CreteProjectTaskPanel;
         
         /// <summary>
-        /// closeForm control.
+        /// taskName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button closeForm;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText taskName;
         
         /// <summary>
-        /// closeBtn control.
+        /// taskDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton closeBtn;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea taskDescription;
         
         /// <summary>
-        /// ProjectName control.
+        /// taskHours control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProjectName;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect taskHours;
         
         /// <summary>
-        /// projectDesc control.
+        /// taskCost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea projectDesc;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl taskCost;
         
         /// <summary>
-        /// saveProject control.
+        /// taskStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button saveProject;
-        
-        /// <summary>
-        /// FakeSaveProject control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button FakeSaveProject;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect taskStatus;
     }
 }

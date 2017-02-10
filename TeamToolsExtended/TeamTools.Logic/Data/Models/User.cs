@@ -9,7 +9,6 @@ namespace TeamTools.Logic.Data.Models
 {
     public class User: IdentityUser
     {
-        private ICollection<ProjectTask> projectTasks;
         private ICollection<Organization> organizations;
         private ICollection<Project> personalProjects;
         private ICollection<Note> notes;
@@ -17,7 +16,6 @@ namespace TeamTools.Logic.Data.Models
         public User()
             : base()
         {
-            this.projectTasks = new HashSet<ProjectTask>();
             this.organizations = new HashSet<Organization>();
             this.personalProjects = new HashSet<Project>();
             this.notes = new HashSet<Note>();
@@ -36,12 +34,6 @@ namespace TeamTools.Logic.Data.Models
         public int UserLogoId { get; set; }
 
         public virtual UserLogo UserLogo { get; set; }
-
-        public virtual ICollection<ProjectTask> ProjectTasks
-        {
-            get { return this.projectTasks; }
-            set { this.projectTasks = value; }
-        }
 
         public virtual ICollection<Organization> Organizations
         {

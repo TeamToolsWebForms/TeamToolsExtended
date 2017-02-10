@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Projects.ascx.cs" Inherits="TeamTools.Web.Profile.MyProjects" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Projects.ascx.cs" Inherits="TeamTools.Web.Profile.Projects" %>
 
 <div id="gridviewControl" class="row">
     <div class="col-md-7 col-md-offset-1">
@@ -15,6 +15,7 @@
             </div>
             <div class="panel-body">
                 <asp:GridView runat="server" ID="MyProjectsGrid"
+                    ViewStateMode="Enabled"
                     DataKeyNames="Id"
                     ItemType="TeamTools.Logic.DTO.ProjectDTO"
                     CssClass="table table-striped table-bordered table-list"
@@ -27,12 +28,14 @@
                     DeleteMethod="MyProjectsGrid_DeleteItem">
                     <Columns>
                         <asp:CommandField ShowEditButton="true" ControlStyle-CssClass="btn btn-info" />
+                        <asp:HyperLinkField ItemStyle-HorizontalAlign="Center" ControlStyle-CssClass="fa fa-info-circle btn btn-warning" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="~/Profile/ProjectDetails.aspx?id={0}" Text=" Info" HeaderText="Show details" />
                         <asp:BoundField SortExpression="Title" DataField="Title" HeaderText="Name" />
                         <asp:BoundField SortExpression="CreatorName" ReadOnly="true" DataField="CreatorName" HeaderText="Creator" />
                         <asp:CommandField ShowDeleteButton="true" ItemStyle-HorizontalAlign="Center" ControlStyle-CssClass="btn btn-danger" />
                     </Columns>
                 </asp:GridView>
             </div>
+            
             <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtenderCreateProject"
                 TargetControlID="CreateNew"
                 PopupControlID="CreteProjectPanel"
@@ -45,7 +48,8 @@
                     <div class="modal-dialog modal-md">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" id="closeForm" class="close" aria-label="Close">
+                                <asp:Button id="closeForm" Visible="false" OnClick="closeForm_Click" runat="server" />
+                                <button type="button" runat="server" onserverclick="closeBtn_ServerClick" id="closeBtn" class="close" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                 <h4 class="modal-title">New Project</h4>

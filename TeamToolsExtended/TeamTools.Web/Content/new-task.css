@@ -1,0 +1,12 @@
+﻿input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+ul.list-of-hours {
+    height: 200px;
+    overflow-x: scroll;
+}
+
+ul {
+    list-style: none;
+}
