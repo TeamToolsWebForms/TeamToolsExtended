@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MyOrganizations.aspx.cs" Inherits="TeamTools.Web.Profile.MyOrganizations" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link href="Content/organizations.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    
+    <asp:HyperLink NavigateUrl="~/create-organization.aspx" CssClass="btn btn-primary" ID="HyperLink1" runat="server">Create an organization</asp:HyperLink>
         <div>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TeamToolsDB %>" SelectCommand="SELECT [Name], [Description] FROM [Organizations]"></asp:SqlDataSource>
         </div>

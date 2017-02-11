@@ -1,0 +1,8 @@
+.panel, .btn{
+    margin-top: 40px !important;
+}
+.btn {
+    display: block;
+    margin: auto;
+    width:15%;
+}
