@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Web.UI;
+using TeamTools.Logic.Data;
+using TeamTools.Logic.Data.Models;
+using TeamTools.Logic.DTO;
 
 namespace TeamTools.Web.Profile
 {

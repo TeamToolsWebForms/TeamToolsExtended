@@ -2,6 +2,10 @@
     border: 1px solid red;
 }
 
+textarea {
+    resize: vertical;
+}
+
 ul.list-of-hours {
     height: 200px;
     overflow-x: scroll;

@@ -9,7 +9,7 @@
                         <h3 class="panel-title">Project tasks</h3>
                     </div>
                     <div class="col col-xs-6 text-right">
-                        <asp:Button Text="Create New" ID="CreateNew" CssClass="btn btn-sm btn-primary btn-create" runat="server" />
+                        <a id="CreateNew" class="btn btn-sm btn-primary btn-create">Create New</a>
                     </div>
                 </div>
             </div>
@@ -38,85 +38,59 @@
                     </Columns>
                 </asp:GridView>
             </div>
-            <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtenderCreateProjectTask"
-                TargetControlID="CreateNew"
-                PopupControlID="CreteProjectTaskPanel"
-                OkControlID="SaveTask"
-                CancelControlID="closeTaskForm"
-                BackgroundCssClass="modalBackground"
-                runat="server">
-            </ajaxToolkit:ModalPopupExtender>
-            <asp:Panel ID="CreteProjectTaskPanel" runat="server" CssClass="text-center" Style="display: none">
-                    <div class="panel panel-default col-md-4">
-                        <div class="panel-content">
-                            <div class="panel-header">
-                                <button type="button" id="closeTaskForm" class="close" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <h4 class="modal-title">New Task</h4>
-                            </div>
-                            <div class="panel-body">
-                <form>
-                    <div class="form-group">
-                        <label for="taskName">Name</label>
-                        <%-- Invalid task name: Lenght of the name should be between 3 and 50 symbols. --%>
-                        <input runat="server" class="form-control" placeholder="Something catchy and short." type="text" id="taskName">
+            <div id="NewTaskPanel" class="panel panel-default col-md-4">
+                <div class="panel-content">
+                    <div class="panel-header">
+                        <button type="button" id="closeTaskForm" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">New Task</h4>
                     </div>
-                    <div class="form-group">
-                        <label for="taskDescription">Description</label>
-                        <textarea runat="server" class="form-control" rows="5" placeholder="Something descriptive, but don't write a novel.(Optional)" id="taskDescription"></textarea>
-                    </div>
-                    <div class="form-group form-inline">
-                        <label for="taskHours">Hours</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                <span class="glyphicon glyphicon-time"></span>
+                    <div class="panel-body">
+                        <form name="NewTaskForm">
+                            <div class="form-group">
+                                <label for="taskName">Name</label>
+                                <%-- Invalid task name: Lenght of the name should be between 3 and 50 symbols. --%>
+                                <asp:TextBox runat="server" ID="TaskName" CssClass="form-control" placeholder="Something catchy and short." />
                             </div>
-                            <select class="form-control" runat="server" id="taskHours">
-                                <%--<option [value]="newTask.timeForExecution">{{newTask.timeForExecution}}</option>
-                                <option *ngFor="let hour of items;" [value]="hour">{{hour}}</option>--%>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="taskCost">Cost</label>
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <span class="glyphicon glyphicon-usd"></span>
+                            <div class="form-group">
+                                <label for="taskDescription">Description</label>
+                                <textarea runat="server" class="form-control" rows="5" placeholder="Something descriptive, but don't write a novel.(Optional)" id="taskDescription"></textarea>
+                            </div>
+                            <div class="form-group form-inline">
+                                <label for="taskDate">Due date</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </div>
+                                    <asp:TextBox runat="server" ID="TaskEndDate" CssClass="form-control" />
+                                    <ajaxToolkit:CalendarExtender runat="server" TargetControlID="TaskEndDate" />
                                 </div>
-                                <input runat="server" class="form-control" type="number" id="taskCost" required min="1">
+                                <div class="form-group">
+                                    <label for="taskCost">Cost</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-usd"></span>
+                                        </div>
+                                        <input runat="server" class="form-control" type="number" id="taskCost" min="1">
+                                    </div>
+                                    <%-- Invalid Cost: Task cost cannot be 0 or negative value. --%>
+                                </div>
                             </div>
-                            <%-- Invalid Cost: Task cost cannot be 0 or negative value. --%>
-                        </div>
+                            <div class="form-group">
+                                <label for="taskStatus">Status</label>
+                                <select class="form-control" runat="server" id="taskStatus">
+                                    <option value="started">Started</option>
+                                    <option value="done">Done</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <a id="CreateTask" class="btn btn-success" runat="server" onserverclick="CreateTask_ServerClick">Save Task</a>
+                            </div>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="taskStatus">Status</label>
-                        <select class="form-control" runat="server" id="taskStatus">
-                            <option value="started">Started</option>
-                            <option value="done">Done</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="task_status">Add user to task</label>
-                        <div>
-                            <%--<small class="text-danger" *ngIf="!newTask.users.length">No users assigned yet.</small>--%>
-                            <span>Assigned users: </span>
-                        </div>
-                        <%--<ul>
-                            <li *ngFor="let selected of newTask.users">
-                                {{selected}}
-                            </li>
-                        </ul>--%>
-                        <%--<input auto-complete class="form-control" [source]="availableUsers" name="selectedUser" [(ngModel)]="selectedUser" type="text" />--%>
-                        <a class="btn btn-warning">Add user</a>
-                    </div>
-                    <div class="form-group">
-                        <button <%--[disabled]="!(isCostValid && newTaskForm.form.valid && newTask.users.length)"--%> type="submit" class="btn btn-success">Save Task</button>
-                    </div>
-                </form>
+                </div>
             </div>
-                        </div>
-                    </div>
-            </asp:Panel>
         </div>
     </div>
 </div>

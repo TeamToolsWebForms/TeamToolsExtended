@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProjectDetails.aspx.cs" Inherits="TeamTools.Web.Profile.ProjectDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="ProjectDetails.aspx.cs" Inherits="TeamTools.Web.Profile.ProjectDetails" %>
 <%@ Register Src="~/Profile/ProjectDetailsTasks.ascx" TagName="ProjectTasks" TagPrefix="pt" %>
 <%-- Add documents --%>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">

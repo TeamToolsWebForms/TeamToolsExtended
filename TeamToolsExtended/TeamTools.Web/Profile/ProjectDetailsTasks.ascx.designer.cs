@@ -13,15 +13,6 @@ namespace TeamTools.Web.Profile {
     public partial class ProjectDetailsTasks {
         
         /// <summary>
-        /// CreateNew control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CreateNew;
-        
-        /// <summary>
         /// MyProjectTasksGrid control.
         /// </summary>
         /// <remarks>
@@ -31,31 +22,13 @@ namespace TeamTools.Web.Profile {
         protected global::System.Web.UI.WebControls.GridView MyProjectTasksGrid;
         
         /// <summary>
-        /// ModalPopupExtenderCreateProjectTask control.
+        /// TaskName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender ModalPopupExtenderCreateProjectTask;
-        
-        /// <summary>
-        /// CreteProjectTaskPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel CreteProjectTaskPanel;
-        
-        /// <summary>
-        /// taskName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText taskName;
+        protected global::System.Web.UI.WebControls.TextBox TaskName;
         
         /// <summary>
         /// taskDescription control.
@@ -67,13 +40,13 @@ namespace TeamTools.Web.Profile {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea taskDescription;
         
         /// <summary>
-        /// taskHours control.
+        /// TaskEndDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect taskHours;
+        protected global::System.Web.UI.WebControls.TextBox TaskEndDate;
         
         /// <summary>
         /// taskCost control.
@@ -92,5 +65,14 @@ namespace TeamTools.Web.Profile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlSelect taskStatus;
+        
+        /// <summary>
+        /// CreateTask control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor CreateTask;
     }
 }

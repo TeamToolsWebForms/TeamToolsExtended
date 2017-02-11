@@ -126,3 +126,11 @@
 .modal-content {
     background-color: slategrey;
 }
+
+#NewTaskPanel {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 100%;
+}

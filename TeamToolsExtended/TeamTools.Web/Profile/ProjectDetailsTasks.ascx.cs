@@ -70,7 +70,7 @@ namespace TeamTools.Web.Profile
             this.MyProjectTasksGrid.DataBind();
         }
 
-        protected void SaveTask_Click(object sender, EventArgs e)
+        protected void CreateTask_ServerClick(object sender, EventArgs e)
         {
 
         }
