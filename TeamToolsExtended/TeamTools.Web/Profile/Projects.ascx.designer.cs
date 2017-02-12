@@ -13,6 +13,15 @@ namespace TeamTools.Web.Profile {
     public partial class Projects {
         
         /// <summary>
+        /// CreateNew control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CreateNew;
+        
+        /// <summary>
         /// MyProjectsGrid control.
         /// </summary>
         /// <remarks>
@@ -22,31 +31,13 @@ namespace TeamTools.Web.Profile {
         protected global::System.Web.UI.WebControls.GridView MyProjectsGrid;
         
         /// <summary>
-        /// ModalPopupExtenderCreateProject control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender ModalPopupExtenderCreateProject;
-        
-        /// <summary>
         /// CreteProjectPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CreteProjectPanel;
-        
-        /// <summary>
-        /// closeForm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button closeForm;
+        protected global::System.Web.UI.WebControls.Panel CreteProjectPanel;
         
         /// <summary>
         /// closeBtn control.
@@ -83,14 +74,5 @@ namespace TeamTools.Web.Profile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button saveProject;
-        
-        /// <summary>
-        /// FakeSaveProject control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button FakeSaveProject;
     }
 }

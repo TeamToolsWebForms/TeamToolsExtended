@@ -8,7 +8,11 @@
                 <div>
                     <ul id="items-list">
                         <li class="list-item">
-                            <h3><a href="#"><i class="fa fa-file-text"></i> <%#: Item.Title %></a></h3>
+                            <h3>
+                                <span class="fa fa-file-text">
+                                    <asp:HyperLink NavigateUrl='<%# Eval("Id", "~/Profile/ProjectDetails.aspx?id={0}") %>' Text="<%#: Item.Title %>" runat="server" />
+                                </span>
+                            </h3>
                             <p><%#: Item.Description %></p>
                         </li>
                     </ul>

@@ -9,7 +9,7 @@
                         <h3 class="panel-title">My Projects</h3>
                     </div>
                     <div class="col col-xs-6 text-right">
-                        <a id="CreateNew" class="btn btn-sm btn-primary btn-create">Create New</a>
+                        <asp:Button ID="CreateNew" ClientIDMode="Static" CssClass="btn btn-sm btn-primary btn-create" Text="Create New" runat="server" OnClick="CreateNew_Click" />
                     </div>
                 </div>
             </div>
@@ -35,20 +35,11 @@
                     </Columns>
                 </asp:GridView>
             </div>
-            
-            <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtenderCreateProject"
-                TargetControlID="CreateNew"
-                PopupControlID="CreteProjectPanel"
-                OkControlID="saveProject"
-                CancelControlID="closeForm"
-                BackgroundCssClass="modalBackground"
-                runat="server">
-            </ajaxToolkit:ModalPopupExtender>
-            <div id="CreteProjectPanel" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+
+            <asp:Panel ID="CreteProjectPanel" ClientIDMode="Static" runat="server" CssClass="modalPopup" align="center" Style="display: none">
                     <div class="modal-dialog modal-md">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <asp:Button id="closeForm" Visible="false" OnClick="closeForm_Click" runat="server" />
                                 <button type="button" runat="server" onserverclick="closeBtn_ServerClick" id="closeBtn" class="close" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -65,14 +56,13 @@
                                         <textarea class="form-control" rows="5" runat="server" id="projectDesc" placeholder="Optional description"></textarea>
                                     </div>
                                     <div class="actions">
-                                        <asp:Button ID="saveProject" Visible="false" OnClick="saveProject_Click" runat="server" />
-                                        <asp:Button ID="FakeSaveProject" OnClick="FakeSaveProject_Click" CssClass="btn btn-success" Text="Save Project" runat="server" />
+                                        <asp:Button ID="saveProject" CssClass="btn btn-success" Text="Save Project" OnClick="saveProject_Click" runat="server" />
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-            </div>
+            </asp:Panel>
         </div>
     </div>
 </div>

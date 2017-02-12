@@ -96,18 +96,14 @@ namespace TeamTools.Web.Profile
             this.MyProjectsGrid.DataBind();
         }
 
-        protected void FakeSaveProject_Click(object sender, EventArgs e)
+        protected void CreateNew_Click(object sender, EventArgs e)
         {
-            saveProject_Click(sender, e);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "showCreateProjectPanel();", true);
         }
 
         protected void closeBtn_ServerClick(object sender, EventArgs e)
         {
-            this.closeForm_Click(sender, e);
-        }
-
-        protected void closeForm_Click(object sender, EventArgs e)
-        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "closePanelForm();", true);
         }
     }
 }

@@ -54,7 +54,7 @@
                 <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
                     <li>
                         <a href="~/Profile/MyProjects.aspx" runat="server">
-                            <i class="fa fa-folder-open"></i>My Projects  <span class="label label-info pull-right">3</span>
+                            <i class="fa fa-folder-open"></i>My Projects
                         </a>
                     </li>
                     <li>

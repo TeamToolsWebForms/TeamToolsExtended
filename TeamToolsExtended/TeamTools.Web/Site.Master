@@ -82,8 +82,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administration <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="~/Admin/Admin.aspx" runat="server">Manage users</a></li>
-                                <li><a href="~/Admin/Admin.aspx" runat="server">Manage organizations</a></li>
+                                <li><a href="~/Admin/Admin.aspx" runat="server">Dashboard</a></li>
                             </ul>
                         </li>
                         <% } %>
@@ -97,7 +96,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a runat="server" href="~/Profile/Home.aspx" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>

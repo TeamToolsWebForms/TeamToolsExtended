@@ -1,14 +1,13 @@
-﻿.modalBackground {
-    background-color: Black;
-    filter: alpha(opacity=90);
-    opacity: 0.8;
-}
-
-#projectDesc {
+﻿#projectDesc {
     resize: vertical;
 }
 
 #gridviewControl {
     padding-top: 2%;
     padding-left: 15%;
+}
+
+#CreteProjectPanel {
+    position: absolute;
+    top: 0;
 }

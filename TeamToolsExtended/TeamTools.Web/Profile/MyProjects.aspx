@@ -6,14 +6,10 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:ScriptManagerProxy runat="server">
-        <Scripts>
-            <asp:ScriptReference Path="~/Scripts/create-note-validation.js" />
-        </Scripts>
-    </asp:ScriptManagerProxy>
-    <asp:UpdatePanel runat="server">
+    <asp:UpdatePanel runat="server"> 
         <ContentTemplate>
             <mp:Projects runat="server" ID="MyProjectsControl" />
         </ContentTemplate>
     </asp:UpdatePanel>
+    <script src="../Scripts/my-projects.js"></script>
 </asp:Content>
