@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TeamTools.Logic.Data.Models.Enums;
 
 namespace TeamTools.Logic.DTO
@@ -11,7 +12,7 @@ namespace TeamTools.Logic.DTO
         
         public string Description { get; set; }
         
-        public string ExecutionTime { get; set; }
+        public DateTime? DueDate { get; set; }
 
         public decimal ExecutionCost { get; set; }
 

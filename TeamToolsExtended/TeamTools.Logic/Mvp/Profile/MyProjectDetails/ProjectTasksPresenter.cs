@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TeamTools.Logic.Mvp.Profile.MyProjectDetails.ProjectTasks.Contracts;
+using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
 using TeamTools.Logic.Services.Contracts;
 using WebFormsMvp;
 
-namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails.ProjectTasks
+namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
 {
     public class ProjectTasksPresenter : Presenter<IProjectTasksView>
     {
@@ -27,22 +27,22 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails.ProjectTasks
             this.projectService = projectService;
         }
 
-        private void View_CreateProjectTask(object sender, ProjectTasksEventArgs e)
+        private void View_CreateProjectTask(object sender, ProjectDetailsEventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        private void View_DeleteProjectTask(object sender, ProjectTasksEventArgs e)
+        private void View_DeleteProjectTask(object sender, ProjectDetailsEventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        private void View_UpdateProjectTask(object sender, ProjectTasksEventArgs e)
+        private void View_UpdateProjectTask(object sender, ProjectDetailsEventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        private void View_LoadProjectTasks(object sender, ProjectTasksEventArgs e)
+        private void View_LoadProjectTasks(object sender, ProjectDetailsEventArgs e)
         {
             this.View.Model.Project = this.projectService.GetById(e.ProjectId);
         }

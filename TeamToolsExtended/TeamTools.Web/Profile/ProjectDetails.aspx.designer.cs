@@ -13,12 +13,39 @@ namespace TeamTools.Web.Profile {
     public partial class ProjectDetails {
         
         /// <summary>
-        /// AccordionTasks control.
+        /// ShowStatistics control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.Accordion AccordionTasks;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ShowStatistics;
+        
+        /// <summary>
+        /// DeleteProjectButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor DeleteProjectButton;
+        
+        /// <summary>
+        /// closeDeleteProjectForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton closeDeleteProjectForm;
+        
+        /// <summary>
+        /// DeleteProjectBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteProjectBtn;
     }
 }

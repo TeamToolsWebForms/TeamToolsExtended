@@ -1,16 +1,16 @@
 ﻿using System;
 using TeamTools.Logic.Data.Models.Enums;
 
-namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails.ProjectTasks
+namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
 {
-    public class ProjectTasksEventArgs : EventArgs
+    public class ProjectDetailsEventArgs : EventArgs
     {
-        public ProjectTasksEventArgs(int projectId)
+        public ProjectDetailsEventArgs(int projectId)
         {
             this.ProjectId = projectId;
         }
 
-        public ProjectTasksEventArgs(
+        public ProjectDetailsEventArgs(
             string title,
             string description,
             string executionTime,

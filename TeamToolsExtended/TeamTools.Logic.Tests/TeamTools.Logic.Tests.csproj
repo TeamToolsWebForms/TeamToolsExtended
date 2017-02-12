@@ -110,7 +110,7 @@
     <Compile Include="Data\Models\OrganizationTests\Users_Should.cs" />
     <Compile Include="Data\Models\ProjectTaskTests\Description_Should.cs" />
     <Compile Include="Data\Models\ProjectTaskTests\ExecutionCost_Should.cs" />
-    <Compile Include="Data\Models\ProjectTaskTests\ExecutionTime_Should.cs" />
+    <Compile Include="Data\Models\ProjectTaskTests\DueDate_Should.cs" />
     <Compile Include="Data\Models\ProjectTaskTests\Id_Should.cs" />
     <Compile Include="Data\Models\ProjectTaskTests\IsDeleted_Should.cs" />
     <Compile Include="Data\Models\ProjectTaskTests\ProjectId_Should.cs" />

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using TeamTools.Logic.Data.Models.Enums;
@@ -25,9 +26,8 @@ namespace TeamTools.Logic.Data.Models
         [MinLength(5)]
         [MaxLength(200)]
         public string Description { get; set; }
-
-        [MaxLength(15)]
-        public string ExecutionTime { get; set; }
+        
+        public DateTime? DueDate { get; set; }
 
         public decimal ExecutionCost { get; set; }
 

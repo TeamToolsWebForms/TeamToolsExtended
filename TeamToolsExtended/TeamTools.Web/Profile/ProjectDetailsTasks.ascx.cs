@@ -7,28 +7,43 @@ using System.Web.UI.WebControls;
 using TeamTools.Logic.DTO;
 using Microsoft.AspNet.Identity;
 using WebFormsMvp.Web;
-using TeamTools.Logic.Mvp.Profile.MyProjectDetails.ProjectTasks;
-using TeamTools.Logic.Mvp.Profile.MyProjectDetails.ProjectTasks.Contracts;
+using TeamTools.Logic.Mvp.Profile.MyProjectDetails;
+using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
 using WebFormsMvp;
 
 namespace TeamTools.Web.Profile
 {
     [PresenterBinding(typeof(ProjectTasksPresenter))]
-    public partial class ProjectDetailsTasks : MvpUserControl<ProjectTasksViewModel>, IProjectTasksView
+    public partial class ProjectDetailsTasks : MvpUserControl<ProjectDetailsViewModel>, IProjectTasksView
     {
+        private const string RedirectUrl = "~/Profile/MyProjects.aspx";
         private const int MinTitleLength = 3;
         private const int MaxTitleLength = 100;
         private const int MaxDescriptionLength = 200;
-        
-        public event EventHandler<ProjectTasksEventArgs> LoadProjectTasks;
-        public event EventHandler<ProjectTasksEventArgs> UpdateProjectTask;
-        public event EventHandler<ProjectTasksEventArgs> DeleteProjectTask;
-        public event EventHandler<ProjectTasksEventArgs> CreateProjectTask;
+
+        public event EventHandler<ProjectDetailsEventArgs> LoadProjectTasks;
+        public event EventHandler<ProjectDetailsEventArgs> UpdateProjectTask;
+        public event EventHandler<ProjectDetailsEventArgs> DeleteProjectTask;
+        public event EventHandler<ProjectDetailsEventArgs> CreateProjectTask;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int paramId = int.Parse(Request.Params["id"]);
-            this.LoadProjectTasks?.Invoke(this, new ProjectTasksEventArgs(paramId));
+            if (Request.Params["id"] == null)
+            {
+                Response.Redirect(RedirectUrl);
+            }
+            else
+            {
+                try
+                {
+                    int paramId = int.Parse(Request.Params["id"]);
+                    this.LoadProjectTasks?.Invoke(this, new ProjectDetailsEventArgs(paramId));
+                }
+                catch (FormatException)
+                {
+                    Response.Redirect(RedirectUrl);
+                }
+            }
         }
 
         protected void MyProjectTasksGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)

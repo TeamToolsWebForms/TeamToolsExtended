@@ -16,8 +16,6 @@ namespace TeamTools.Logic.DTO
         
         public UserLogoDTO UserLogo { get; set; }
 
-        public ICollection<ProjectTaskDTO> ProjectTasks { get; set; }
-
         public ICollection<OrganizationDTO> Organizations;
 
         public ICollection<ProjectDTO> Projects;

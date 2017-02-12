@@ -68,6 +68,8 @@
 
             .sidebar-nav li a:hover {
                 text-decoration: none;
+                color: #000000;
+                font-weight: bold;
             }
 
             .sidebar-nav li a:active,
@@ -87,6 +89,8 @@
 
             .sidebar-nav > .sidebar-brand a:hover {
                 background: none;
+                color: #000000;
+                font-weight: bold;
             }
 
 @media(min-width:768px) {
@@ -125,6 +129,15 @@
 
 .modal-content {
     background-color: slategrey;
+}
+
+#DeleteProjectPanel {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 30%;
+    z-index: 5000;
 }
 
 #NewTaskPanel {

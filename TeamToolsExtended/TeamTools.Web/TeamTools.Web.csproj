@@ -338,6 +338,8 @@
     <Content Include="Profile\Projects.ascx" />
     <Content Include="Profile\MyProjects.aspx" />
     <Content Include="Profile\TrashNotes.ascx" />
+    <Content Include="ProjectDetails.aspx" />
+    <Content Include="Projects.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\create-note-validation.js" />
@@ -591,6 +593,20 @@
     </Compile>
     <Compile Include="Profile\TrashNotes.ascx.designer.cs">
       <DependentUpon>TrashNotes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectDetails.aspx.cs">
+      <DependentUpon>ProjectDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectDetails.aspx.designer.cs">
+      <DependentUpon>ProjectDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
