@@ -9,7 +9,7 @@
                         <h3 class="panel-title">My Projects</h3>
                     </div>
                     <div class="col col-xs-6 text-right">
-                        <asp:Button Text="Create New" ID="CreateNew" CssClass="btn btn-sm btn-primary btn-create" runat="server" />
+                        <a id="CreateNew" class="btn btn-sm btn-primary btn-create">Create New</a>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                 BackgroundCssClass="modalBackground"
                 runat="server">
             </ajaxToolkit:ModalPopupExtender>
-            <asp:Panel ID="CreteProjectPanel" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+            <div id="CreteProjectPanel" runat="server" CssClass="modalPopup" align="center" Style="display: none">
                     <div class="modal-dialog modal-md">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -72,7 +72,7 @@
                             </div>
                         </div>
                     </div>
-            </asp:Panel>
+            </div>
         </div>
     </div>
 </div>

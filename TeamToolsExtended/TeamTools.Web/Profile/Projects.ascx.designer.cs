@@ -13,15 +13,6 @@ namespace TeamTools.Web.Profile {
     public partial class Projects {
         
         /// <summary>
-        /// CreateNew control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CreateNew;
-        
-        /// <summary>
         /// MyProjectsGrid control.
         /// </summary>
         /// <remarks>
@@ -46,7 +37,7 @@ namespace TeamTools.Web.Profile {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel CreteProjectPanel;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CreteProjectPanel;
         
         /// <summary>
         /// closeForm control.
