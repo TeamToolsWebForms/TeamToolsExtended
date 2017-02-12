@@ -9,8 +9,8 @@ using WebFormsMvp.Binder;
 using TeamTools.Web.App_Start.MvpFactoryConfig;
 using TeamTools.Web.App_Start.MvpFactoryConfig.Contracts;
 using TeamTools.Logic.Mvp.Profile.Home.Contracts;
-using TeamTools.Logic.Mvp.Profile.Home;
 using TeamTools.Logic.Mvp.Profile.MyProjects.Contracts;
+using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
 
 namespace TeamTools.Web.App_Start.NinjectModules
 {
@@ -25,6 +25,7 @@ namespace TeamTools.Web.App_Start.NinjectModules
                 .NamedLikeFactoryMethod((ICustomPresenterFactory factory) => factory.GetPresenter(null, null, null));
             this.Bind<INoteDTOFactory>().ToFactory().InSingletonScope();
             this.Bind<IProjectFactory>().ToFactory().InSingletonScope();
+            this.Bind<IProjectTaskFactory>().ToFactory().InSingletonScope();
         }
 
         private IPresenter GetPresenter(IContext context)

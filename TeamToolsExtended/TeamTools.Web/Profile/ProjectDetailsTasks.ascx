@@ -9,7 +9,7 @@
                         <h3 class="panel-title">Project tasks</h3>
                     </div>
                     <div class="col col-xs-6 text-right">
-                        <a id="CreateNew" class="btn btn-sm btn-primary btn-create">Create New</a>
+                        <a runat="server" onserverclick="CreateNew_ServerClick" id="CreateNew" class="btn btn-sm btn-primary btn-create">Create New</a>
                     </div>
                 </div>
             </div>
@@ -26,12 +26,12 @@
                     UpdateMethod="MyProjectTasksGrid_UpdateItem"
                     DeleteMethod="MyProjectTasksGrid_DeleteItem">
                     <Columns>
-                        <%-- On hyperlink possibly show some chart about task --%>
                         <asp:BoundField SortExpression="Title" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" DataField="Title" HeaderText="Task" />
                         <asp:BoundField SortExpression="Status" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" DataField="Status" HeaderText="Task Status" />
+                        <asp:BoundField SortExpression="DueDate" DataFormatString="{0: dd.MM.yyyy}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" DataField="DueDate" HeaderText="Due Date" />
                         <asp:TemplateField ItemStyle-CssClass="text-center">
                             <ItemTemplate>
-                                <asp:Button Text="Edit" CssClass="btn btn-warning" CommandName="Edit" runat="server" />
+                                <asp:Button Text="Edit" CssClass="btn btn-warning" ID="EditTaskBtn" OnClick="EditTaskBtn_Click" runat="server" />
                                 <asp:Button Text="Delete" CssClass="btn btn-danger" CommandName="Delete" runat="server" />
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -41,7 +41,7 @@
             <div id="NewTaskPanel" class="panel panel-default col-md-4">
                 <div class="panel-content">
                     <div class="panel-header">
-                        <button type="button" id="closeTaskForm" class="close" aria-label="Close">
+                        <button runat="server" onserverclick="closeTaskForm_ServerClick" type="button" id="closeTaskForm" class="close" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <h4 class="modal-title">New Task</h4>
@@ -79,10 +79,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="taskStatus">Status</label>
-                                <select class="form-control" runat="server" id="taskStatus">
-                                    <option value="started">Started</option>
-                                    <option value="done">Done</option>
-                                </select>
+                                <asp:DropDownList ID="TaskStatus" CssClass="form-control" runat="server">
+                                    <asp:ListItem Text="Started" Value="started" />
+                                    <asp:ListItem Text="Done" Value="done" />
+                                </asp:DropDownList>
                             </div>
                             <div class="form-group">
                                 <a id="CreateTask" class="btn btn-success" runat="server" onserverclick="CreateTask_ServerClick">Save Task</a>

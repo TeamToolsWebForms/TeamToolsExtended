@@ -14,6 +14,9 @@
                 <li class="sidebar-brand">
                     <a runat="server" id="ShowStatistics" onserverclick="ShowStatistics_ServerClick">Statistics</a>
                 </li>
+                <li class="sidebar-brand">
+                    <a runat="server" id="AddNewDocument">Add document</a>
+                </li>
                 <li>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -55,7 +58,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-10">
-                            <pt:ProjectTasks runat="server" />
+                            <asp:UpdatePanel runat="server">
+                                <ContentTemplate>
+                                    <pt:ProjectTasks runat="server" />
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
                         </div>
                     </div>
                 </div>

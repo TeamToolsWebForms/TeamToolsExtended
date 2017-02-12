@@ -11,8 +11,8 @@ namespace TeamTools.Web.App_Start.NinjectModules
         public override void Load()
         {
             this.Bind<ITeamToolsDbContext>().To<TeamToolsDbContext>().InRequestScope();
-            this.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>)).InSingletonScope();
-            this.Bind<IUnitOfWork>().To<UnitOfWork>().InSingletonScope();
+            this.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>)).InRequestScope();
+            this.Bind<IUnitOfWork>().To<UnitOfWork>().InRequestScope();
             this.Bind<IStateFactory>().ToFactory().InSingletonScope();
             this.Bind(typeof(IEntryState<>)).To(typeof(EntryState<>));
         }

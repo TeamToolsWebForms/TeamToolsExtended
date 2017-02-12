@@ -10,6 +10,7 @@ using WebFormsMvp.Web;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
 using WebFormsMvp;
+using TeamTools.Logic.Data.Models.Enums;
 
 namespace TeamTools.Web.Profile
 {
@@ -20,6 +21,7 @@ namespace TeamTools.Web.Profile
         private const int MinTitleLength = 3;
         private const int MaxTitleLength = 100;
         private const int MaxDescriptionLength = 200;
+        private int projectId;
 
         public event EventHandler<ProjectDetailsEventArgs> LoadProjectTasks;
         public event EventHandler<ProjectDetailsEventArgs> UpdateProjectTask;
@@ -37,6 +39,7 @@ namespace TeamTools.Web.Profile
                 try
                 {
                     int paramId = int.Parse(Request.Params["id"]);
+                    this.projectId = paramId;
                     this.LoadProjectTasks?.Invoke(this, new ProjectDetailsEventArgs(paramId));
                 }
                 catch (FormatException)
@@ -87,7 +90,39 @@ namespace TeamTools.Web.Profile
 
         protected void CreateTask_ServerClick(object sender, EventArgs e)
         {
+            string taskTitle = this.TaskName.Text;
+            string taskDescription = this.taskDescription.InnerText;
+            decimal executionCost;
+            DateTime? dueDate;
+            TaskType taskStatus;
+            try
+            {
+                dueDate = DateTime.Parse(this.TaskEndDate.Text);
+                executionCost = decimal.Parse(this.taskCost.Value);
+                taskStatus = (TaskType)Enum.Parse(typeof(TaskType), this.TaskStatus.SelectedItem.Text);
 
+                this.CreateProjectTask?.Invoke(sender, new ProjectDetailsEventArgs(taskTitle, taskDescription, dueDate, executionCost, taskStatus, this.projectId));
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "createNewTask();", true);
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "parseError();", true);
+            }
+        }
+
+        protected void EditTaskBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CreateNew_ServerClick(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "showNewTaskPanel();", true);
+        }
+
+        protected void closeTaskForm_ServerClick(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "closeNewTaskPanel();", true);
         }
     }
 }

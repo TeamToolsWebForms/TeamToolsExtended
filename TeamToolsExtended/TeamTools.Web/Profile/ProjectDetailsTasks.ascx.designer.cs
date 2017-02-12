@@ -13,6 +13,15 @@ namespace TeamTools.Web.Profile {
     public partial class ProjectDetailsTasks {
         
         /// <summary>
+        /// CreateNew control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor CreateNew;
+        
+        /// <summary>
         /// MyProjectTasksGrid control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace TeamTools.Web.Profile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView MyProjectTasksGrid;
+        
+        /// <summary>
+        /// closeTaskForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton closeTaskForm;
         
         /// <summary>
         /// TaskName control.
@@ -58,13 +76,13 @@ namespace TeamTools.Web.Profile {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl taskCost;
         
         /// <summary>
-        /// taskStatus control.
+        /// TaskStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect taskStatus;
+        protected global::System.Web.UI.WebControls.DropDownList TaskStatus;
         
         /// <summary>
         /// CreateTask control.

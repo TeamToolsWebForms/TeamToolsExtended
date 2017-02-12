@@ -22,6 +22,15 @@ namespace TeamTools.Web.Profile {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor ShowStatistics;
         
         /// <summary>
+        /// AddNewDocument control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor AddNewDocument;
+        
+        /// <summary>
         /// DeleteProjectButton control.
         /// </summary>
         /// <remarks>

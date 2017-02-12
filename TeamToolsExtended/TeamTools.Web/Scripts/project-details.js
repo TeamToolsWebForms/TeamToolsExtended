@@ -8,23 +8,18 @@ function showDeleteProjectPanel() {
     $("#DeleteProjectPanel").fadeIn();
 };
 
-//$(function () {
-//    let newTaskPanel = $("#NewTaskPanel");
+function showNewTaskPanel() {
+    $("#NewTaskPanel").fadeIn();
+}
 
-//    function showChat() {
-//        $("#main-chat").removeClass("hidden");
-//    }
-    
-//    $("#CreateNew").on("click", () => {
-//        newTaskPanel.fadeIn();
-//    });
+function closeNewTaskPanel() {
+    $("#NewTaskPanel").fadeOut();
+}
 
-//    $("#closeTaskForm").on("click", () => {
-//        newTaskPanel.fadeOut();
-//    });
+function createNewTask() {
+    toastr.success("New task added successfully");
+}
 
-//    $("#CreateTask").on("click", () => {
-//        toastr.success("New task added successfully");
-//        newTaskPanel.fadeOut();
-//    });
-//});
+function parseError() {
+    toastr.error("Something went wrong, please try again");
+}

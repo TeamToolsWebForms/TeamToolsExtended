@@ -13,13 +13,15 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
         public ProjectDetailsEventArgs(
             string title,
             string description,
-            string executionTime,
+            DateTime? executionTime,
             decimal executionCost,
-            TaskType status)
+            TaskType status,
+            int projectId)
+            : this(projectId)
         {
             this.TaskTitle = title;
             this.TaskDescription = description;
-            this.TaskExecutionTime = executionTime;
+            this.DueDate = executionTime;
             this.TaskExecutionCost = executionCost;
             this.TaskStatus = status;
         }
@@ -30,7 +32,7 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
 
         public string TaskDescription { get; set; }
 
-        public string TaskExecutionTime { get; set; }
+        public DateTime? DueDate { get; set; }
 
         public decimal TaskExecutionCost { get; set; }
 

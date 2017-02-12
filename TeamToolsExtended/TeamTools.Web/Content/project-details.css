@@ -134,7 +134,7 @@
 #DeleteProjectPanel {
     display: none;
     position: absolute;
-    top: 25%;
+    top: 35%;
     left: 0;
     width: 30%;
     z-index: 5000;
