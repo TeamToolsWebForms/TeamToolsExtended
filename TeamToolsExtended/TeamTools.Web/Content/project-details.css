@@ -147,3 +147,11 @@
     left: 10%;
     width: 100%;
 }
+
+#EditTaskPanel {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 100%;
+}

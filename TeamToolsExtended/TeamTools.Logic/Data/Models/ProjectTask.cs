@@ -15,17 +15,6 @@ namespace TeamTools.Logic.Data.Models
             this.users = new HashSet<User>();
         }
 
-        public ProjectTask(string title, string description, DateTime? dueDate, decimal cost, TaskType status, int projectId)
-            : this()
-        {
-            this.Title = title;
-            this.Description = description;
-            this.DueDate = dueDate;
-            this.ExecutionCost = cost;
-            this.Status = status;
-            this.ProjectId = projectId;
-        }
-
         public int Id { get; set; }
 
         [Required]
@@ -34,7 +23,7 @@ namespace TeamTools.Logic.Data.Models
         [MaxLength(100)]
         public string Title { get; set; }
 
-        [MinLength(5)]
+        [MinLength(3)]
         [MaxLength(200)]
         public string Description { get; set; }
         

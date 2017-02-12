@@ -5,9 +5,9 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
 {
     public class ProjectDetailsEventArgs : EventArgs
     {
-        public ProjectDetailsEventArgs(int projectId)
+        public ProjectDetailsEventArgs(int id)
         {
-            this.ProjectId = projectId;
+            this.Id = id;
         }
 
         public ProjectDetailsEventArgs(
@@ -26,7 +26,7 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
             this.TaskStatus = status;
         }
 
-        public int ProjectId { get; set; }
+        public int Id { get; set; }
 
         public string TaskTitle { get; set; }
 

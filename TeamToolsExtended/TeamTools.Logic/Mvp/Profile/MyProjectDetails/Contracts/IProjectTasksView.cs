@@ -9,5 +9,6 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts
         event EventHandler<ProjectDetailsEventArgs> UpdateProjectTask;
         event EventHandler<ProjectDetailsEventArgs> DeleteProjectTask;
         event EventHandler<ProjectDetailsEventArgs> CreateProjectTask;
+        event EventHandler<ProjectDetailsEventArgs> LoadEditedTask;
     }
 }

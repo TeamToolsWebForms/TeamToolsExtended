@@ -22,7 +22,7 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
 
         private void View_DeleteProject(object sender, ProjectDetailsEventArgs e)
         {
-            this.projectService.Delete(e.ProjectId);
+            this.projectService.Delete(e.Id);
         }
     }
 }

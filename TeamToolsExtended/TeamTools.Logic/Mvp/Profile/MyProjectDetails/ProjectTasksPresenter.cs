@@ -28,15 +28,21 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
             this.View.UpdateProjectTask += View_UpdateProjectTask;
             this.View.DeleteProjectTask += View_DeleteProjectTask;
             this.View.CreateProjectTask += View_CreateProjectTask;
+            this.View.LoadEditedTask += View_LoadEditedTask;
             
             this.projectService = projectService;
             this.projectTaskService = projectTaskService;
             this.projectTaskFactory = projectTaskFactory;
         }
 
+        private void View_LoadEditedTask(object sender, ProjectDetailsEventArgs e)
+        {
+            this.View.Model.EditableTask = this.projectTaskService.GetById(e.Id);
+        }
+
         private void View_CreateProjectTask(object sender, ProjectDetailsEventArgs e)
         {
-            var projectTask = this.projectTaskFactory.CreateProjectTask(e.TaskTitle, e.TaskDescription, e.DueDate, e.TaskExecutionCost, e.TaskStatus, e.ProjectId);
+            var projectTask = this.projectTaskFactory.CreateProjectTask(e.TaskTitle, e.TaskDescription, e.DueDate, e.TaskExecutionCost, e.TaskStatus, e.Id);
             this.projectTaskService.Create(projectTask);
         }
 
@@ -47,12 +53,12 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
 
         private void View_UpdateProjectTask(object sender, ProjectDetailsEventArgs e)
         {
-            throw new NotImplementedException();
+            this.projectTaskService.Update(this.View.Model.EditableTask);
         }
 
         private void View_LoadProjectTasks(object sender, ProjectDetailsEventArgs e)
         {
-            this.View.Model.Project = this.projectService.GetById(e.ProjectId);
+            this.View.Model.Project = this.projectService.GetById(e.Id);
         }
     }
 }
