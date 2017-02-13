@@ -24,6 +24,9 @@
                     OnPageIndexChanging="MyProjectTasksGrid_PageIndexChanging"
                     SelectMethod="MyProjectTasksGrid_GetData"
                     DeleteMethod="MyProjectTasksGrid_DeleteItem">
+                    <EmptyDataTemplate>
+                        <h3 class="text-center">There are no tasks yet!</h3>
+                    </EmptyDataTemplate>
                     <Columns>
                         <asp:BoundField SortExpression="Title" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" DataField="Title" HeaderText="Task" />
                         <asp:BoundField SortExpression="Status" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" DataField="Status" HeaderText="Task Status" />

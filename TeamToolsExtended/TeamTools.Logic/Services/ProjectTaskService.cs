@@ -46,5 +46,13 @@ namespace TeamTools.Logic.Services
             this.projectTasksRepository.Update(mappedProjectTask);
             this.unitOfWork.Commit();
         }
+
+        public void Delete(int id)
+        {
+            var taskToDelete = this.projectTasksRepository.GetById(id);
+            taskToDelete.IsDeleted = true;
+            this.projectTasksRepository.Update(taskToDelete);
+            this.unitOfWork.Commit();
+        }
     }
 }

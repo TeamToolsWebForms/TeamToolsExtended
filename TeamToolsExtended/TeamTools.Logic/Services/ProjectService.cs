@@ -1,4 +1,5 @@
 ﻿using Bytes2you.Validation;
+using System.Linq;
 using TeamTools.Logic.Data.Contracts;
 using TeamTools.Logic.Data.Models;
 using TeamTools.Logic.DTO;
@@ -58,6 +59,9 @@ namespace TeamTools.Logic.Services
         public ProjectDTO GetById(int id)
         {
             var project = this.projectRepository.GetById(id);
+            var filteredTasks = project.ProjectTasks.Where(t => t.IsDeleted == false).ToList();
+            project.ProjectTasks.Clear();
+            project.ProjectTasks = filteredTasks;
             var mappedProject = this.mapperService.MapObject<ProjectDTO>(project);
             return mappedProject;
         }

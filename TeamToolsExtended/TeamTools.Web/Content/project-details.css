@@ -68,7 +68,7 @@
 
             .sidebar-nav li a:hover {
                 text-decoration: none;
-                color: #000000;
+                color: #999999;
                 font-weight: bold;
             }
 
@@ -89,7 +89,7 @@
 
             .sidebar-nav > .sidebar-brand a:hover {
                 background: none;
-                color: #000000;
+                color: #999999;
                 font-weight: bold;
             }
 
@@ -134,9 +134,9 @@
 #DeleteProjectPanel {
     display: none;
     position: absolute;
-    top: 35%;
+    top: 45%;
     left: 0;
-    width: 30%;
+    width: 25%;
     z-index: 5000;
 }
 

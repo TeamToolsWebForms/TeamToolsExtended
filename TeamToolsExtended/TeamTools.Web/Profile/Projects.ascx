@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Projects.ascx.cs" Inherits="TeamTools.Web.Profile.Projects" %>
 
 <div id="gridviewControl" class="row">
-    <div class="col-md-7 col-md-offset-1">
+    <div class="col-md-9">
         <div class="panel panel-default panel-table">
             <div class="panel-heading">
                 <div class="row">
@@ -26,6 +26,9 @@
                     SelectMethod="MyProjectsGrid_GetData"
                     UpdateMethod="MyProjectsGrid_UpdateItem"
                     DeleteMethod="MyProjectsGrid_DeleteItem">
+                    <EmptyDataTemplate>
+                        <h3 class="text-center">There are no personal projects yet!</h3>
+                    </EmptyDataTemplate>
                     <Columns>
                         <asp:CommandField ShowEditButton="true" ControlStyle-CssClass="btn btn-info" />
                         <asp:HyperLinkField ItemStyle-HorizontalAlign="Center" ControlStyle-CssClass="fa fa-info-circle btn btn-warning" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="~/Profile/ProjectDetails.aspx?id={0}" Text=" Info" HeaderText="Show details" />

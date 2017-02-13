@@ -1,5 +1,4 @@
-﻿using TeamTools.Logic.Data.Models;
-using TeamTools.Logic.DTO;
+﻿using TeamTools.Logic.DTO;
 
 namespace TeamTools.Logic.Services.Contracts
 {
@@ -10,5 +9,7 @@ namespace TeamTools.Logic.Services.Contracts
         ProjectTaskDTO GetById(int id);
 
         void Update(ProjectTaskDTO projectTask);
+
+        void Delete(int id);
     }
 }

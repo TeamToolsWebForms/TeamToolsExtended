@@ -13,6 +13,15 @@ namespace TeamTools.Web.Profile {
     public partial class ProjectDetails {
         
         /// <summary>
+        /// ShowTasks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ShowTasks;
+        
+        /// <summary>
         /// ShowStatistics control.
         /// </summary>
         /// <remarks>
@@ -56,5 +65,23 @@ namespace TeamTools.Web.Profile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button DeleteProjectBtn;
+        
+        /// <summary>
+        /// ProjectStatsControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TeamTools.Web.Profile.ProjectDetailsChart ProjectStatsControl;
+        
+        /// <summary>
+        /// ProjectDetailsContentControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TeamTools.Web.Profile.ProjectDetailsTasks ProjectDetailsContentControl;
     }
 }

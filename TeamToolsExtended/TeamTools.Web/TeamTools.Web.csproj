@@ -334,6 +334,7 @@
     <Content Include="Profile\HomeProjects.ascx" />
     <Content Include="Profile\MyOrganizations.aspx" />
     <Content Include="Profile\ProjectDetails.aspx" />
+    <Content Include="Profile\ProjectDetailsChart.ascx" />
     <Content Include="Profile\ProjectDetailsTasks.ascx" />
     <Content Include="Profile\Projects.ascx" />
     <Content Include="Profile\MyProjects.aspx" />
@@ -565,6 +566,13 @@
     </Compile>
     <Compile Include="Profile\ProjectDetails.aspx.designer.cs">
       <DependentUpon>ProjectDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\ProjectDetailsChart.ascx.cs">
+      <DependentUpon>ProjectDetailsChart.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\ProjectDetailsChart.ascx.designer.cs">
+      <DependentUpon>ProjectDetailsChart.ascx</DependentUpon>
     </Compile>
     <Compile Include="Profile\ProjectDetailsTasks.ascx.cs">
       <DependentUpon>ProjectDetailsTasks.ascx</DependentUpon>

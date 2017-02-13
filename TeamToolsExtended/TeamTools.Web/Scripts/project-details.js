@@ -43,3 +43,7 @@ function closeEditTaskPanel() {
 function editTask() {
     toastr.success("Task edited successfully");
 }
+
+function deleteProjectTaskSuccess() {
+    toastr.success("Task deleted successfully");
+}

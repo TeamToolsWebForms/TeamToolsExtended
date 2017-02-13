@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="ProjectDetails.aspx.cs" Inherits="TeamTools.Web.Profile.ProjectDetails" %>
-
+<%@ Register Src="~/Profile/ProjectDetailsChart.ascx" TagName="ProjectChart" TagPrefix="pt" %>
 <%@ Register Src="~/Profile/ProjectDetailsTasks.ascx" TagName="ProjectTasks" TagPrefix="pt" %>
 <%-- Add documents --%>
 
@@ -11,6 +11,9 @@
     <div id="wrapper" class="row">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a runat="server" id="ShowTasks" onserverclick="ShowTasks_ServerClick">Show tasks</a>
+                </li>
                 <li class="sidebar-brand">
                     <a runat="server" id="ShowStatistics" onserverclick="ShowStatistics_ServerClick">Statistics</a>
                 </li>
@@ -34,6 +37,7 @@
             </ul>
         </div>
         <div>
+            
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
                     <div id="DeleteProjectPanel" class="panel panel-default col-md-4">
@@ -60,8 +64,13 @@
                         <div class="col-xs-14">
                             <asp:UpdatePanel runat="server">
                                 <ContentTemplate>
-                                    <pt:ProjectTasks runat="server" />
+                                    <pt:ProjectChart runat="server" ID="ProjectStatsControl" Visible="false" />
+                                    <pt:ProjectTasks runat="server" ID="ProjectDetailsContentControl" />
                                 </ContentTemplate>
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="ShowTasks" EventName="ServerClick" />
+                                    <asp:AsyncPostBackTrigger ControlID="ShowStatistics" EventName="ServerClick" />
+                                </Triggers>
                             </asp:UpdatePanel>
                         </div>
                     </div>

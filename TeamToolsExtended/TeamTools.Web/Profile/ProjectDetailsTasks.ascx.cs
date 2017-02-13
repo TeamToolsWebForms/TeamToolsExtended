@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TeamTools.Logic.DTO;
-using Microsoft.AspNet.Identity;
 using WebFormsMvp.Web;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
@@ -64,12 +63,9 @@ namespace TeamTools.Web.Profile
 
         public void MyProjectTasksGrid_DeleteItem(int id)
         {
-            //string userId = Page.User.Identity.GetUserId();
-            //string username = Page.User.Identity.GetUserName();
+            this.DeleteProjectTask?.Invoke(this, new ProjectDetailsEventArgs(id));
 
-            //this.DeleteUserProject?.Invoke(this, new MyProjectsEventArgs(userId, username, id));
-
-            // ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "deleteProjectSuccess();", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "deleteProjectTaskSuccess();", true);
             this.MyProjectTasksGrid.DataBind();
         }
 

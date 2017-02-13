@@ -35,6 +35,7 @@ namespace TeamTools.Logic.Services
         public UserDTO GetByIdWithFilteredProjects(string id, string username)
         {
             var user = this.userRepository.GetById(id);
+            user.Projects.Clear();
             var userProjects = this.projectRepository.All(x => x.IsPersonal == true && x.CreatorName == username && x.IsDeleted == false);
             user.Projects = userProjects.ToList();
 

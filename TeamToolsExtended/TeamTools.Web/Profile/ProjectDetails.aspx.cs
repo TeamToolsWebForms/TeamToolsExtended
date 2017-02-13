@@ -42,7 +42,8 @@ namespace TeamTools.Web.Profile
 
         protected void ShowStatistics_ServerClick(object sender, EventArgs e)
         {
-
+            this.ProjectStatsControl.Visible = true;
+            this.ProjectDetailsContentControl.Visible = false;
         }
 
         protected void DeleteProjectBtn_Click(object sender, EventArgs e)
@@ -54,6 +55,12 @@ namespace TeamTools.Web.Profile
         protected void closeDeleteProjectForm_ServerClick(object sender, EventArgs e)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "closeDeleteProjectForm();", true);
+        }
+
+        protected void ShowTasks_ServerClick(object sender, EventArgs e)
+        {
+            this.ProjectStatsControl.Visible = false;
+            this.ProjectDetailsContentControl.Visible = true;
         }
     }
 }

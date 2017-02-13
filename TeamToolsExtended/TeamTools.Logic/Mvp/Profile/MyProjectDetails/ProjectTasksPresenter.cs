@@ -1,9 +1,4 @@
 ﻿using Bytes2you.Validation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
 using TeamTools.Logic.Services.Contracts;
 using WebFormsMvp;
@@ -48,7 +43,7 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
 
         private void View_DeleteProjectTask(object sender, ProjectDetailsEventArgs e)
         {
-            throw new NotImplementedException();
+            this.projectTaskService.Delete(e.Id);
         }
 
         private void View_UpdateProjectTask(object sender, ProjectDetailsEventArgs e)
