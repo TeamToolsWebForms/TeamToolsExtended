@@ -1,9 +1,9 @@
-﻿using System.Web;
+﻿using TeamTools.Logic.DTO;
 
 namespace TeamTools.Logic.Services.Contracts
 {
     public interface IFileService
     {
-        void SaveFileToServer(string filename, string serverPath, HttpPostedFile postedFile, string username);
+        void SaveDocument(ProjectDocumentDTO projectDocument);
     }
 }

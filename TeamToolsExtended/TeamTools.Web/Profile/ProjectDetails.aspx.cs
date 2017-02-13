@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AjaxControlToolkit;
+using System;
 using System.Web.UI;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
@@ -14,6 +15,7 @@ namespace TeamTools.Web.Profile
         private int projectId;
 
         public event EventHandler<ProjectDetailsEventArgs> DeleteProject;
+        public event EventHandler<ProjectDetailsEventArgs> SaveDocument;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -42,6 +44,7 @@ namespace TeamTools.Web.Profile
 
         protected void ShowStatistics_ServerClick(object sender, EventArgs e)
         {
+            this.ProjectDocumentsControl.Visible = false;
             this.ProjectStatsControl.Visible = true;
             this.ProjectDetailsContentControl.Visible = false;
         }
@@ -59,8 +62,28 @@ namespace TeamTools.Web.Profile
 
         protected void ShowTasks_ServerClick(object sender, EventArgs e)
         {
+            this.ProjectDocumentsControl.Visible = false;
             this.ProjectStatsControl.Visible = false;
             this.ProjectDetailsContentControl.Visible = true;
+        }
+
+        protected void AjaxFileUpload_UploadComplete(object sender, AjaxFileUploadEventArgs e)
+        {
+            var content = e.GetContents();
+            var str = string.Empty;
+            foreach (var bit in content)
+            {
+                str += bit;
+            }
+
+            this.SaveDocument?.Invoke(sender, new ProjectDetailsEventArgs(this.projectId, e.FileName, e.ContentType, e.GetContents()));
+        }
+
+        protected void ShowDocuments_ServerClick(object sender, EventArgs e)
+        {
+            this.ProjectStatsControl.Visible = false;
+            this.ProjectDetailsContentControl.Visible = false;
+            this.ProjectDocumentsControl.Visible = true;
         }
     }
 }

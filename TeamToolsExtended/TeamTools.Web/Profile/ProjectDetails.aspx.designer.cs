@@ -31,13 +31,13 @@ namespace TeamTools.Web.Profile {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor ShowStatistics;
         
         /// <summary>
-        /// AddNewDocument control.
+        /// ShowDocuments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor AddNewDocument;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ShowDocuments;
         
         /// <summary>
         /// DeleteProjectButton control.
@@ -47,6 +47,15 @@ namespace TeamTools.Web.Profile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor DeleteProjectButton;
+        
+        /// <summary>
+        /// AjaxFileUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AjaxFileUpload AjaxFileUpload;
         
         /// <summary>
         /// closeDeleteProjectForm control.
@@ -83,5 +92,14 @@ namespace TeamTools.Web.Profile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::TeamTools.Web.Profile.ProjectDetailsTasks ProjectDetailsContentControl;
+        
+        /// <summary>
+        /// ProjectDocumentsControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TeamTools.Web.Profile.ProjectDetailsDocuments ProjectDocumentsControl;
     }
 }

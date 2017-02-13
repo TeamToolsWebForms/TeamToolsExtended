@@ -8,12 +8,14 @@ namespace TeamTools.Logic.Data.Models
         private ICollection<User> users;
         private ICollection<ProjectTask> tasks;
         private ICollection<Message> messages;
+        private ICollection<ProjectDocument> projectDocuments;
 
         public Project()
         {
             this.users = new HashSet<User>();
             this.tasks = new HashSet<ProjectTask>();
             this.messages = new HashSet<Message>();
+            this.projectDocuments = new HashSet<ProjectDocument>();
         }
 
         public Project(string title, string description, string username)
@@ -40,6 +42,12 @@ namespace TeamTools.Logic.Data.Models
         public bool IsPersonal { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public virtual ICollection<ProjectDocument> ProjectDocuments
+        {
+            get { return this.projectDocuments; }
+            set { this.projectDocuments = value; }
+        }
 
         public virtual ICollection<User> Users
         {

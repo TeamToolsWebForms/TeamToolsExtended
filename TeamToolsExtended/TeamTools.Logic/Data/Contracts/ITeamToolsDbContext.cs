@@ -17,6 +17,8 @@ namespace TeamTools.Logic.Data.Contracts
 
         IDbSet<ProjectTask> ProjectTasks { get; set; }
 
+        IDbSet<ProjectDocument> ProjectDocuments { get; set; }
+
         IDbSet<Message> Messages { get; set; }
 
         IDbSet<Note> Notes { get; set; }

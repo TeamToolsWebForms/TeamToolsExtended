@@ -12,6 +12,8 @@ namespace TeamTools.Logic.DTO
         
         public string CreatorName { get; set; }
 
+        public ICollection<ProjectDocumentDTO> ProjectDocuments { get; set; }
+
         public ICollection<UserDTO> Users;
 
         public ICollection<ProjectTaskDTO> ProjectTasks;

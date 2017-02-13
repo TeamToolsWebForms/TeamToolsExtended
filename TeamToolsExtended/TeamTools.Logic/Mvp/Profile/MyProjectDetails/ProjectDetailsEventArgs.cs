@@ -10,6 +10,14 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
             this.Id = id;
         }
 
+        public ProjectDetailsEventArgs(int id, string filename, string fileExtension, byte[] fileContent)
+            : this(id)
+        {
+            this.FileName = filename;
+            this.FileExtension = fileExtension;
+            this.FileContent = fileContent;
+        }
+
         public ProjectDetailsEventArgs(
             string title,
             string description,
@@ -37,5 +45,11 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
         public decimal TaskExecutionCost { get; set; }
 
         public TaskType TaskStatus { get; set; }
+
+        public byte[] FileContent { get; set; }
+
+        public string FileName { get; set; }
+
+        public string FileExtension { get; set; }
     }
 }

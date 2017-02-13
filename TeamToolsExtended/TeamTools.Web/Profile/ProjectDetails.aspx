@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="ProjectDetails.aspx.cs" Inherits="TeamTools.Web.Profile.ProjectDetails" %>
+
 <%@ Register Src="~/Profile/ProjectDetailsChart.ascx" TagName="ProjectChart" TagPrefix="pt" %>
 <%@ Register Src="~/Profile/ProjectDetailsTasks.ascx" TagName="ProjectTasks" TagPrefix="pt" %>
-<%-- Add documents --%>
+<%@ Register Src="~/Profile/ProjectDetailsDocuments.ascx" TagName="ProjectDocuments" TagPrefix="pt" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="../Content/project-details.css" rel="stylesheet" type="text/css" />
@@ -18,7 +19,10 @@
                     <a runat="server" id="ShowStatistics" onserverclick="ShowStatistics_ServerClick">Statistics</a>
                 </li>
                 <li class="sidebar-brand">
-                    <a runat="server" id="AddNewDocument">Add document</a>
+                    <a id="AddNewDocument" onclick="showAjaxFileUpload();">Add document</a>
+                </li>
+                <li class="sidebar-brand">
+                    <a runat="server" id="ShowDocuments" onserverclick="ShowDocuments_ServerClick">Show documents</a>
                 </li>
                 <li>
                     <div class="dropdown">
@@ -37,7 +41,24 @@
             </ul>
         </div>
         <div>
-            
+            <div id="DocumentFileUpload" class="panel panel-default col-md-4">
+                <div class="panel-content">
+                    <div class="panel-header">
+                        <button type="button" onclick="closeFileUploadForm();" id="Button1" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="panel-body">
+                            <ajaxToolkit:AjaxFileUpload ID="AjaxFileUpload"
+                                ClientIDMode="Static"
+                                OnUploadComplete="AjaxFileUpload_UploadComplete"
+                                AllowedFileTypes="txt,xlsx,pdf,doc,docx,jpg,jpeg"
+                                MaximumNumberOfFiles="3"
+                                runat="server" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
                     <div id="DeleteProjectPanel" class="panel panel-default col-md-4">
@@ -66,10 +87,12 @@
                                 <ContentTemplate>
                                     <pt:ProjectChart runat="server" ID="ProjectStatsControl" Visible="false" />
                                     <pt:ProjectTasks runat="server" ID="ProjectDetailsContentControl" />
+                                    <pt:ProjectDocuments runat="server" ID="ProjectDocumentsControl" Visible="false" />
                                 </ContentTemplate>
                                 <Triggers>
                                     <asp:AsyncPostBackTrigger ControlID="ShowTasks" EventName="ServerClick" />
                                     <asp:AsyncPostBackTrigger ControlID="ShowStatistics" EventName="ServerClick" />
+                                    <asp:AsyncPostBackTrigger ControlID="ShowDocuments" EventName="ServerClick" />
                                 </Triggers>
                             </asp:UpdatePanel>
                         </div>

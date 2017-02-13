@@ -84,6 +84,7 @@
     <Compile Include="Data\Models\Organization.cs" />
     <Compile Include="Data\Models\OrganizationLogo.cs" />
     <Compile Include="Data\Models\Project.cs" />
+    <Compile Include="Data\Models\ProjectDocument.cs" />
     <Compile Include="Data\Models\ProjectTask.cs" />
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Data\Models\UserLogo.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="DTO\NoteDTO.cs" />
     <Compile Include="DTO\OrganizationDTO.cs" />
     <Compile Include="DTO\OrganizationLogoDTO.cs" />
+    <Compile Include="DTO\ProjectDocumentDTO.cs" />
     <Compile Include="DTO\ProjectDTO.cs" />
     <Compile Include="DTO\ProjectTaskDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="Mvp\Profile\Home\Contracts\IMyNotesView.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IMyProjectDetailsChartView.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IMyProjectDetailsView.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IProjectDocumentFactory.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IProjectTaskFactory.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IProjectTasksView.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\MyProjectDetailsChartPresenter.cs" />

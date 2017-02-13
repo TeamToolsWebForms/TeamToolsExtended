@@ -1,28 +1,36 @@
-﻿using System.Web;
+﻿using Bytes2you.Validation;
+using TeamTools.Logic.Data.Contracts;
+using TeamTools.Logic.Data.Models;
+using TeamTools.Logic.DTO;
 using TeamTools.Logic.Services.Contracts;
-using TeamTools.Logic.Services.Helpers.Contracts;
 
 namespace TeamTools.Logic.Services
 {
     public class FileService : IFileService
     {
-        private readonly IDirectoryHelper directoryHelper;
+        private readonly IRepository<ProjectDocument> projectDocumentRepository;
+        private readonly IUnitOfWork unitOfWork;
+        private readonly IMapperService mapperService;
 
-        public FileService(IDirectoryHelper directoryHelper)
+        public FileService(
+            IRepository<ProjectDocument> projectDocumentRepository,
+            IUnitOfWork unitOfWork,
+            IMapperService mapperService)
         {
-            this.directoryHelper = directoryHelper;
+            Guard.WhenArgument(projectDocumentRepository, "ProjectDocument Repository").IsNull().Throw();
+            Guard.WhenArgument(unitOfWork, "Unit of work").IsNull().Throw();
+            Guard.WhenArgument(mapperService, "Mapper Service").IsNull().Throw();
+
+            this.projectDocumentRepository = projectDocumentRepository;
+            this.unitOfWork = unitOfWork;
+            this.mapperService = mapperService;
         }
 
-        public void SaveFileToServer(string filename, string serverPath, HttpPostedFile postedFile, string username)
+        public void SaveDocument(ProjectDocumentDTO projectDocument)
         {
-            string fullPath = $"{serverPath}{username}";
-
-            if (!this.directoryHelper.Exists(fullPath))
-            {
-                this.directoryHelper.CreateDirectory(fullPath);
-            }
-
-            postedFile.SaveAs($"{fullPath}\\{filename}");
+            var mappedProjectDocument = this.mapperService.MapObject<ProjectDocument>(projectDocument);
+            this.projectDocumentRepository.Add(mappedProjectDocument);
+            this.unitOfWork.Commit();
         }
     }
 }

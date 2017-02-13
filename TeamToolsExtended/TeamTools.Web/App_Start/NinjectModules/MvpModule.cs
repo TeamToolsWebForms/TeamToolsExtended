@@ -26,6 +26,7 @@ namespace TeamTools.Web.App_Start.NinjectModules
             this.Bind<INoteDTOFactory>().ToFactory().InSingletonScope();
             this.Bind<IProjectFactory>().ToFactory().InSingletonScope();
             this.Bind<IProjectTaskFactory>().ToFactory().InSingletonScope();
+            this.Bind<IProjectDocumentFactory>().ToFactory().InSingletonScope();
         }
 
         private IPresenter GetPresenter(IContext context)

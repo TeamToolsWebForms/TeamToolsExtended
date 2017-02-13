@@ -47,3 +47,11 @@ function editTask() {
 function deleteProjectTaskSuccess() {
     toastr.success("Task deleted successfully");
 }
+
+function showAjaxFileUpload() {
+    $("#DocumentFileUpload").fadeIn();
+}
+
+function closeFileUploadForm() {
+    $("#DocumentFileUpload").fadeOut();
+}

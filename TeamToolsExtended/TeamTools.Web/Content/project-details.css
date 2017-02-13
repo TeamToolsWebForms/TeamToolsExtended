@@ -155,3 +155,12 @@
     left: 10%;
     width: 100%;
 }
+
+#DocumentFileUpload{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 30%;
+    z-index: 1000;
+}
