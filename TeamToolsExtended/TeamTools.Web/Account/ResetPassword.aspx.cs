@@ -5,6 +5,7 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using TeamTools.Web.IdentityHelpers;
+using TeamTools.Authentication;
 
 namespace TeamTools.Web.Account
 {

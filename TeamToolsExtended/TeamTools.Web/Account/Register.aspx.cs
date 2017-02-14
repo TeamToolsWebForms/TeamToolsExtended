@@ -9,6 +9,7 @@ using TeamTools.Web.IdentityHelpers;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
+using TeamTools.Authentication;
 
 namespace TeamTools.Web.Account
 {

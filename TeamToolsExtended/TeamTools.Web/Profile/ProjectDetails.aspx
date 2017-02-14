@@ -52,7 +52,7 @@
                                 ClientIDMode="Static" OnClientUploadCompleteAll="verifyDownload"
                                 OnUploadComplete="AjaxFileUpload_UploadComplete"
                                 AllowedFileTypes="txt,xlsx,pdf,doc,docx,jpg,jpeg"
-                                MaximumNumberOfFiles="3" ClearFileListAfterUpload="true"
+                                MaximumNumberOfFiles="3"
                                 runat="server" />
                         </div>
                     </div>
@@ -101,5 +101,6 @@
             </div>
         </div>
     </div>
+    <script src="../Scripts/project-details-download.js"></script>
     <script src="../Scripts/project-details.js"></script>
 </asp:Content>

@@ -105,12 +105,14 @@
     <Compile Include="Mvp\Profile\Home\Contracts\IMyNotesView.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IMyProjectDetailsChartView.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IMyProjectDetailsView.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IMyProjectDocumentsView.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IProjectDocumentFactory.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IProjectTaskFactory.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IProjectTasksView.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\MyProjectDetailsChartPresenter.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\MyProjectDetailsPresenter.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\ProjectDetailsEventArgs.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectDocumentsPresenter.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasksPresenter.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasksViewModel.cs" />
     <Compile Include="Mvp\Profile\MyProjects\Contracts\IMyProjectsView.cs" />

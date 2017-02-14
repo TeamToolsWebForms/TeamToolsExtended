@@ -6,7 +6,7 @@ using System;
 using TeamTools.Logic.Data;
 using TeamTools.Logic.Data.Models;
 
-namespace TeamTools.Web
+namespace TeamTools.Authentication
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<User>
@@ -28,11 +28,7 @@ namespace TeamTools.Web
             // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 6,
-                RequireNonLetterOrDigit = false,
-                RequireDigit = false,
-                RequireLowercase = false,
-                RequireUppercase = false,
+                RequiredLength = 6
             };
 
             // Register two factor authentication providers. This application uses Phone and Emails as a step of receiving a code for verifying the user

@@ -8,6 +8,8 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
 
         public ProjectTaskDTO EditableTask { get; set; }
 
+        public ProjectDocumentDTO DocumentInfo { get; set; }
+
         public decimal[] AllCosts { get; set; }
 
         public string AllDays { get; set; }

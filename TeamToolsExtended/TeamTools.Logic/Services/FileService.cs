@@ -1,6 +1,8 @@
-﻿using Bytes2you.Validation;
+﻿using System;
+using Bytes2you.Validation;
 using TeamTools.Logic.Data.Contracts;
 using TeamTools.Logic.Data.Models;
+using TeamTools.Logic.DTO;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
 using TeamTools.Logic.Services.Contracts;
 
@@ -36,6 +38,13 @@ namespace TeamTools.Logic.Services
             var mappedProjectDocument = this.mapperService.MapObject<ProjectDocument>(createdDocument);
             this.projectDocumentRepository.Add(mappedProjectDocument);
             this.unitOfWork.Commit();
+        }
+
+        public ProjectDocumentDTO DownloadFile(int id)
+        {
+            var projectDocument = this.projectDocumentRepository.GetById(id);
+            var mappedProjectDocument = this.mapperService.MapObject<ProjectDocumentDTO>(projectDocument);
+            return mappedProjectDocument;
         }
     }
 }

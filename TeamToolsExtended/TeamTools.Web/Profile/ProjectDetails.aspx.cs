@@ -7,7 +7,6 @@ using WebFormsMvp;
 using WebFormsMvp.Web;
 using Ninject;
 using TeamTools.Logic.Services.Contracts;
-using Microsoft.Owin;
 
 namespace TeamTools.Web.Profile
 {

@@ -5,7 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using TeamTools.Logic.Data.Models;
 
-namespace TeamTools.Web
+namespace TeamTools.Authentication
 {
     public class ApplicationSignInManager : SignInManager<User, string>
     {

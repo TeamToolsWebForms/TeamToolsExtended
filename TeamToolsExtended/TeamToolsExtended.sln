@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamTools.Web", "TeamTools.Web\TeamTools.Web.csproj", "{ABB989D8-A441-4A55-8B70-34BF9F220DCF}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamTools.Logic", "TeamTools.Logic\TeamTools.Logic.csproj", "{0265786E-93D5-467D-B1FA-2A8FF03FF459}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamTools.Logic.Tests", "TeamTools.Logic.Tests\TeamTools.Logic.Tests.csproj", "{1380F4DF-7E90-482C-8B13-57317E8781CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamTools.Authentication", "TeamTools.Authentication\TeamTools.Authentication.csproj", "{FE4F9A44-B601-44E3-9102-616DE721281B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{1380F4DF-7E90-482C-8B13-57317E8781CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1380F4DF-7E90-482C-8B13-57317E8781CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1380F4DF-7E90-482C-8B13-57317E8781CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE4F9A44-B601-44E3-9102-616DE721281B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE4F9A44-B601-44E3-9102-616DE721281B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE4F9A44-B601-44E3-9102-616DE721281B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE4F9A44-B601-44E3-9102-616DE721281B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +52,6 @@ Global
 		{CE4A31B1-A123-44D3-912A-37CA0F9ED45A} = {42889A93-297D-4502-A7D9-96B5AFC7F15E}
 		{0265786E-93D5-467D-B1FA-2A8FF03FF459} = {BB47155E-3BD9-489E-8AEC-C93D7DFC8BE6}
 		{1380F4DF-7E90-482C-8B13-57317E8781CB} = {42889A93-297D-4502-A7D9-96B5AFC7F15E}
+		{FE4F9A44-B601-44E3-9102-616DE721281B} = {BB47155E-3BD9-489E-8AEC-C93D7DFC8BE6}
 	EndGlobalSection
 EndGlobal
