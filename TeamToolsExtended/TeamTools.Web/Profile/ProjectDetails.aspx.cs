@@ -1,10 +1,12 @@
 ﻿using AjaxControlToolkit;
 using System;
 using System.Web.UI;
+using TeamTools.Logic.Data;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
 using WebFormsMvp;
 using WebFormsMvp.Web;
+using System.Linq;
 
 namespace TeamTools.Web.Profile
 {

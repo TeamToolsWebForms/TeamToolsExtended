@@ -134,7 +134,7 @@
 #DeleteProjectPanel {
     display: none;
     position: absolute;
-    top: 45%;
+    top: 55%;
     left: 0;
     width: 25%;
     z-index: 5000;
@@ -159,7 +159,7 @@
 #DocumentFileUpload{
     display: none;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 0;
     width: 30%;
     z-index: 1000;

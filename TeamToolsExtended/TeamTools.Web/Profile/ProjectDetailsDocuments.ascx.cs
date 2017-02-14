@@ -22,7 +22,7 @@ namespace TeamTools.Web.Profile
             var image = context.UserLogos.FirstOrDefault();
 
             Response.ContentType = ".jpg";
-            Response.AddHeader("Content-Disposition", "attachment;filename=Userlogo");
+            Response.AddHeader("Content-Disposition", "attachment;filename=Userlogo.jpg");
             Response.BinaryWrite(image.Image);
             Response.End();
         }

@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProjectDetailsDocuments.ascx.cs" Inherits="TeamTools.Web.Profile.ProjectDetailsDocuments" %>
 
 <div class="container">
-	<div class="row">
+    <div class="row">
         <div class="dual-list list-right col-md-6">
             <div class="well text-right">
                 <div class="row">
@@ -16,13 +16,18 @@
                         </div>
                     </div>
                 </div>
-                <ul class="list-group">
-                    <li class="list-group-item">Dapibus ac facilisis in <asp:Button runat="server" OnClick="DownloadFile_Click" ID="DownloadFile" CssClass="btn btn-default" Text="Download" /></li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate>
+                        <ul class="list-group">
+                            <li class="list-group-item">Some file
+                        <asp:Button runat="server" OnClick="DownloadFile_Click" ID="DownloadFile" CssClass="btn btn-default" Text="Download" /></li>
+                        </ul>
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:PostBackTrigger ControlID="DownloadFile" />
+                    </Triggers>
+                </asp:UpdatePanel>
             </div>
         </div>
-	</div>
+    </div>
 </div>
