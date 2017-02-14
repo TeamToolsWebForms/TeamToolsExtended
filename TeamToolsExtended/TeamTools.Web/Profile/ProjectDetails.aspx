@@ -49,10 +49,10 @@
                         </button>
                         <div class="panel-body">
                             <ajaxToolkit:AjaxFileUpload ID="AjaxFileUpload"
-                                ClientIDMode="Static"
+                                ClientIDMode="Static" OnClientUploadCompleteAll="verifyDownload"
                                 OnUploadComplete="AjaxFileUpload_UploadComplete"
                                 AllowedFileTypes="txt,xlsx,pdf,doc,docx,jpg,jpeg"
-                                MaximumNumberOfFiles="3"
+                                MaximumNumberOfFiles="3" ClearFileListAfterUpload="true"
                                 runat="server" />
                         </div>
                     </div>

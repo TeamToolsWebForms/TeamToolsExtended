@@ -1,9 +1,7 @@
-﻿using TeamTools.Logic.DTO;
-
-namespace TeamTools.Logic.Services.Contracts
+﻿namespace TeamTools.Logic.Services.Contracts
 {
     public interface IFileService
     {
-        void SaveDocument(ProjectDocumentDTO projectDocument);
+        void SaveDocument(string filename, string fileExtension, byte[] fileContent, int projectId);
     }
 }

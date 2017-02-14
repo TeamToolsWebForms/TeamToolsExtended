@@ -63,10 +63,11 @@
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span style="font-size: 16px;" class="pull-left hidden-xs showopacity fa fa-cog"></span>Settings</a>
-                        <ul class="dropdown-menu forAnimate" role="menu">
-                            <li><a href="#">Change Password</a></li>
-                            <li><a href="#">Delete project</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <asp:Button Text="Change password" ID="ChangePassword" runat="server" />
+                            </li>
                         </ul>
                     </li>
                 </ul>

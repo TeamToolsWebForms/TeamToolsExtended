@@ -1,40 +1,43 @@
 ﻿using AjaxControlToolkit;
 using System;
 using System.Web.UI;
-using TeamTools.Logic.Data;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
 using WebFormsMvp;
 using WebFormsMvp.Web;
-using System.Linq;
+using Ninject;
+using TeamTools.Logic.Services.Contracts;
+using Microsoft.Owin;
 
 namespace TeamTools.Web.Profile
 {
     [PresenterBinding(typeof(MyProjectDetailsPresenter))]
     public partial class ProjectDetails : MvpPage<ProjectDetailsViewModel>, IMyProjectDetailsView
     {
+        [Inject]
+        public IFileService FileService { get; set; }
+
         private const string RedirectUrl = "~/Profile/MyProjects.aspx";
         private int projectId;
 
         public event EventHandler<ProjectDetailsEventArgs> DeleteProject;
-        public event EventHandler<ProjectDetailsEventArgs> SaveDocument;
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Params["id"] == null)
+            if (this.Request.Params["id"] == null)
             {
-                Response.Redirect(RedirectUrl);
+                this.Response.Redirect(RedirectUrl);
             }
             else
             {
                 try
                 {
-                    int paramId = int.Parse(Request.Params["id"]);
+                    int paramId = int.Parse(this.Request.Params["id"]);
                     this.projectId = paramId;
                 }
                 catch (FormatException)
                 {
-                    Response.Redirect(RedirectUrl);
+                    this.Response.Redirect(RedirectUrl);
                 }
             }
         }
@@ -71,16 +74,25 @@ namespace TeamTools.Web.Profile
 
         protected void AjaxFileUpload_UploadComplete(object sender, AjaxFileUploadEventArgs e)
         {
-            var content = e.GetContents();
-            var str = string.Empty;
-            foreach (var bit in content)
+            if (this.Request.Params["id"] == null)
             {
-                str += bit;
+                this.Response.Redirect(RedirectUrl);
             }
-
-            this.SaveDocument?.Invoke(sender, new ProjectDetailsEventArgs(this.projectId, e.FileName, e.ContentType, e.GetContents()));
+            else
+            {
+                try
+                {
+                    int paramId = int.Parse(this.Request.Params["id"]);
+                    var content = e.GetContents();
+                    this.FileService.SaveDocument(e.FileName, e.ContentType, content, paramId);
+                }
+                catch (FormatException)
+                {
+                    this.Response.Redirect(RedirectUrl);
+                }
+            }
         }
-
+        
         protected void ShowDocuments_ServerClick(object sender, EventArgs e)
         {
             this.ProjectStatsControl.Visible = false;

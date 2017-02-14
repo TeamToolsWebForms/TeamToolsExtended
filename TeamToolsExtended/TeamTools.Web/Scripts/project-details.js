@@ -55,3 +55,8 @@ function showAjaxFileUpload() {
 function closeFileUploadForm() {
     $("#DocumentFileUpload").fadeOut();
 }
+
+function verifyDownload() {
+    $("#DocumentFileUpload").fadeOut();
+    toastr.success("Files uploaded successfully");
+}
