@@ -5,6 +5,6 @@ namespace TeamTools.Logic.Mvp.Profile.MyOrganizations
 {
     public class MyOrganizationsViewModel
     {
-        public IEnumerable<OrganizationDTO> MyOrganizations { get; set; }
+        public ICollection<OrganizationDTO> MyOrganizations { get; set; }
     }
 }

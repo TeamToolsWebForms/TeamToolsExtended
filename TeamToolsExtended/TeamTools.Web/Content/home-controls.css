@@ -21,6 +21,15 @@
     padding: 5px 10px 5px 10px;
 }
 
+#DataPagerOrganizations {
+    padding-left: 200px;
+}
+
+#DataPagerOrganizations * {
+    margin: 10px 10px 10px 0px;
+    padding: 5px 10px 5px 10px;
+}
+
 #MainContent_MyProjectsControl_DataPagerAllMyProjects {
     padding-left: 750px;
 }

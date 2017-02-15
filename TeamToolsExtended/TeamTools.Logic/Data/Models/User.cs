@@ -22,6 +22,7 @@ namespace TeamTools.Logic.Data.Models
         }
 
         public User(string username, string email, string firstName, string lastName, string gender, UserLogo userLogo)
+            : this()
         {
             this.UserName = username;
             this.Email = email;

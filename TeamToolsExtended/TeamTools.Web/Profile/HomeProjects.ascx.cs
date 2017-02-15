@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.UI;
 using TeamTools.Logic.Mvp.Profile.Home;
 using TeamTools.Logic.Mvp.Profile.Home.Contracts;
@@ -20,6 +21,18 @@ namespace TeamTools.Web.Profile
             this.LoadUserWithPersonalProjects?.Invoke(this, new ProfileHomeEventArgs(userId, username));
 
             this.ProfileProjects.DataSource = this.Model.User.Projects;
+            this.ProfileProjects.DataBind();
+        }
+
+        protected void SortInitially_ServerClick(object sender, EventArgs e)
+        {
+            this.ProfileProjects.DataSource = this.Model.User.Projects.OrderBy(x => x.Id).ToList();
+            this.ProfileProjects.DataBind();
+        }
+
+        protected void SortByName_ServerClick(object sender, EventArgs e)
+        {
+            this.ProfileProjects.DataSource = this.Model.User.Projects.OrderBy(x => x.Title).ToList();
             this.ProfileProjects.DataBind();
         }
     }

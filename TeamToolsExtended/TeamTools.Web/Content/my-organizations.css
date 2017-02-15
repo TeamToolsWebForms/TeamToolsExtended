@@ -1,0 +1,36 @@
+﻿#CreteOrganizationPanel {
+    position: absolute;
+    left: 28%;
+    top: 18%;
+    z-index: 1000; 
+}
+
+#myorganizations-main {
+    padding-top: 2%;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.my-anchor {
+    font-weight: bold;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#DataPagerMyOrganizationsListView{
+    padding-left: 20px;
+}
+
+#DataPagerMyOrganizationsListView * {
+    margin: 5px 5px 5px 0px;
+    padding: 5px 5px 5px 5px;
+}
+
+#SortMenu {
+    padding-left: 10px;
+}

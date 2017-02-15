@@ -24,10 +24,15 @@ namespace TeamTools.Web.Profile
             this.ProfileOrganizations.DataBind();
         }
 
-        protected void SortByName_Click(object sender, EventArgs e)
+        protected void SortByName_ServerClick(object sender, EventArgs e)
         {
-            // check if work properly
             this.ProfileOrganizations.DataSource = this.Model.User.Organizations.OrderBy(o => o.Name).ToList();
+            this.ProfileOrganizations.DataBind();
+        }
+
+        protected void SortInitially_ServerClick(object sender, EventArgs e)
+        {
+            this.ProfileOrganizations.DataSource = this.Model.User.Organizations.OrderBy(o => o.Id).ToList();
             this.ProfileOrganizations.DataBind();
         }
     }

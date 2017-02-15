@@ -6,7 +6,10 @@
         <div class="dropdown">
             <span class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort <span class="caret"></span></span>
             <ul class="dropdown-menu">
-                <li><asp:Button runat="server" Text="By name" ID="SortByName" CssClass="btn btn-default" OnClick="SortByName_Click" /></li>
+                <li>
+                    <a runat="server" class="text-center" id="SortInitially" onserverclick="SortInitially_ServerClick">Initially</a>
+                    <a runat="server" class="text-center" id="SortByName" onserverclick="SortByName_ServerClick">By name</a>
+                </li>
             </ul>
         </div>
         <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
@@ -17,7 +20,7 @@
                 <div>
                     <ul id="items-list">
                         <li class="list-item">
-                            <h3><a href="#"><i class="fa fa-users"></i><%#: Item.Name %></a></h3>
+                            <h3><a href='<%#: string.Format("~/OrganizationDetails?id={0}", Item.Id) %>' runat="server"><i class="fa fa-users"></i> <%#: Item.Name %></a></h3>
                             <p><%#: Item.Description %></p>
                         </li>
                     </ul>
@@ -29,15 +32,13 @@
         <h3>Currently you are not a member of organization</h3>
     </EmptyDataTemplate>
 </asp:ListView>
-<%-- Make pager with ajax --%>
-<asp:DataPager ID="DataPagerOrganizations" runat="server"
-    PagedControlID="ProfileOrganizations" PageSize="5"
-    QueryStringField="page">
+<asp:DataPager ID="DataPagerOrganizations" ClientIDMode="Static" runat="server"
+    PagedControlID="ProfileOrganizations" PageSize="4">
     <Fields>
-        <asp:NextPreviousPagerField ShowFirstPageButton="true"
+        <asp:NextPreviousPagerField ShowFirstPageButton="false"
             ShowNextPageButton="false" ShowPreviousPageButton="false" />
         <asp:NumericPagerField />
-        <asp:NextPreviousPagerField ShowLastPageButton="true"
+        <asp:NextPreviousPagerField ShowLastPageButton="false"
             ShowNextPageButton="false" ShowPreviousPageButton="false" />
     </Fields>
 </asp:DataPager>

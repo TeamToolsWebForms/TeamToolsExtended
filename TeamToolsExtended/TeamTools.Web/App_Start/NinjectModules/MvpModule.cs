@@ -12,6 +12,7 @@ using TeamTools.Logic.Mvp.Profile.Home.Contracts;
 using TeamTools.Logic.Mvp.Profile.MyProjects.Contracts;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
 using TeamTools.Logic.Mvp.Account.Register.Contracts;
+using TeamTools.Logic.Mvp.Profile.MyOrganizations.Contracts;
 
 namespace TeamTools.Web.App_Start.NinjectModules
 {
@@ -30,6 +31,8 @@ namespace TeamTools.Web.App_Start.NinjectModules
             this.Bind<IProjectDocumentFactory>().ToFactory().InSingletonScope();
             this.Bind<IUserFactory>().ToFactory().InSingletonScope();
             this.Bind<IUserLogoFactory>().ToFactory().InSingletonScope();
+            this.Bind<IOrganizationFactory>().ToFactory().InSingletonScope();
+            this.Bind<IOrganizationLogoFactory>().ToFactory().InSingletonScope();
         }
 
         private IPresenter GetPresenter(IContext context)

@@ -2,6 +2,18 @@
 <link rel="stylesheet" href="../Content/home-controls.css" type="text/css" />
 
 <asp:ListView runat="server" ID="ProfileProjects" ItemType="TeamTools.Logic.DTO.ProjectDTO">
+    <LayoutTemplate>
+        <div class="dropdown">
+            <span class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort <span class="caret"></span></span>
+            <ul class="dropdown-menu">
+                <li>
+                    <a runat="server" class="text-center" id="SortInitially" onserverclick="SortInitially_ServerClick">Initially</a>
+                    <a runat="server" class="text-center" id="SortByName" onserverclick="SortByName_ServerClick">By name</a>
+                </li>
+            </ul>
+        </div>
+        <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
+    </LayoutTemplate>
     <ItemTemplate>
         <div class="container">
             <div class="row">
@@ -34,3 +46,4 @@
             ShowNextPageButton="false" ShowPreviousPageButton="false" />
     </Fields>
 </asp:DataPager>
+

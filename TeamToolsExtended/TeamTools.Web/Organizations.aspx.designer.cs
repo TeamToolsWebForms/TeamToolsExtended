@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TeamTools.Web.Profile {
+namespace TeamTools.Web {
     
     
-    public partial class MyOrganizations {
+    public partial class Organizations {
         
         /// <summary>
         /// HyperLink1 control.

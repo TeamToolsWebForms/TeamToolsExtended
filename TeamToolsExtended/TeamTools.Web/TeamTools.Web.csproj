@@ -286,12 +286,14 @@
     <Content Include="Content\home-controls.css" />
     <Content Include="Content\home-profile.css" />
     <Content Include="Content\message-board.css" />
+    <Content Include="Content\my-organizations.css" />
     <Content Include="Content\mynotes.css" />
     <Content Include="Content\new-task.css" />
     <Content Include="Content\project-details.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="create-organization.aspx" />
+    <Content Include="Images\default-organization.png" />
     <Content Include="Images\default-user.jpg" />
     <Content Include="Content\bootstrap-social.css" />
     <Content Include="Content\docs.css" />
@@ -347,6 +349,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\my-projects.js" />
     <Content Include="Scripts\mynotes.js" />
+    <Content Include="Scripts\my-organizations.js" />
     <Content Include="Scripts\Profile\Home\profile-home.js" />
     <Content Include="Scripts\project-details-download.js" />
     <Content Include="Scripts\project-details.js" />

@@ -114,6 +114,8 @@
     <Compile Include="Mvp\Profile\Home\Contracts\IImportantNoteView.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IMyNotesView.cs" />
     <Compile Include="Mvp\Profile\MyOrganizations\Contracts\IMyOrganizationsView.cs" />
+    <Compile Include="Mvp\Profile\MyOrganizations\Contracts\IOrganizationFactory.cs" />
+    <Compile Include="Mvp\Profile\MyOrganizations\Contracts\IOrganizationLogoFactory.cs" />
     <Compile Include="Mvp\Profile\MyOrganizations\MyOrganizationsEventArgs.cs" />
     <Compile Include="Mvp\Profile\MyOrganizations\MyOrganizationsPresenter.cs" />
     <Compile Include="Mvp\Profile\MyOrganizations\MyOrganizationsViewModel.cs" />

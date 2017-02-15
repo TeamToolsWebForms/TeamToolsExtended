@@ -15,6 +15,16 @@ namespace TeamTools.Logic.Data.Models
             this.projects = new HashSet<Project>();
         }
 
+        public Organization(string name, string description, OrganizationLogo organizationLogo, string creatorName, string organizationLogoUrl)
+            : this()
+        {
+            this.Name = name;
+            this.Description = description;
+            this.OrganizationLogo = organizationLogo;
+            this.OrganizationLogoUrl = organizationLogoUrl;
+            this.CreatorName = creatorName;
+        }
+
         public int Id { get; set; }
 
         [Required]
@@ -30,6 +40,8 @@ namespace TeamTools.Logic.Data.Models
         public int OrganizationLogoId { get; set; }
 
         public virtual OrganizationLogo OrganizationLogo { get; set; }
+
+        public string OrganizationLogoUrl { get; set; }
 
         [MaxLength(150)]
         public string CreatorName { get; set; }
