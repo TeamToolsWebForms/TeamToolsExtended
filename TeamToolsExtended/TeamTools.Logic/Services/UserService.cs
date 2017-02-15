@@ -51,5 +51,12 @@ namespace TeamTools.Logic.Services
             this.userRepository.Update(currentUser);
             this.unitOfWork.Commit();
         }
+
+        public UserDTO GetByUsername(string username)
+        {
+            var user = this.userRepository.All(x => x.UserName == username).FirstOrDefault();
+            var mapperUser = this.mapperService.MapObject<UserDTO>(user);
+            return mapperUser;
+        }
     }
 }

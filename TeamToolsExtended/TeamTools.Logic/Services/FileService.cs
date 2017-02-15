@@ -1,5 +1,4 @@
-﻿using System;
-using Bytes2you.Validation;
+﻿using Bytes2you.Validation;
 using TeamTools.Logic.Data.Contracts;
 using TeamTools.Logic.Data.Models;
 using TeamTools.Logic.DTO;

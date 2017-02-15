@@ -21,5 +21,10 @@ namespace TeamTools.Logic.Services.Helpers
             string resultUrl = "data:image/jpg;base64," + base64String;
             return resultUrl;
         }
+
+        public Image GetImage(string path)
+        {
+            return Image.FromFile(path);
+        }
     }
 }

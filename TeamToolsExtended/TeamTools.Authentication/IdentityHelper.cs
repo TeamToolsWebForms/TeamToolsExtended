@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 
-namespace TeamTools.Web.IdentityHelpers
+namespace TeamTools.Authentication
 {
     public static class IdentityHelper
     {

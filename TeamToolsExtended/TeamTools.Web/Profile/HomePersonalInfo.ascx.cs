@@ -77,7 +77,7 @@ namespace TeamTools.Web.Profile
                     this.UploadImage.Visible = false;
                     this.ShowUpload.Visible = true;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     // logging possibly
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "InternalError();", true);

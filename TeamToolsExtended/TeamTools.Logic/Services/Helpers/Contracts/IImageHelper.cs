@@ -7,5 +7,7 @@ namespace TeamTools.Logic.Services.Helpers.Contracts
         byte[] ImageToByteArray(Image imageIn);
 
         string ByteArrayToImageUrl(byte[] byteArrayIn);
+
+        Image GetImage(string path);
     }
 }

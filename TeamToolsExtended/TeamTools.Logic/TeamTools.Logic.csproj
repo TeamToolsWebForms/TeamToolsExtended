@@ -101,6 +101,16 @@
     <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Data\Migrations\Configuration.cs" />
     <Compile Include="DTO\UserLogoDTO.cs" />
+    <Compile Include="Mvp\Account\Register\Contracts\IRegisterView.cs" />
+    <Compile Include="Mvp\Account\Register\Contracts\IUserFactory.cs" />
+    <Compile Include="Mvp\Account\Register\Contracts\IUserLogoFactory.cs" />
+    <Compile Include="Mvp\Account\Register\RegisterEventArgs.cs" />
+    <Compile Include="Mvp\Account\Register\RegisterPresenter.cs" />
+    <Compile Include="Mvp\Account\Register\RegisterViewModel.cs" />
+    <Compile Include="Mvp\Account\ResetPassword\Contracts\IResetPasswordView.cs" />
+    <Compile Include="Mvp\Account\ResetPassword\ResetPasswordEventArgs.cs" />
+    <Compile Include="Mvp\Account\ResetPassword\ResetPasswordPresenter.cs" />
+    <Compile Include="Mvp\Account\ResetPassword\ResetPasswordViewModel.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IImportantNoteView.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IMyNotesView.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IMyProjectDetailsChartView.cs" />

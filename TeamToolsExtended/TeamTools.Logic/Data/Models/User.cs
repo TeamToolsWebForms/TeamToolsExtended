@@ -21,6 +21,16 @@ namespace TeamTools.Logic.Data.Models
             this.notes = new HashSet<Note>();
         }
 
+        public User(string username, string email, string firstName, string lastName, string gender, UserLogo userLogo)
+        {
+            this.UserName = username;
+            this.Email = email;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Gender = gender;
+            this.UserLogo = userLogo;
+        }
+
         [MinLength(3)]
         [MaxLength(100)]
         public string FirstName { get; set; }
