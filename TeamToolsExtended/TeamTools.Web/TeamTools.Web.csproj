@@ -276,6 +276,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="400.html" />
+    <Content Include="404.html" />
+    <Content Include="500.html" />
     <Content Include="About.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
@@ -290,9 +293,11 @@
     <Content Include="Content\mynotes.css" />
     <Content Include="Content\new-task.css" />
     <Content Include="Content\project-details.css" />
+    <Content Include="Content\server-error.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="create-organization.aspx" />
+    <Content Include="Images\500.gif" />
     <Content Include="Images\default-organization.png" />
     <Content Include="Images\default-user.jpg" />
     <Content Include="Content\bootstrap-social.css" />
@@ -319,6 +324,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="OrganizationDetails.aspx" />
     <Content Include="Profile\CreateNote.ascx" />
     <Content Include="Profile\ImportantNotes.ascx" />
     <Content Include="Profile\MyNotes.ascx" />
@@ -469,6 +475,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Validator.cs" />
+    <Compile Include="OrganizationDetails.aspx.cs">
+      <DependentUpon>OrganizationDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrganizationDetails.aspx.designer.cs">
+      <DependentUpon>OrganizationDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Organizations.aspx.cs">
       <DependentUpon>Organizations.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
