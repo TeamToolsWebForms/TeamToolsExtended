@@ -350,6 +350,7 @@
     <Content Include="Scripts\Profile\Home\profile-home.js" />
     <Content Include="Scripts\project-details-download.js" />
     <Content Include="Scripts\project-details.js" />
+    <Content Include="Scripts\register.js" />
     <Content Include="Scripts\requester.js" />
     <Content Include="Scripts\reset-password.js" />
     <Content Include="Scripts\respond.js" />
@@ -464,8 +465,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\Contracts\IImageHelper.cs" />
-    <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\Validator.cs" />
     <Compile Include="Organizations.aspx.cs">
       <DependentUpon>Organizations.aspx</DependentUpon>

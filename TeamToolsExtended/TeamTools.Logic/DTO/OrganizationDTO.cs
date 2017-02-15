@@ -11,7 +11,9 @@ namespace TeamTools.Logic.DTO
         public OrganizationLogoDTO OrganizationLogo { get; set; }
         
         public string CreatorName { get; set; }
-        
+
+        public string OrganizationLogoUrl { get; set; }
+
         public ICollection<UserDTO> Users;
 
         public ICollection<ProjectDTO> Projects;

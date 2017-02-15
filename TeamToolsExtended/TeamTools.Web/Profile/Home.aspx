@@ -58,7 +58,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="~/Profile/MyOrganizations.aspx" runat="server">
                             <i class="fa fa-sitemap"></i>My Organizations
                         </a>
                     </li>
@@ -66,7 +66,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <asp:Button Text="Change password" ID="ChangePassword" runat="server" />
+                                <asp:HyperLink Text="Change password" NavigateUrl="~/Account/ResetPassword.aspx" runat="server" />
                             </li>
                         </ul>
                     </li>

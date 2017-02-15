@@ -113,6 +113,10 @@
     <Compile Include="Mvp\Account\ResetPassword\ResetPasswordViewModel.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IImportantNoteView.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IMyNotesView.cs" />
+    <Compile Include="Mvp\Profile\MyOrganizations\Contracts\IMyOrganizationsView.cs" />
+    <Compile Include="Mvp\Profile\MyOrganizations\MyOrganizationsEventArgs.cs" />
+    <Compile Include="Mvp\Profile\MyOrganizations\MyOrganizationsPresenter.cs" />
+    <Compile Include="Mvp\Profile\MyOrganizations\MyOrganizationsViewModel.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IMyProjectDetailsChartView.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IMyProjectDetailsView.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IMyProjectDocumentsView.cs" />
@@ -153,6 +157,7 @@
     <Compile Include="Services\Contracts\IFileService.cs" />
     <Compile Include="Services\Contracts\IMapperService.cs" />
     <Compile Include="Services\Contracts\INoteService.cs" />
+    <Compile Include="Services\Contracts\IOrganizationService.cs" />
     <Compile Include="Services\Contracts\IProjectService.cs" />
     <Compile Include="Services\Contracts\IProjectTaskService.cs" />
     <Compile Include="Services\Contracts\IUserService.cs" />
@@ -163,6 +168,7 @@
     <Compile Include="Services\Helpers\ImageHelper.cs" />
     <Compile Include="Services\MapperService.cs" />
     <Compile Include="Services\NoteService.cs" />
+    <Compile Include="Services\OrganizationService.cs" />
     <Compile Include="Services\ProjectService.cs" />
     <Compile Include="Services\ProjectTaskService.cs" />
     <Compile Include="Services\UserService.cs" />
