@@ -1,6 +1,8 @@
 ﻿using Bytes2you.Validation;
+using System;
 using TeamTools.Logic.Data.Contracts;
 using TeamTools.Logic.Data.Models;
+using TeamTools.Logic.Data.Models.Enums;
 using TeamTools.Logic.DTO;
 using TeamTools.Logic.Services.Contracts;
 
@@ -40,10 +42,17 @@ namespace TeamTools.Logic.Services
             return mappedProjectTask;
         }
 
-        public void Update(ProjectTaskDTO projectTask)
+        public void Update(int taskId, string title, string description, DateTime? dueDate, decimal cost, TaskType status)
         {
-            var mappedProjectTask = this.mapperService.MapObject<ProjectTask>(projectTask);
-            this.projectTasksRepository.Update(mappedProjectTask);
+            var task = this.projectTasksRepository.GetById(taskId);
+
+            task.Title = title;
+            task.Description = description;
+            task.DueDate = dueDate;
+            task.ExecutionCost = cost;
+            task.Status = status;
+
+            this.projectTasksRepository.Update(task);
             this.unitOfWork.Commit();
         }
 

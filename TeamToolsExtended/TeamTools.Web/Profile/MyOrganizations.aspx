@@ -58,7 +58,7 @@
                                             </div>
                                             <div class="col-xs-12 col-sm-9">
                                                 <span class="name">
-                                                    <asp:HyperLink runat="server" CssClass="my-anchor" NavigateUrl='<%# string.Format("~/OrganizationDetails?id={0}", Item.Id) %>' Text="<%#: Item.Name %>" /></span><br />
+                                                    <asp:HyperLink runat="server" CssClass="my-anchor" NavigateUrl='<%# string.Format("~/organizationdetails?id={0}", Item.Id) %>' Text="<%#: Item.Name %>" /></span><br />
                                                 <span class="fa fa-user-circle-o" data-toggle="tooltip" title="Created by"> <%#: Item.CreatorName %></span>
                                             </div>
                                             <div class="clearfix"></div>

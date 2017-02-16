@@ -16,7 +16,7 @@ namespace TeamTools.Web.Profile
         [Inject]
         public IFileService FileService { get; set; }
 
-        private const string RedirectUrl = "~/Profile/MyProjects.aspx";
+        private const string RedirectUrl = "~/profile/myprojects.aspx";
         private int projectId;
 
         public event EventHandler<ProjectDetailsEventArgs> DeleteProject;

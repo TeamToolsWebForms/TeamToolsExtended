@@ -24,8 +24,8 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
             DateTime? executionTime,
             decimal executionCost,
             TaskType status,
-            int projectId)
-            : this(projectId)
+            int id)
+            : this(id)
         {
             this.TaskTitle = title;
             this.TaskDescription = description;

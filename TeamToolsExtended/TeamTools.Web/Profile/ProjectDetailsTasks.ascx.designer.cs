@@ -148,12 +148,21 @@ namespace TeamTools.Web.Profile {
         protected global::System.Web.UI.WebControls.DropDownList EditTaskStatus;
         
         /// <summary>
-        /// EditTaskBtn control.
+        /// EditTaskId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor EditTaskBtn;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl EditTaskId;
+        
+        /// <summary>
+        /// EditTaskButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor EditTaskButton;
     }
 }

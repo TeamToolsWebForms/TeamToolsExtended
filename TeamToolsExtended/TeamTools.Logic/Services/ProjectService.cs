@@ -5,6 +5,7 @@ using TeamTools.Logic.Data.Models;
 using TeamTools.Logic.DTO;
 using TeamTools.Logic.Mvp.Profile.MyProjects.Contracts;
 using TeamTools.Logic.Services.Contracts;
+using System;
 
 namespace TeamTools.Logic.Services
 {
@@ -63,6 +64,14 @@ namespace TeamTools.Logic.Services
             project.ProjectTasks.Clear();
             project.ProjectTasks = filteredTasks;
             var mappedProject = this.mapperService.MapObject<ProjectDTO>(project);
+            return mappedProject;
+        }
+
+        public ProjectDTO GetByIdSearchedDocuments(int id, string pattern)
+        {
+            var project = this.projectRepository.GetById(id);
+            var mappedProject = this.mapperService.MapObject<ProjectDTO>(project);
+            mappedProject.ProjectDocuments = mappedProject.ProjectDocuments.Where(d => d.FileName.ToLower().Contains(pattern.ToLower())).ToList();
             return mappedProject;
         }
     }

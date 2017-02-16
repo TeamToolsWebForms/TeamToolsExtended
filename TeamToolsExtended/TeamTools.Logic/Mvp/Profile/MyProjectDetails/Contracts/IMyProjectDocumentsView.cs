@@ -7,5 +7,6 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts
     {
         event EventHandler<ProjectDetailsEventArgs> GetDocuments;
         event EventHandler<ProjectDetailsEventArgs> GetDocumentInfo;
+        event EventHandler<ProjectDocumentsEventArgs> FindDocuments;
     }
 }

@@ -20,7 +20,7 @@
                 <div>
                     <ul id="items-list">
                         <li class="list-item">
-                            <h3><a href='<%#: string.Format("~/OrganizationDetails?id={0}", Item.Id) %>' runat="server"><i class="fa fa-users"></i> <%#: Item.Name %></a></h3>
+                            <h3><a href='<%#: string.Format("~/organizationdetails?id={0}", Item.Id) %>' runat="server"><i class="fa fa-users"></i> <%#: Item.Name %></a></h3>
                             <p><%#: Item.Description %></p>
                         </li>
                     </ul>

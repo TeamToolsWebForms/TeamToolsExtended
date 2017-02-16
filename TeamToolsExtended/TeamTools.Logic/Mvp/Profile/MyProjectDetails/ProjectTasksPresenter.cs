@@ -14,7 +14,6 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
         public ProjectTasksPresenter(IProjectTasksView view, IProjectService projectService, IProjectTaskService projectTaskService, IProjectTaskFactory projectTaskFactory)
             : base(view)
         {
-            Guard.WhenArgument(view, "View").IsNull().Throw();
             Guard.WhenArgument(projectService, "Project Service").IsNull().Throw();
             Guard.WhenArgument(projectTaskService, "ProjectTask Service").IsNull().Throw();
             Guard.WhenArgument(projectTaskFactory, "ProjectTask Factory").IsNull().Throw();
@@ -48,7 +47,7 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
 
         private void View_UpdateProjectTask(object sender, ProjectDetailsEventArgs e)
         {
-            this.projectTaskService.Update(this.View.Model.EditableTask);
+            this.projectTaskService.Update(e.Id, e.TaskTitle, e.TaskDescription, e.DueDate, e.TaskExecutionCost, e.TaskStatus);
         }
 
         private void View_LoadProjectTasks(object sender, ProjectDetailsEventArgs e)

@@ -26,6 +26,8 @@ namespace TeamTools.Web.App_Start
                 cfg.CreateMap<ProjectDTO, Project>().PreserveReferences();
                 cfg.CreateMap<ProjectTaskDTO, ProjectTask>();
                 cfg.CreateMap<ProjectDocumentDTO, ProjectDocument>();
+                cfg.CreateMap<OrganizationDTO, Organization>();
+                cfg.CreateMap<OrganizationLogoDTO, OrganizationLogo>();
             });
         }
     }

@@ -32,7 +32,7 @@
                                 </ContentTemplate>
                             </asp:UpdatePanel>
                             <div>
-                                <asp:HyperLink runat="server" NavigateUrl="~/Account/ResetPassword.aspx" ID="ForgotPasswordHyperLink" Text="Forgot your password?" ViewStateMode="Disabled" />
+                                <asp:HyperLink runat="server" NavigateUrl="~/account/resetpassword.aspx" ID="ForgotPasswordHyperLink" Text="Forgot your password?" ViewStateMode="Disabled" />
                             </div>
                         </div>
                     </div>

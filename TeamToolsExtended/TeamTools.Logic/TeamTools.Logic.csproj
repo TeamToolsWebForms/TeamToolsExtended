@@ -128,6 +128,7 @@
     <Compile Include="Mvp\Profile\MyProjectDetails\MyProjectDetailsChartPresenter.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\MyProjectDetailsPresenter.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\ProjectDetailsEventArgs.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectDocumentsEventArgs.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\ProjectDocumentsPresenter.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasksPresenter.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasksViewModel.cs" />

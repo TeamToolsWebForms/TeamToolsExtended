@@ -6,6 +6,8 @@ namespace TeamTools.Logic.Services.Contracts
     {
         ProjectDTO GetById(int id);
 
+        ProjectDTO GetByIdSearchedDocuments(int id, string pattern);
+
         void Update(int id, string newTitle);
 
         void Delete(int id);

@@ -12,10 +12,12 @@ namespace TeamTools.Web.Profile
     [PresenterBinding(typeof(ProjectDocumentsPresenter))]
     public partial class ProjectDetailsDocuments : MvpUserControl<ProjectDetailsViewModel>, IMyProjectDocumentsView
     {
-        private const string RedirectUrl = "~/Profile/MyProjects.aspx";
+        private const string RedirectUrl = "~/profile/myprojects.aspx";
+        private int projectId;
 
         public event EventHandler<ProjectDetailsEventArgs> GetDocuments;
         public event EventHandler<ProjectDetailsEventArgs> GetDocumentInfo;
+        public event EventHandler<ProjectDocumentsEventArgs> FindDocuments;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +30,8 @@ namespace TeamTools.Web.Profile
                 try
                 {
                     int paramId = int.Parse(this.Request.Params["id"]);
-                    this.GetDocuments?.Invoke(sender, new ProjectDetailsEventArgs(paramId));
+                    this.projectId = paramId;
+                    this.GetDocuments?.Invoke(sender, new ProjectDetailsEventArgs(this.projectId));
                 }
                 catch (FormatException)
                 {
@@ -65,6 +68,15 @@ namespace TeamTools.Web.Profile
         public IQueryable<ProjectDocumentDTO> MyProjectDocuments_GetData()
         {
             return this.Model.Project.ProjectDocuments.OrderBy(x => x.Id).AsQueryable();
+        }
+
+        protected void SearchDocuments_Click(object sender, EventArgs e)
+        {
+            string pattern = this.searchDocumentsPattern.Text;
+
+            this.FindDocuments?.Invoke(sender, new ProjectDocumentsEventArgs(this.projectId, pattern));
+            
+            this.MyProjectDocuments.DataBind();
         }
     }
 }

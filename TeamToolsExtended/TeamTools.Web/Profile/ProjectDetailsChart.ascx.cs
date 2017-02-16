@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Web.UI.WebControls;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
 using WebFormsMvp;
@@ -11,7 +9,7 @@ namespace TeamTools.Web.Profile
     [PresenterBinding(typeof(MyProjectDetailsChartPresenter))]
     public partial class ProjectDetailsChart : MvpUserControl<ProjectDetailsViewModel>, IMyProjectDetailsChartView
     {
-        private const string RedirectUrl = "~/Profile/MyProjects.aspx";
+        private const string RedirectUrl = "~/profile/myprojects.aspx";
         private int projectId;
         
         public event EventHandler<ProjectDetailsEventArgs> LoadProject;

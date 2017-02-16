@@ -53,12 +53,12 @@
                 <h5 class="nav-email-subtitle">More</h5>
                 <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
                     <li>
-                        <a href="~/Profile/MyProjects.aspx" runat="server">
+                        <a href="~/profile/myprojects.aspx" runat="server">
                             <i class="fa fa-folder-open"></i>My Projects
                         </a>
                     </li>
                     <li>
-                        <a href="~/Profile/MyOrganizations.aspx" runat="server">
+                        <a href="~/profile/myorganizations.aspx" runat="server">
                             <i class="fa fa-sitemap"></i>My Organizations
                         </a>
                     </li>

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TeamTools.Logic.DTO;
@@ -17,7 +15,7 @@ namespace TeamTools.Web.Profile
     [PresenterBinding(typeof(ProjectTasksPresenter))]
     public partial class ProjectDetailsTasks : MvpUserControl<ProjectDetailsViewModel>, IProjectTasksView
     {
-        private const string RedirectUrl = "~/Profile/MyProjects.aspx";
+        private const string RedirectUrl = "~/profile/myprojects.aspx";
         private const int MinLength = 3;
         private const int MaxTitleLength = 100;
         private const int MaxDescriptionLength = 200;
@@ -112,7 +110,6 @@ namespace TeamTools.Web.Profile
 
                 this.CreateProjectTask?.Invoke(sender, new ProjectDetailsEventArgs(taskTitle, taskDescription, dueDate, executionCost, taskStatus, this.projectId));
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "createNewTask();", true);
-                this.MyProjectTasksGrid.DataBind();
             }
             catch (Exception)
             {
@@ -135,7 +132,7 @@ namespace TeamTools.Web.Profile
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "closeEditTaskPanel();", true);
         }
 
-        protected void EditTaskBtn_ServerClick(object sender, EventArgs e)
+        protected void EditTaskButton_ServerClick(object sender, EventArgs e)
         {
             string taskTitle = this.EditTaskTitle.Text;
             if (!Validator.ValidateRange(taskTitle, MinLength, MaxTitleLength))
@@ -158,7 +155,7 @@ namespace TeamTools.Web.Profile
             {
                 if (this.EditTaskEndDate.Text != string.Empty)
                 {
-                    dueDate = DateTime.Parse(this.TaskEndDate.Text);
+                    dueDate = DateTime.Parse(this.EditTaskEndDate.Text);
                 }
                 else
                 {
@@ -171,23 +168,19 @@ namespace TeamTools.Web.Profile
                 }
                 else
                 {
-                    executionCost = decimal.Parse(this.taskCost.Value);
+                    executionCost = decimal.Parse(this.EditTaskCost.Value);
                 }
 
                 taskStatus = (TaskType)Enum.Parse(typeof(TaskType), this.EditTaskStatus.SelectedItem.Text);
 
-                this.Model.EditableTask.Title = taskTitle;
-                this.Model.EditableTask.Description = taskDescription;
-                this.Model.EditableTask.DueDate = dueDate;
-                this.Model.EditableTask.ExecutionCost = executionCost;
-                this.Model.EditableTask.Status = taskStatus;
-                this.Model.EditableTask.ProjectId = this.projectId;
+                int taskId = int.Parse(this.EditTaskId.Attributes["data-id"]);
 
-                this.UpdateProjectTask?.Invoke(sender, new ProjectDetailsEventArgs(this.projectId));
+                this.UpdateProjectTask?.Invoke(sender, new ProjectDetailsEventArgs(taskTitle, taskDescription, dueDate, executionCost, taskStatus, taskId));
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "editTask();", true);
                 this.MyProjectTasksGrid.DataBind();
+                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "parseError();", true);
             }
@@ -202,9 +195,10 @@ namespace TeamTools.Web.Profile
                 int taskId = int.Parse(btnEdit.AccessKey);
                 this.LoadEditedTask?.Invoke(sender, new ProjectDetailsEventArgs(taskId));
 
+                this.EditTaskId.Attributes.Add("data-id", taskId.ToString());
                 this.EditTaskTitle.Text = this.Model.EditableTask.Title;
                 this.EditTaskDescription.InnerText = this.Model.EditableTask.Description;
-                this.EditTaskEndDate.Text = this.Model.EditableTask.DueDate.ToString();
+                this.EditTaskEndDate.Text = this.Model.EditableTask.DueDate.ToString().Split(' ')[0];
                 this.EditTaskCost.Value = this.Model.EditableTask.ExecutionCost.ToString();
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "showEditTaskPanel();", true);

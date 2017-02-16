@@ -63,18 +63,18 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="~/Profile/Home.aspx" runat="server">Your profile</a></li>
-                                <li><a href="~/Profile/MyProjects.aspx" runat="server">My projects</a></li>
-                                <li><a href="~/Profile/MyOrganizations.aspx" runat="server">My organizations</a></li>
+                                <li><a href="~/profile/home.aspx" runat="server">Your profile</a></li>
+                                <li><a href="~/profile/myprojects.aspx" runat="server">My projects</a></li>
+                                <li><a href="~/profile/myorganizations.aspx" runat="server">My organizations</a></li>
                             </ul>
                         </li>
                         <% } %>
 
                         <li>
-                            <a href="~/Organizations.aspx" runat="server">Organizations</a>
+                            <a href="~/organizations.aspx" runat="server">Organizations</a>
                         </li>
                         <li>
-                            <a href="~/About.aspx" runat="server">About</a>
+                            <a href="~/about.aspx" runat="server">About</a>
                         </li>
 
                         <% if (HttpContext.Current.User.IsInRole("Admin"))
@@ -82,7 +82,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administration <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="~/Admin/Admin.aspx" runat="server">Dashboard</a></li>
+                                <li><a href="~/admin/admin.aspx" runat="server">Dashboard</a></li>
                             </ul>
                         </li>
                         <% } %>
@@ -90,13 +90,13 @@
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a runat="server" href="~/account/register">Register</a></li>
+                                <li><a runat="server" href="~/account/login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Profile/Home.aspx" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a runat="server" href="~/profile/home.aspx" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>

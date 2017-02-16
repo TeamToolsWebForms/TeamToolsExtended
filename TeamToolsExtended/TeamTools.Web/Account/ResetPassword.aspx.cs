@@ -41,7 +41,7 @@ namespace TeamTools.Web.Account
                 var result = manager.ResetPassword(user.Id, token, this.Password.Text);
                 if (result.Succeeded)
                 {
-                    this.Response.Redirect("~/Account/Login");
+                    this.Response.Redirect("~/account/login");
                     return;
                 }
 

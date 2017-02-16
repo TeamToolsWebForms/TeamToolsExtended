@@ -25,5 +25,10 @@ namespace TeamTools.Web
                 }
             }
         }
+
+        protected void OrganizationProfile_Click(object sender, EventArgs e)
+        {
+            this.OrganizationHomeControl.Visible = true;
+        }
     }
 }

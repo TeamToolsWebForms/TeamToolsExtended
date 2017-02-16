@@ -22,7 +22,7 @@
                         <li class="list-item">
                             <h3>
                                 <span class="fa fa-file-text">
-                                    <asp:HyperLink NavigateUrl='<%# Eval("Id", "~/Profile/ProjectDetails.aspx?id={0}") %>' Text="<%#: Item.Title %>" runat="server" />
+                                    <asp:HyperLink NavigateUrl='<%# Eval("Id", "~/profile/projectdetails.aspx?id={0}") %>' Text="<%#: Item.Title %>" runat="server" />
                                 </span>
                             </h3>
                             <p><%#: Item.Description %></p>

@@ -1,4 +1,6 @@
-﻿using TeamTools.Logic.DTO;
+﻿using System;
+using TeamTools.Logic.Data.Models.Enums;
+using TeamTools.Logic.DTO;
 
 namespace TeamTools.Logic.Services.Contracts
 {
@@ -8,7 +10,7 @@ namespace TeamTools.Logic.Services.Contracts
 
         ProjectTaskDTO GetById(int id);
 
-        void Update(ProjectTaskDTO projectTask);
+        void Update(int taskId, string title, string description, DateTime? dueDate, decimal cost, TaskType status);
 
         void Delete(int id);
     }
