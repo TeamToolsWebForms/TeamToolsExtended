@@ -101,6 +101,6 @@
             </div>
         </div>
     </div>
-    <script src="../Scripts/project-details-download.js"></script>
+
     <script src="../Scripts/project-details.js"></script>
 </asp:Content>

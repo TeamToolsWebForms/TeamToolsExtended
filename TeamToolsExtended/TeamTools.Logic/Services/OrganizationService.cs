@@ -6,6 +6,7 @@ using TeamTools.Logic.Data.Models;
 using TeamTools.Logic.DTO;
 using TeamTools.Logic.Services.Contracts;
 using TeamTools.Logic.Services.Helpers.Contracts;
+using System;
 
 namespace TeamTools.Logic.Services
 {
@@ -57,8 +58,18 @@ namespace TeamTools.Logic.Services
         {
             var organization = this.organizationRepository.GetById(id);
             var mappedOrganization = this.mapperService.MapObject<OrganizationDTO>(organization);
+            mappedOrganization.Projects = mappedOrganization.Projects.Where(x => x.IsDeleted == false).ToList();
             mappedOrganization.OrganizationLogoUrl = this.imageHelper.ByteArrayToImageUrl(mappedOrganization.OrganizationLogo.Image);
             return mappedOrganization;
+        }
+
+        public void RemoveUserFromOrganization(string userId, int organizationId)
+        {
+            var organization = this.organizationRepository.GetById(organizationId);
+            var user = this.userRepository.GetById(userId);
+            organization.Users.Remove(user);
+            this.organizationRepository.Update(organization);
+            this.unitOfWork.Commit();
         }
     }
 }

@@ -6,6 +6,8 @@ namespace TeamTools.Logic.Services.Contracts
 {
     public interface IOrganizationService
     {
+        void RemoveUserFromOrganization(string userId, int organizationId);
+
         ICollection<OrganizationDTO> GetUserOrganizations(string id);
 
         void Create(Organization organization, string userId);

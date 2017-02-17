@@ -13,5 +13,7 @@ namespace TeamTools.Logic.Services.Contracts
         void Delete(int id);
 
         void CreatePersonalProject(string projectName, string projectDescription, string username);
+
+        void CreateOrganizationProject(int organizationId, string projectName, string projectDescription, string creatorName);
     }
 }

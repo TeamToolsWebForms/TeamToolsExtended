@@ -19,5 +19,7 @@ namespace TeamTools.Logic.DTO
         public ICollection<ProjectTaskDTO> ProjectTasks;
 
         public ICollection<MessageDTO> Messages;
+
+        public bool IsDeleted { get; set; }
     }
 }

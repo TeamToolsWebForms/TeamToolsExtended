@@ -13,13 +13,13 @@ namespace TeamTools.Web {
     public partial class OrganizationDetails {
         
         /// <summary>
-        /// OrganizationProfile control.
+        /// OrganizationProjects control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton OrganizationProfile;
+        protected global::System.Web.UI.WebControls.LinkButton OrganizationProjects;
         
         /// <summary>
         /// OrganizationAddUser control.
@@ -31,13 +31,13 @@ namespace TeamTools.Web {
         protected global::System.Web.UI.WebControls.LinkButton OrganizationAddUser;
         
         /// <summary>
-        /// OrganizationProjects control.
+        /// OrganizationProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton OrganizationProjects;
+        protected global::System.Web.UI.WebControls.LinkButton OrganizationProfile;
         
         /// <summary>
         /// LeaveOrganizationBtn control.
@@ -47,6 +47,24 @@ namespace TeamTools.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor LeaveOrganizationBtn;
+        
+        /// <summary>
+        /// ChangeLogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ChangeLogo;
+        
+        /// <summary>
+        /// AjaxFileUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AjaxFileUpload AjaxFileUpload;
         
         /// <summary>
         /// OrganizationHomeControl control.

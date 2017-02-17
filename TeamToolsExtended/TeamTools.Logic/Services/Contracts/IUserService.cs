@@ -1,4 +1,5 @@
-﻿using TeamTools.Logic.Data.Models;
+﻿using System.Collections.Generic;
+using TeamTools.Logic.Data.Models;
 using TeamTools.Logic.DTO;
 
 namespace TeamTools.Logic.Services.Contracts
@@ -8,6 +9,8 @@ namespace TeamTools.Logic.Services.Contracts
         UserDTO GetById(string id);
 
         UserDTO GetByUsername(string username);
+
+        IEnumerable<string> GetAllUsernamesWithoutMembers(string userId, int organizationId);
 
         UserDTO GetByIdWithFilteredProjects(string id, string username);
 

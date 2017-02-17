@@ -3,6 +3,9 @@ using TeamTools.Logic.Data.Contracts;
 using TeamTools.Logic.DTO;
 using TeamTools.Logic.Data.Models;
 using TeamTools.Logic.Services.Contracts;
+using System;
+using System.Collections.Generic;
+using Bytes2you.Validation;
 
 namespace TeamTools.Logic.Services
 {
@@ -10,17 +13,26 @@ namespace TeamTools.Logic.Services
     {
         private readonly IRepository<User> userRepository;
         private readonly IRepository<Project> projectRepository;
+        private readonly IRepository<Organization> organizationRepository;
         private readonly IMapperService mapperService;
         private readonly IUnitOfWork unitOfWork;
 
         public UserService(
             IRepository<User> userRepository,
             IRepository<Project> projectRepository,
+            IRepository<Organization> organizationRepository,
             IMapperService mapperService,
             IUnitOfWork unitOfWork)
         {
+            Guard.WhenArgument(userRepository, "User Repository").IsNull().Throw();
+            Guard.WhenArgument(projectRepository, "Project Repository").IsNull().Throw();
+            Guard.WhenArgument(organizationRepository, "Organization Repository").IsNull().Throw();
+            Guard.WhenArgument(mapperService, "Mapper Service").IsNull().Throw();
+            Guard.WhenArgument(unitOfWork, "UnitOfWork").IsNull().Throw();
+
             this.userRepository = userRepository;
             this.projectRepository = projectRepository;
+            this.organizationRepository = organizationRepository;
             this.mapperService = mapperService;
             this.unitOfWork = unitOfWork;
         }
@@ -57,6 +69,13 @@ namespace TeamTools.Logic.Services
             var user = this.userRepository.All(x => x.UserName == username).FirstOrDefault();
             var mapperUser = this.mapperService.MapObject<UserDTO>(user);
             return mapperUser;
+        }
+
+        public IEnumerable<string> GetAllUsernamesWithoutMembers(string userId, int organizationId)
+        {
+            var organization = this.organizationRepository.GetById(organizationId);
+            var users = this.userRepository.All().Where(x => !organization.Users.Contains(x)).Select(u => u.UserName);
+            return users;
         }
     }
 }

@@ -20,6 +20,7 @@ namespace TeamTools.Web.App_Start.NinjectModules
             this.Bind<IProjectService>().To<ProjectService>().InRequestScope();
             this.Bind<IProjectTaskService>().To<ProjectTaskService>().InRequestScope();
             this.Bind<IOrganizationService>().To<OrganizationService>().InRequestScope();
+            this.Bind<IJsonService>().To<JsonService>().InRequestScope();
         }
     }
 }
