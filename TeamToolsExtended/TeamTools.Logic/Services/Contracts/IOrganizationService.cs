@@ -9,5 +9,7 @@ namespace TeamTools.Logic.Services.Contracts
         ICollection<OrganizationDTO> GetUserOrganizations(string id);
 
         void Create(Organization organization, string userId);
+
+        OrganizationDTO GetById(int id);
     }
 }

@@ -111,6 +111,10 @@
     <Compile Include="Mvp\Account\ResetPassword\ResetPasswordEventArgs.cs" />
     <Compile Include="Mvp\Account\ResetPassword\ResetPasswordPresenter.cs" />
     <Compile Include="Mvp\Account\ResetPassword\ResetPasswordViewModel.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsHome\Contracts\IOrganizationDetailsHomeView.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsHome\OrganizationDetailsHomeEventArgs.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsHome\OrganizationDetailsHomePresenter.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsHome\OrganizationDetailsHomeViewModel.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IImportantNoteView.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IMyNotesView.cs" />
     <Compile Include="Mvp\Profile\MyOrganizations\Contracts\IMyOrganizationsView.cs" />

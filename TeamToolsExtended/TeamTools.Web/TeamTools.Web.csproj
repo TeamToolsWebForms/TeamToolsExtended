@@ -292,6 +292,7 @@
     <Content Include="Content\my-organizations.css" />
     <Content Include="Content\mynotes.css" />
     <Content Include="Content\new-task.css" />
+    <Content Include="Content\organization-details.css" />
     <Content Include="Content\project-details.css" />
     <Content Include="Content\server-error.css" />
     <Content Include="Content\toastr.css" />
@@ -325,7 +326,9 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="OrganizationDetails.aspx" />
+    <Content Include="OrganizationDetailsAddUser.ascx" />
     <Content Include="OrganizationDetailsHome.ascx" />
+    <Content Include="OrganizationDetailsProjects.ascx" />
     <Content Include="Profile\CreateNote.ascx" />
     <Content Include="Profile\ImportantNotes.ascx" />
     <Content Include="Profile\MyNotes.ascx" />
@@ -483,12 +486,26 @@
     <Compile Include="OrganizationDetails.aspx.designer.cs">
       <DependentUpon>OrganizationDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="OrganizationDetailsAddUser.ascx.cs">
+      <DependentUpon>OrganizationDetailsAddUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrganizationDetailsAddUser.ascx.designer.cs">
+      <DependentUpon>OrganizationDetailsAddUser.ascx</DependentUpon>
+    </Compile>
     <Compile Include="OrganizationDetailsHome.ascx.cs">
       <DependentUpon>OrganizationDetailsHome.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="OrganizationDetailsHome.ascx.designer.cs">
       <DependentUpon>OrganizationDetailsHome.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationDetailsProjects.ascx.cs">
+      <DependentUpon>OrganizationDetailsProjects.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrganizationDetailsProjects.ascx.designer.cs">
+      <DependentUpon>OrganizationDetailsProjects.ascx</DependentUpon>
     </Compile>
     <Compile Include="Organizations.aspx.cs">
       <DependentUpon>Organizations.aspx</DependentUpon>

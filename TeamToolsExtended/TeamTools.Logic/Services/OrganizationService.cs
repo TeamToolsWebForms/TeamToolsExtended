@@ -52,5 +52,13 @@ namespace TeamTools.Logic.Services
             this.organizationRepository.Add(organization);
             this.unitOfWork.Commit();
         }
+
+        public OrganizationDTO GetById(int id)
+        {
+            var organization = this.organizationRepository.GetById(id);
+            var mappedOrganization = this.mapperService.MapObject<OrganizationDTO>(organization);
+            mappedOrganization.OrganizationLogoUrl = this.imageHelper.ByteArrayToImageUrl(mappedOrganization.OrganizationLogo.Image);
+            return mappedOrganization;
+        }
     }
 }

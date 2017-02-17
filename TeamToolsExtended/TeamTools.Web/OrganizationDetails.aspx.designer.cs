@@ -40,6 +40,15 @@ namespace TeamTools.Web {
         protected global::System.Web.UI.WebControls.LinkButton OrganizationProjects;
         
         /// <summary>
+        /// LeaveOrganizationBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor LeaveOrganizationBtn;
+        
+        /// <summary>
         /// OrganizationHomeControl control.
         /// </summary>
         /// <remarks>
@@ -47,5 +56,23 @@ namespace TeamTools.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::TeamTools.Web.OrganizationDetailsHome OrganizationHomeControl;
+        
+        /// <summary>
+        /// OrganizationAddUserControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TeamTools.Web.OrganizationDetailsAddUser OrganizationAddUserControl;
+        
+        /// <summary>
+        /// OrganizationProjectsControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TeamTools.Web.OrganizationDetailsProjects OrganizationProjectsControl;
     }
 }

@@ -5,7 +5,7 @@ namespace TeamTools.Web
 {
     public partial class OrganizationDetails : Page
     {
-        private const string RedirectUrl = "~/Profile/MyOrganizations";
+        private const string RedirectUrl = "~/profile/myorganizations";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +28,28 @@ namespace TeamTools.Web
 
         protected void OrganizationProfile_Click(object sender, EventArgs e)
         {
+            this.OrganizationProjectsControl.Visible = false;
+            this.OrganizationAddUserControl.Visible = false;
             this.OrganizationHomeControl.Visible = true;
+        }
+
+        protected void LeaveOrganizationBtn_ServerClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void OrganizationAddUser_Click(object sender, EventArgs e)
+        {
+            this.OrganizationProjectsControl.Visible = false;
+            this.OrganizationAddUserControl.Visible = true;
+            this.OrganizationHomeControl.Visible = false;
+        }
+
+        protected void OrganizationProjects_Click(object sender, EventArgs e)
+        {
+            this.OrganizationProjectsControl.Visible = true;
+            this.OrganizationAddUserControl.Visible = false;
+            this.OrganizationHomeControl.Visible = false;
         }
     }
 }
