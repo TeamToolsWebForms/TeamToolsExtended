@@ -5,16 +5,15 @@ using WebFormsMvp;
 
 namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
 {
-    public class MyProjectDetailsPresenter : Presenter<IMyProjectDetailsView>
+    public class ProjectDetailsPresenter : Presenter<IProjectDetailsView>
     {
         private readonly IProjectService projectService;
 
-        public MyProjectDetailsPresenter(
-            IMyProjectDetailsView view,
+        public ProjectDetailsPresenter(
+            IProjectDetailsView view,
             IProjectService projectService)
             : base(view)
         {
-            Guard.WhenArgument(view, "View").IsNull().Throw();
             Guard.WhenArgument(projectService, "Project service").IsNull().Throw();
 
             this.View.DeleteProject += View_DeleteProject;

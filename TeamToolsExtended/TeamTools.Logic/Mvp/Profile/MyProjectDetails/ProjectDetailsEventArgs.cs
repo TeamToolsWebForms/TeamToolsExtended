@@ -10,6 +10,18 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
             this.Id = id;
         }
 
+        public ProjectDetailsEventArgs(int id, string username)
+            : this(id)
+        {
+            this.Username = username;
+        }
+
+        public ProjectDetailsEventArgs(int id, int organizationId)
+            : this(id)
+        {
+            this.OrganizationId = organizationId;
+        }
+
         public ProjectDetailsEventArgs(int id, string filename, string fileExtension, byte[] fileContent)
             : this(id)
         {
@@ -35,6 +47,10 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
         }
 
         public int Id { get; set; }
+
+        public int OrganizationId { get; set; }
+
+        public string Username { get; set; }
 
         public string TaskTitle { get; set; }
 

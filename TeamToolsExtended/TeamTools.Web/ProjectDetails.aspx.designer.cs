@@ -13,6 +13,114 @@ namespace TeamTools.Web {
     public partial class ProjectDetails {
         
         /// <summary>
+        /// ShowTasks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ShowTasks;
+        
+        /// <summary>
+        /// ShowStatistics control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ShowStatistics;
+        
+        /// <summary>
+        /// AddUserToProject control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor AddUserToProject;
+        
+        /// <summary>
+        /// ShowDocuments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ShowDocuments;
+        
+        /// <summary>
+        /// DeleteProjectButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor DeleteProjectButton;
+        
+        /// <summary>
+        /// AjaxFileUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AjaxFileUpload AjaxFileUpload;
+        
+        /// <summary>
+        /// closeDeleteProjectForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton closeDeleteProjectForm;
+        
+        /// <summary>
+        /// DeleteProjectBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteProjectBtn;
+        
+        /// <summary>
+        /// ProjectStatsControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TeamTools.Web.ProjectDetailsCharts ProjectStatsControl;
+        
+        /// <summary>
+        /// AddUserToProjectControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TeamTools.Web.ProjectDetailsAddUserToProject AddUserToProjectControl;
+        
+        /// <summary>
+        /// ProjectDetailsContentControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TeamTools.Web.ProjectDetailsTasks ProjectDetailsContentControl;
+        
+        /// <summary>
+        /// ProjectDocumentsControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TeamTools.Web.ProjectDetailsDocuments ProjectDocumentsControl;
+        
+        /// <summary>
         /// AccordionTasks control.
         /// </summary>
         /// <remarks>

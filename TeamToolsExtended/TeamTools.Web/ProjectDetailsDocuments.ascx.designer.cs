@@ -11,7 +11,7 @@ namespace TeamTools.Web
 {
 
 
-    public partial class Projects
+    public partial class ProjectDetailsDocuments
     {
     }
 }

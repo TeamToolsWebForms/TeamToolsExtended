@@ -10,8 +10,8 @@ using TeamTools.Logic.Services.Contracts;
 
 namespace TeamTools.Web.Profile
 {
-    [PresenterBinding(typeof(MyProjectDetailsPresenter))]
-    public partial class ProjectDetails : MvpPage<ProjectDetailsViewModel>, IMyProjectDetailsView
+    [PresenterBinding(typeof(ProjectDetailsPresenter))]
+    public partial class ProjectDetails : MvpPage<ProjectDetailsViewModel>, IProjectDetailsView
     {
         [Inject]
         public IFileService FileService { get; set; }

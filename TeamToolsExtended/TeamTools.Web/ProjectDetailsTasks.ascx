@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProjectDetailsTasks.ascx.cs" Inherits="TeamTools.Web.Profile.ProjectDetailsTasks" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProjectDetailsTasks.ascx.cs" Inherits="TeamTools.Web.ProjectDetailsTasks" %>
 
 <div id="gridviewControl" class="row">
     <div class="col-md-7 col-md-offset-1">
@@ -14,16 +14,16 @@
                 </div>
             </div>
             <div class="panel-body">
-                <asp:GridView runat="server" ClientIDMode="Static" ID="MyProjectTasksGrid"
+                <asp:GridView runat="server" ClientIDMode="Static" ID="ProjectTasksGrid"
                     DataKeyNames="Id"
                     ItemType="TeamTools.Logic.DTO.ProjectTaskDTO"
                     CssClass="table table-striped table-bordered table-list"
                     AutoGenerateColumns="false" AllowPaging="true"
                     AllowSorting="true"
                     PageSize="5"
-                    OnPageIndexChanging="MyProjectTasksGrid_PageIndexChanging"
-                    SelectMethod="MyProjectTasksGrid_GetData"
-                    DeleteMethod="MyProjectTasksGrid_DeleteItem">
+                    OnPageIndexChanging="ProjectTasksGrid_PageIndexChanging"
+                    SelectMethod="ProjectTasksGrid_GetData"
+                    DeleteMethod="ProjectTasksGrid_DeleteItem">
                     <EmptyDataTemplate>
                         <h3 class="text-center">There are no tasks yet!</h3>
                     </EmptyDataTemplate>
@@ -54,7 +54,7 @@
                         <form name="NewTaskForm">
                             <div class="form-group">
                                 <label for="taskName">Name</label>
-                                <asp:TextBox runat="server" ID="TaskName" CssClass="form-control" placeholder="Something catchy and short." />
+                                <asp:TextBox runat="server" ClientIDMode="Static" ID="TaskName" CssClass="form-control" placeholder="Something catchy and short." />
                             </div>
                             <div class="form-group">
                                 <label for="taskDescription">Description</label>
@@ -95,56 +95,83 @@
             </div>
 
             <%-- Edit task form --%>
-            <div id="EditTaskPanel" class="panel panel-default col-md-4">
-                <div class="panel-content">
-                    <div class="panel-header">
-                        <button runat="server" onserverclick="closeEditTaskPanel_ServerClick" type="button" id="closeEditTaskPanel" class="close" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4 class="modal-title">Edit Task</h4>
-                    </div>
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label for="EditTaskTitle">Name</label>
-                            <asp:TextBox runat="server" ID="EditTaskTitle" CssClass="form-control" placeholder="Something catchy and short." />
-                        </div>
-                        <div class="form-group">
-                            <label for="taskDescription">Description</label>
-                            <textarea runat="server" class="form-control" rows="5" placeholder="Something descriptive, but don't write a novel.(Optional)" id="EditTaskDescription"></textarea>
-                        </div>
-                        <div class="form-group form-inline">
-                            <label for="taskDate">Due date</label>
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <span class="fa fa-calendar"></span>
-                                </div>
-                                <asp:TextBox runat="server" ID="EditTaskEndDate" CssClass="form-control" />
-                                <ajaxToolkit:CalendarExtender runat="server" TargetControlID="EditTaskEndDate" />
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+
+
+                    <div id="EditTaskPanel" class="panel panel-default col-md-4">
+                        <div class="panel-content">
+                            <div class="panel-header">
+                                <button runat="server" onserverclick="closeEditTaskPanel_ServerClick" type="button" id="closeEditTaskPanel" class="close" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title">Edit Task</h4>
                             </div>
-                            <div class="form-group">
-                                <label for="taskCost">Cost</label>
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <span class="glyphicon glyphicon-usd"></span>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="EditTaskTitle">Name</label>
+                                    <asp:TextBox runat="server" ID="EditTaskTitle" CssClass="form-control" placeholder="Something catchy and short." />
+                                </div>
+                                <div class="form-group">
+                                    <label for="taskDescription">Description</label>
+                                    <textarea runat="server" class="form-control" rows="5" placeholder="Something descriptive, but don't write a novel.(Optional)" id="EditTaskDescription"></textarea>
+                                </div>
+                                <div class="form-group form-inline">
+                                    <label for="taskDate">Due date</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </div>
+                                        <asp:TextBox runat="server" ID="EditTaskEndDate" CssClass="form-control" />
+                                        <ajaxToolkit:CalendarExtender runat="server" TargetControlID="EditTaskEndDate" />
                                     </div>
-                                    <input runat="server" class="form-control" type="number" id="EditTaskCost" min="1">
+                                    <div class="form-group">
+                                        <label for="taskCost">Cost</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <span class="glyphicon glyphicon-usd"></span>
+                                            </div>
+                                            <input runat="server" class="form-control" type="number" id="EditTaskCost" min="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="taskStatus">Status</label>
+                                    <asp:DropDownList ID="EditTaskStatus" CssClass="form-control" runat="server">
+                                        <asp:ListItem Text="Started" Value="started" />
+                                        <asp:ListItem Text="Done" Value="done" />
+                                    </asp:DropDownList>
+                                </div>
+                                <div class="form-group">
+                                    <label for="task_status">Add user to task</label>
+                                    <div>
+                                        <span>Assigned users: </span>
+                                    </div>
+                                    <asp:Repeater runat="server" ID="AssignedUsersRepeater" ItemType="TeamTools.Logic.DTO.UserDTO">
+                                        <HeaderTemplate>
+                                            <ul>
+                                        </HeaderTemplate>
+                                        <ItemTemplate>
+                                            <li>
+                                                <%#: Item.UserName %>
+                                            </li>
+                                        </ItemTemplate>
+                                        <FooterTemplate>
+                                            </ul>
+                                        </FooterTemplate>
+                                    </asp:Repeater>
+                                    <asp:TextBox runat="server" ID="AssignUserToTask" ClientIDMode="Static" CssClass="form-control" />
+                                    <a runat="server" id="AssignUserBtn" class="btn btn-warning" onserverclick="AssignUserBtn_ServerClick">Add user</a>
+                                </div>
+                                <div class="form-group">
+                                    <span id="EditTaskId" runat="server"></span>
+                                    <a id="EditTaskButton" class="btn btn-success" runat="server" onserverclick="EditTaskButton_ServerClick">Edit Task</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="taskStatus">Status</label>
-                            <asp:DropDownList ID="EditTaskStatus" CssClass="form-control" runat="server">
-                                <asp:ListItem Text="Started" Value="started" />
-                                <asp:ListItem Text="Done" Value="done" />
-                            </asp:DropDownList>
-                        </div>
-                        <div class="form-group">
-                            <span id="EditTaskId" runat="server"></span>
-                            <a id="EditTaskButton" class="btn btn-success" runat="server" onserverclick="EditTaskButton_ServerClick">Edit Task</a>
-                        </div>
                     </div>
-                </div>
-            </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
     </div>
 </div>

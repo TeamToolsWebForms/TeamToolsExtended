@@ -10,3 +10,13 @@ ul.list-of-hours {
 ul {
     list-style: none;
 }
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }

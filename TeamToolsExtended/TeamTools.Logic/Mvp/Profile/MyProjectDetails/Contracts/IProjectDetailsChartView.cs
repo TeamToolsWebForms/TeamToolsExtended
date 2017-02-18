@@ -3,7 +3,7 @@ using WebFormsMvp;
 
 namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts
 {
-    public interface IMyProjectDetailsChartView : IView<ProjectDetailsViewModel>
+    public interface IProjectDetailsChartView : IView<ProjectDetailsViewModel>
     {
         event EventHandler<ProjectDetailsEventArgs> LoadProject;
     }

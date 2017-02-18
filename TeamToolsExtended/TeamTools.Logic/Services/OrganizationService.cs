@@ -6,7 +6,6 @@ using TeamTools.Logic.Data.Models;
 using TeamTools.Logic.DTO;
 using TeamTools.Logic.Services.Contracts;
 using TeamTools.Logic.Services.Helpers.Contracts;
-using System;
 
 namespace TeamTools.Logic.Services
 {

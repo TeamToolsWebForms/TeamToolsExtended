@@ -32,7 +32,7 @@
                         </EmptyDataTemplate>
                         <Columns>
                             <asp:CommandField ShowEditButton="true" ControlStyle-CssClass="btn btn-info" />
-                            <asp:HyperLinkField ItemStyle-HorizontalAlign="Center" ControlStyle-CssClass="fa fa-info-circle btn btn-warning" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="~/projectdetails.aspx?id={0}" Text=" Info" HeaderText="Show details" />
+                            <asp:HyperLinkField ItemStyle-HorizontalAlign="Center" ControlStyle-CssClass="fa fa-info-circle btn btn-warning" DataNavigateUrlFields="Id,OrganizationId" DataNavigateUrlFormatString="~/projectdetails.aspx?id={0}&organization={1}" Text=" Info" HeaderText="Show details" />
                             <asp:BoundField SortExpression="Title" DataField="Title" HeaderText="Name" />
                             <asp:BoundField SortExpression="CreatorName" ReadOnly="true" DataField="CreatorName" HeaderText="Creator" />
                             <asp:CommandField ShowDeleteButton="true" ItemStyle-HorizontalAlign="Center" ControlStyle-CssClass="btn btn-danger" />

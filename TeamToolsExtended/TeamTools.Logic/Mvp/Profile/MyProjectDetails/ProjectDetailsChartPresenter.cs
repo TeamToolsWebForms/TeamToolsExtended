@@ -6,11 +6,11 @@ using WebFormsMvp;
 
 namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
 {
-    public class MyProjectDetailsChartPresenter : Presenter<IMyProjectDetailsChartView>
+    public class ProjectDetailsChartPresenter : Presenter<IProjectDetailsChartView>
     {
         private readonly IProjectService projectService;
 
-        public MyProjectDetailsChartPresenter(IMyProjectDetailsChartView view, IProjectService projectService)
+        public ProjectDetailsChartPresenter(IProjectDetailsChartView view, IProjectService projectService)
             : base(view)
         {
             Guard.WhenArgument(view, "View").IsNull().Throw();

@@ -26,12 +26,14 @@ namespace TeamTools.Web.Profile
         public event EventHandler<ProjectDetailsEventArgs> DeleteProjectTask;
         public event EventHandler<ProjectDetailsEventArgs> CreateProjectTask;
         public event EventHandler<ProjectDetailsEventArgs> LoadEditedTask;
+        public event EventHandler<ProjectDetailsEventArgs> AssignUserToTaskEv;
+        public event EventHandler<ProjectDetailsEventArgs> IsUserToAssignValid;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Params["id"] == null)
+            if (this.Request.Params["id"] == null)
             {
-                Response.Redirect(RedirectUrl);
+                this.Response.Redirect(RedirectUrl);
             }
             else
             {
@@ -43,7 +45,7 @@ namespace TeamTools.Web.Profile
                 }
                 catch (FormatException)
                 {
-                    Response.Redirect(RedirectUrl);
+                    this.Response.Redirect(RedirectUrl);
                 }
             }
         }
@@ -180,7 +182,7 @@ namespace TeamTools.Web.Profile
                 this.MyProjectTasksGrid.DataBind();
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "parseError();", true);
             }

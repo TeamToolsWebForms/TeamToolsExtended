@@ -13,5 +13,11 @@ namespace TeamTools.Logic.Services.Contracts
         void Update(int taskId, string title, string description, DateTime? dueDate, decimal cost, TaskType status);
 
         void Delete(int id);
+
+        void AssignUserToTask(int id, string username);
+
+        bool IsUserToAssignValid(int id, string username);
+
+        string GetUsersNotSignedToTask(int taskId, int projectId);
     }
 }

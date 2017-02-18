@@ -18,20 +18,33 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
             Guard.WhenArgument(projectTaskService, "ProjectTask Service").IsNull().Throw();
             Guard.WhenArgument(projectTaskFactory, "ProjectTask Factory").IsNull().Throw();
 
-            this.View.LoadProjectTasks += View_LoadProjectTasks;
-            this.View.UpdateProjectTask += View_UpdateProjectTask;
-            this.View.DeleteProjectTask += View_DeleteProjectTask;
-            this.View.CreateProjectTask += View_CreateProjectTask;
-            this.View.LoadEditedTask += View_LoadEditedTask;
-            
+            this.View.LoadProjectTasks += this.View_LoadProjectTasks;
+            this.View.UpdateProjectTask += this.View_UpdateProjectTask;
+            this.View.DeleteProjectTask += this.View_DeleteProjectTask;
+            this.View.CreateProjectTask += this.View_CreateProjectTask;
+            this.View.LoadEditedTask += this.View_LoadEditedTask;
+            this.View.AssignUserToTaskEv += this.View_AssignUserToTaskEv;
+            this.View.IsUserToAssignValid += this.View_IsUserToAssignValid;
+
             this.projectService = projectService;
             this.projectTaskService = projectTaskService;
             this.projectTaskFactory = projectTaskFactory;
         }
 
+        private void View_IsUserToAssignValid(object sender, ProjectDetailsEventArgs e)
+        {
+            this.View.Model.IsUserInValid = this.projectTaskService.IsUserToAssignValid(e.Id, e.Username);
+        }
+
+        private void View_AssignUserToTaskEv(object sender, ProjectDetailsEventArgs e)
+        {
+            this.projectTaskService.AssignUserToTask(e.Id, e.Username);
+        }
+
         private void View_LoadEditedTask(object sender, ProjectDetailsEventArgs e)
         {
             this.View.Model.EditableTask = this.projectTaskService.GetById(e.Id);
+            this.View.Model.UserSignedToProjectJson = this.projectTaskService.GetUsersNotSignedToTask(e.Id, e.OrganizationId);
         }
 
         private void View_CreateProjectTask(object sender, ProjectDetailsEventArgs e)

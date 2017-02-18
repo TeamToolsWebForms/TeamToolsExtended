@@ -10,6 +10,12 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
 
         public ProjectDocumentDTO DocumentInfo { get; set; }
 
+        public string UserSignedToProjectJson { get; set; }
+
+        public string UsersUnsignedToProjectJson { get; set; }
+
+        public bool IsUserInValid { get; set; }
+
         public decimal[] AllCosts { get; set; }
 
         public string AllDays { get; set; }

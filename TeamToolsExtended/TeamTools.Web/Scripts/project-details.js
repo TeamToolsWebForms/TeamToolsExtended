@@ -49,7 +49,7 @@ function deleteProjectTaskSuccess() {
 }
 
 function showAjaxFileUpload() {
-    $("#DocumentFileUpload").fadeIn();
+    $("#DocumentFileUpload").fadeToggle();
 }
 
 function closeFileUploadForm() {
@@ -59,4 +59,32 @@ function closeFileUploadForm() {
 function verifyDownload() {
     $("#DocumentFileUpload").fadeOut();
     toastr.success("Files uploaded successfully");
+}
+
+function successAddToProject() {
+    toastr.success("User successfully added to project");
+}
+
+function failAddToProject() {
+    toastr.error("Sorry, but user with that email could not be found in the organization");
+}
+
+function loadUsers(users) {
+    $("#ProjectUserField").autocomplete({
+        source: users
+    });
+}
+
+function loadProjectUsers(users) {
+    $("#AssignUserToTask").autocomplete({
+        source: users
+    });
+}
+
+function userAssignedToProject() {
+    toastr.success("User successfully assigned to task");
+}
+
+function invalidUser() {
+    toastr.error("Cannot assign invalid username");
 }
