@@ -5,6 +5,8 @@ using Ninject;
 using Ninject.Web.Common;
 using TeamTools.Web.App_Start.NinjectModules;
 using WebFormsMvp.Binder;
+using Microsoft.AspNet.SignalR;
+using TeamTools.Web.App_Start.SignalRConfig;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(TeamTools.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(TeamTools.Web.App_Start.NinjectWebCommon), "Stop")]
@@ -45,6 +47,8 @@ namespace TeamTools.Web.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+                
+                GlobalHost.DependencyResolver = new NinjectSignalRDependencyResolver(kernel);
 
                 RegisterServices(kernel);
                 return kernel;

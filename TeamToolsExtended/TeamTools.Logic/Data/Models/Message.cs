@@ -5,6 +5,17 @@ namespace TeamTools.Logic.Data.Models
 {
     public class Message
     {
+        public Message()
+        {
+        }
+
+        public Message(DateTime created, string creator, string content)
+        {
+            this.Created = created;
+            this.Creator = creator;
+            this.Content = content;
+        }
+
         public int Id { get; set; }
 
         public int ProjectId { get; set; }
@@ -13,9 +24,7 @@ namespace TeamTools.Logic.Data.Models
 
         public DateTime Created { get; set; }
 
-        public int UserId { get; set; }
-
-        public virtual User User { get; set; }
+        public string Creator { get; set; }
 
         [MaxLength(300)]
         public string Content { get; set; }

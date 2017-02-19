@@ -3,14 +3,16 @@ using System;
 using System.Web.UI;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
+using TeamTools.Logic.Mvp.ProjectDetails.ProjectDetailsMain;
+using TeamTools.Logic.Mvp.ProjectDetails.ProjectDetailsMain.Contracts;
 using TeamTools.Logic.Services.Contracts;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
 namespace TeamTools.Web
 {
-    [PresenterBinding(typeof(ProjectDetailsPresenter))]
-    public partial class ProjectDetails : MvpPage<ProjectDetailsViewModel>, IProjectDetailsView
+    [PresenterBinding(typeof(ProjectDetailsMainPresenter))]
+    public partial class ProjectDetails : MvpPage<ProjectDetailsMainViewModel>, IProjectDetailsMainView
     {
         [Inject]
         public IFileService FileService { get; set; }
@@ -19,7 +21,8 @@ namespace TeamTools.Web
         private int projectId;
         private int organizationId;
 
-        public event EventHandler<ProjectDetailsEventArgs> DeleteProject;
+        public event EventHandler<ProjectDetailsMainEventArgs> DeleteProject;
+        public event EventHandler<ProjectDetailsMainEventArgs> LoadProjectMessages;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,6 +38,10 @@ namespace TeamTools.Web
                     int queryOrganizationId = int.Parse(this.Request.Params["organization"]);
                     this.projectId = queryProjectId;
                     this.organizationId = queryOrganizationId;
+                    this.LoadProjectMessages?.Invoke(sender, new ProjectDetailsMainEventArgs(this.projectId));
+
+                    this.MessageRepeater.DataSource = this.Model.Messages;
+                    this.MessageRepeater.DataBind();
                 }
                 catch (FormatException)
                 {
@@ -45,7 +52,7 @@ namespace TeamTools.Web
 
         protected void DeleteProjectBtn_Click(object sender, EventArgs e)
         {
-            this.DeleteProject?.Invoke(sender, new ProjectDetailsEventArgs(this.projectId));
+            this.DeleteProject?.Invoke(sender, new ProjectDetailsMainEventArgs(this.projectId));
             this.Response.Redirect(RedirectUrl);
         }
 

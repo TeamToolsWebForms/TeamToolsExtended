@@ -1,20 +1,22 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using System;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
-using System;
 using TeamTools.Logic.Data;
 using TeamTools.Logic.Data.Models;
 
 [assembly: OwinStartupAttribute(typeof(TeamTools.Authentication.Startup))]
+[assembly: OwinStartup(typeof(TeamTools.Authentication.Startup))]
+
 namespace TeamTools.Authentication
 {
     public class Startup
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+            this.ConfigureAuth(app);
         }
 
         public void ConfigureAuth(IAppBuilder app)
@@ -38,6 +40,7 @@ namespace TeamTools.Authentication
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
             });
+
             // Use a cookie to temporarily store information about a user logging in with a third party login provider
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
@@ -48,6 +51,7 @@ namespace TeamTools.Authentication
             // Once you check this option, your second step of verification during the login process will be remembered on the device where you logged in from.
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
+            app.MapSignalR();
         }
     }
 }

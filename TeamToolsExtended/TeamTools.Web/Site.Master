@@ -40,9 +40,11 @@
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
+                <asp:ScriptReference Path="~/Scripts/jquery.signalR-2.2.1.min.js" />
                 <asp:ScriptReference Path="~/Scripts/jquery-ui-1.12.1.min.js" />
                 <asp:ScriptReference Path="~/Scripts/toastr.min.js" />
                 <asp:ScriptReference Path="~/Scripts/requester.js" />
+                <asp:ScriptReference Path="signalr/hubs" />
             </Scripts>
         </asp:ScriptManager>
 

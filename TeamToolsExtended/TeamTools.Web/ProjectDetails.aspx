@@ -8,6 +8,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="../Content/project-details.css" rel="stylesheet" type="text/css" />
     <link href="../Content/new-task.css" rel="stylesheet" type="text/css" />
+    <link href="Content/chat.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div id="wrapper" class="row">
@@ -15,6 +16,9 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a runat="server" id="ShowTasks" onserverclick="ShowTasks_ServerClick">Show tasks</a>
+                </li>
+                <li class="sidebar-brand">
+                    <a id="ShowChat">Show chat</a>
                 </li>
                 <li class="sidebar-brand">
                     <a runat="server" id="ShowStatistics" onserverclick="ShowStatistics_ServerClick">Statistics</a>
@@ -108,66 +112,37 @@
         </div>
     </div>
 
-
-
-
-
-
-    <ajaxToolkit:Accordion ID="AccordionTasks" runat="server"
-        SelectedIndex="-1"
-        HeaderCssClass="accordionHeader"
-        HeaderSelectedCssClass="accordionHeaderSelected"
-        ContentCssClass="accordionContent"
-        AutoSize="None"
-        FadeTransitions="true"
-        TransitionDuration="250"
-        FramesPerSecond="40"
-        RequireOpenedPane="false"
-        SuppressHeaderPostbacks="true"
-        ClientIDMode="Static">
-        <Panes>
-            <ajaxToolkit:AccordionPane runat="server">
-                <Header>
-                    <div id="showChat">
-                        <span class="glyphicon glyphicon-comment"></span>Chat
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                        <span class="glyphicon glyphicon-chevron-down"></span>
-                                    </button>
+    <div id="main-chat" class="container col-xs-4">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                    <div id="message-container" class="container scrollable-chat-menu">
+                        <asp:Repeater runat="server" ID="MessageRepeater" ItemType="TeamTools.Logic.DTO.MessageDTO">
+                            <ItemTemplate>
+                                <div class="row message-bubble">
+                                    <p class="text-muted">
+                                        <span><%#: Item.Creator %></span>
+                                    </p>
+                                    <p><%#: Item.Content %></p>
+                                    <div>sent <%#: Item.Created.ToString("ddd MMM dd yyyy") %></div>
                                 </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </div>
-                </Header>
-                <Content>
-                    <div id="main-chat" <%--[@slideInOut]="menuState"--%> class="container col-xs-4">
-                        <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-heading"><%--{{project.name}}--%></div>
-                                <div class="panel-body">
-                                    <div id="message-container" <%--#chatContent--%> class="container scrollable-chat-menu">
-                                        <div class="row message-bubble" <%--*ngFor="let message of messages"--%>>
-                                            <p class="text-muted">
-                                                <img style="width: 30px; height: 25px;" src="<%--{{message.picture}}/> {{message.from}}--%>" />
-                                            </p>
-                                            <p><%--{{message.message}}--%></p>
-                                            <div>sent <%--{{message.created | date}}--%></div>
-                                        </div>
-                                    </div>
-                                    <div class="chat-message-botom">
-                                        <div class="input-group">
-                                            <input id="m" type="text" class="form-control" <%--(keyup.enter)="messageBoardUpdate()"--%> <%--[(ngModel)]="message"--%> />
-                                            <span class="input-group-btn">
-                                                <button id="sendMsg" type="submit" class="btn btn-success" <%--(click)="messageBoardUpdate()"--%>>Send</button>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="chat-message-botom">
+                        <div class="input-group">
+                            <input id="m" type="text" class="form-control" <%--(keyup.enter)="messageBoardUpdate()"--%> <%--[(ngModel)]="message"--%> />
+                            <span class="input-group-btn">
+                                <a id="sendMsg" class="btn btn-success" <%--(click)="messageBoardUpdate()"--%>>Send</a>
+                            </span>
                         </div>
                     </div>
-                </Content>
-            </ajaxToolkit:AccordionPane>
-        </Panes>
-    </ajaxToolkit:Accordion>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="Scripts/chat-logic.js"></script>
     <script src="../Scripts/project-details.js"></script>
 </asp:Content>

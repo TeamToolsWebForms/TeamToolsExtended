@@ -121,12 +121,12 @@ namespace TeamTools.Web {
         protected global::TeamTools.Web.ProjectDetailsDocuments ProjectDocumentsControl;
         
         /// <summary>
-        /// AccordionTasks control.
+        /// MessageRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.Accordion AccordionTasks;
+        protected global::System.Web.UI.WebControls.Repeater MessageRepeater;
     }
 }

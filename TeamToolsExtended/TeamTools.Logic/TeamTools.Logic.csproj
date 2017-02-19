@@ -186,12 +186,18 @@
     <Compile Include="Mvp\ProjectDetails\ProjectDetailsAddUserProject\ProjectDetailsAddUserProjectEventArgs.cs" />
     <Compile Include="Mvp\ProjectDetails\ProjectDetailsAddUserProject\ProjectDetailsAddUserProjectPresenter.cs" />
     <Compile Include="Mvp\ProjectDetails\ProjectDetailsAddUserProject\ProjectDetailsAddUserProjectViewModel.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsMain\Contracts\IProjectDetailsMainView.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsMain\ProjectDetailsMainEventArgs.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsMain\ProjectDetailsMainPresenter.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsMain\ProjectDetailsMainViewModel.cs" />
     <Compile Include="Mvp\ProjectDetails\ProjectDetailsOrganization\Contracts\IProjectDetailsOrganizationView.cs" />
     <Compile Include="Mvp\ProjectDetails\ProjectDetailsOrganization\ProjectDetailsOrganizationPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Contracts\IFileService.cs" />
     <Compile Include="Services\Contracts\IJsonService.cs" />
     <Compile Include="Services\Contracts\IMapperService.cs" />
+    <Compile Include="Services\Contracts\IMessageFactory.cs" />
+    <Compile Include="Services\Contracts\IMessageService.cs" />
     <Compile Include="Services\Contracts\INoteService.cs" />
     <Compile Include="Services\Contracts\IOrganizationService.cs" />
     <Compile Include="Services\Contracts\IProjectService.cs" />
@@ -204,6 +210,7 @@
     <Compile Include="Services\Helpers\ImageHelper.cs" />
     <Compile Include="Services\JsonService.cs" />
     <Compile Include="Services\MapperService.cs" />
+    <Compile Include="Services\MessageService.cs" />
     <Compile Include="Services\NoteService.cs" />
     <Compile Include="Services\OrganizationService.cs" />
     <Compile Include="Services\ProjectService.cs" />

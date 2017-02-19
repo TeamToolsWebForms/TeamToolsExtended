@@ -1,4 +1,5 @@
-﻿using Ninject.Modules;
+﻿using Ninject.Extensions.Factory;
+using Ninject.Modules;
 using Ninject.Web.Common;
 using TeamTools.Logic.Services;
 using TeamTools.Logic.Services.Contracts;
@@ -21,6 +22,8 @@ namespace TeamTools.Web.App_Start.NinjectModules
             this.Bind<IProjectTaskService>().To<ProjectTaskService>().InRequestScope();
             this.Bind<IOrganizationService>().To<OrganizationService>().InRequestScope();
             this.Bind<IJsonService>().To<JsonService>().InRequestScope();
+            this.Bind<IMessageService>().To<MessageService>().InRequestScope();
+            this.Bind<IMessageFactory>().ToFactory().InSingletonScope();
         }
     }
 }
