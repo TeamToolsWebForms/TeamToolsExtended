@@ -7,5 +7,6 @@ namespace TeamTools.Logic.Mvp.OrganizationDetails.OrganizationDetailsMain.Contra
     {
         event EventHandler<OrganizationDetailsEventArgs> LoadAllUsersWithoutCurrentMembers;
         event EventHandler<OrganizationDetailsEventArgs> LeaveOrganization;
+        event EventHandler<OrganizationDetailsEventArgs> CheckIfUserPersistInOrganization;
     }
 }

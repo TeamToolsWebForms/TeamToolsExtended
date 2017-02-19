@@ -24,10 +24,16 @@ namespace TeamTools.Logic.Mvp.OrganizationDetails.OrganizationDetailsMain
 
             this.View.LoadAllUsersWithoutCurrentMembers += this.View_LoadAllUsersWithoutCurrentMembers;
             this.View.LeaveOrganization += this.View_LeaveOrganization;
+            this.View.CheckIfUserPersistInOrganization += this.View_CheckIfUserPersistInOrganization;
 
             this.userService = userService;
             this.jsonService = jsonService;
             this.organizationService = organizationService;
+        }
+
+        private void View_CheckIfUserPersistInOrganization(object sender, OrganizationDetailsEventArgs e)
+        {
+            this.View.Model.CanVisitOrganizationDetails = this.organizationService.CanUserJoinOrganization(e.OrganizationId, e.Username);
         }
 
         private void View_LeaveOrganization(object sender, OrganizationDetailsEventArgs e)

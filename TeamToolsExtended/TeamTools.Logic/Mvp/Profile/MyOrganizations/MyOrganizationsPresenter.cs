@@ -1,9 +1,4 @@
 ﻿using Bytes2you.Validation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TeamTools.Logic.Mvp.Profile.MyOrganizations.Contracts;
 using TeamTools.Logic.Services.Contracts;
 using TeamTools.Logic.Services.Helpers.Contracts;
@@ -26,14 +21,13 @@ namespace TeamTools.Logic.Mvp.Profile.MyOrganizations
             IImageHelper imageHelper)
             : base(view)
         {
-            Guard.WhenArgument(view, "View").IsNull().Throw();
             Guard.WhenArgument(organizationService, "Organization Service").IsNull().Throw();
             Guard.WhenArgument(organizationFactory, "Organization Factory").IsNull().Throw();
             Guard.WhenArgument(organizationLogoFactory, "OrganizationLogo Factory").IsNull().Throw();
             Guard.WhenArgument(imageHelper, "Image Helper").IsNull().Throw();
 
-            this.View.LoadMyOrganizations += View_LoadMyOrganizations;
-            this.View.SaveOrganization += View_SaveOrganization;
+            this.View.LoadMyOrganizations += this.View_LoadMyOrganizations;
+            this.View.SaveOrganization += this.View_SaveOrganization;
 
             this.organizationService = organizationService;
             this.organizationFactory = organizationFactory;
@@ -41,7 +35,7 @@ namespace TeamTools.Logic.Mvp.Profile.MyOrganizations
             this.imageHelper = imageHelper;
         }
 
-        private void View_SaveOrganization(object sender, MyOrganizationsEventArgs e)
+        private void View_SaveOrganization(object sender, OrganizationsEventArgs e)
         {
             var image = this.imageHelper.GetImage(e.DefaultLogoPath);
             var imageContent = this.imageHelper.ImageToByteArray(image);
@@ -52,7 +46,7 @@ namespace TeamTools.Logic.Mvp.Profile.MyOrganizations
             this.organizationService.Create(organization, e.Id);
         }
 
-        private void View_LoadMyOrganizations(object sender, MyOrganizationsEventArgs e)
+        private void View_LoadMyOrganizations(object sender, OrganizationsEventArgs e)
         {
             this.View.Model.MyOrganizations = this.organizationService.GetUserOrganizations(e.Id);
         }

@@ -8,10 +8,16 @@ namespace TeamTools.Logic.Services.Contracts
     {
         void RemoveUserFromOrganization(string userId, int organizationId);
 
+        ICollection<OrganizationDTO> GetOrganizations();
+
         ICollection<OrganizationDTO> GetUserOrganizations(string id);
 
         void Create(Organization organization, string userId);
 
         OrganizationDTO GetById(int id);
+
+        bool CanUserJoinOrganization(int organizationId, string username);
+
+        void JoinOrganization(int organizationId, string username);
     }
 }

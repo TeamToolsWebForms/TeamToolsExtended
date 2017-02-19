@@ -7,6 +7,8 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using TeamTools.Authentication;
 
 namespace TeamTools.Web
 {
@@ -69,6 +71,7 @@ namespace TeamTools.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

@@ -26,8 +26,6 @@ namespace TeamTools.Web.Profile
         public event EventHandler<ProjectDetailsEventArgs> DeleteProjectTask;
         public event EventHandler<ProjectDetailsEventArgs> CreateProjectTask;
         public event EventHandler<ProjectDetailsEventArgs> LoadEditedTask;
-        public event EventHandler<ProjectDetailsEventArgs> AssignUserToTaskEv;
-        public event EventHandler<ProjectDetailsEventArgs> IsUserToAssignValid;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -194,7 +192,7 @@ namespace TeamTools.Web.Profile
             
             try
             {
-                int taskId = int.Parse(btnEdit.AccessKey);
+                int taskId = int.Parse(btnEdit.CommandArgument);
                 this.LoadEditedTask?.Invoke(sender, new ProjectDetailsEventArgs(taskId));
 
                 this.EditTaskId.Attributes.Add("data-id", taskId.ToString());

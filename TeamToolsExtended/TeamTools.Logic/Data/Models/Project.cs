@@ -39,7 +39,7 @@ namespace TeamTools.Logic.Data.Models
         [MaxLength(150)]
         public string CreatorName { get; set; }
 
-        public int OrganizationId { get; set; }
+        public int? OrganizationId { get; set; }
 
         public bool IsPersonal { get; set; }
 

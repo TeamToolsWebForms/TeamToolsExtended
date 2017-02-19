@@ -10,8 +10,16 @@ namespace TeamTools.Logic.Mvp.OrganizationDetails.OrganizationDetailsMain
             this.OrganizationId = organizationId;
         }
 
+        public OrganizationDetailsEventArgs(int organizationId, string username)
+        {
+            this.OrganizationId = organizationId;
+            this.Username = username;
+        }
+
         public string UserId { get; private set; }
 
         public int OrganizationId { get; private set; }
+
+        public string Username { get; set; }
     }
 }

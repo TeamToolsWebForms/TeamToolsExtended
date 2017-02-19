@@ -12,7 +12,7 @@ namespace TeamTools.Logic.DTO
         
         public string CreatorName { get; set; }
 
-        public int OrganizationId { get; set; }
+        public int? OrganizationId { get; set; }
 
         public ICollection<ProjectDocumentDTO> ProjectDocuments { get; set; }
 

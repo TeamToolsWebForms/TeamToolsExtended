@@ -5,15 +5,16 @@ using System.Web.UI.WebControls;
 using TeamTools.Logic.Data.Models.Enums;
 using TeamTools.Logic.DTO;
 using TeamTools.Logic.Mvp.Profile.MyProjectDetails;
-using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
+using TeamTools.Logic.Mvp.ProjectDetails.ProjectDetailsOrganization;
+using TeamTools.Logic.Mvp.ProjectDetails.ProjectDetailsOrganization.Contracts;
 using TeamTools.Web.Helpers;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
 namespace TeamTools.Web
 {
-    [PresenterBinding(typeof(ProjectTasksPresenter))]
-    public partial class ProjectDetailsTasks : MvpUserControl<ProjectDetailsViewModel>, IProjectTasksView
+    [PresenterBinding(typeof(ProjectDetailsOrganizationPresenter))]
+    public partial class ProjectDetailsTasks : MvpUserControl<ProjectDetailsViewModel>, IProjectDetailsOrganizationView
     {
         private const string RedirectUrl = "~/organizations.aspx";
         private const int MinLength = 3;
@@ -98,7 +99,7 @@ namespace TeamTools.Web
                 this.ProjectTasksGrid.DataBind();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "parseError();", true);
             }
@@ -170,7 +171,7 @@ namespace TeamTools.Web
 
             try
             {
-                int taskId = int.Parse(btnEdit.AccessKey);
+                int taskId = int.Parse(btnEdit.CommandArgument);
                 this.LoadEditedTask?.Invoke(sender, new ProjectDetailsEventArgs(taskId, this.projectId));
 
                 this.EditTaskId.Attributes.Add("data-id", taskId.ToString());

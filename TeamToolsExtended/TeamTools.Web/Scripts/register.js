@@ -1,5 +1,5 @@
 ﻿"use strict";
 
 function registerError() {
-    toastr.error("Something went wrong, please try again");
+    toastr.error("User with that email already exists");
 }

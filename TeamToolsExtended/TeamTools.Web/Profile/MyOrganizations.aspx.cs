@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,13 +16,13 @@ namespace TeamTools.Web.Profile
     {
         private const string DefaultOrganizationLogoPath = "~/Images/default-organization.png";
     
-        public event EventHandler<MyOrganizationsEventArgs> LoadMyOrganizations;
-        public event EventHandler<MyOrganizationsEventArgs> SaveOrganization;
+        public event EventHandler<OrganizationsEventArgs> LoadMyOrganizations;
+        public event EventHandler<OrganizationsEventArgs> SaveOrganization;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             string userId = this.Page.User.Identity.GetUserId();
-            this.LoadMyOrganizations?.Invoke(sender, new MyOrganizationsEventArgs(userId));
+            this.LoadMyOrganizations?.Invoke(sender, new OrganizationsEventArgs(userId));
 
             this.MyOrganizationsListView.DataSource = this.Model.MyOrganizations;
             this.MyOrganizationsListView.DataBind();
@@ -53,7 +52,7 @@ namespace TeamTools.Web.Profile
             
             string defaultPath = HttpContext.Current.Server.MapPath(DefaultOrganizationLogoPath);
 
-            this.SaveOrganization?.Invoke(sender, new MyOrganizationsEventArgs(userId, name, description, username, defaultPath));
+            this.SaveOrganization?.Invoke(sender, new OrganizationsEventArgs(userId, name, description, username, defaultPath));
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "saveOrganization();", true);
             

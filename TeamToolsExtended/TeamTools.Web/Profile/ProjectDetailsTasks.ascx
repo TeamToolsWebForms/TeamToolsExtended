@@ -33,7 +33,7 @@
                         <asp:BoundField SortExpression="DueDate" DataFormatString="{0: dd.MM.yyyy}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" DataField="DueDate" HeaderText="Due Date" />
                         <asp:TemplateField ItemStyle-CssClass="text-center">
                             <ItemTemplate>
-                                <asp:Button Text="Edit" AccessKey="<%# Item.Id %>" CssClass="btn btn-warning" ID="EditTaskBtn" OnClick="EditTaskBtn_Click" runat="server" />
+                                <asp:Button Text="Edit" CommandArgument="<%# Item.Id %>" CssClass="btn btn-warning" ID="EditTaskBtn" OnClick="EditTaskBtn_Click" runat="server" />
                                 <asp:Button Text="Delete" CssClass="btn btn-danger" CommandName="Delete" runat="server" />
                             </ItemTemplate>
                         </asp:TemplateField>

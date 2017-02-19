@@ -6,6 +6,7 @@ using TeamTools.Logic.Data.Models;
 using TeamTools.Logic.DTO;
 using TeamTools.Logic.Services.Contracts;
 using TeamTools.Logic.Services.Helpers.Contracts;
+using System;
 
 namespace TeamTools.Logic.Services
 {
@@ -68,6 +69,27 @@ namespace TeamTools.Logic.Services
             var user = this.userRepository.GetById(userId);
             organization.Users.Remove(user);
             this.organizationRepository.Update(organization);
+            this.unitOfWork.Commit();
+        }
+
+        public ICollection<OrganizationDTO> GetOrganizations()
+        {
+            var mappedOrganizations = this.organizationRepository.All().Select(x => this.mapperService.MapObject<OrganizationDTO>(x));
+            return mappedOrganizations.ToList();
+        }
+
+        public bool CanUserJoinOrganization(int organizationId, string username)
+        {
+            var organization = this.organizationRepository.GetById(organizationId);
+            bool canJoin = organization.Users.Any(x => x.UserName == username);
+            return canJoin;
+        }
+
+        public void JoinOrganization(int organizationId, string username)
+        {
+            var organization = this.organizationRepository.GetById(organizationId);
+            var user = this.userRepository.All(x => x.UserName == username).FirstOrDefault();
+            organization.Users.Add(user);
             this.unitOfWork.Commit();
         }
     }

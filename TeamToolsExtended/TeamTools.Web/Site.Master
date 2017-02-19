@@ -78,13 +78,12 @@
                         <li>
                             <a href="~/about.aspx" runat="server">About</a>
                         </li>
-
-                        <% if (HttpContext.Current.User.IsInRole("Admin"))
+                        <% if (HttpContext.Current.User.IsInRole("admin"))
                             { %>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administration <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="~/admin/admin.aspx" runat="server">Dashboard</a></li>
+                                <li><a href="~/admin/dashboard.aspx" runat="server">Dashboard</a></li>
                             </ul>
                         </li>
                         <% } %>

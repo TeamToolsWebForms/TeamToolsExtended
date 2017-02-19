@@ -20,3 +20,11 @@ function requiredName() {
 function requiredDescription() {
     toastr.error("Description is required");
 }
+
+function joinSuccess() {
+    toastr.success("Successfully joined organization");
+}
+
+function joinFail() {
+    toastr.error("Something went wrong, please try again");
+}

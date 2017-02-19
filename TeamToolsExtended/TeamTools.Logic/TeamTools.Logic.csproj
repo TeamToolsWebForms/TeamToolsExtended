@@ -92,7 +92,6 @@
     <Compile Include="Data\Models\ProjectTask.cs" />
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Data\Models\UserLogo.cs" />
-    <Compile Include="Data\Models\UserRole.cs" />
     <Compile Include="Data\TeamToolsDbContext.cs" />
     <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="DTO\MessageDTO.cs" />
@@ -105,6 +104,10 @@
     <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Data\Migrations\Configuration.cs" />
     <Compile Include="DTO\UserLogoDTO.cs" />
+    <Compile Include="Mvp\Account\Login\Contracts\ILoginView.cs" />
+    <Compile Include="Mvp\Account\Login\LoginEventArgs.cs" />
+    <Compile Include="Mvp\Account\Login\LoginPresenter.cs" />
+    <Compile Include="Mvp\Account\Login\LoginViewModel.cs" />
     <Compile Include="Mvp\Account\Register\Contracts\IRegisterView.cs" />
     <Compile Include="Mvp\Account\Register\Contracts\IUserFactory.cs" />
     <Compile Include="Mvp\Account\Register\Contracts\IUserLogoFactory.cs" />
@@ -115,6 +118,10 @@
     <Compile Include="Mvp\Account\ResetPassword\ResetPasswordEventArgs.cs" />
     <Compile Include="Mvp\Account\ResetPassword\ResetPasswordPresenter.cs" />
     <Compile Include="Mvp\Account\ResetPassword\ResetPasswordViewModel.cs" />
+    <Compile Include="Mvp\Admin\AllUsers\AllUsersEventArgs.cs" />
+    <Compile Include="Mvp\Admin\AllUsers\AllUsersPresenter.cs" />
+    <Compile Include="Mvp\Admin\AllUsers\AllUsersViewModel.cs" />
+    <Compile Include="Mvp\Admin\AllUsers\Contracts\IAllUsersView.cs" />
     <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsHome\Contracts\IOrganizationDetailsHomeView.cs" />
     <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsHome\OrganizationDetailsHomeEventArgs.cs" />
     <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsHome\OrganizationDetailsHomePresenter.cs" />
@@ -127,12 +134,15 @@
     <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsProjects\OrganizationDetailsProjectsEventArgs.cs" />
     <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsProjects\OrganizationDetailsProjectsPresenter.cs" />
     <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsProjects\OrganizationDetailsProjectsViewModel.cs" />
+    <Compile Include="Mvp\Organizations\Contracts\IOrganizationsView.cs" />
+    <Compile Include="Mvp\Organizations\OrganizationsPresenter.cs" />
+    <Compile Include="Mvp\Organizations\OrganizationsViewModel.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IImportantNoteView.cs" />
     <Compile Include="Mvp\Profile\Home\Contracts\IMyNotesView.cs" />
     <Compile Include="Mvp\Profile\MyOrganizations\Contracts\IMyOrganizationsView.cs" />
     <Compile Include="Mvp\Profile\MyOrganizations\Contracts\IOrganizationFactory.cs" />
     <Compile Include="Mvp\Profile\MyOrganizations\Contracts\IOrganizationLogoFactory.cs" />
-    <Compile Include="Mvp\Profile\MyOrganizations\MyOrganizationsEventArgs.cs" />
+    <Compile Include="Mvp\Profile\MyOrganizations\OrganizationsEventArgs.cs" />
     <Compile Include="Mvp\Profile\MyOrganizations\MyOrganizationsPresenter.cs" />
     <Compile Include="Mvp\Profile\MyOrganizations\MyOrganizationsViewModel.cs" />
     <Compile Include="Mvp\Profile\MyProjectDetails\Contracts\IProjectDetailsChartView.cs" />
@@ -176,6 +186,8 @@
     <Compile Include="Mvp\ProjectDetails\ProjectDetailsAddUserProject\ProjectDetailsAddUserProjectEventArgs.cs" />
     <Compile Include="Mvp\ProjectDetails\ProjectDetailsAddUserProject\ProjectDetailsAddUserProjectPresenter.cs" />
     <Compile Include="Mvp\ProjectDetails\ProjectDetailsAddUserProject\ProjectDetailsAddUserProjectViewModel.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsOrganization\Contracts\IProjectDetailsOrganizationView.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsOrganization\ProjectDetailsOrganizationPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Contracts\IFileService.cs" />
     <Compile Include="Services\Contracts\IJsonService.cs" />

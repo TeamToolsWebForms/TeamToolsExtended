@@ -44,7 +44,9 @@ namespace TeamTools.Logic.Services
         public void Create(ProjectTaskDTO projectTask)
         {
             var mappedProjectTask = this.mapperService.MapObject<ProjectTask>(projectTask);
+            var project = this.projectRepository.GetById(projectTask.ProjectId);
             this.projectTasksRepository.Add(mappedProjectTask);
+            project.ProjectTasks.Add(mappedProjectTask);
             this.unitOfWork.Commit();
         }
 

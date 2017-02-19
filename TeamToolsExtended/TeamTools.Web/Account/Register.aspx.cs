@@ -8,6 +8,7 @@ using TeamTools.Logic.Mvp.Account.Register;
 using TeamTools.Logic.Mvp.Account.Register.Contracts;
 using WebFormsMvp;
 using System.Web.UI;
+using System.Linq;
 
 namespace TeamTools.Web.Account
 {
@@ -40,6 +41,7 @@ namespace TeamTools.Web.Account
             else 
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "registerError();", true);
+                return;
             }
         }
     }

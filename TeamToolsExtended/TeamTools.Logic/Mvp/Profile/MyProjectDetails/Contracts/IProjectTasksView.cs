@@ -10,7 +10,5 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts
         event EventHandler<ProjectDetailsEventArgs> DeleteProjectTask;
         event EventHandler<ProjectDetailsEventArgs> CreateProjectTask;
         event EventHandler<ProjectDetailsEventArgs> LoadEditedTask;
-        event EventHandler<ProjectDetailsEventArgs> AssignUserToTaskEv;
-        event EventHandler<ProjectDetailsEventArgs> IsUserToAssignValid;
     }
 }

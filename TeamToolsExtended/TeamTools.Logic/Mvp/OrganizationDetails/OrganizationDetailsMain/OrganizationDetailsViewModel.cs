@@ -5,5 +5,7 @@ namespace TeamTools.Logic.Mvp.OrganizationDetails.OrganizationDetailsMain
     public class OrganizationDetailsViewModel
     {
         public string UsersWithoutCurrentMembersJson { get; set; }
+
+        public bool CanVisitOrganizationDetails { get; set; }
     }
 }

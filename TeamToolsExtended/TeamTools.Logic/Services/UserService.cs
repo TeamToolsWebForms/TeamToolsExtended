@@ -3,17 +3,19 @@ using TeamTools.Logic.Data.Contracts;
 using TeamTools.Logic.DTO;
 using TeamTools.Logic.Data.Models;
 using TeamTools.Logic.Services.Contracts;
-using System;
 using System.Collections.Generic;
 using Bytes2you.Validation;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace TeamTools.Logic.Services
 {
     public class UserService : IUserService
     {
+        private const string BannedRoleId = "2";
         private readonly IRepository<User> userRepository;
         private readonly IRepository<Project> projectRepository;
         private readonly IRepository<Organization> organizationRepository;
+        private readonly IRepository<IdentityUserRole> roleRepository;
         private readonly IMapperService mapperService;
         private readonly IUnitOfWork unitOfWork;
 
@@ -21,6 +23,7 @@ namespace TeamTools.Logic.Services
             IRepository<User> userRepository,
             IRepository<Project> projectRepository,
             IRepository<Organization> organizationRepository,
+            IRepository<IdentityUserRole> roleRepository,
             IMapperService mapperService,
             IUnitOfWork unitOfWork)
         {
@@ -33,6 +36,7 @@ namespace TeamTools.Logic.Services
             this.userRepository = userRepository;
             this.projectRepository = projectRepository;
             this.organizationRepository = organizationRepository;
+            this.roleRepository = roleRepository;
             this.mapperService = mapperService;
             this.unitOfWork = unitOfWork;
         }
@@ -76,6 +80,19 @@ namespace TeamTools.Logic.Services
             var organization = this.organizationRepository.GetById(organizationId);
             var users = this.userRepository.All().Where(x => !organization.Users.Contains(x)).Select(u => u.UserName);
             return users;
+        }
+
+        public bool CheckIfBanned(string username)
+        {
+            var user = this.userRepository.All(x => x.UserName == username).FirstOrDefault();
+            var role = this.roleRepository.All(x => x.RoleId == BannedRoleId).FirstOrDefault();
+            bool isBanned = user.Roles.Contains(role);
+            return isBanned;
+        }
+
+        public ICollection<UserDTO> GetAll()
+        {
+            return this.userRepository.All().Select(x => this.mapperService.MapObject<UserDTO>(x)).ToList();
         }
     }
 }

@@ -2,14 +2,20 @@
 
 namespace TeamTools.Logic.Mvp.Profile.MyOrganizations
 {
-    public class MyOrganizationsEventArgs : EventArgs
+    public class OrganizationsEventArgs : EventArgs
     {
-        public MyOrganizationsEventArgs(string id)
+        public OrganizationsEventArgs(string id)
         {
             this.Id = id;
         }
 
-        public MyOrganizationsEventArgs(string id, string name, string description, string username, string defaultLogoPath)
+        public OrganizationsEventArgs(int organizationId, string username)
+        {
+            this.OrganizationId = organizationId;
+            this.Username = username;
+        }
+
+        public OrganizationsEventArgs(string id, string name, string description, string username, string defaultLogoPath)
             : this(id)
         {
             this.Name = name;
@@ -19,6 +25,8 @@ namespace TeamTools.Logic.Mvp.Profile.MyOrganizations
         }
 
         public string Id { get; set; }
+
+        public int OrganizationId { get; set; }
 
         public string Name { get; set; }
 

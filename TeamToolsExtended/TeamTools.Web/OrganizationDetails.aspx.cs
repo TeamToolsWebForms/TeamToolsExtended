@@ -13,13 +13,14 @@ namespace TeamTools.Web
     [PresenterBinding(typeof(OrganizationDetailsPresenter))]
     public partial class OrganizationDetails : MvpPage<OrganizationDetailsViewModel>, IOrganizationDetailsView
     {
-        private const string RedirectUrl = "~/profile/myorganizations";
+        private const string RedirectUrl = "~/organizations";
         private int organizationId;
 
         [Inject]
         public IFileService FileService { get; set; }
         public event EventHandler<OrganizationDetailsEventArgs> LoadAllUsersWithoutCurrentMembers;
         public event EventHandler<OrganizationDetailsEventArgs> LeaveOrganization;
+        public event EventHandler<OrganizationDetailsEventArgs> CheckIfUserPersistInOrganization;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,6 +34,12 @@ namespace TeamTools.Web
                 {
                     int paramId = int.Parse(this.Request.Params["id"]);
                     this.organizationId = paramId;
+                    string currentUser = this.Page.User.Identity.GetUserName();
+                    this.CheckIfUserPersistInOrganization?.Invoke(sender, new OrganizationDetailsEventArgs(this.organizationId, currentUser));
+                    if (!this.Model.CanVisitOrganizationDetails)
+                    {
+                        this.Response.Redirect(RedirectUrl);
+                    }
                 }
                 catch (FormatException)
                 {

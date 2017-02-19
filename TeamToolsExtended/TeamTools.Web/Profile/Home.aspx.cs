@@ -1,14 +1,14 @@
 ﻿using System;
+using System.Web;
 using System.Web.UI;
+using TeamTools.Authentication;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace TeamTools.Web.Profile
 {
     public partial class Home : Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-        }
-
         protected void MyProfile_Click(object sender, EventArgs e)
         {
             this.TrashNotesControl.Visible = false;

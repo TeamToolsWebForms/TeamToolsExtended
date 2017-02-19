@@ -52,7 +52,7 @@
                                 <form>
                                     <div class="form-group">
                                         <label for="projectName">Name</label>
-                                        <asp:TextBox runat="server" ID="ProjectName" placeholder="Name of the project" />
+                                        <asp:TextBox runat="server" ID="ProjectName" CssClass="form-control" placeholder="Name of the project" />
                                     </div>
                                     <div class="form-group">
                                         <label for="projectDesc">Description</label>

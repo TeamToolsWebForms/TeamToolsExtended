@@ -284,7 +284,9 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
-    <Content Include="Admin\Admin.aspx" />
+    <Content Include="Admin\AllUsers.ascx" />
+    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Content\admin-allusers.css" />
     <Content Include="Content\create-note.css" />
     <Content Include="Content\gridview-create.css" />
     <Content Include="Content\home-controls.css" />
@@ -339,7 +341,6 @@
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
-    <Content Include="create-organization.aspx" />
     <Content Include="Images\500.gif" />
     <Content Include="Images\default-organization.png" />
     <Content Include="Images\default-user.jpg" />
@@ -395,6 +396,7 @@
     <Content Include="ProjectDetailsCharts.ascx" />
     <Content Include="ProjectDetailsDocuments.ascx" />
     <Content Include="ProjectDetailsTasks.ascx" />
+    <Content Include="Scripts\allusers.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\create-note-validation.js" />
@@ -490,12 +492,19 @@
     <Compile Include="Account\ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Admin.aspx.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
+    <Compile Include="Admin\AllUsers.ascx.cs">
+      <DependentUpon>AllUsers.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Admin.aspx.designer.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
+    <Compile Include="Admin\AllUsers.ascx.designer.cs">
+      <DependentUpon>AllUsers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\AutomapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -511,13 +520,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\ProjectDocumentController.cs" />
-    <Compile Include="create-organization.aspx.cs">
-      <DependentUpon>create-organization.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="create-organization.aspx.designer.cs">
-      <DependentUpon>create-organization.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
