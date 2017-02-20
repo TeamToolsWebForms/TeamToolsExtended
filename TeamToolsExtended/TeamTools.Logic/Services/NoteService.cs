@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Bytes2you.Validation;
+using System.Collections.Generic;
 using System.Linq;
 using TeamTools.Logic.Data.Contracts;
 using TeamTools.Logic.Data.Models;
@@ -18,6 +19,10 @@ namespace TeamTools.Logic.Services
             IMapperService mapperService,
             IUnitOfWork unitOfWork)
         {
+            Guard.WhenArgument(noteRepository, "Note Repository").IsNull().Throw();
+            Guard.WhenArgument(mapperService, "Mapper Service").IsNull().Throw();
+            Guard.WhenArgument(unitOfWork, "UnitOfWork").IsNull().Throw();
+
             this.noteRepository = noteRepository;
             this.mapperService = mapperService;
             this.unitOfWork = unitOfWork;
@@ -32,23 +37,23 @@ namespace TeamTools.Logic.Services
 
         public IEnumerable<NoteDTO> GetAllUserNotes(string id)
         {
-            return this.noteRepository
-                .All(u => u.UserId == id && u.IsDeleted == false, n => n.Id, false)
-                .Select(n => this.mapperService.MapObject<NoteDTO>(n));
+            var notes = this.noteRepository.All(u => u.UserId == id && u.IsDeleted == false, n => n.Id, false);
+            var mappedNotes = notes.Select(n => this.mapperService.MapObject<NoteDTO>(n));
+            return mappedNotes;
         }
 
         public IEnumerable<NoteDTO> GetAllImportantUserNotes(string id)
         {
-            return this.noteRepository
-                .All(u => u.UserId == id && u.IsDeleted == false && u.IsImportant == true, n => n.Id, false)
-                .Select(n => this.mapperService.MapObject<NoteDTO>(n));
+            var notes = this.noteRepository.All(u => u.UserId == id && u.IsDeleted == false && u.IsImportant == true, n => n.Id, false);
+            var mappedNotes = notes.Select(n => this.mapperService.MapObject<NoteDTO>(n));
+            return mappedNotes;
         }
 
         public IEnumerable<NoteDTO> GetAllDeleteUserNotes(string id)
         {
-            return this.noteRepository
-                .All(u => u.UserId == id && u.IsDeleted == true, n => n.Id, false)
-                .Select(n => this.mapperService.MapObject<NoteDTO>(n));
+            var notes = this.noteRepository.All(u => u.UserId == id && u.IsDeleted == true, n => n.Id, false);
+            var mappedNotes = notes.Select(n => this.mapperService.MapObject<NoteDTO>(n));
+            return mappedNotes;
         }
 
         public NoteDTO GetById(int id)

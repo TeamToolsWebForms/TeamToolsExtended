@@ -96,6 +96,52 @@ namespace TeamTools.Logic.Tests.Data.GenericRepositoryTests
             Assert.AreEqual(0, result.Count());
         }
 
+        [Test]
+        public void ReturnAscendingOrderedCollection_WhenIsAscendingSetToTrue()
+        {
+            var data = new List<Note>()
+            {
+                new Note() { IsImportant = true, Title = "Some" },
+                new Note() { IsImportant = true, Title = "Other" },
+                new Note() { IsImportant = true, Title = "Another" },
+                new Note() { IsImportant = true, Title = "Again" }
+            };
+            var mockedDbContext = new Mock<ITeamToolsDbContext>();
+            var queryableData = data.AsQueryable();
+            var mockedDbSet = this.GetMockedDbSet<Note>(queryableData);
+
+            mockedDbContext.Setup(x => x.Set<Note>()).Returns(mockedDbSet.Object);
+            var repo = new GenericRepository<Note>(mockedDbContext.Object);
+
+            var result = repo.All(x => x.IsImportant == true, x => x.Title, true);
+            var expected = data.OrderBy(x => x.Title);
+
+            CollectionAssert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void ReturnDescendingOrderedCollection_WhenIsAscendingSetToFalse()
+        {
+            var data = new List<Note>()
+            {
+                new Note() { IsImportant = true, Title = "Some" },
+                new Note() { IsImportant = true, Title = "Other" },
+                new Note() { IsImportant = true, Title = "Another" },
+                new Note() { IsImportant = true, Title = "Again" }
+            };
+            var mockedDbContext = new Mock<ITeamToolsDbContext>();
+            var queryableData = data.AsQueryable();
+            var mockedDbSet = this.GetMockedDbSet<Note>(queryableData);
+
+            mockedDbContext.Setup(x => x.Set<Note>()).Returns(mockedDbSet.Object);
+            var repo = new GenericRepository<Note>(mockedDbContext.Object);
+
+            var result = repo.All(x => x.IsImportant == true, x => x.Title, false);
+            var expected = data.OrderByDescending(x => x.Title);
+
+            CollectionAssert.AreEqual(expected, result);
+        }
+
         private Mock<IDbSet<T>> GetMockedDbSet<T>(IQueryable<T> data)
             where T : class
         {

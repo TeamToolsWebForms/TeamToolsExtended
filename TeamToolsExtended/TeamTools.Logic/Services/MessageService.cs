@@ -1,5 +1,4 @@
 ﻿using Bytes2you.Validation;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using TeamTools.Logic.Data.Contracts;
@@ -16,31 +15,36 @@ namespace TeamTools.Logic.Services
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapperService mapperService;
         private readonly IMessageFactory messageFactory;
+        private readonly IDateService dateService;
 
         public MessageService(
             IRepository<Message> messageRepository,
             IRepository<Project> projectRepository,
             IUnitOfWork unitOfWork,
             IMapperService mapperService,
-            IMessageFactory messageFactory)
+            IMessageFactory messageFactory,
+            IDateService dateService)
         {
             Guard.WhenArgument(messageRepository, "Message Repository").IsNull().Throw();
             Guard.WhenArgument(projectRepository, "Project Repository").IsNull().Throw();
             Guard.WhenArgument(unitOfWork, "UnitOfWork").IsNull().Throw();
             Guard.WhenArgument(mapperService, "Mapper Service").IsNull().Throw();
             Guard.WhenArgument(messageFactory, "Message Factory").IsNull().Throw();
+            Guard.WhenArgument(dateService, "Date Service").IsNull().Throw();
 
             this.messageRepository = messageRepository;
             this.projectRepository = projectRepository;
             this.unitOfWork = unitOfWork;
             this.mapperService = mapperService;
             this.messageFactory = messageFactory;
+            this.dateService = dateService;
         }
 
         public MessageDTO Create(string content, string username, int projectId)
         {
             var project = this.projectRepository.GetById(projectId);
-            var message = this.messageFactory.CreateMessage(DateTime.Now, username, content);
+            var date = this.dateService.GetCurrentTime();
+            var message = this.messageFactory.CreateMessage(date, username, content);
             this.messageRepository.Add(message);
             project.Messages.Add(message);
             this.unitOfWork.Commit();

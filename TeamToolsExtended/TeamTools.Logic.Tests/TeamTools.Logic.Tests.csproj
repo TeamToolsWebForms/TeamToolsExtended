@@ -79,13 +79,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Data\ConfigurationTests\Constructor_Should.cs" />
     <Compile Include="Data\GenericRepositoryTests\Add_Should.cs" />
     <Compile Include="Data\GenericRepositoryTests\All_Should.cs" />
     <Compile Include="Data\GenericRepositoryTests\Constructor_Should.cs" />
     <Compile Include="Data\GenericRepositoryTests\Delete_Should.cs" />
     <Compile Include="Data\GenericRepositoryTests\GetById_Should.cs" />
+    <Compile Include="Data\GenericRepositoryTests\Update_Should.cs" />
+    <Compile Include="Data\Models\MessageTests\Constructor_Should.cs" />
     <Compile Include="Data\Models\MessageTests\Content_Should.cs" />
     <Compile Include="Data\Models\MessageTests\Created_Should.cs" />
+    <Compile Include="Data\Models\MessageTests\Creator_Should.cs" />
     <Compile Include="Data\Models\MessageTests\Id_Should.cs" />
     <Compile Include="Data\Models\MessageTests\ProjectId_Should.cs" />
     <Compile Include="Data\Models\MessageTests\Project_Should.cs" />
@@ -96,16 +100,25 @@
     <Compile Include="Data\Models\NoteTests\Title_Should.cs" />
     <Compile Include="Data\Models\NoteTests\UserId_Should.cs" />
     <Compile Include="Data\Models\NoteTests\User_Should.cs" />
+    <Compile Include="Data\Models\OrganizationLogoTests\Constructor_Should.cs" />
     <Compile Include="Data\Models\OrganizationLogoTests\Id_Should.cs" />
     <Compile Include="Data\Models\OrganizationLogoTests\Image_Should.cs" />
+    <Compile Include="Data\Models\OrganizationTests\Constructor_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\Creatorname_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\Description_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\Id_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\Name_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\OrganizationLogoId_Should.cs" />
+    <Compile Include="Data\Models\OrganizationTests\OrganizationLogoUrl_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\OrganizationLogo_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\Projects_Should.cs" />
     <Compile Include="Data\Models\OrganizationTests\Users_Should.cs" />
+    <Compile Include="Data\Models\ProjectDocumentTests\FileContent_Should.cs" />
+    <Compile Include="Data\Models\ProjectDocumentTests\FileExtenstion_Should.cs" />
+    <Compile Include="Data\Models\ProjectDocumentTests\Filename_Should.cs" />
+    <Compile Include="Data\Models\ProjectDocumentTests\Id_Should.cs" />
+    <Compile Include="Data\Models\ProjectDocumentTests\ProjectId_Should.cs" />
+    <Compile Include="Data\Models\ProjectDocumentTests\Project_Should.cs" />
     <Compile Include="Data\Models\ProjectTaskTests\Description_Should.cs" />
     <Compile Include="Data\Models\ProjectTaskTests\ExecutionCost_Should.cs" />
     <Compile Include="Data\Models\ProjectTaskTests\DueDate_Should.cs" />
@@ -116,23 +129,28 @@
     <Compile Include="Data\Models\ProjectTaskTests\Status_Should.cs" />
     <Compile Include="Data\Models\ProjectTaskTests\Title_Should.cs" />
     <Compile Include="Data\Models\ProjectTaskTests\Users_Should.cs" />
+    <Compile Include="Data\Models\ProjectTests\Constructor_Should.cs" />
     <Compile Include="Data\Models\ProjectTests\Creatorname_Should.cs" />
     <Compile Include="Data\Models\ProjectTests\Description_Should.cs" />
     <Compile Include="Data\Models\ProjectTests\Id_Should.cs" />
     <Compile Include="Data\Models\ProjectTests\IsDeleted_Should.cs" />
     <Compile Include="Data\Models\ProjectTests\IsPersonal_Should.cs" />
     <Compile Include="Data\Models\ProjectTests\Messages_Should.cs" />
+    <Compile Include="Data\Models\ProjectTests\OrganizationId_Should.cs" />
+    <Compile Include="Data\Models\ProjectTests\ProjectDocuments_Should.cs" />
     <Compile Include="Data\Models\ProjectTests\ProjectTasks_Should.cs" />
     <Compile Include="Data\Models\ProjectTests\Title_Should.cs" />
     <Compile Include="Data\Models\ProjectTests\Users_Should.cs" />
+    <Compile Include="Data\Models\UserLogoTests\Constructor_Should.cs" />
     <Compile Include="Data\Models\UserLogoTests\Id_Should.cs" />
     <Compile Include="Data\Models\UserLogoTests\Image_Should.cs" />
-    <Compile Include="Data\Models\UserRoleTests\Constructor_Should.cs" />
+    <Compile Include="Data\Models\UserTests\Constructor_Should.cs" />
     <Compile Include="Data\Models\UserTests\FirstName_Should.cs" />
     <Compile Include="Data\Models\UserTests\Gender_Should.cs" />
     <Compile Include="Data\Models\UserTests\LastName_Should.cs" />
     <Compile Include="Data\Models\UserTests\Notes_Should.cs" />
     <Compile Include="Data\Models\UserTests\Organizations_Should.cs" />
+    <Compile Include="Data\Models\UserTests\ProjectTasks_Should.cs" />
     <Compile Include="Data\Models\UserTests\UserLogoId_Should.cs" />
     <Compile Include="Data\Models\UserTests\UserLogo_Should.cs" />
     <Compile Include="Data\Models\UserTests\Projects_Should.cs" />
@@ -143,12 +161,29 @@
     <Compile Include="Data\TeamToolsDbContextTests\Notes_Should.cs" />
     <Compile Include="Data\TeamToolsDbContextTests\OrganizationLogos_Should.cs" />
     <Compile Include="Data\TeamToolsDbContextTests\Organizations_Should.cs" />
+    <Compile Include="Data\TeamToolsDbContextTests\ProjectDocuments_Should.cs" />
     <Compile Include="Data\TeamToolsDbContextTests\Projects_Should.cs" />
     <Compile Include="Data\TeamToolsDbContextTests\ProjectTasks_Should.cs" />
     <Compile Include="Data\TeamToolsDbContextTests\UserLogos_Should.cs" />
     <Compile Include="Data\UnitOfWorkTests\Commit_Should.cs" />
     <Compile Include="Data\UnitOfWorkTests\Constructor_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DateServiceTests\GetCurrentTime_Should.cs" />
+    <Compile Include="Services\FileServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\FileServiceTests\DownloadFile_Should.cs" />
+    <Compile Include="Services\FileServiceTests\SaveDocument_Should.cs" />
+    <Compile Include="Services\FileServiceTests\UpdateDocument_Should.cs" />
+    <Compile Include="Services\JsonServiceTests\GetAsJson_Should.cs" />
+    <Compile Include="Services\MessageServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\MessageServiceTests\Create_Should.cs" />
+    <Compile Include="Services\MessageServiceTests\GetAllProjectMessages_Should.cs" />
+    <Compile Include="Services\NoteServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\NoteServiceTests\Create_Should.cs" />
+    <Compile Include="Services\NoteServiceTests\GetAllDeletedUserNotes.cs" />
+    <Compile Include="Services\NoteServiceTests\GetAllImportantUserNotes.cs" />
+    <Compile Include="Services\NoteServiceTests\GetAllUserNotes_Should.cs" />
+    <Compile Include="Services\NoteServiceTests\GetById_Should.cs" />
+    <Compile Include="Services\NoteServiceTests\Update_Should.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
