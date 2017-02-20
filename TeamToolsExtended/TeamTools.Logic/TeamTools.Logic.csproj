@@ -206,9 +206,7 @@
     <Compile Include="Services\Contracts\IUserService.cs" />
     <Compile Include="Services\DateService.cs" />
     <Compile Include="Services\FileService.cs" />
-    <Compile Include="Services\Helpers\Contracts\IDirectoryHelper.cs" />
     <Compile Include="Services\Helpers\Contracts\IImageHelper.cs" />
-    <Compile Include="Services\Helpers\DirectoryHelper.cs" />
     <Compile Include="Services\Helpers\ImageHelper.cs" />
     <Compile Include="Services\JsonService.cs" />
     <Compile Include="Services\MapperService.cs" />

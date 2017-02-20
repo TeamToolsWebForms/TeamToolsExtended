@@ -30,6 +30,7 @@ namespace TeamTools.Logic.Services
             Guard.WhenArgument(userRepository, "User Repository").IsNull().Throw();
             Guard.WhenArgument(projectRepository, "Project Repository").IsNull().Throw();
             Guard.WhenArgument(organizationRepository, "Organization Repository").IsNull().Throw();
+            Guard.WhenArgument(roleRepository, "Role Repository").IsNull().Throw();
             Guard.WhenArgument(mapperService, "Mapper Service").IsNull().Throw();
             Guard.WhenArgument(unitOfWork, "UnitOfWork").IsNull().Throw();
 

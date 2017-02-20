@@ -202,6 +202,22 @@
     <Compile Include="Services\ProjectServiceTests\GetUnsignedOrgUsersToProject_Should.cs" />
     <Compile Include="Services\ProjectServiceTests\IsUserValid_Should.cs" />
     <Compile Include="Services\ProjectServiceTests\Update_Should.cs" />
+    <Compile Include="Services\ProjectTaskServiceTests\AssignUserToTask_Should.cs" />
+    <Compile Include="Services\ProjectTaskServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\ProjectTaskServiceTests\Create_Should.cs" />
+    <Compile Include="Services\ProjectTaskServiceTests\Delete_Should.cs" />
+    <Compile Include="Services\ProjectTaskServiceTests\GetById_Should.cs" />
+    <Compile Include="Services\ProjectTaskServiceTests\GetUsersNotSignedToTask_Should.cs" />
+    <Compile Include="Services\ProjectTaskServiceTests\IsUserToAssignValid_Should.cs" />
+    <Compile Include="Services\ProjectTaskServiceTests\Update_Should.cs" />
+    <Compile Include="Services\UserServiceTests\CheckIfBanned_Should.cs" />
+    <Compile Include="Services\UserServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\UserServiceTests\GetAllUsernamesWithoutMembers_Should.cs" />
+    <Compile Include="Services\UserServiceTests\GetAll_Should.cs" />
+    <Compile Include="Services\UserServiceTests\GetByIdWithFilteredProjects_Should.cs" />
+    <Compile Include="Services\UserServiceTests\GetById_Should.cs" />
+    <Compile Include="Services\UserServiceTests\GetByUsername_Should.cs" />
+    <Compile Include="Services\UserServiceTests\Update_Should.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

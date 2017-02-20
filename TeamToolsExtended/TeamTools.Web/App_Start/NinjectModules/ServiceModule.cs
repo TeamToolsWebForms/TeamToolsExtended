@@ -13,7 +13,6 @@ namespace TeamTools.Web.App_Start.NinjectModules
         public override void Load()
         {
             this.Bind<IImageHelper>().To<ImageHelper>().InRequestScope();
-            this.Bind<IDirectoryHelper>().To<DirectoryHelper>().InRequestScope();
             this.Bind<IFileService>().To<FileService>().InRequestScope();
             this.Bind<IUserService>().To<UserService>().InRequestScope();
             this.Bind<IMapperService>().To<MapperService>().InRequestScope();
