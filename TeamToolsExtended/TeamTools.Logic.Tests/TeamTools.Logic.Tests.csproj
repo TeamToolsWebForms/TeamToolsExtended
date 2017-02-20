@@ -184,6 +184,24 @@
     <Compile Include="Services\NoteServiceTests\GetAllUserNotes_Should.cs" />
     <Compile Include="Services\NoteServiceTests\GetById_Should.cs" />
     <Compile Include="Services\NoteServiceTests\Update_Should.cs" />
+    <Compile Include="Services\OrganizationServiceTests\CanUserJoinOrganization_Should.cs" />
+    <Compile Include="Services\OrganizationServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\OrganizationServiceTests\Create_Should.cs" />
+    <Compile Include="Services\OrganizationServiceTests\GetById_Should.cs" />
+    <Compile Include="Services\OrganizationServiceTests\GetOrganizations_Should.cs" />
+    <Compile Include="Services\OrganizationServiceTests\GetUserOrganizations_Should.cs" />
+    <Compile Include="Services\OrganizationServiceTests\JoinOrganization_Should.cs" />
+    <Compile Include="Services\OrganizationServiceTests\RemoveFromOrganization_Should.cs" />
+    <Compile Include="Services\ProjectServiceTests\AddUserToProject_Should.cs" />
+    <Compile Include="Services\ProjectServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\ProjectServiceTests\CreateOrganizationProject_Should.cs" />
+    <Compile Include="Services\ProjectServiceTests\CreatePersonalProject_Should.cs" />
+    <Compile Include="Services\ProjectServiceTests\Delete_Should.cs" />
+    <Compile Include="Services\ProjectServiceTests\GetByIdSearchedDocuments_Should.cs" />
+    <Compile Include="Services\ProjectServiceTests\GetById_Should.cs" />
+    <Compile Include="Services\ProjectServiceTests\GetUnsignedOrgUsersToProject_Should.cs" />
+    <Compile Include="Services\ProjectServiceTests\IsUserValid_Should.cs" />
+    <Compile Include="Services\ProjectServiceTests\Update_Should.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

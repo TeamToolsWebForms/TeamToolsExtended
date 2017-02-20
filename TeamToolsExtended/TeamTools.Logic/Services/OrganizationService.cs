@@ -74,7 +74,8 @@ namespace TeamTools.Logic.Services
 
         public ICollection<OrganizationDTO> GetOrganizations()
         {
-            var mappedOrganizations = this.organizationRepository.All().Select(x => this.mapperService.MapObject<OrganizationDTO>(x));
+            var organizations = this.organizationRepository.All();
+            var mappedOrganizations = organizations.Select(x => this.mapperService.MapObject<OrganizationDTO>(x));
             return mappedOrganizations.ToList();
         }
 

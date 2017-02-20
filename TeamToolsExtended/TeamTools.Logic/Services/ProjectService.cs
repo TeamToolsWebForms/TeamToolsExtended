@@ -5,7 +5,6 @@ using TeamTools.Logic.Data.Models;
 using TeamTools.Logic.DTO;
 using TeamTools.Logic.Mvp.Profile.MyProjects.Contracts;
 using TeamTools.Logic.Services.Contracts;
-using System;
 
 namespace TeamTools.Logic.Services
 {
