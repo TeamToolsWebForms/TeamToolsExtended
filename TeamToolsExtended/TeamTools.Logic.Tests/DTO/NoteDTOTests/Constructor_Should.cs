@@ -1,15 +1,10 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TeamTools.Logic.DTO;
 
-namespace TeamTools.Logic.Tests.DTO
+namespace TeamTools.Logic.Tests.DTO.NoteDTOTests
 {
     [TestFixture]
-    public class NoteDTOConstructor_Should
+    public class Constructor_Should
     {
         [Test]
         public void CreateAnObjectOfTheSameType()

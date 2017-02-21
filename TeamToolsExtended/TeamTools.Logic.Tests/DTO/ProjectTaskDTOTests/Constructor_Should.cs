@@ -1,16 +1,12 @@
-﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TeamTools.Logic.Data.Models.Enums;
+﻿using System;
+using NUnit.Framework;
 using TeamTools.Logic.DTO;
+using TeamTools.Logic.Data.Models.Enums;
 
-namespace TeamTools.Logic.Tests.DTO
+namespace TeamTools.Logic.Tests.DTO.ProjectTaskDTOTests
 {
     [TestFixture]
-    public class ProjectTaskDtoConstructor_Should
+    public class Constructor_Should
     {
         [Test]
         public void CreateAnObjextOfTheSameTypeWithParameters()
@@ -123,6 +119,5 @@ namespace TeamTools.Logic.Tests.DTO
 
             Assert.AreEqual(projectId, taskDto.ProjectId);
         }
-
     }
 }

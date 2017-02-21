@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Moq;
 using TeamTools.Logic.Mvp.Profile.Home.Contracts;
 using TeamTools.Logic.Services.Contracts;
 using TeamTools.Logic.Mvp.Profile.Home;
+using TeamTools.Logic.DTO;
 
 namespace TeamTools.Logic.Tests.Mvp.Profile.Home.ProfileHomeOrganizationsPresenterTests
 {
@@ -40,6 +36,8 @@ namespace TeamTools.Logic.Tests.Mvp.Profile.Home.ProfileHomeOrganizationsPresent
             var viewModel = new ProfileHomeViewModel();
             mockedView.Setup(x => x.Model).Returns(viewModel);
             var mockedUserService = new Mock<IUserService>();
+            var user = new UserDTO();
+            mockedUserService.Setup(x => x.GetById(It.IsAny<string>())).Returns(user);
 
             var presenter = new ProfileHomeOrganizationsPresenter(
                 mockedView.Object,
@@ -48,6 +46,8 @@ namespace TeamTools.Logic.Tests.Mvp.Profile.Home.ProfileHomeOrganizationsPresent
             string userId = "some-id";
 
             mockedView.Raise(x => x.LoadUserData += null, new ProfileHomeEventArgs(userId, username));
+
+            Assert.AreSame(mockedView.Object.Model.User, user);
         }
     }
 }

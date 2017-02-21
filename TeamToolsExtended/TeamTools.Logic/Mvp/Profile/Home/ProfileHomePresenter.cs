@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using Bytes2you.Validation;
+using System.IO;
 using TeamTools.Logic.Mvp.Profile.Home.Contracts;
 using TeamTools.Logic.Services.Contracts;
 using TeamTools.Logic.Services.Helpers.Contracts;
@@ -17,8 +18,11 @@ namespace TeamTools.Logic.Mvp.Profile.Home
             IImageHelper imageHelper)
             : base(view)
         {
-            this.View.LoadUserData += View_LoadUserData;
-            this.View.SaveProfileImage += View_SaveProfileImage;
+            Guard.WhenArgument(userService, "User Service").IsNull().Throw();
+            Guard.WhenArgument(imageHelper, "Image Helper").IsNull().Throw();
+
+            this.View.LoadUserData += this.View_LoadUserData;
+            this.View.SaveProfileImage += this.View_SaveProfileImage;
 
             this.userService = userService;
             this.imageHelper = imageHelper;

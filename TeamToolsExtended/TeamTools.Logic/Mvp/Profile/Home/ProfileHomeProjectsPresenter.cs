@@ -1,4 +1,5 @@
-﻿using TeamTools.Logic.Mvp.Profile.Home.Contracts;
+﻿using Bytes2you.Validation;
+using TeamTools.Logic.Mvp.Profile.Home.Contracts;
 using TeamTools.Logic.Services.Contracts;
 using WebFormsMvp;
 
@@ -11,7 +12,10 @@ namespace TeamTools.Logic.Mvp.Profile.Home
         public ProfileHomeProjectsPresenter(IProfileHomeProjectsView view, IUserService userService)
             : base(view)
         {
-            this.View.LoadUserWithPersonalProjects += View_LoadUserWithPersonalProjects;
+            Guard.WhenArgument(userService, "User Service").IsNull().Throw();
+
+            this.View.LoadUserWithPersonalProjects += this.View_LoadUserWithPersonalProjects;
+
             this.userService = userService;
         }
 
