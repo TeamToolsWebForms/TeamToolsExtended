@@ -204,6 +204,9 @@
     <Compile Include="Mvp\Profile\Home\ProfileHomeMyNotesPresenterTests\View_LoadUserNotes_Should.cs" />
     <Compile Include="Mvp\Profile\Home\ProfileHomeOrganizationsPresenterTests\Constructor_Should.cs" />
     <Compile Include="Mvp\Profile\Home\ProfileHomeOrganizationsPresenterTests\View_LoadUserData_Should.cs" />
+    <Compile Include="NoteDTO_Constructor_Should.cs" />
+    <Compile Include="ProjectDocumentDTO_ConstructorShould.cs" />
+    <Compile Include="ProjectTaskDtoConstructor_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DateServiceTests\GetCurrentTime_Should.cs" />
     <Compile Include="Services\FileServiceTests\Constructor_Should.cs" />
@@ -257,7 +260,9 @@
     <Compile Include="Services\UserServiceTests\GetByUsername_Should.cs" />
     <Compile Include="Services\UserServiceTests\Update_Should.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TeamTools.Logic\TeamTools.Logic.csproj">
       <Project>{0265786e-93d5-467d-b1fa-2a8ff03ff459}</Project>
