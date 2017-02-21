@@ -1,8 +1,6 @@
 ﻿using Ninject;
 using System;
 using System.Web.UI;
-using TeamTools.Logic.Mvp.Profile.MyProjectDetails;
-using TeamTools.Logic.Mvp.Profile.MyProjectDetails.Contracts;
 using TeamTools.Logic.Mvp.ProjectDetails.ProjectDetailsMain;
 using TeamTools.Logic.Mvp.ProjectDetails.ProjectDetailsMain.Contracts;
 using TeamTools.Logic.Services.Contracts;

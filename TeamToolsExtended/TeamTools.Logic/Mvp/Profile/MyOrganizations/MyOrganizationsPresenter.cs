@@ -44,6 +44,7 @@ namespace TeamTools.Logic.Mvp.Profile.MyOrganizations
             
             var organization = this.organizationFactory.CreateOrganization(e.Name, e.Description, organizationLogo, e.Username, organizationLogoUrl);
             this.organizationService.Create(organization, e.Id);
+            this.View.Model.MyOrganizations = this.organizationService.GetUserOrganizations(e.Id);
         }
 
         private void View_LoadMyOrganizations(object sender, OrganizationsEventArgs e)

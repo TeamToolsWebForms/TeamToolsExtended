@@ -72,7 +72,7 @@ namespace TeamTools.Web
                 return;
             }
 
-            this.UpdateOrganizationProject?.Invoke(this, new OrganizationDetailsProjectsEventArgs(id, editTitleBox.Text));
+            this.UpdateOrganizationProject?.Invoke(this, new OrganizationDetailsProjectsEventArgs(id, editTitleBox.Text, this.organizationId));
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "updateProjectSuccess();", true);
             this.ProjectsGrid.DataBind();
@@ -80,7 +80,7 @@ namespace TeamTools.Web
         
         public void ProjectsGrid_DeleteItem(int id)
         {
-            this.DeleteOrganizationProject?.Invoke(this, new OrganizationDetailsProjectsEventArgs(id));
+            this.DeleteOrganizationProject?.Invoke(this, new OrganizationDetailsProjectsEventArgs(id, "", this.organizationId));
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "deleteProjectSuccess();", true);
             this.ProjectsGrid.DataBind();

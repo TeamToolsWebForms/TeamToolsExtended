@@ -1,9 +1,4 @@
 ﻿using Bytes2you.Validation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TeamTools.Logic.Mvp.ProjectDetails.ProjectDetailsMain.Contracts;
 using TeamTools.Logic.Services.Contracts;
 using WebFormsMvp;

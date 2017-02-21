@@ -12,7 +12,6 @@ namespace TeamTools.Logic.Mvp.Account.ResetPassword
         public ResetPasswordPresenter(IResetPasswordView view, IUserService userService)
             : base(view)
         {
-            Guard.WhenArgument(view, "View").IsNull().Throw();
             Guard.WhenArgument(userService, "User Service").IsNull().Throw();
 
             this.View.GetUser += View_GetUser;

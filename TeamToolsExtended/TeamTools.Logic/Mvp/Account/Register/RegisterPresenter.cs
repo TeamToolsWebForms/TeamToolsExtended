@@ -23,7 +23,6 @@ namespace TeamTools.Logic.Mvp.Account.Register
             IImageHelper imageHelper)
             : base(view)
         {
-            Guard.WhenArgument(view, "View").IsNull().Throw();
             Guard.WhenArgument(userService, "User Service").IsNull().Throw();
             Guard.WhenArgument(userFactory, "User Factory").IsNull().Throw();
             Guard.WhenArgument(userLogoFactory, "UserLogo Factory").IsNull().Throw();

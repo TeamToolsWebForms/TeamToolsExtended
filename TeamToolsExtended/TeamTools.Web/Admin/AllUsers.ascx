@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AllUsers.ascx.cs" Inherits="TeamTools.Web.Admin.AllUsers" %>
 
 <div id="gridviewControl" class="row">
-    <div class="col-md-7">
+    <div class="col-md-9">
         <div class="panel panel-default panel-table">
             <div class="panel-heading">
                 <div class="row">
@@ -35,8 +35,8 @@
                                 <div class="text-center">
                                     <asp:Button Text="Ban" CommandArgument="<%# Item.Id %>" ID="BanBtn" CssClass="btn btn-danger spacing" OnClick="BanBtn_Click" runat="server" />
                                     <asp:Button Text="Unban" CommandArgument="<%# Item.Id %>" ID="UnbanBtn" CssClass="btn btn-danger spacing" OnClick="UnbanBtn_Click" runat="server" />
-                                    <asp:Button Text="Make Admin" CommandArgument="<%# Item.Id %>" ID="AdminBtn" CssClass="btn btn-primary spacing" OnClick="AdminBtn_Click" runat="server" />
-                                    <asp:Button Text="Remove Admin" CommandArgument="<%# Item.Id %>" ID="RemoveAdminBtn" CssClass="btn btn-primary spacing" OnClick="RemoveAdminBtn_Click" runat="server" />
+                                    <asp:Button Text="Make Admin" CommandArgument="<%# Item.Id %>" ID="AdminBtn" CssClass="btn btn-warning spacing" OnClick="AdminBtn_Click" runat="server" />
+                                    <asp:Button Text="Remove Admin" CommandArgument="<%# Item.Id %>" ID="RemoveAdminBtn" CssClass="btn btn-warning spacing" OnClick="RemoveAdminBtn_Click" runat="server" />
                                 </div>
                             </ItemTemplate>
                         </asp:TemplateField>

@@ -31,16 +31,19 @@ namespace TeamTools.Logic.Mvp.OrganizationDetails.OrganizationDetailsProjects
         private void View_CreateProject(object sender, OrganizationDetailsProjectsEventArgs e)
         {
             this.projectService.CreateOrganizationProject(e.Id, e.ProjectTitle, e.Description, e.Creator);
+            this.View.Model.Organization = this.organizationService.GetById(e.Id);
         }
 
         private void View_DeleteOrganizationProject(object sender, OrganizationDetailsProjectsEventArgs e)
         {
             this.projectService.Delete(e.Id);
+            this.View.Model.Organization = this.organizationService.GetById(e.OrganizationId);
         }
 
         private void View_UpdateOrganizationProject(object sender, OrganizationDetailsProjectsEventArgs e)
         {
             this.projectService.Update(e.Id, e.ProjectTitle);
+            this.View.Model.Organization = this.organizationService.GetById(e.OrganizationId);
         }
 
         private void View_LoadOrganization(object sender, OrganizationDetailsProjectsEventArgs e)

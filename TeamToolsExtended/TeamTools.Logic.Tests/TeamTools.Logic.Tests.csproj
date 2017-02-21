@@ -65,6 +65,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebFormsMvp.1.4.5.0\lib\WebFormsMvp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -167,12 +172,44 @@
     <Compile Include="Data\TeamToolsDbContextTests\UserLogos_Should.cs" />
     <Compile Include="Data\UnitOfWorkTests\Commit_Should.cs" />
     <Compile Include="Data\UnitOfWorkTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Account\Login\LoginPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Account\Login\LoginPresenterTests\View_CheckIsBanned_Should.cs" />
+    <Compile Include="Mvp\Account\Register\RegisterPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Account\Register\RegisterPresenterTests\View_GetUser_Should.cs" />
+    <Compile Include="Mvp\Account\ResetPassword\ResetPasswordPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Account\ResetPassword\ResetPasswordPresenterTests\View_GetUser_Should.cs" />
+    <Compile Include="Mvp\Admin\AllUsers\AllUsersPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Admin\AllUsers\AllUsersPresenterTests\View_LoadUsers_Should.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsHome\OrganizationDetailsHomePresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsHome\OrganizationDetailsHomePresenterTests\View_LoadOrganization_Should.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsMain\OrganizationDetailsPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsMain\OrganizationDetailsPresenterTests\View_CheckIfUserPersistInOrganization_Should.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsMain\OrganizationDetailsPresenterTests\View_LeaveOrganization_Should.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsMain\OrganizationDetailsPresenterTests\View_LoadAllUsersWithoutCurrentMembers_Should.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsProjects\OrganizationDetailsProjectsPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsProjects\OrganizationDetailsProjectsPresenterTests\View_CreateProject_Should.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsProjects\OrganizationDetailsProjectsPresenterTests\View_DeleteOrganizationProject_Should.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsProjects\OrganizationDetailsProjectsPresenterTests\View_LoadOrganization_Should.cs" />
+    <Compile Include="Mvp\OrganizationDetails\OrganizationDetailsProjects\OrganizationDetailsProjectsPresenterTests\View_UpdateOrganizationProject_Should.cs" />
+    <Compile Include="Mvp\Organizations\OrganizationsPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Organizations\OrganizationsPresenterTests\View_CanJoinOrganization_Should.cs" />
+    <Compile Include="Mvp\Organizations\OrganizationsPresenterTests\View_JoinOrganization_Should.cs" />
+    <Compile Include="Mvp\Organizations\OrganizationsPresenterTests\View_LoadMyOrganizations_Should.cs" />
+    <Compile Include="Mvp\Organizations\OrganizationsPresenterTests\View_SaveOrganization_Should.cs" />
+    <Compile Include="Mvp\Profile\Home\CreateNotePresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Profile\Home\CreateNotePresenterTests\View_CreateNote_Should.cs" />
+    <Compile Include="Mvp\Profile\Home\ProfileHomeImortantNotesPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Profile\Home\ProfileHomeImortantNotesPresenterTests\View_LoadImportantUserNotes_Should.cs" />
+    <Compile Include="Mvp\Profile\Home\ProfileHomeMyNotesPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Profile\Home\ProfileHomeMyNotesPresenterTests\View_LoadUserNotes_Should.cs" />
+    <Compile Include="Mvp\Profile\Home\ProfileHomeOrganizationsPresenterTests\Constructor_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DateServiceTests\GetCurrentTime_Should.cs" />
     <Compile Include="Services\FileServiceTests\Constructor_Should.cs" />
     <Compile Include="Services\FileServiceTests\DownloadFile_Should.cs" />
     <Compile Include="Services\FileServiceTests\SaveDocument_Should.cs" />
     <Compile Include="Services\FileServiceTests\UpdateDocument_Should.cs" />
+    <Compile Include="Services\Helpers\ImageHelperTests\ByteArrayToImageUrl_Should.cs" />
     <Compile Include="Services\JsonServiceTests\GetAsJson_Should.cs" />
     <Compile Include="Services\MessageServiceTests\Constructor_Should.cs" />
     <Compile Include="Services\MessageServiceTests\Create_Should.cs" />

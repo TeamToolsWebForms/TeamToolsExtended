@@ -53,11 +53,13 @@ namespace TeamTools.Logic.Mvp.ProjectDetails.ProjectDetailsOrganization
         {
             var projectTask = this.projectTaskFactory.CreateProjectTask(e.TaskTitle, e.TaskDescription, e.DueDate, e.TaskExecutionCost, e.TaskStatus, e.Id);
             this.projectTaskService.Create(projectTask);
+            this.View.Model.Project = this.projectService.GetById(e.Id);
         }
 
         private void View_DeleteProjectTask(object sender, ProjectDetailsEventArgs e)
         {
             this.projectTaskService.Delete(e.Id);
+            this.View.Model.Project = this.projectService.GetById(e.Id);
         }
 
         private void View_UpdateProjectTask(object sender, ProjectDetailsEventArgs e)

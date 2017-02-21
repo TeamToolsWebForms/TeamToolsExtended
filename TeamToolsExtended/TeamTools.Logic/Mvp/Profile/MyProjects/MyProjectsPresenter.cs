@@ -26,6 +26,8 @@ namespace TeamTools.Logic.Mvp.Profile.Home
         private void View_CreateUserProject(object sender, MyProjectsEventArgs e)
         {
             this.projectService.CreatePersonalProject(e.ProjectName, e.ProjectDescription, e.Username);
+            var foundUser = this.GetUser(e.UserId, e.Username);
+            this.View.Model.User = foundUser;
         }
 
         private void View_DeleteUserProject(object sender, MyProjectsEventArgs e)

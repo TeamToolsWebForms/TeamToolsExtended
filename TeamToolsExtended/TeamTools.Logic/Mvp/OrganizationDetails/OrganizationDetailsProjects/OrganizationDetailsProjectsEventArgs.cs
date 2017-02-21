@@ -15,6 +15,12 @@ namespace TeamTools.Logic.Mvp.OrganizationDetails.OrganizationDetailsProjects
             this.ProjectTitle = projectTitle;
         }
 
+        public OrganizationDetailsProjectsEventArgs(int id, string projectTitle, int organizationId)
+            : this(id, projectTitle)
+        {
+            this.OrganizationId = organizationId;
+        }
+
         public OrganizationDetailsProjectsEventArgs(int id, string projectTitle, string description, string creatorName)
             : this(id, projectTitle)
         {
@@ -29,5 +35,7 @@ namespace TeamTools.Logic.Mvp.OrganizationDetails.OrganizationDetailsProjects
         public string Description { get; private set; }
 
         public string Creator { get; private set; }
+
+        public int OrganizationId { get; set; }
     }
 }

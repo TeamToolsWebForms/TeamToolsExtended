@@ -38,6 +38,7 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
         {
             var projectTask = this.projectTaskFactory.CreateProjectTask(e.TaskTitle, e.TaskDescription, e.DueDate, e.TaskExecutionCost, e.TaskStatus, e.Id);
             this.projectTaskService.Create(projectTask);
+            this.View.Model.Project = this.projectService.GetById(e.Id);
         }
 
         private void View_DeleteProjectTask(object sender, ProjectDetailsEventArgs e)

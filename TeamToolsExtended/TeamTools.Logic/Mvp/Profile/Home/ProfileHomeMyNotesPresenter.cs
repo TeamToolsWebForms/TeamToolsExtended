@@ -1,4 +1,5 @@
-﻿using TeamTools.Logic.Mvp.Profile.Home.Contracts;
+﻿using Bytes2you.Validation;
+using TeamTools.Logic.Mvp.Profile.Home.Contracts;
 using TeamTools.Logic.Services.Contracts;
 using WebFormsMvp;
 
@@ -11,6 +12,8 @@ namespace TeamTools.Logic.Mvp.Profile.Home
         public ProfileHomeMyNotesPresenter(IMyNotesView view, INoteService noteService)
             : base(view)
         {
+            Guard.WhenArgument(noteService, "Note Service").IsNull().Throw();
+
             this.noteService = noteService;
 
             this.View.LoadUserNotes += View_LoadUserNotes;

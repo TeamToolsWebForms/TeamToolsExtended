@@ -1,4 +1,5 @@
-﻿using TeamTools.Logic.Mvp.Profile.Home.Contracts;
+﻿using Bytes2you.Validation;
+using TeamTools.Logic.Mvp.Profile.Home.Contracts;
 using TeamTools.Logic.Services.Contracts;
 using WebFormsMvp;
 
@@ -12,6 +13,9 @@ namespace TeamTools.Logic.Mvp.Profile.Home
         public CreateNotePresenter(ICreateNoteView view, INoteService noteService, INoteDTOFactory noteFactory)
             : base(view)
         {
+            Guard.WhenArgument(noteService, "Note Service").IsNull().Throw();
+            Guard.WhenArgument(noteFactory, "Note Factory").IsNull().Throw();
+
             this.View.CreateNewNote += View_CreateNote;
 
             this.noteService = noteService;

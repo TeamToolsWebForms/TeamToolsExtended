@@ -103,30 +103,6 @@
                                     <a runat="server" href="~/profile/home.aspx" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a>
                                 </li>
                                 <li>
-                                    <a id="dLabel" role="button" data-toggle="dropdown">
-                                        <i class="btn btn-warning glyphicon glyphicon-bell"><%--{{notificationCount}}--%></i>
-                                    </a>
-
-                                    <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
-
-                                        <div class="notification-heading">
-                                            <h4 class="menu-title">Notifications</h4>
-                                            <h4 class="menu-title pull-right">Clear all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4>
-                                        </div>
-                                        <li class="divider"></li>
-                                        <div class="notifications-wrapper">
-                                            <asp:Repeater runat="server">
-                                                <ItemTemplate>
-                                                    <div class="notification-item">
-                                                        <h4 class="item-title"><%--{{notification.content}}--%> <span class="btn btn-xs btn-danger">x</span></h4>
-                                                        <p class="item-info"><%--{{notification.created | date}}--%></p>
-                                                    </div>
-                                                </ItemTemplate>
-                                            </asp:Repeater>
-                                        </div>
-                                    </ul>
-                                </li>
-                                <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
