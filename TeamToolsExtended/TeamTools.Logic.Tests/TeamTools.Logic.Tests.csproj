@@ -203,6 +203,7 @@
     <Compile Include="Mvp\Profile\Home\ProfileHomeMyNotesPresenterTests\Constructor_Should.cs" />
     <Compile Include="Mvp\Profile\Home\ProfileHomeMyNotesPresenterTests\View_LoadUserNotes_Should.cs" />
     <Compile Include="Mvp\Profile\Home\ProfileHomeOrganizationsPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Profile\Home\ProfileHomeOrganizationsPresenterTests\View_LoadUserData_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DateServiceTests\GetCurrentTime_Should.cs" />
     <Compile Include="Services\FileServiceTests\Constructor_Should.cs" />
