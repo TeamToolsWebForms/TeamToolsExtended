@@ -13,10 +13,9 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
         public ProjectDetailsChartPresenter(IProjectDetailsChartView view, IProjectService projectService)
             : base(view)
         {
-            Guard.WhenArgument(view, "View").IsNull().Throw();
             Guard.WhenArgument(projectService, "Project service").IsNull().Throw();
 
-            this.View.LoadProject += View_LoadProject;
+            this.View.LoadProject += this.View_LoadProject;
 
             this.projectService = projectService;
         }

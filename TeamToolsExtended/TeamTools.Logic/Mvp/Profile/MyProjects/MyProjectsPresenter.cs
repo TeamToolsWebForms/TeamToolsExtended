@@ -1,4 +1,5 @@
-﻿using TeamTools.Logic.DTO;
+﻿using Bytes2you.Validation;
+using TeamTools.Logic.DTO;
 using TeamTools.Logic.Mvp.Profile.MyProjects;
 using TeamTools.Logic.Mvp.Profile.MyProjects.Contracts;
 using TeamTools.Logic.Services.Contracts;
@@ -14,6 +15,9 @@ namespace TeamTools.Logic.Mvp.Profile.Home
         public MyProjectsPresenter(IMyProjectsView view, IProjectService projectService, IUserService userService)
             : base(view)
         {
+            Guard.WhenArgument(projectService, "Project Service").IsNull().Throw();
+            Guard.WhenArgument(userService, "User Service").IsNull().Throw();
+
             this.View.LoadUserProjects += View_LoadUserProjects;
             this.View.UpdateUserProject += View_UpdateUserProject;
             this.View.DeleteUserProject += View_DeleteUserProject;

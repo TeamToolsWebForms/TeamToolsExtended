@@ -16,9 +16,9 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
             Guard.WhenArgument(projectService, "Project Service").IsNull().Throw();
             Guard.WhenArgument(fileService, "File Service").IsNull().Throw();
 
-            this.View.GetDocuments += View_GetDocuments;
-            this.View.GetDocumentInfo += View_GetDocumentInfo;
-            this.View.FindDocuments += View_FindDocuments;
+            this.View.GetDocuments += this.View_GetDocuments;
+            this.View.GetDocumentInfo += this.View_GetDocumentInfo;
+            this.View.FindDocuments += this.View_FindDocuments;
 
             this.projectService = projectService;
             this.fileService = fileService;

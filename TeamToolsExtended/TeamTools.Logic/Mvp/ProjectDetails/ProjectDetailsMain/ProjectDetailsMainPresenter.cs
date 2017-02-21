@@ -17,7 +17,7 @@ namespace TeamTools.Logic.Mvp.ProjectDetails.ProjectDetailsMain
             : base(view)
         {
             Guard.WhenArgument(projectService, "Project Service").IsNull().Throw();
-            Guard.WhenArgument(messageService, "Project Service").IsNull().Throw();
+            Guard.WhenArgument(messageService, "Message Service").IsNull().Throw();
 
             this.View.DeleteProject += this.View_DeleteProject;
             this.View.LoadProjectMessages += this.View_LoadProjectMessages;

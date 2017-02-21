@@ -16,7 +16,7 @@ namespace TeamTools.Logic.Mvp.Profile.MyProjectDetails
         {
             Guard.WhenArgument(projectService, "Project service").IsNull().Throw();
 
-            this.View.DeleteProject += View_DeleteProject;
+            this.View.DeleteProject += this.View_DeleteProject;
 
             this.projectService = projectService;
         }

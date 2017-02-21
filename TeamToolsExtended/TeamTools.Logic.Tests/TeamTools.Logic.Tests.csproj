@@ -59,9 +59,25 @@
       <HintPath>..\packages\Moq.4.5.30\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.6.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -217,6 +233,40 @@
     <Compile Include="Mvp\Profile\MyOrganizations\MyOrganizationsPresenterTests\Constructor_Should.cs" />
     <Compile Include="Mvp\Profile\MyOrganizations\MyOrganizationsPresenterTests\View_LoadMyOrganizations_Should.cs" />
     <Compile Include="Mvp\Profile\MyOrganizations\MyOrganizationsPresenterTests\View_SaveOrganization_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectDetailsChartPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectDetailsChartPresenterTests\View_LoadProject_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectDetailsPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectDetailsPresenterTests\View_DeleteProject_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectDocumentsPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectDocumentsPresenterTests\View_FindDocuments_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectDocumentsPresenterTests\View_GetDocumentInfo_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectDocumentsPresenterTests\View_GetDocuments_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasksPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasksPresenterTests\View_CreateProjectTask_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasksPresenterTests\View_DeleteProjectTask_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasksPresenterTests\View_LoadEditedTask_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasksPresenterTests\View_LoadProjectTasks_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjectDetails\ProjectTasksPresenterTests\View_UpdateProjectTask_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjects\MyProjectsPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjects\MyProjectsPresenterTests\View_CreateUserProject_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjects\MyProjectsPresenterTests\View_DeleteUserProject_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjects\MyProjectsPresenterTests\View_LoadUserProjects_Should.cs" />
+    <Compile Include="Mvp\Profile\MyProjects\MyProjectsPresenterTests\View_UpdateUserProject_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsAddUserProjectPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsAddUserProjectPresenterTests\View_AddUserToProject_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsAddUserProjectPresenterTests\View_CheckIsEmailValid_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsAddUserProjectPresenterTests\View_LoadOrganizationUsersUnsignedToProject_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsMainPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsMainPresenterTests\View_DeleteProject_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsMainPresenterTests\View_LoadProjectMessages_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsOrganizationPresenterTests\Constructor_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsOrganizationPresenterTests\View_AssignUserToTaskEv_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsOrganizationPresenterTests\View_CreateProjectTask_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsOrganizationPresenterTests\View_DeleteProjectTask_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsOrganizationPresenterTests\View_IsUserToAssignValid_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsOrganizationPresenterTests\View_LoadEditedTask_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsOrganizationPresenterTests\View_LoadProjectTasks_Should.cs" />
+    <Compile Include="Mvp\ProjectDetails\ProjectDetailsOrganizationPresenterTests\View_UpdateProjectTask_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DateServiceTests\GetCurrentTime_Should.cs" />
     <Compile Include="Services\FileServiceTests\Constructor_Should.cs" />
@@ -275,6 +325,10 @@
     <ProjectReference Include="..\TeamTools.Logic\TeamTools.Logic.csproj">
       <Project>{0265786e-93d5-467d-b1fa-2a8ff03ff459}</Project>
       <Name>TeamTools.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeamTools.Web\TeamTools.Web.csproj">
+      <Project>{abb989d8-a441-4a55-8b70-34bf9f220dcf}</Project>
+      <Name>TeamTools.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
