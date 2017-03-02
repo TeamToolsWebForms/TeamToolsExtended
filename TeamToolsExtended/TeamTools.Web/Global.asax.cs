@@ -17,7 +17,7 @@ namespace TeamTools.Web
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
             GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
-            // on error 404 and 500 error pages
+            // on error 404 and 500 error pagesz
         }
     }
 }
